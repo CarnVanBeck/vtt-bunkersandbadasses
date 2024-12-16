@@ -1,0 +1,17 @@
+{
+    "badass": {
+        "description": "Alternatives B&B System für FoundryVTT",
+        "actor": {
+            "movement": "Bewegung",
+            "vaultHunter": {
+                "xp": {
+                    "label": "EP",
+                    "hint": "Die aktuelle Erfahrungspunkte die dein Kammerjäger hat"
+                }
+            }
+        },
+        "item": {
+            "value": "Wert"
+        }
+    }
+}

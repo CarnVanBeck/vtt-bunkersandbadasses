@@ -1,0 +1,99 @@
+{
+    "id": "badass",
+    "title": "Bunkers & Badasses (FoundryVTT)",
+    "description": "Alternative B&B System for FoundryVTT",
+    "authors": [
+        {
+            "name": "FrostyMoS"
+        },
+        {
+            "name": "CarnVanBeck",
+            "discord": "carnvanbeck"
+        }
+    ],
+    "url": "https://github.com/CarnVanBeck/vtt-bunkersandbadasses/",
+    "license": "https://github.com/CarnVanBeck/vtt-bunkersandbadasses/blob/main/LICENSE.txt",
+    "readme": "https://github.com/CarnVanBeck/vtt-bunkersandbadasses/blob/main/README.md",
+    "bugs": "https://github.com/CarnVanBeck/vtt-bunkersandbadasses/issues",
+    "changelog": "https://github.com/CarnVanBeck/vtt-bunkersandbadasses/blob/main/CHANGELOG.md",
+    "version": "0.0.1",
+    "compatibility": {
+        "minimum": 12,
+        "verified": "12.331"
+    },
+    "esmodules": ["badass.mjs"],
+    "styles": ["css/badass.css"],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "de",
+            "name": "Deutsch",
+            "path": "lang/de.json"
+        }
+    ],
+    "packs": [],
+    "packFolders": [],
+    "socket": false,
+    "manifest": "https://raw.githubusercontent.com/CarnVanBeck/vtt-bunkersandbadasses/main/system.json",
+    "download": "https://github.com/CarnVanBeck/vtt-bunkersandbadasses/releases/latest/download/vtt-bunkersandbadasses.zip",
+    "gridDistance": 1,
+    "gridUnits": "sq",
+    "documentTypes": {
+        "Actor": {
+            "vaultHunter": {
+                "HTMLFields": ["characterInfo", "background", "publicInfo"]
+            },
+            "nonVaultHunter": {
+                "HTMLFields": ["publicInfo"]
+            },
+            "environmental": {
+                "HTMLFields": ["publicInfo"]
+            },
+            "minion": {
+                "HTMLFields": ["publicInfo"]
+            }
+        },
+        "Item": {
+            "class": {
+                "HTMLFields": ["description"]
+            },
+            "skill": {
+                "HTMLFields": ["description"]
+            },
+            "action": {
+                "HTMLFields": ["description"]
+            },
+            "gun": {
+                "HTMLFields": ["description"]
+            },
+            "grenadeMod": {
+                "HTMLFields": ["description"]
+            },
+            "shield": {
+                "HTMLFields": ["description"]
+            },
+            "armor": {
+                "HTMLFields": ["description"]
+            },
+            "potion": {
+                "HTMLFields": ["description"]
+            },
+            "relic": {
+                "HTMLFields": ["description"]
+            },
+            "quest": {
+                "HTMLFields": ["description"]
+            },
+            "redText": {
+                "HTMLFields": ["description"]
+            },
+            "prefix": {
+                "HTMLFields": ["description"]
+            }
+        }
+    }
+}
