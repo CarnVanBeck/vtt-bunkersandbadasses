@@ -1,6 +1,6 @@
 import Defense from '../data/custom/defense.mjs';
 import Element from '../data/custom/element.mjs';
-import GunType, { GunLevel } from '../data/custom/gunType.mjs';
+import { GunType, GunLevel } from '../data/custom/gunType.mjs';
 import GunAccuracy from '../data/custom/gunAccuracy.mjs';
 
 export const BADASS = {};
@@ -68,44 +68,44 @@ export function getDefaultGunTypes() {
     combatRifle.key = 'cmb';
     combatRifle.name = game.i18n.localize('badass.item.gun.types.combatRifle.label');
     combatRifle.description = game.i18n.localize('badass.item.gun.types.combatRifle.hint');
-    combatRifle.levels = this.combatRifleLevels();
+    combatRifle.levels = combatRifleLevels();
 }
 
 function combatRifleLevels() {
-    let level1 = GunLevel();
+    let level1 = new GunLevel();
     level1.start = 1;
     level1.end = 6;
     level1.damage = '1d6';
     level1.range = 6;
-    level1.accuracy = [this.gunAccuracy(2, 7, 1, 0), this.gunAccuracy(8, 15, 3, 0), this.gunAccuracy(16, null, 3, 1)];
+    level1.accuracy = [gunAccuracy(2, 7, 1, 0), gunAccuracy(8, 15, 3, 0), gunAccuracy(16, null, 3, 1)];
 
-    let level2 = GunLevel();
+    let level2 = new GunLevel();
     level2.start = 7;
     level2.end = 12;
     level2.damage = '1d8';
     level2.range = 6;
-    level2.accuracy = [this.gunAccuracy(2, 7, 2, 0), this.gunAccuracy(8, 15, 3, 0), this.gunAccuracy(16, null, 2, 1)];
+    level2.accuracy = [gunAccuracy(2, 7, 2, 0), gunAccuracy(8, 15, 3, 0), gunAccuracy(16, null, 2, 1)];
 
-    let level3 = GunLevel();
+    let level3 = new GunLevel();
     level3.start = 13;
     level3.end = 18;
     level3.damage = '1d8';
     level3.range = 6;
-    level3.accuracy = [this.gunAccuracy(2, 7, 1, 1), this.gunAccuracy(8, 15, 2, 1), this.gunAccuracy(16, null, 2, 2)];
+    level3.accuracy = [gunAccuracy(2, 7, 1, 1), gunAccuracy(8, 15, 2, 1), gunAccuracy(16, null, 2, 2)];
 
-    let level4 = GunLevel();
+    let level4 = new GunLevel();
     level4.start = 19;
     level4.end = 24;
     level4.damage = '2d6';
     level4.range = 6;
-    level4.accuracy = [this.gunAccuracy(2, 7, 1, 0), this.gunAccuracy(8, 15, 2, 1), this.gunAccuracy(16, null, 3, 1)];
+    level4.accuracy = [gunAccuracy(2, 7, 1, 0), gunAccuracy(8, 15, 2, 1), gunAccuracy(16, null, 3, 1)];
 
-    let level5 = GunLevel();
+    let level5 = new GunLevel();
     level5.start = 25;
     level5.end = 30;
     level5.damage = '1d10';
     level5.range = 6;
-    level5.accuracy = [this.gunAccuracy(2, 7, 1, 2), this.gunAccuracy(8, 15, 2, 1), this.gunAccuracy(16, null, 2, 3)];
+    level5.accuracy = [gunAccuracy(2, 7, 1, 2), gunAccuracy(8, 15, 2, 1), gunAccuracy(16, null, 2, 3)];
 
     return [level1, level2, level3, level4, level5];
 }
