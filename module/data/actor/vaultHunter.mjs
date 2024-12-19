@@ -48,6 +48,11 @@ export default class VaultHunterData extends ActorDataModel {
         return schema;
     }
 
+    /** @inheritDoc */
+    prepareDerivedData() {
+        this.type = 'vaultHunter';
+    }
+
     /**
      * Called before a new actor is created and committed to the database
      * @param {object} data

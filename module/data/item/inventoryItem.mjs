@@ -17,6 +17,7 @@ export default class InventoryItemData extends BaseItemData {
             label: game.i18n.localize('badass.item.value'),
         });
         schema.rarity = new fields.StringField();
+        schema.equipped = new fields.BooleanField({ initial: false });
         return schema;
     }
 }

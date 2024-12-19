@@ -4,6 +4,8 @@ import { GunType, GunLevel } from '../data/custom/gunType.mjs';
 import GunAccuracy from '../data/custom/gunAccuracy.mjs';
 
 export const BADASS = {};
+BADASS.namespace = 'badass';
+BADASS.systemPath = 'systems/vtt-bunkersandbadasses';
 
 export function getDefaultDefenses() {
     let shield = new Defense();
@@ -15,17 +17,17 @@ export function getDefaultDefenses() {
     armor.key = 'arm';
     armor.name = game.i18n.localize('badass.defense.armor.label');
     armor.description = game.i18n.localize('badass.defense.armor.hint');
-    armor.order = 1;
+    armor.order = 10;
     let hp = new Defense();
     hp.key = 'hp';
     hp.name = game.i18n.localize('badass.defense.hp.label');
     hp.description = game.i18n.localize('badass.defense.hp.hint');
-    hp.order = 2;
+    hp.order = 20;
     let generic = new Defense();
     generic.key = 'gen';
     generic.name = game.i18n.localize('badass.defense.generic.label');
     generic.description = game.i18n.localize('badass.defense.generic.hint');
-    generic.order = 3;
+    generic.order = 30;
 
     return [shield, armor, hp, generic];
 }
