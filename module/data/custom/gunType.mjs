@@ -7,7 +7,7 @@
  * @property {string}   icon        Path to the image
  * @property {object[]} levels      Array of GunLevels to specify the scaling
  */
-export default class GunType {
+export class GunType {
     key = '';
     name = '';
     description = '';

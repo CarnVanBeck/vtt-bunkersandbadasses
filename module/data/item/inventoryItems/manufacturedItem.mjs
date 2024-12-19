@@ -8,8 +8,9 @@ export default class ManufacturedItemData extends InventoryItemData {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();
         schema.manufacturer = new fields.ObjectField({
-            required: true,
-            nullable: false,
+            name: 'manufacturer',
+            required: false,
+            nullable: true,
             label: game.i18n.localize('badass.item.manufacturer.label'),
         });
         return schema;

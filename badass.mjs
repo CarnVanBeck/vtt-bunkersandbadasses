@@ -12,5 +12,7 @@ Hooks.on('init', () => {
     };
     CONFIG.Item.dataModels = {
         gun: dataModels.gun,
+        redText: dataModels.redText,
+        prefix: dataModels.prefix,
     };
 });

@@ -1,5 +1,5 @@
 {
-    "id": "badass",
+    "id": "vtt-bunkersandbadasses",
     "title": "Bunkers & Badasses (FoundryVTT)",
     "description": "Alternative B&B System for FoundryVTT",
     "authors": [
@@ -21,8 +21,17 @@
         "minimum": 12,
         "verified": "12.331"
     },
-    "esmodules": ["badass.mjs"],
-    "styles": ["css/badass.css"],
+    "esmodules": [
+        "badass.mjs",
+        "scripts/gunCard.js",
+        "scripts/handlebars.js"
+    ],
+    "styles": [
+        "css/badass.css",
+        "css/dices.css",
+        "css/elements.css",
+        "css/gunCard.css"
+    ],
     "languages": [
         {
             "lang": "en",

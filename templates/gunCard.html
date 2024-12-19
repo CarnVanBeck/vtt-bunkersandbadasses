@@ -1,0 +1,110 @@
+<form class="OriItemSheet {{cssClass}}" autocomplete="off">
+	<div class="gunCardSheet {{system.rarity.colorValue}}" >
+		<div class="gunCardHeader gunCardFlex" >
+			<div class="gunCardGunManRar" >
+				<div class="gunCardGunManufacturer">
+					{{> optionSelector choices=manufacturers name="manufacturer"}}
+				</div>
+				<div class="gunCardGunRarity">
+					<select>
+						<option >formatDummy</option>
+					</select>
+				</div>
+			</div>
+			<div class="gunCardName" >
+				<input class="gunCardNameInput" name="name" type="text" value="{{item.name}}" placeholder="Gun Name"/>
+			</div>
+			<div class="gunCardGunLvlType" >
+				<div class="gunCardGunLvl" >
+					<select>
+						<option >formatDummy</option>
+					</select>
+				</div>
+				<div class="gunCardGunType" >
+					{{> optionSelector choices=gunTypes name="gunType"}}
+				</div>
+			</div>
+		</div>
+		<div class="gunCardRollAndImage gunCardFlex" >
+			<div class="gunCardRollData gunCardFlex" >
+				<div class="gunCardRollHeader" > ACCURACY </div>
+				<div class="gunCardAccuracy gunCardFlex" >
+					<div class="gunCardD20AndMods" >
+						{{> "d20"}}
+						<input class="gunCardInput" 
+							onfocus="this.select()"
+							value="{{system.statMods.acc}}" 
+							name="system.statMods.acc"
+							type="number" data-dtype="Number"
+						/>
+						MOD
+					</div>
+					<table class="gunCardHitsAndCrits" >
+						{{> "gunCardHitLine"
+							range="2-7:" hitCategory="low"
+							hits=system.accuracy.low.hits
+							crits=system.accuracy.low.crits
+						}}
+						{{> "gunCardHitLine"
+							range="8-15:" hitCategory="mid"
+							hits=system.accuracy.mid.hits
+							crits=system.accuracy.mid.crits
+						}}
+						{{> "gunCardHitLine"
+							range="16+:" hitCategory="high"
+							hits=system.accuracy.high.hits
+							crits=system.accuracy.high.crits
+						}}
+					</table>
+				</div>
+				<div class="gunCardRollHeader" > {{localize "badass.item.gun.damage"}} </div>
+				<div class="gunCardDamage gunCardFlex">
+					{{#if system.damage}}
+						{{> (concat "d" system.damage.dice.size)}}
+					<div class="gunCardDiceMulti">
+						{{#equals 2 system.damage.dice.count}}
+							x{{system.damage.dice.count}}
+						{{/equals}}
+					</div>
+					{{/if}}
+					<input class="gunCardInput"
+						onfocus="this.select()"
+						value="{{system.statMods.dmg}}"
+						name="system.statMods.dmg"
+						type="number" data-dtype="Number"
+					/> 
+				</div>
+				<div class="gunCardRollHeader gunCardRange">
+					<div> RANGE: </div>
+					<input class="gunCardInput"
+						onfocus="this.select()"
+						value="{{system.range}}"
+						name="system.range"
+						type="number" data-dtype="Number"
+					/> 
+					<div> SQ </div>
+				</div>
+			</div>
+			<div class="gunCardPicture" >
+				<img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+			</div>
+		</div>
+		<div class="gunCardElementNotes" >
+			<div class="gunCardElements" >
+				{{> optionSelector choices=elements name="element"}}
+			</div>
+			<div class="gunCardNotes" >
+				Lorem ipsum
+			</div>
+		</div>
+		<div class="gunCardValue" >
+			<input class="gunCardInput"
+				onfocus="this.select()"
+				value="{{system.value}}"
+				name="system.value"
+				type="number" data-dtype="Number"
+			/> 
+			Gold
+		</div>
+	</div>
+</form>

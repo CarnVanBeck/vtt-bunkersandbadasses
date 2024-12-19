@@ -1,0 +1,29 @@
+<svg class="elementCryo" viewBox="0 0 400 400" 
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" 
+>
+	<defs>
+		<!-- single arm symbol definition for element cryo -->
+		<symbol id="cryoArc">
+			<path d="m200,200 l-45,0 
+				l-45,39 l45,-39 l-45,-39 l45,39 
+				l-75,0 
+				l-30,26 l30,-26 l-30,-26 l30,26
+				l-45,0 
+				z" 
+			/>
+		</symbol>
+		<symbol id="cryo">
+			<!-- 6 Arms each group rotated -->
+			<use href="#cryoArc" transform="rotate(30, 200, 200)" />
+			<use href="#cryoArc" transform="rotate(90, 200, 200)" />
+			<use href="#cryoArc" transform="rotate(150, 200, 200)" />
+			<use href="#cryoArc" transform="rotate(210, 200, 200)" />
+			<use href="#cryoArc" transform="rotate(270, 200, 200)" />
+			<use href="#cryoArc" transform="rotate(330, 200, 200)" />
+		</symbol>
+		
+	</defs>
+	
+	<!-- cryo symbol -->
+	<use href="#cryo" fill="var(--cryo)"/>
+</svg>

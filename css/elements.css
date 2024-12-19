@@ -1,0 +1,156 @@
+/*******
+*      *
+* Cryo *
+*      *
+********
+*/
+.elementCryo {
+    --cryo: #eee;
+}
+
+.elementCryo #cryoArc {
+    stroke-width: 15;
+    stroke: #fff;
+    stroke-linecap: round;
+}
+
+/*******
+*      *
+* Acid *
+*      *
+********
+*/
+.elementAcid {
+    --dark: #21240F; 
+    --light: #38462F;
+    --acid: #4EF70F;
+}
+
+#acidArc {
+    stroke-width:1;
+    stroke: #000;
+}
+
+.acidCircle {
+    fill: transparent;
+}
+
+.acidOuterCircle {
+    stroke-width: 8;
+    stroke: #000;
+}
+
+.acidInnerCircle {
+    stroke-width: 6;
+    stroke: var(--acid);
+}
+
+/************
+*           *
+* Explosive *
+*           *
+*************
+*/
+
+.elementExplosive {
+    --light: #835C28;
+    --dark: #603905;
+    --edge: #160402; 
+    --nob: #2A0208;
+    --explosive: #ffea00;
+    --explosiveDark: #ccbb00;
+}
+.elementExplosive #explosiveSymbol {
+    animation-name:				explFlash;
+    animation-duration:			5s;
+    animation-iteration-count:	infinite;
+}
+@keyframes explFlash {
+    0% {
+        fill: var(--explosive);
+    }
+    45% {
+        fill: var(--explosiveDark);
+    }	
+    55% {
+        fill: var(--explosiveDark);
+    }
+    100% {
+        fill: var(--explosive);
+    }	
+}
+
+/*************
+*            *
+* incendiary *
+*            *
+**************
+*/
+
+.elementIncendiary {
+    --light: #651B00;
+    --dark: #4A1000;
+    --edge: #100101; 
+    --nob: #2A0208;
+    --incendiary: #FDB329;
+}
+.elementIncendiary .incendiaryPath {
+    fill: var(--incendiary, #bfb8c9);
+    stroke-width: 0.5;
+    stroke: var(--edge);
+}
+
+/************
+*           *
+* Radiation *
+*           *
+*************
+*/
+
+.elementRadiation {
+    --dark: #3C4168; 
+    --light: #424A16;
+    --nob: #2A0208;
+    --radiation: #CCD63E;
+}
+
+.elementRadiation .radiationOuterCircle {
+    fill: transparent;
+    stroke-width: 18;
+    stroke: var(--radiation);
+}
+
+/********
+*       *
+* Shock *
+*       *
+*********
+*/
+
+.elementShock {
+    --light: #252656;
+    --dark: #101141;
+    --edge: #1B0329; 
+    --nob: #2A0208;
+    --shock: #26E3F5;
+}
+.elementShock .lightning {
+    fill: var(--shock, #bfb8c9);
+    stroke-width: 1;
+    stroke: var(--edge);
+}
+
+/******************
+*                 *
+* elementSelector *
+*                 *
+*******************
+*/
+
+.elementSelector .elementSelectorAcid {
+    background-image: url("/foundry/systems/vtt-bunkersandbadasses/assets/standalone/elements/acid.svg");
+}
+
+.elementSelector .elementSelectorCryo {
+    background-image: url("/foundry/systems/vtt-bunkersandbadasses/assets/standalone/elements/cryo.svg");
+}

@@ -1,0 +1,31 @@
+<svg class="elementShock" viewBox="0 0 400 400" width="400" height="400" 
+    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" 
+>
+	<defs>
+		<style>
+			.elementShock {
+				--light: #252656;
+				--dark: #101141;
+				--edge: #1B0329; 
+				--nob: #2A0208;
+				--shock: #26E3F5;
+			}
+            #shock {
+                fill: var(--shock, #bfb8c9);
+                stroke-width: 1;
+                stroke: var(--edge);
+            }
+		</style>
+		<!-- symbol definition for element shock -->
+		<symbol id="shock"> 
+			<path id="bigLightning" class="lightning" 
+                d="m200,380 l-3,-156 l60,3 l-60,-210 l3,156 l-60,-3 l60,210 z"
+            />
+			<use href="#bigLightning" transform="translate(100,190) scale(0.5) rotate(45,200,380)" />
+			<use href="#bigLightning" transform="translate(100,190) scale(0.5) rotate(-45,200,380)" />
+		</symbol>
+	</defs>
+	
+	<!-- acid symbol -->
+	<use href="#shock" />
+</svg>
