@@ -22,12 +22,13 @@ Hooks.on('init', () => {
         redText: dataModels.redText,
         prefix: dataModels.prefix,
     };
-  
+
     CONFIG.Item.documentClass = BadassItem;
-  
+
     Items.registerSheet('bunkers-and-badasses', GunCardSheet, {
         types: ['gun'],
         makeDefault: true,
+    });
     Actors.unregisterSheet('core', ActorSheet);
     Actors.registerSheet(BADASS.namespace, BadassActorSheet, {
         makeDefault: true,
