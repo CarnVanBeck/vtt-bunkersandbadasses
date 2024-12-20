@@ -8,7 +8,7 @@
 				--nob: #2A0208;
 				--incendiary: #FDB329;
 			}
-           #incendiary {
+            #incendiary {
                 fill: var(--incendiary, #bfb8c9);
                 stroke-width: 0.5;
                 stroke: var(--edge);
