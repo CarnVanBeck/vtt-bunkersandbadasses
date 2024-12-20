@@ -22,13 +22,11 @@
         "verified": "12.331"
     },
     "esmodules": [
-        "badass.mjs",
-        "scripts/gunCard.js",
-        "scripts/handlebars.js"
+        "badass.mjs"
     ],
     "styles": [
         "css/badass.css",
-        "css/dices.css",
+        "css/dice.css",
         "css/elements.css",
         "css/gunCard.css"
     ],
