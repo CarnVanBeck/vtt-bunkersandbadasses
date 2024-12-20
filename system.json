@@ -21,8 +21,15 @@
         "minimum": 12,
         "verified": "12.331"
     },
-    "esmodules": ["badass.mjs"],
-    "styles": ["css/badass.css"],
+    "esmodules": [
+        "badass.mjs"
+    ],
+    "styles": [
+        "css/badass.css",
+        "css/dice.css",
+        "css/elements.css",
+        "css/gunCard.css"
+    ],
     "languages": [
         {
             "lang": "en",

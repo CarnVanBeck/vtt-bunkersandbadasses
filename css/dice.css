@@ -1,0 +1,79 @@
+/********
+ * 		*
+ *	D20	*
+ * 		*
+ ********
+ */
+
+ .d20 {
+	--diceBlue : #3030ff;
+	--diceLine : rgba(125,125,255,0.4);
+	--diceTransparent : rgba(200,200,200,0.3);
+}
+
+.d20 .triangle {
+	stroke: var(--diceLine, beige);
+	stroke-width: 3;
+	stroke-linejoin: round;
+}
+
+.d20 .triangle:nth-child(3n) {
+	fill: url(#blueCloud1);
+}
+
+.d20 .triangle:nth-child(3n + 1) {
+	fill: url(#blueCloud2);
+}
+
+.d20 .triangle:nth-child(3n + 2) {
+	fill: url(#blueCloud3);
+}
+
+.d20 .diceNumber {
+	fill: white;
+	stroke: white;
+	font-size: 6em;
+	font-weight: bold;
+}
+
+/********
+ * 		*
+ *	D6	*
+ * 		*
+ ********
+ */
+ 
+.d6 .quadrat {
+	fill: aliceblue;
+	stroke: blue;
+	stroke-width: 3;
+	stroke-linejoin: round;
+}
+
+.d6 .diceNumber {
+	fill: gray;
+	stroke: white;
+	font-size: 10em;
+	font-weight: bold;
+}
+
+/********
+ * 		*
+ *	D4	*
+ * 		*
+ ********
+ */
+ 
+.d4 .triangle {
+	fill: aliceblue;
+	stroke: blue;
+	stroke-width: 3;
+	stroke-linejoin: round;
+}
+
+.d4 .diceNumber {
+	fill: gray;
+	stroke: white;
+	font-size: 10em;
+	font-weight: bold;
+}

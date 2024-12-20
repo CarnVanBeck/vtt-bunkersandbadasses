@@ -1,0 +1,30 @@
+<svg id="smg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 30" height="450" width="650">
+	<defs>
+		<style>
+			#smg {
+				--smgBlack: #222;
+			}
+			#smg .gSmg {
+				mask: url(#cut);
+				fill: var(--smgBlack);
+			}
+		</style>
+	</defs>
+	<mask id="cut">
+		<rect fill="white"
+			x="0" y="0" height="30" width="75"
+		>
+		</rect>
+		<path fill="black"
+			d="m34,14 h5 q0,2 -1,2.5 q0,2 3,-2.5 h1 q0,4 -2,4 h-5 q-1,0 -1,-1 z"
+		>
+		</path>
+	</mask>
+	<path class="gSmg"
+		d="m4.5,7 v-1 h1 v-1 h7 l2,-2 h5.5 l1,-1 h32 v2 l1,1 h6 l3,-3 h2 l2,2
+        q-1.5,7 0,14 l-1,1 h-3 q-1,0 -2,-5 q-1,-5 -2,-5 h-3.5 v2 l-3,3 h-5 v3
+        q0,1 1,1.5 q1,1 1,1.5 v4 q0,2 -2,2 h-4 q-2,0 -2,-2 v-4 h-8 q-2,0 -2,-2 v-2
+        h-2 v4 q-1,9 -6,9 q-6,0 -3,-5 q4,-4 4,-11 h-10 l-2,-2 v-2 h-7 v-1 h-1 z"
+	>
+	</path>
+</svg>

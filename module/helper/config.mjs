@@ -71,6 +71,8 @@ export function getDefaultGunTypes() {
     combatRifle.name = game.i18n.localize('badass.item.gun.types.combatRifle.label');
     combatRifle.description = game.i18n.localize('badass.item.gun.types.combatRifle.hint');
     combatRifle.levels = combatRifleLevels();
+
+    return [combatRifle];
 }
 
 function combatRifleLevels() {

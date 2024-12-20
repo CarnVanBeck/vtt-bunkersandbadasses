@@ -1,0 +1,21 @@
+<tr class="critHitRow">
+	<td class="accuracyLow accuracyLine">
+		{{range}}
+	</td>
+	<td class="hit">
+		<input class="gunCardInput"
+			onfocus="this.select()"
+			value="{{hits}}" 
+			name="system.accuracy.{{hitCategory}}.hits"
+			type="number" data-dtype="Number"
+		/>
+	</td>
+	<td class="crit">
+		<input class="gunCardInput"
+			onfocus="this.select()"
+			value="{{crits}}" 
+			name="system.accuracy.{{hitCategory}}.crits"
+			type="number" data-dtype="Number"
+		/>
+	</td>
+</tr>

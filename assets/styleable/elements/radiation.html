@@ -1,0 +1,22 @@
+<svg class="elementRadiation" viewBox="0 0 400 400"
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" 
+>
+	<defs>
+		<!-- arc definition for element radiation -->
+		<symbol id="radiationArc">
+			<path d="m200,155 a45,45 0,0,0 -22.5,6 l-52.5,-90.93 a150,150 0,0,1 150,0 l-52.5,90.93 a45,45 0,0,0 -22.5,-6z" />
+		</symbol>
+		
+		<!-- symbol definition for element radiation -->
+		<symbol id="radiation"> 
+			<circle class="radiationRand radiationOuterCircle" cx="200" cy="200" r="174"/>
+			<circle class="radiationRand"	cx="200" cy="200" r="30" />
+			<use href="#radiationArc" />
+			<use href="#radiationArc" transform="rotate(120, 200, 200)"/>
+			<use href="#radiationArc" transform="rotate(240, 200, 200)"/>
+		</symbol>
+	</defs>
+	
+	<!-- acid symbol -->
+	<use href="#radiation" fill="var(--radiation)" />
+</svg>

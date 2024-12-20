@@ -1,0 +1,33 @@
+<svg id="rocketLauncher" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 55" height="450" width="650">
+	<defs>
+		<style>
+			#rocketLauncher {
+				--rocketLauncherBlack: #222;
+			}
+			#rocketLauncher .rLauncher {
+				mask: url(#cut);
+				fill: var(--rocketLauncherBlack);
+			}
+		</style>
+	</defs>
+	<mask id="cut">
+		<rect fill="white"
+			x="0" y="0" height="55" width="75"
+		>
+		</rect>
+		<path fill="black"
+			d="m45,18.5 h3 q0,3 -2,3 q-1,0 -1,-3 z"
+		>
+		</path>
+        <path fill="black"
+			d="m52,18.5 h2 q2,0 2,2 v2 h-2 q-2,0 -2,-2z"
+		>
+		</path>
+	</mask>
+	<path class="rLauncher"
+		d="m1,13 h1 v-1 h13 v-1 h24 v-3 h-2 l-2,2 h-8 v-8 h8 l2,2 h16 l1.5,1.5 v2 l-1.5,1.5
+        h-4 v2 l1.5,1.5 h16 l2,-2 h2 l2,2 q-2,6 0,12 l-2.5,2 h-5 q-4,0 -4,-6 q -2,0 -3,4 
+        q-1,4 -3,4.5 h-4 q-2,0 -2,-2 v-4 h-3 l-2,2 h-6 q-3,0 -4,-6 h-18 l-1,-2 v-1 h-13 v-1 h-1 z"
+	>
+	</path>
+</svg>

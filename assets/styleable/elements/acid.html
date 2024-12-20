@@ -1,0 +1,27 @@
+<svg class="elementAcid" 
+	viewBox="0 0 400 400"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:svg="http://www.w3.org/2000/svg"
+>
+	<defs>
+        <!-- arc definition for element acid-->
+		<symbol id="acidArc">
+			<path d="m182,130 a36,36 0,0,0 15,67.5 l0,13.5 a30,36 -25,0,1 -15,-81z" />
+			<path d="m218,130 a36,36 0,0,1 -15,67.5 l0,13.5 a30,36 25,0,0 15,-81z" />
+		</symbol>
+		
+		<!-- symbol definition for element acid-->
+		<symbol id="acid">
+			<!-- background circle -->
+			<circle class="acidCircle acidOuterCircle" cx="200" cy="220" r="37.5" />
+			<circle class="acidCircle acidInnerCircle" cx="200" cy="220" r="37.5" />
+			<!-- 6 Arms each group rotated -->
+			<use href="#acidArc"/>
+			<use href="#acidArc" transform="rotate(120, 200, 220)" />
+			<use href="#acidArc" transform="rotate(240, 200, 220)" />
+		</symbol>
+	</defs>
+	
+	<!-- acid symbol -->
+	<use href="#acid" fill="var(--acid)" />
+</svg>

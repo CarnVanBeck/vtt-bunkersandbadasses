@@ -15,7 +15,7 @@ export function registerSettings() {
         scope: 'world',
         config: true,
         type: String,
-        default: JSON.stringify(getDefaultElements()),
+        default: getDefaultElements(),
     });
     game.settings.register('badass', 'gunTypes', {
         name: 'SETTINGS.gunTypes.label',
@@ -23,7 +23,7 @@ export function registerSettings() {
         scope: 'world',
         config: true,
         type: String,
-        default: JSON.stringify(getDefaultGunTypes()),
+        default: getDefaultGunTypes(),
     });
     game.settings.register('badass', 'manufacturers', {
         name: 'SETTINGS.manufacturers.label',

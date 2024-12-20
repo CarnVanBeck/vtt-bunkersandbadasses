@@ -2,8 +2,9 @@ import * as dataModels from './module/data/_module.mjs';
 import { VaultHunterActor } from './module/documents/actor/vhActor.mjs';
 import { BadassItem } from './module/documents/badassItem.mjs';
 import { BADASS, getDefaultElements } from './module/helper/config.mjs';
-import { preloadHandlebarsTemplates } from './module/helper/hbsParts.mjs';
+import { preloadHandlebarsTemplates } from './module/helper/preloadTemplates.mjs';
 import { registerSettings } from './module/helper/settings.mjs';
+import { GunCardSheet } from './module/helper/gunCard.mjs';
 import { BadassActorSheet } from './module/sheets/actorSheet.mjs';
 
 Hooks.on('init', () => {
@@ -21,8 +22,12 @@ Hooks.on('init', () => {
         redText: dataModels.redText,
         prefix: dataModels.prefix,
     };
+  
     CONFIG.Item.documentClass = BadassItem;
-
+  
+    Items.registerSheet('bunkers-and-badasses', GunCardSheet, {
+        types: ['gun'],
+        makeDefault: true,
     Actors.unregisterSheet('core', ActorSheet);
     Actors.registerSheet(BADASS.namespace, BadassActorSheet, {
         makeDefault: true,
@@ -30,7 +35,33 @@ Hooks.on('init', () => {
     });
     return preloadHandlebarsTemplates();
 });
-
 Hooks.on('i18nInit', () => {
     console.log('i18nInit');
+});
+
+/**
+ * Handlebar Helpers;
+ */
+Handlebars.registerHelper('getDiceCount', function (aString) {
+    return aString.split('d')[0];
+});
+
+Handlebars.registerHelper('getDiceSize', function (aString) {
+    return aString.split('d')[1];
+});
+
+Handlebars.registerHelper('equals', function (value, key, opts) {
+    if (value === key) {
+        return opts.fn();
+    } else {
+        return opts.inverse();
+    }
+});
+
+Handlebars.registerHelper('unequals', function (value, key, opts) {
+    if (value === key) {
+        return opts.inverse();
+    } else {
+        return opts.fn();
+    }
 });
