@@ -66,7 +66,7 @@
             }
         },
         "element": {
-            "icendiary": {
+            "incendiary": {
                 "label": "Incendiary",
                 "hint": "Incendiary is a fancy way to say fire. Incendiary damage deals double damage to targets with exposed Flesh. Once Shields or Armor are depleted, all Health damage is double for Flesh targets. Mmmm smells like chicken."
             },
@@ -89,6 +89,17 @@
             "cryo": {
                 "label": "Cryo",
                 "hint": "Cryo = really cold. Targets hit by Cryo damage are Slowed, which means they can only move one square for one turn after being hit and get -2 to Traverse Checks. If a target is hit again with Cryo, they become Frozen. A Frozen target can either move one square on their turn or make a Melee Attack."
+            }
+        },
+        "sheets": {
+            "vaultHunter": {
+                "label": "Vault Hunter Actor Sheet",
+                "archetype": "Archetype",
+                "class": "Class",
+                "name": "Name",
+                "background": "Background",
+                "level": "Level",
+                "actionSkill": "Action Skill"
             }
         }
     },

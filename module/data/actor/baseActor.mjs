@@ -39,6 +39,11 @@ export default class BaseActorData extends BadassDataModel {
             label: 'badass.actor.publicInfo.label',
             hint: 'badass.actor.publicInfo.hint',
         });
+        schema.tookDamage = new fields.BooleanField({
+            initial: false,
+            label: 'badass.actor.tookDamage.label',
+            hint: 'badass.actor.tookDamage.hint',
+        });
         return schema;
     }
 }

@@ -12,5 +12,7 @@ export default class GrenadeModItemData extends ManufacturedItemData {
     }
 
     /** @inheritDoc */
-    prepareDerivedData() {}
+    prepareDerivedData() {
+        this.type = 'grenadeMod';
+    }
 }
