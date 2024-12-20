@@ -1,0 +1,75 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+    <header class="sheet-header">
+        <div class="header-fields">
+          <div class="resources grid grid-5col">
+              placeholder for image
+              <div class="main grid-span-2">
+                  <label for="system.archetype.value" class="resource-label">{{localize "badass.sheets.vaultHunter.archetype"}}</label>
+                  <input name="system.archetype.value" type="text" value="" placeholder="{{localize "badass.sheets.vaultHunter.archetype"}}"/>
+              </div>
+              <div class="main grid-span-2">
+                  <label for="system.class.value" class="resource-label">{{localize "badass.sheets.vaultHunter.class"}}</label>
+                  <input name="system.class.value" type="text" value="" placeholder="{{localize "badass.sheets.vaultHunter.class"}}"/>
+              </div>
+          </div>
+          <div class="resources grid grid-3col">
+              <div>
+                  <label for="actor.name" class="resource-label">{{localize "badass.sheets.vaultHunter.name"}}</label>
+                  <input name="actor.name" type="text" value="{{actor.name}}" placeholder="{{localize "badass.sheets.vaultHunter.name"}}"/>
+              </div>
+              <div>
+                  <label for="system.background.value" class="resource-label">{{localize "badass.sheets.vaultHunter.background"}}</label>
+                  <input name="system.background.value" type="text" value="" placeholder="{{localize "badass.sheets.vaultHunter.background"}}"/>
+              </div>
+              <div>
+                  <label for="system.level.value" class="resource-label">{{localize "badass.sheets.vaultHunter.level"}}</label>
+                  <input name="system.level.value" type="text" value="" placeholder="{{localize "badass.sheets.vaultHunter.level"}}"/>
+              </div>
+          </div>
+          <div class="resources">
+              <label for="system.actionSkill.value" class="resource-label">{{localize "badass.sheets.vaultHunter.actionSkill"}}</label>
+              <input name="system.actionSkill.value" type="text" value="" placeholder="{{localize "badass.sheets.vaultHunter.actionSkill"}}"/>
+          </div>
+        </div>
+    </header>
+    <div class="grid grid-4col">
+        <section class="main">
+            {{> "systems/vtt-bunkersandbadasses/templates/actor/parts/defense.hbs"}}
+        </section>
+    </div>
+                
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+      {{!-- Default tab is specified in actor-sheet.mjs --}}
+      <a class="item" data-tab="equipment">Equipment</a>
+      <a class="item" data-tab="items">Items</a>
+      <a class="item" data-tab="character">Character</a>
+      <a class="item" data-tab="effects">Effects</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+      <div class="tab" data-group="primary" data-tab="equipment">
+        <h2>Equipment</h2>
+        {{> "systems/vtt-bunkersandbadasses/templates/actor/parts/equipment.hbs"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="items">
+        <h2>Items</h2>
+        {{> "systems/vtt-bunkersandbadasses/templates/actor/parts/items.hbs"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="character">
+        <h2>Character</h2>
+        {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
+        {{editor background target="system.background" engine="prosemirror" button=true editable=editable}}
+        {{editor characterInfo target="system.characterInfo" engine="prosemirror" button=true editable=editable}}
+            {{> "systems/vtt-bunkersandbadasses/templates/actor/parts/skills.hbs"}}
+      </div>
+      <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+        <h2>Effects</h2>
+        {{> "systems/vtt-bunkersandbadasses/templates/actor/parts/activeEffects.hbs"}}
+      </div>
+
+    </section>
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+</form>
