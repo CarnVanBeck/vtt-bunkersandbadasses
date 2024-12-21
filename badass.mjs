@@ -4,7 +4,8 @@ import { BadassItem } from './module/documents/badassItem.mjs';
 import { BADASS, getDefaultElements } from './module/helper/config.mjs';
 import { preloadHandlebarsTemplates } from './module/helper/preloadTemplates.mjs';
 import { registerSettings } from './module/helper/settings.mjs';
-import { GunCardSheet } from './module/helper/gunCard.mjs';
+import { GunCardSheet } from './module/sheets/gunCard.mjs';
+import { ShieldCardSheet } from './module/sheets/shieldCard.mjs';
 import { BadassActorSheet } from './module/sheets/actorSheet.mjs';
 
 Hooks.on('init', () => {
@@ -27,6 +28,10 @@ Hooks.on('init', () => {
 
     Items.registerSheet('bunkers-and-badasses', GunCardSheet, {
         types: ['gun'],
+        makeDefault: true,
+    });
+    Items.registerSheet('bunkers-and-badasses', ShieldCardSheet, {
+        types: ['shield'],
         makeDefault: true,
     });
     Actors.unregisterSheet('core', ActorSheet);

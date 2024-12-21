@@ -1,14 +1,14 @@
-export class GunCardSheet extends ItemSheet {
+export class ShieldCardSheet extends ItemSheet {
     
     get template() {
-        return "systems/vtt-bunkersandbadasses/templates/gunCard.html";
+        return "systems/vtt-bunkersandbadasses/templates/item/shieldCard.html";
     }
 
 	static get defaultOptions() {
         const options = super.defaultOptions;
 		
 		return foundry.utils.mergeObject(options, {
-            classes: ["sheet", "archy-gun-card"],
+            classes: ["sheet", "shield-card"],
             width: 550,
             height: 650,
             blockFavTab: true,
@@ -34,7 +34,6 @@ export class GunCardSheet extends ItemSheet {
 		context.flags = itemData.flags;
 
 		// Add system relevant data arrays
-		context.gunTypes = game.settings.settings.get("badass.gunTypes").default;
 		context.elements = game.settings.settings.get("badass.elements").default;
 		context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
 
