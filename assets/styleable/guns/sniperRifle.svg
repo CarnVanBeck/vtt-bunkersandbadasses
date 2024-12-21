@@ -1,4 +1,6 @@
-<svg id="rocketLauncher" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 55" height="450" width="650">
+<svg id="rocketLauncher" viewBox="0 0 75 55" height="450" width="650"
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<defs>
 		<style>
 			#rocketLauncher {
