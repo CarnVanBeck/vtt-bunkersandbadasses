@@ -10,7 +10,7 @@ export class GunCardSheet extends ItemSheet {
 		return foundry.utils.mergeObject(options, {
             classes: ["sheet", "gun-card"],
             width: 550,
-            height: 650,
+            height: 550,
             blockFavTab: true,
 			makeDefault: true
         });

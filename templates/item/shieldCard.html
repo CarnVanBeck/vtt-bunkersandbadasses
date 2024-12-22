@@ -25,9 +25,35 @@
 		<div class="itemCardRollAndImage itemCardFlex" >
 			<div class="itemDataBlock itemCardFlex" >
 				<div class="itemDataHeader" > CAPACITY </div>
-				<div> Capa :  60 </div>
+				<div class="shieldCapacity">
+					<div class="shieldCapacityImage">
+
+					</div>
+					<div class="shieldCapacityData itemCardFlex">
+						<input class="itemCardInput"
+							onfocus="this.select()"
+							value="{{system.current}}"
+							name="system.current"
+							type="number" data-dtype="Number"
+						/>
+						/
+						<input class="itemCardInput"
+							onfocus="this.select()"
+							value="{{system.max}}"
+							name="system.max"
+							type="number" data-dtype="Number"
+						/>
+					</div>
+				</div>
 				<div class="itemDataHeader" > REGEN </div>
-				<div> 10 </div>
+				<div> 
+					<input class="itemCardInput"
+						onfocus="this.select()"
+						value="{{system.regen}}"
+						name="system.regen"
+						type="number" data-dtype="Number"
+					/> 	
+				</div>
 			</div>
 			<div class="itemCardPicture" >
 				<img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>

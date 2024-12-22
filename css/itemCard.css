@@ -16,6 +16,11 @@
 	height: 1.8em;
 }
 
+.itemCardInput[type="Number"] {
+	color: white;
+	text-align: center;
+}
+
 .itemDataBlock {
 	width: 40%;
 	flex-flow: column;

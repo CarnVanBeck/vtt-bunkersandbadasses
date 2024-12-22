@@ -7,11 +7,6 @@
 	flex-flow: column
 }
 
-.gunCardInput[type="Number"] {
-	color: white;
-	text-align: center;
-}
-
 .gunCardAccuracy {
 	flex-flow: row;
 	width: 100%;
@@ -45,7 +40,7 @@
 
 .critHitRow > td.hit
 {
-	background-image: url(/foundry/systems/bunkers-and-badasses/assets/weapons/hits.svg);
+	background-image: url(../assets/standalone/hits.svg);
 	background-size: auto 85% ;
 }
 
@@ -58,7 +53,7 @@
 
 .critHitRow > td.crit
 {
-	background-image: url(/foundry/systems/bunkers-and-badasses/assets/weapons/crits.svg);
+	background-image: url(../assets/standalone/crits.svg);
 	background-size: auto 85% ;
 }
 

@@ -1,7 +1,7 @@
 <select class="{{name}}Selector" >
-    {{log "choices are" choices}}
+    {{!-- log "choices are" choices --}}
     {{#each choices as | choice | }}
-    {{log "choiceName is" choice.name}}
-    <option class="{{../name}}Option {{../name}}Option{{choice.key}}" value="{{choice.key}}">{{choice.name}}</option>
+        {{!--log "choiceName is" choice.name--}}
+        <option class="{{../name}}Option {{../name}}Option{{choice.key}}" value="{{choice.key}}">{{choice.name}}</option>
     {{/each}}
 </select>

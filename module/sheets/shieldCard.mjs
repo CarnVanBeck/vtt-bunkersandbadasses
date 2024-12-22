@@ -9,8 +9,8 @@ export class ShieldCardSheet extends ItemSheet {
 		
 		return foundry.utils.mergeObject(options, {
             classes: ["sheet", "shield-card"],
-            width: 550,
-            height: 650,
+            width: 500,
+            height: 500,
             blockFavTab: true,
 			makeDefault: true
         });

@@ -31,7 +31,7 @@
 				<div class="gunCardAccuracy itemCardFlex" >
 					<div class="gunCardD20AndMods" >
 						{{> "d20"}}
-						<input class="gunCardInput" 
+						<input class="itemCardInput" 
 							onfocus="this.select()"
 							value="{{system.statMods.acc}}" 
 							name="system.statMods.acc"
@@ -67,7 +67,7 @@
 						{{/equals}}
 					</div>
 					{{/if}}
-					<input class="gunCardInput"
+					<input class="itemCardInput"
 						onfocus="this.select()"
 						value="{{system.statMods.dmg}}"
 						name="system.statMods.dmg"
@@ -76,7 +76,7 @@
 				</div>
 				<div class="itemDataHeader gunCardRange">
 					<div> RANGE: </div>
-					<input class="gunCardInput"
+					<input class="itemCardInput"
 						onfocus="this.select()"
 						value="{{system.range}}"
 						name="system.range"
@@ -98,7 +98,7 @@
 			</div>
 		</div>
 		<div class="itemCardValue" >
-			<input class="gunCardInput"
+			<input class="itemCardInput"
 				onfocus="this.select()"
 				value="{{system.value}}"
 				name="system.value"
