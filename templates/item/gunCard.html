@@ -1,30 +1,6 @@
-<form class="OriItemSheet {{cssClass}}" autocomplete="off">
-	<div class="gunCardSheet {{system.rarity.colorValue}}" >
-		<div class="gunCardHeader itemCardFlex" >
-			<div class="gunCardGunManRar itemHeaderQuarter" >
-				<div class="gunCardGunManufacturer">
-					{{> optionSelector choices=manufacturers name="manufacturer"}}
-				</div>
-				<div class="gunCardGunRarity">
-					<select>
-						<option >formatDummy</option>
-					</select>
-				</div>
-			</div>
-			<div class="itemCardName" >
-				<input class="gunCardNameInput" name="name" type="text" value="{{item.name}}" placeholder="Gun Name"/>
-			</div>
-			<div class="gunCardGunLvlType itemHeaderQuarter" >
-				<div class="gunCardGunLvl" >
-					<select>
-						<option >formatDummy</option>
-					</select>
-				</div>
-				<div class="gunCardGunType" >
-					{{> optionSelector choices=gunTypes name="gunType"}}
-				</div>
-			</div>
-		</div>
+<form class="gunItemSheet {{cssClass}}" autocomplete="off">
+	<div class="itemCardSheet {{system.rarity.colorValue}}" >
+		{{> manuItemHeader manufacturers=manufacturers itemTypes=gunTypes}}
 		<div class="gunCardRollAndImage itemCardFlex" >
 			<div class="itemDataBlock itemCardFlex" >
 				<div class="itemDataHeader" > ACCURACY </div>

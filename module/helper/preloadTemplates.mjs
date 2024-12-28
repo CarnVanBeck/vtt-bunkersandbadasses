@@ -11,6 +11,7 @@ export const preloadHandlebarsTemplates = async function () {
 
         // Item Parts
         optionSelector: `${BADASS.systemPath}/templates/item/parts/optionSelector.html`,
+        manuItemHeader: `${BADASS.systemPath}/templates/item/parts/manufacturedItemHeader.html`,
         // Gun parts
         gunCardHitLine: `${BADASS.systemPath}/templates/item/parts/gunCardAccuracyLine.html`,
 

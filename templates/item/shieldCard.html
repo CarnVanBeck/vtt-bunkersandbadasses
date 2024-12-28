@@ -1,27 +1,6 @@
 <form class="shieldItemSheet {{cssClass}}" autocomplete="off">
 	<div class="itemCardSheet {{system.rarity.colorValue}}" >
-		<div class="itemCardHeader itemCardFlex" >
-			<div class="itemCardManRar itemHeaderQuarter" >
-				<div class="itemCardManufacturer">
-					{{> optionSelector choices=manufacturers name="manufacturer"}}
-				</div>
-				<div class="itemCardRarity">
-					<select>
-						<option >formatDummy</option>
-					</select>
-				</div>
-			</div>
-			<div class="itemCardName" >
-				<input class="itemCardNameInput" name="name" type="text" value="{{item.name}}" placeholder="item Name"/>
-			</div>
-			<div class="itemCardLvlType itemHeaderQuarter" >
-				<div class="itemCardLvl" >
-					<select>
-						<option >formatDummy</option>
-					</select>
-				</div>
-			</div>
-		</div>
+		{{> manuItemHeader manufacturers=manufacturers itemTypes=gunTypes}}
 		<div class="itemCardRollAndImage itemCardFlex" >
 			<div class="itemDataBlock itemCardFlex" >
 				<div class="itemDataHeader" > CAPACITY </div>

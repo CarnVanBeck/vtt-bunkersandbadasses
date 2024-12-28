@@ -1,3 +1,10 @@
+@import "./gunCard.css";
+@import "./shieldCard.css";
+
+.itemCardSheet {
+	color: white;
+}
+
 .itemCardFlex {
 	display:flex;
 }
