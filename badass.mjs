@@ -6,6 +6,7 @@ import { preloadHandlebarsTemplates } from './module/helper/preloadTemplates.mjs
 import { registerSettings } from './module/helper/settings.mjs';
 import { GunCardSheet } from './module/sheets/gunCard.mjs';
 import { ShieldCardSheet } from './module/sheets/shieldCard.mjs';
+import { GrenadeCardSheet } from './module/sheets/grenadeCard.mjs';
 import { BadassActorSheet } from './module/sheets/actorSheet.mjs';
 
 Hooks.on('init', () => {
@@ -26,6 +27,7 @@ Hooks.on('init', () => {
 
     CONFIG.Item.documentClass = BadassItem;
 
+    // Manufactured Item Sheets
     Items.registerSheet('bunkers-and-badasses', GunCardSheet, {
         types: ['gun'],
         makeDefault: true,
@@ -34,6 +36,12 @@ Hooks.on('init', () => {
         types: ['shield'],
         makeDefault: true,
     });
+    Items.registerSheet('bunkers-and-badasses', GrenadeCardSheet, {
+        types: ['grenadeMod'],
+        makeDefault: true,
+    });
+
+    // Actor Sheets
     Actors.unregisterSheet('core', ActorSheet);
     Actors.registerSheet(BADASS.namespace, BadassActorSheet, {
         makeDefault: true,
@@ -41,6 +49,7 @@ Hooks.on('init', () => {
     });
     return preloadHandlebarsTemplates();
 });
+
 Hooks.on('i18nInit', () => {
     console.log('i18nInit');
 });

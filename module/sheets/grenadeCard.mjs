@@ -1,16 +1,16 @@
-export class ShieldCardSheet extends ItemSheet {
+export class GrenadeCardSheet extends ItemSheet {
     
     get template() {
-        return `systems/vtt-bunkersandbadasses/templates/item/shieldCard.html`;
+        return `systems/vtt-bunkersandbadasses/templates/item/grenadeCard.html`;
     }
 
 	static get defaultOptions() {
         const options = super.defaultOptions;
 		
 		return foundry.utils.mergeObject(options, {
-            classes: ["sheet", "shield-card"],
-            width: 500,
-            height: 500,
+            classes: ["sheet", "grenade-card"],
+            width: 550,
+            height: 550,
             blockFavTab: true,
 			makeDefault: true
         });
@@ -35,8 +35,9 @@ export class ShieldCardSheet extends ItemSheet {
 
 		// Add system relevant data arrays
 		context.elements = game.settings.settings.get("badass.elements").default;
+		
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
-		context.manufacturers = [{name:"Anshin"}, {name:"Hyperius"}];
+		context.manufacturers = [{name:"Feriore"}, {name:"Malefactor"}];
 
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);

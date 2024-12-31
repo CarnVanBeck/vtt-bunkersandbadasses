@@ -1,7 +1,7 @@
 export class GunCardSheet extends ItemSheet {
     
     get template() {
-        return 'systems/vtt-bunkersandbadasses/templates/item/gunCard.html';
+        return `systems/vtt-bunkersandbadasses/templates/item/gunCard.html`;
     }
 
 	static get defaultOptions() {
@@ -36,7 +36,9 @@ export class GunCardSheet extends ItemSheet {
 		// Add system relevant data arrays
 		context.gunTypes = game.settings.settings.get("badass.gunTypes").default;
 		context.elements = game.settings.settings.get("badass.elements").default;
-		context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
+		
+		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
+		context.manufacturers = [{name:"Dahlia"}, {name:"Feriore"}, {name:"Blackpowder"}];
 
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);

@@ -1,0 +1,69 @@
+<form class="grenadeItemSheet {{cssClass}}" autocomplete="off">
+	<div class="itemCardSheet {{system.rarity.colorValue}}" >
+		{{> manuItemHeader manufacturers=manufacturers itemTypes=gunTypes}}
+		<div class="grenadeCardRollAndImage itemCardFlex" >
+			<div class="itemDataBlock itemCardFlex" >
+				<div class="itemDataHeader" > ACCURACY </div>
+				<div class="grenadeCardAccuracy itemCardFlex" >
+					<div class="gunCardD20AndMods" >
+						{{> "d20"}}
+						<input class="itemCardInput" 
+							onfocus="this.select()"
+							value="{{system.statMods.acc}}" 
+							name="system.statMods.acc"
+							type="number" data-dtype="Number"
+						/>
+						MOD
+					</div>
+				</div>
+				<div class="itemDataHeader" > {{localize "badass.item.gun.damage"}} </div>
+				<div class="grenadeCardDamage itemCardFlex">
+					{{#if system.damage}}
+						{{> (concat "d" system.damage.dice.size)}}
+					<div class="gunCardDiceMulti">
+						{{#equals 2 system.damage.dice.count}}
+							x{{system.damage.dice.count}}
+						{{/equals}}
+					</div>
+					{{/if}}
+					<input class="itemCardInput"
+						onfocus="this.select()"
+						value="{{system.statMods.dmg}}"
+						name="system.statMods.dmg"
+						type="number" data-dtype="Number"
+					/> 
+				</div>
+				<div class="itemDataHeader gunCardRange">
+					<div> RANGE: </div>
+					<input class="itemCardInput"
+						onfocus="this.select()"
+						value="{{system.range}}"
+						name="system.range"
+						type="number" data-dtype="Number"
+					/> 
+					<div> SQ </div>
+				</div>
+			</div>
+			<div class="itemCardPicture" >
+				<img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+			</div>
+		</div>
+		<div class="gunCardElementNotes" >
+			<div class="itemCardElements" >
+				{{> optionSelector choices=elements name="element"}}
+			</div>
+			<div class="gunCardNotes" >
+				Lorem ipsum
+			</div>
+		</div>
+		<div class="itemCardValue" >
+			<input class="itemCardInput"
+				onfocus="this.select()"
+				value="{{system.value}}"
+				name="system.value"
+				type="number" data-dtype="Number"
+			/> 
+			Gold
+		</div>
+	</div>
+</form>
