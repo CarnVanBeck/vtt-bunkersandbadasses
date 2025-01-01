@@ -2,6 +2,6 @@
     {{!-- log "choices are" choices --}}
     {{#each choices as | choice | }}
         {{!--log "choiceName is" choice.name--}}
-        <option class="{{../name}}Option {{../name}}Option{{choice.key}}" value="{{choice.key}}">{{choice.name}}</option>
+        <option class="{{../name}}Option {{../name}}Option{{choice.key}}" value="{{choice.key}}">{{localize choice.name}}</option>
     {{/each}}
 </select>

@@ -75,6 +75,15 @@ export function getDefaultGunTypes() {
     return [combatRifle];
 }
 
+export function getDefaultRarities() {
+    let common = {name: "common", key:"com"};
+    let uncommon = {name: "uncommon", key:"ucm"};
+    let rare = {name: "rare", key:"rar"};
+    let epic = {name: "epic", key:"epc"};
+    let legendary = {name: "legendary", key:"lgd"};
+    return [common, uncommon, rare, epic, legendary];
+}
+
 function combatRifleLevels() {
     let level1 = new GunLevel();
     level1.start = 1;

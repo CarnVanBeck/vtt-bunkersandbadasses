@@ -16,7 +16,7 @@
 						MOD
 					</div>
 				</div>
-				<div class="itemDataHeader" > {{localize "badass.item.gun.damage"}} </div>
+				<div class="itemDataHeader" > {{localize "badass.item.gun.damage.label"}} </div>
 				<div class="grenadeCardDamage itemCardFlex">
 					{{#if system.damage}}
 						{{> (concat "d" system.damage.dice.size)}}
@@ -34,7 +34,7 @@
 					/> 
 				</div>
 				<div class="itemDataHeader gunCardRange">
-					<div> RANGE: </div>
+					<div> {{localize "badass.item.gun.range.label"}}: </div>
 					<input class="itemCardInput"
 						onfocus="this.select()"
 						value="{{system.range}}"

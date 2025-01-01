@@ -4,9 +4,9 @@ import { BadassItem } from './module/documents/badassItem.mjs';
 import { BADASS, getDefaultElements } from './module/helper/config.mjs';
 import { preloadHandlebarsTemplates } from './module/helper/preloadTemplates.mjs';
 import { registerSettings } from './module/helper/settings.mjs';
-import { GunCardSheet } from './module/sheets/gunCard.mjs';
-import { ShieldCardSheet } from './module/sheets/shieldCard.mjs';
-import { GrenadeCardSheet } from './module/sheets/grenadeCard.mjs';
+import { GunCardSheet } from './module/sheets/item/gunCard.mjs';
+import { ShieldCardSheet} from './module/sheets/item/shieldCard.mjs';
+import { GrenadeCardSheet } from './module/sheets/item/grenadeCard.mjs';
 import { BadassActorSheet } from './module/sheets/actorSheet.mjs';
 
 Hooks.on('init', () => {
