@@ -27,6 +27,7 @@ Hooks.on('init', () => {
 
     CONFIG.Item.documentClass = BadassItem;
 
+
     // Manufactured Item Sheets
     Items.registerSheet('bunkers-and-badasses', GunCardSheet, {
         types: ['gun'],
