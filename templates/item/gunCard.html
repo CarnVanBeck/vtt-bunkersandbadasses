@@ -1,37 +1,13 @@
-<form class="OriItemSheet {{cssClass}}" autocomplete="off">
-	<div class="gunCardSheet {{system.rarity.colorValue}}" >
-		<div class="gunCardHeader gunCardFlex" >
-			<div class="gunCardGunManRar" >
-				<div class="gunCardGunManufacturer">
-					{{> optionSelector choices=manufacturers name="manufacturer"}}
-				</div>
-				<div class="gunCardGunRarity">
-					<select>
-						<option >formatDummy</option>
-					</select>
-				</div>
-			</div>
-			<div class="gunCardName" >
-				<input class="gunCardNameInput" name="name" type="text" value="{{item.name}}" placeholder="Gun Name"/>
-			</div>
-			<div class="gunCardGunLvlType" >
-				<div class="gunCardGunLvl" >
-					<select>
-						<option >formatDummy</option>
-					</select>
-				</div>
-				<div class="gunCardGunType" >
-					{{> optionSelector choices=gunTypes name="gunType"}}
-				</div>
-			</div>
-		</div>
-		<div class="gunCardRollAndImage gunCardFlex" >
-			<div class="gunCardRollData gunCardFlex" >
-				<div class="gunCardRollHeader" > ACCURACY </div>
-				<div class="gunCardAccuracy gunCardFlex" >
+<form class="gunItemSheet {{cssClass}}" autocomplete="off">
+	<div class="itemCardSheet {{system.rarity.colorValue}}" >
+		{{> manuItemHeader manufacturers=manufacturers itemTypes=gunTypes}}
+		<div class="gunCardRollAndImage itemCardFlex" >
+			<div class="itemDataBlock itemCardFlex" >
+				<div class="itemDataHeader" > ACCURACY </div>
+				<div class="gunCardAccuracy itemCardFlex" >
 					<div class="gunCardD20AndMods" >
 						{{> "d20"}}
-						<input class="gunCardInput" 
+						<input class="itemCardInput" 
 							onfocus="this.select()"
 							value="{{system.statMods.acc}}" 
 							name="system.statMods.acc"
@@ -57,8 +33,8 @@
 						}}
 					</table>
 				</div>
-				<div class="gunCardRollHeader" > {{localize "badass.item.gun.damage"}} </div>
-				<div class="gunCardDamage gunCardFlex">
+				<div class="itemDataHeader" > {{localize "badass.item.gun.damage.label"}} </div>
+				<div class="gunCardDamage itemCardFlex">
 					{{#if system.damage}}
 						{{> (concat "d" system.damage.dice.size)}}
 					<div class="gunCardDiceMulti">
@@ -67,16 +43,16 @@
 						{{/equals}}
 					</div>
 					{{/if}}
-					<input class="gunCardInput"
+					<input class="itemCardInput"
 						onfocus="this.select()"
 						value="{{system.statMods.dmg}}"
 						name="system.statMods.dmg"
 						type="number" data-dtype="Number"
 					/> 
 				</div>
-				<div class="gunCardRollHeader gunCardRange">
-					<div> RANGE: </div>
-					<input class="gunCardInput"
+				<div class="itemDataHeader gunCardRange">
+					<div> {{localize "badass.item.gun.range.label"}}: </div>
+					<input class="itemCardInput"
 						onfocus="this.select()"
 						value="{{system.range}}"
 						name="system.range"
@@ -85,20 +61,20 @@
 					<div> SQ </div>
 				</div>
 			</div>
-			<div class="gunCardPicture" >
+			<div class="itemCardPicture" >
 				<img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
 			</div>
 		</div>
 		<div class="gunCardElementNotes" >
-			<div class="gunCardElements" >
+			<div class="itemCardElements" >
 				{{> optionSelector choices=elements name="element"}}
 			</div>
 			<div class="gunCardNotes" >
 				Lorem ipsum
 			</div>
 		</div>
-		<div class="gunCardValue" >
-			<input class="gunCardInput"
+		<div class="itemCardValue" >
+			<input class="itemCardInput"
 				onfocus="this.select()"
 				value="{{system.value}}"
 				name="system.value"

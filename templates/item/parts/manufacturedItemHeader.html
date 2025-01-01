@@ -1,0 +1,25 @@
+<div class="itemCardHeader itemCardFlex" >
+    <div class="itemCardManRar itemHeaderQuarter" >
+        <div class="itemCardManufacturer">
+            {{> optionSelector choices=manufacturers name="manufacturer"}}
+        </div>
+        <div class="itemCardRarity">
+            {{> optionSelector choices=rarities name="rarity"}}
+        </div>
+    </div>
+    <div class="itemCardName" >
+        <input class="itemCardNameInput" name="name" type="text" value="{{item.name}}" placeholder="{{itemDescriptor}} Name"/>
+    </div>
+    <div class="itemCardLvlType itemHeaderQuarter" >
+        <div class="itemCardLvl" >
+            <select>
+                <option>levelDummy</option>
+            </select>
+        </div>
+        {{#if itemTypes}}
+        <div class="itemCardType" >        
+            {{> optionSelector choices=itemTypes name="(itemDescriptor)Type"}}
+        </div>
+        {{/if}}
+    </div>
+</div>

@@ -25,10 +25,7 @@
         "badass.mjs"
     ],
     "styles": [
-        "css/badass.css",
-        "css/dice.css",
-        "css/elements.css",
-        "css/gunCard.css"
+        "css/badass.css"
     ],
     "languages": [
         {
