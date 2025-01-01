@@ -8,9 +8,12 @@ import { BADASS } from './config.mjs';
 export const preloadHandlebarsTemplates = async function () {
     // Define template paths to load
     const templatePaths = {
+
+        // Item Parts
+        optionSelector: `${BADASS.systemPath}/templates/item/parts/optionSelector.html`,
+        manuItemHeader: `${BADASS.systemPath}/templates/item/parts/manufacturedItemHeader.html`,
         // Gun parts
-        gunCardHitLine: `${BADASS.systemPath}/templates/parts/gunCardAccuracyLine.html`,
-        optionSelector: `${BADASS.systemPath}/templates/parts/optionSelector.html`,
+        gunCardHitLine: `${BADASS.systemPath}/templates/item/parts/gunCardAccuracyLine.html`,
 
         // Dices
         d4: `${BADASS.systemPath}/assets/styleable/dice/d4.html`,

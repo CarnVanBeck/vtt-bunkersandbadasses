@@ -1,51 +1,6 @@
-.gunCardFlex {
-	display:flex;
-}
-
-.gunCardSheet {
-	color: white;
-}
-
-.gunCardGunManRar, .gunCardGunLvlType {
-	width: 25%;
-}
-
-.gunCardName {
-	width: 50%;
-	font-size: 2em;
-	line-height: 2em;
-}
-
-.gunCardName > input{
-	height: 1.8em;
-}
-
-.gunCardRollData {
-	background-color: rgba(50,50,50,1);
-	padding: 10px;
-}
-
-.gunCardAccuracy,
-.gunCardRollData {
+.gunCardAccuracy {
 	width: 40%;
-}
-
-.gunCardAccuracy,
-.gunCardRollData {
-	flex-flow: column;
-}
-
-.gunCardRollHeader {
-	text-align: center;
-	background-color: #888;
-	clip-path: polygon(20% 50%, 25% 0%, 80% 0%, 85% 50%, 80% 100%, 25% 100%);
-	height: 25px;
-	line-height: 25px;
-}
-
-.gunCardInput[type="Number"] {
-	color: white;
-	text-align: center;
+	flex-flow: column
 }
 
 .gunCardAccuracy {
@@ -55,13 +10,6 @@
 
 .gunCardD20AndMods {
 	width: 40%;
-}
-
-.gunCardPicture {
-	width: 60%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .gunCardAccuracy .d20 {
@@ -88,7 +36,7 @@
 
 .critHitRow > td.hit
 {
-	background-image: url(/foundry/systems/bunkers-and-badasses/assets/weapons/hits.svg);
+	background-image: url(../assets/standalone/hits.svg);
 	background-size: auto 85% ;
 }
 
@@ -101,7 +49,7 @@
 
 .critHitRow > td.crit
 {
-	background-image: url(/foundry/systems/bunkers-and-badasses/assets/weapons/crits.svg);
+	background-image: url(../assets/standalone/crits.svg);
 	background-size: auto 85% ;
 }
 
@@ -138,17 +86,4 @@
 	height: 60px;
 	font-size: 2em;
 	margin: 10px;
-}
-
-.gunCardElements {
-	width: 20%;
-}
-
-.gunCardValue {
-	float: right;
-	width: 20%;
-}
-
-.gunCardValue input {
-	width:  max(50px, 50%);
 }

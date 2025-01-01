@@ -1,20 +1,21 @@
-export class GunCardSheet extends ItemSheet {
+import { ManufacturedSheet } from "./manufactered.mjs";
+
+export class GunCardSheet extends ManufacturedSheet {
     
     get template() {
-        return "systems/vtt-bunkersandbadasses/templates/gunCard.html";
+        return `systems/vtt-bunkersandbadasses/templates/item/gunCard.html`;
     }
 
 	static get defaultOptions() {
         const options = super.defaultOptions;
 		
 		return foundry.utils.mergeObject(options, {
-            classes: ["sheet", "archy-gun-card"],
+            classes: ["sheet", "gun-card"],
             width: 550,
-            height: 650,
+            height: 550,
             blockFavTab: true,
 			makeDefault: true
         });
-        return options;
 		
     }
 	
@@ -23,20 +24,11 @@ export class GunCardSheet extends ItemSheet {
 		// Retrieve base data structure.
 		const context = super.getData();
 
-		// Use a safe clone of the item data for further operations.
-		const itemData = context.data;
-
-		// Retrieve the roll data for TinyMCE editors.
-		context.rollData = this.item.getRollData();
-
-		// Add the item's data to context.data for easier access, as well as flags.
-		context.system = itemData.system;
-		context.flags = itemData.flags;
-
 		// Add system relevant data arrays
 		context.gunTypes = game.settings.settings.get("badass.gunTypes").default;
-		context.elements = game.settings.settings.get("badass.elements").default;
-		context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
+		
+		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
+		context.manufacturers = [{name:"Dahlia"}, {name:"Feriore"}, {name:"Blackpowder"}];
 
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);

@@ -1,0 +1,33 @@
+<svg class="shieldIcon" width="400" height="400" 
+    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <style>
+            .shieldIcon {
+                --shieldLightBlue: #27D6DB;
+                --shieldMediumBlue: #22A9AC;
+            }
+            .shieldIcon #honigwabe {
+                stroke: var(--shieldLightBlue);
+                stroke-width: 8;
+                fill: var(--shieldMediumBlue);
+            }
+            .shieldBorder {
+                stroke-width: 10;
+                stroke: var(--shieldLightBlue);
+                fill: url(#honigwabe);
+            }
+        </style>
+        <pattern id="honigwabe" x="0" y="0" width="154" height="91" patternUnits="userSpaceOnUse" patternTransform="scale(0.5,0.5)">
+            <desc>Honigwabe</desc>
+            <symbol id="einzelWabe">
+                <polygon points="28,1 80,1 106,46 80,91 28,91 2,46" />
+            </symbol>
+            <use href="#einzelWabe" transform="translate(-28,0)" />
+            <use href="#einzelWabe" transform="translate(50,45)" />
+            <use href="#einzelWabe" transform="translate(50,-45)" />
+            <use href="#einzelWabe" transform="translate(126,0)" />
+        </pattern>
+    </defs>
+	<path class="shieldBorder" d="m200,50 l120,40 a125,200,15 0,1 -120,260 a125,200,-15 0,1 -120,-260z"  />
+</svg>

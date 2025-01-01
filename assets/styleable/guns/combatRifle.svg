@@ -1,4 +1,6 @@
-<svg id="combatRifle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 30" height="450" width="650">
+<svg id="combatRifle" viewBox="0 0 75 30" height="450" width="650"
+	xmlns="http://www.w3.org/2000/svg" 
+>
 	<defs>
 		<style>
 			#combatRifle {

@@ -91,6 +91,28 @@
                 "hint": "Cryo = really cold. Targets hit by Cryo damage are Slowed, which means they can only move one square for one turn after being hit and get -2 to Traverse Checks. If a target is hit again with Cryo, they become Frozen. A Frozen target can either move one square on their turn or make a Melee Attack."
             }
         },
+        "rarity": {
+            "common": {
+                "label": "Common",
+                "color": "white"
+            },
+            "uncommon": {
+                "label": "Uncommon",
+                "color": "green"
+            },
+            "rare": {
+                "label": "Rare",
+                "color": "blue"
+            },
+            "epic": {
+                "label": "Epic",
+                "color": "purple"
+            },
+            "legendary": {
+                "label": "Legendary",
+                "color": "orange"
+            }
+        },
         "sheets": {
             "vaultHunter": {
                 "label": "Vault Hunter Actor Sheet",
