@@ -106,7 +106,44 @@
     "SETTINGS": {
         "defenses": {
             "label": "Defenses",
-            "hint": ""
+            "hint": "",
+            "config": {
+                "label": "Configure Defenses"
+            },
+            "edit": {
+                "label": "Edit Defense"
+            },
+            "add": {
+                "label": "Add Defense"
+            },
+            "key": { "label": "Key", "hint": "A unique key to identify the Defense." },
+            "name": { "label": "Name", "hint": "Readable name that will be shown in heets." },
+            "description": {
+                "label": "Description",
+                "hint": "A description for this Defense to provide an explanation which will be shown when hovered over this Defense in a sheet."
+            },
+            "order": {
+                "label": "Order",
+                "hint": "The order in which the defense instances will be used during the damage calculation (lower entries will be damaged first)."
+            },
+            "max": { "label": "Max", "hint": "The maximum value for this Defense." },
+            "current": { "label": "Current", "hint": "The current value of this Defense." },
+            "recharge": {
+                "label": "Recharge",
+                "hint": "How much the current value increases per round if the actor wasn't hit."
+            },
+            "isLife": {
+                "label": "Is life",
+                "hint": "Identifies if the actor counts as dead if this Defense gets to current = 0."
+            },
+            "requiresItem": {
+                "label": "Requires an Item",
+                "hint": "Specifies if the Defense requires an Item or if it uses values."
+            },
+            "item": {
+                "label": "Item",
+                "hint": "If *Requires an Item* is set to true, this defense won't use the max, current etc. values but values from an item."
+            }
         },
         "elements": {
             "label": "Elements",
