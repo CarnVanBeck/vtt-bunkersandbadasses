@@ -1,3 +1,4 @@
+import { getDefaultGunTypes } from "../../helper/config.mjs";
 import { ManufacturedSheet } from "./manufactered.mjs";
 
 export class GunCardSheet extends ManufacturedSheet {
@@ -25,10 +26,10 @@ export class GunCardSheet extends ManufacturedSheet {
 		const context = super.getData();
 
 		// Add system relevant data arrays
-		context.gunTypes = game.settings.settings.get("badass.gunTypes").default;
+		context.gunTypes = getDefaultGunTypes();
 		
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
-		context.manufacturers = [{name:"Dahlia"}, {name:"Feriore"}, {name:"Blackpowder"}];
+		context.manufacturers = [{name:"Dahlia", key:"dahlia"}, {name:"Feriore", key:"feriore"}, {name:"Blackpowder", key: "blackpowder"}];
 
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);
