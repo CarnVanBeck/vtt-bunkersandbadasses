@@ -21,12 +21,8 @@
         "minimum": 12,
         "verified": "12.331"
     },
-    "esmodules": [
-        "badass.mjs"
-    ],
-    "styles": [
-        "css/badass.css"
-    ],
+    "esmodules": ["badass.mjs"],
+    "styles": ["css/badass.css"],
     "languages": [
         {
             "lang": "en",
@@ -44,8 +40,10 @@
     "socket": false,
     "manifest": "https://raw.githubusercontent.com/CarnVanBeck/vtt-bunkersandbadasses/main/system.json",
     "download": "https://github.com/CarnVanBeck/vtt-bunkersandbadasses/releases/latest/download/vtt-bunkersandbadasses.zip",
-    "gridDistance": 1,
-    "gridUnits": "sq",
+    "grid": {
+        "distance": 1,
+        "units": "sq"
+    },
     "documentTypes": {
         "Actor": {
             "vaultHunter": {
