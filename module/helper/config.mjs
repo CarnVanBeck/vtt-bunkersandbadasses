@@ -4,31 +4,33 @@ import { GunType, GunLevel } from '../data/custom/gunType.mjs';
 import GunAccuracy from '../data/custom/gunAccuracy.mjs';
 
 export const BADASS = {};
-BADASS.namespace = 'badass';
+BADASS.namespace = 'vtt-bunkersandbadasses';
 BADASS.systemPath = 'systems/vtt-bunkersandbadasses';
 
 export function getDefaultDefenses() {
     let shield = new Defense();
     shield.key = 'sld';
-    shield.name = game.i18n.localize('badass.defense.shield.label');
-    shield.description = game.i18n.localize('badass.defense.shield.hint');
+    shield.name = 'badass.defense.shield.label';
+    shield.description = 'badass.defense.shield.hint';
+    shield.requiresItem = true;
     shield.order = 0;
     let armor = new Defense();
     armor.key = 'arm';
-    armor.name = game.i18n.localize('badass.defense.armor.label');
-    armor.description = game.i18n.localize('badass.defense.armor.hint');
+    armor.name = 'badass.defense.armor.label';
+    armor.description = 'badass.defense.armor.hint';
     armor.order = 10;
     let hp = new Defense();
     hp.key = 'hp';
-    hp.name = game.i18n.localize('badass.defense.hp.label');
-    hp.description = game.i18n.localize('badass.defense.hp.hint');
+    hp.name = 'badass.defense.hp.label';
+    hp.description = 'badass.defense.hp.hint';
+    hp.isLife = true;
     hp.order = 20;
     let generic = new Defense();
     generic.key = 'gen';
-    generic.name = game.i18n.localize('badass.defense.generic.label');
-    generic.description = game.i18n.localize('badass.defense.generic.hint');
+    generic.name = 'badass.defense.generic.label';
+    generic.description = 'badass.defense.generic.hint';
+    generic.isLife = true;
     generic.order = 30;
-
     return [shield, armor, hp, generic];
 }
 
@@ -76,11 +78,11 @@ export function getDefaultGunTypes() {
 }
 
 export function getDefaultRarities() {
-    let common = {name: "common", key:"com"};
-    let uncommon = {name: "uncommon", key:"ucm"};
-    let rare = {name: "rare", key:"rar"};
-    let epic = {name: "epic", key:"epc"};
-    let legendary = {name: "legendary", key:"lgd"};
+    let common = { name: 'common', key: 'com' };
+    let uncommon = { name: 'uncommon', key: 'ucm' };
+    let rare = { name: 'rare', key: 'rar' };
+    let epic = { name: 'epic', key: 'epc' };
+    let legendary = { name: 'legendary', key: 'lgd' };
     return [common, uncommon, rare, epic, legendary];
 }
 

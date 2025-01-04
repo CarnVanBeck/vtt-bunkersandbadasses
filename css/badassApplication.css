@@ -1,0 +1,43 @@
+.badass.settings {
+    display: flex;
+}
+.badass.settings .sidebar {
+    padding: 10px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 33%;
+}
+.badass.settings .sidebar .sidebar-list {
+    flex-basis: 100%;
+}
+.badass.settings .sidebar .sidebar-list ul {
+    padding: 0;
+    margin: 0;
+}
+.badass.settings .sidebar .sidebar-list .sidebar-list-item {
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-light-5);
+    cursor: pointer;
+    list-style-type: none;
+}
+.badass.settings .sidebar .sidebar-list .sidebar-list-item:hover {
+    text-shadow: var(--color-shadow-primary);
+    font-weight: bold;
+}
+.badass.settings .sidebar .sidebar-item {
+    flex-basis: 100%;
+}
+.badass.settings .content {
+    padding: 10px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-basis: 66%;
+}
+
+.badass.settings .settings-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+}

@@ -9,7 +9,7 @@
  * @property {string[]} weakAgainst     Array of Defense keys this element deals half damage to
  * @property {string[]} ignores         Array of Defense keys this element ignores, skiping them in the damage calculation
  */
-export default class Defense {
+export default class Element {
     key = '';
     name = '';
     description = '';

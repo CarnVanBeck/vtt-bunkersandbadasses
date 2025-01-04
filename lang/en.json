@@ -138,7 +138,20 @@
             "add": {
                 "label": "Add Defense"
             },
-            "key": { "label": "Key", "hint": "A unique key to identify the Defense." },
+            "save": {
+                "label": "Save"
+            },
+            "delete": {
+                "label": "Delete Defense"
+            },
+            "default": {
+                "label": "Overwrite with default Defenses"
+            },
+            "key": {
+                "label": "Key",
+                "hint": "A unique key to identify the Defense.",
+                "error": { "unique": "There can only be one Defense with this key" }
+            },
             "name": { "label": "Name", "hint": "Readable name that will be shown in heets." },
             "description": {
                 "label": "Description",
@@ -146,7 +159,8 @@
             },
             "order": {
                 "label": "Order",
-                "hint": "The order in which the defense instances will be used during the damage calculation (lower entries will be damaged first)."
+                "hint": "The order in which the defense instances will be used during the damage calculation (lower entries will be damaged first).",
+                "error": { "unique": "There can only be one Defense at this order" }
             },
             "max": { "label": "Max", "hint": "The maximum value for this Defense." },
             "current": { "label": "Current", "hint": "The current value of this Defense." },

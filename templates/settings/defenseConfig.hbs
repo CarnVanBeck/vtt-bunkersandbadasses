@@ -1,0 +1,84 @@
+<div class='badass settings'>
+    <section class='sidebar'>
+        <fieldset class='sidebar-list'>
+            <legend>{{localize 'SETTINGS.defenses.label'}}</legend>
+            <ul>
+                {{#each defenses as |defense|}}
+                    <li class='sidebar-list-item' data-action='editDefense' data-key='{{defense.key}}'>{{localize
+                            defense.name
+                        }}</li>
+                {{/each}}
+                <li class='sidebar-list-item' data-action='addDefense'>{{localize 'SETTINGS.defenses.add.label'}}</li>
+            </ul>
+        </fieldset>
+    </section>
+    {{#if selectedDefense}}
+        <section class='content'>
+            <fieldset>
+                <legend>{{localize 'SETTINGS.defenses.edit.label'}}</legend>
+                <label for='defenseKey'>{{localize 'SETTINGS.defenses.key.label'}}</label>
+                <input
+                    type='text'
+                    id='defenseKey'
+                    value='{{selectedDefense.key}}'
+                    data-property='key'
+                    title='{{localize "Settings.defense.key.hint"}}'
+                />
+
+                <label for='defenseName'>{{localize 'SETTINGS.defenses.name.label'}}</label>
+                <input
+                    type='text'
+                    id='defenseName'
+                    value='{{selectedDefense.name}}'
+                    data-property='name'
+                    title='{{localize "Settings.defense.name.hint"}}'
+                />
+
+                <label for='defenseDescription'>{{localize 'SETTINGS.defenses.description.label'}}</label>
+                <input
+                    type='text'
+                    id='defenseDescription'
+                    value='{{selectedDefense.description}}'
+                    data-property='description'
+                    title='{{localize "Settings.defense.description.hint"}}'
+                />
+
+                <label for='defenseOrder'>{{localize 'SETTINGS.defenses.order.label'}}</label>
+                <input
+                    type='number'
+                    id='defenseOrder'
+                    value='{{selectedDefense.order}}'
+                    data-property='order'
+                    title='{{localize "Settings.defense.order.hint"}}'
+                />
+
+                <label for='defenseIsLife'>{{localize 'SETTINGS.defenses.isLife.label'}}</label>
+                <input
+                    type='checkbox'
+                    id='defenseIsLife'
+                    {{checked selectedDefense.isLife}}
+                    data-property='isLife'
+                    title='{{localize "Settings.defense.isLife.hint"}}'
+                />
+
+                <label for='defenseRequiresItem'>{{localize 'SETTINGS.defenses.requiresItem.label'}}</label>
+                <input
+                    type='checkbox'
+                    id='defenseRequiresItem'
+                    {{checked selectedDefense.requiresItem}}
+                    data-property='requiresItem'
+                    title='{{localize "Settings.defense.requiresItem.hint"}}'
+                />
+
+                <div class='settings-buttons'>
+                    <button class='btn btn-primary' data-action='saveDefense'>
+                        {{localize 'SETTINGS.defenses.save.label'}}
+                    </button>
+                    <button class='btn btn-danger' data-action='removeDefense'>
+                        {{localize 'SETTINGS.defenses.delete.label'}}
+                    </button>
+                </div>
+            </fieldset>
+        </section>
+    {{/if}}
+</div>

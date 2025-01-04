@@ -11,4 +11,21 @@ export default class BadassDataModel extends foundry.abstract.TypeDataModel {
     toPlainObject() {
         return { ...this };
     }
+
+    /**
+     * Convert the schema to a plain object.
+     * Because writing an instance of a Data Model to the settings will clear the values with
+     * the way Foundry saves the data.
+     * Foundry uses the toObject method and using it on a DataModel will return an the correct properties
+     * defined in the schema but not the values in the properties.
+     * @returns {object} Plain object. Savable to settings.
+     * @override
+     */
+    toObject() {
+        let obj = {};
+        for (let key in this) {
+            obj[key] = this[key];
+        }
+        return obj;
+    }
 }
