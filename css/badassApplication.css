@@ -26,6 +26,14 @@
     text-shadow: var(--color-shadow-primary);
     font-weight: bold;
 }
+.badass.settings .sidebar .sidebar-list .sidebar-list-item .icon {
+    border: 0;
+    height: 14px;
+    display: inline-block;
+    padding-right: 7px;
+    vertical-align: bottom;
+    margin-bottom: 2px;
+}
 .badass.settings .sidebar .sidebar-item {
     flex-basis: 100%;
 }

@@ -126,6 +126,14 @@
         }
     },
     "SETTINGS": {
+        "errors": {
+            "key": {
+                "unique": "There can only be one entry with this key"
+            },
+            "order": {
+                "unique": "There can only be one entry with this order"
+            }
+        },
         "defenses": {
             "label": "Defenses",
             "hint": "You can configure the available Defenses for your World here. These will be used by actors to specify what type of shield, armor or health they have and which element deals what kind of damage to them.",
@@ -138,19 +146,12 @@
             "add": {
                 "label": "Add Defense"
             },
-            "save": {
-                "label": "Save"
-            },
-            "delete": {
-                "label": "Delete Defense"
-            },
             "default": {
                 "label": "Overwrite with default Defenses"
             },
             "key": {
                 "label": "Key",
-                "hint": "A unique key to identify the Defense.",
-                "error": { "unique": "There can only be one Defense with this key" }
+                "hint": "A unique key to identify the Defense."
             },
             "name": { "label": "Name", "hint": "Readable name that will be shown in sheets." },
             "description": {
@@ -159,8 +160,7 @@
             },
             "order": {
                 "label": "Order",
-                "hint": "The order in which the defense instances will be used during the damage calculation (lower entries will be damaged first).",
-                "error": { "unique": "There can only be one Defense at this order" }
+                "hint": "The order in which the defense instances will be used during the damage calculation (lower entries will be damaged first)."
             },
             "max": { "label": "Max", "hint": "The maximum value for this Defense." },
             "current": { "label": "Current", "hint": "The current value of this Defense." },
@@ -193,19 +193,12 @@
             "add": {
                 "label": "Add Element"
             },
-            "save": {
-                "label": "Save"
-            },
-            "delete": {
-                "label": "Delete Element"
-            },
             "default": {
                 "label": "Overwrite with default Elements"
             },
             "key": {
                 "label": "Key",
-                "hint": "A unique key to identify the Element.",
-                "error": { "unique": "There can only be one Element with this key" }
+                "hint": "A unique key to identify the Element."
             },
             "name": { "label": "Name", "hint": "Readable name that will be shown in sheets." },
             "description": {
@@ -239,7 +232,63 @@
         },
         "manufacturers": {
             "label": "Manufacturers",
-            "hint": ""
+            "hint": "You can configure available Manufacturers for your World here. These will be used by guns, shields etc.",
+            "config": {
+                "label": "Configure Manufacturers"
+            },
+            "edit": {
+                "label": "Edit Manufacturer"
+            },
+            "add": {
+                "label": "Add Manufacturer"
+            },
+            "key": {
+                "label": "Key",
+                "hint": "A unique key to identify the Manufacturer."
+            },
+            "name": { "label": "Name", "hint": "Readable name that will be shown in sheets." },
+            "description": {
+                "label": "Description",
+                "hint": "A description for this Manufacturer to provide some fancy flavor texts when talking about it."
+            },
+            "icon": {
+                "label": "Icon",
+                "hint": "Every Manufacturer needs some kind of logo to be worth their salt."
+            },
+            "allowedForItems": {
+                "label": "Allowed for Items",
+                "hint": "Select the Item Types this Manufacturer produces."
+            },
+            "allowedForGunTypes": {
+                "label": "Allowed for Guns",
+                "hint": "Select the Gun Types this Manufacturer produces."
+            }
+        },
+        "buttons": {
+            "save": "Save",
+            "remove": "Remove"
+        }
+    },
+    "TYPES": {
+        "Actor": {
+            "vaultHunter": "Vault Hunter",
+            "nonVaultHunter": "Non-Vault Hunter",
+            "environmental": "Environmental",
+            "minion": "Minion"
+        },
+        "Item": {
+            "action": "Action",
+            "armor": "Armor",
+            "class": "Class",
+            "grenadeMod": "Grenade Mod",
+            "gun": "Gun",
+            "potion": "Potion",
+            "prefix": "Prefix",
+            "quest": "Quest Item",
+            "redText": "Red Text",
+            "relic": "Relic",
+            "shield": "Shield",
+            "skill": "Skill"
         }
     }
 }

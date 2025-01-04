@@ -1,6 +1,7 @@
 import { BADASS, getDefaultDefenses, getDefaultElements, getDefaultGunTypes } from './config.mjs';
 import DefenseConfig from '../applications/settings/defenseConfig.mjs';
 import ElementConfig from '../applications/settings/elementConfig.mjs';
+import ManufacturerConfig from '../applications/settings/manufacturerConfig.mjs';
 
 export function registerSettings() {
     game.settings.register(BADASS.namespace, 'migrationVersion', {
@@ -65,13 +66,23 @@ export function registerSettings() {
     // #endregion
 
     // #region Manufacturers
+    game.settings.registerMenu(BADASS.namespace, 'manufacturers', {
+        name: 'SETTINGS.manufacturers.label',
+        label: 'SETTINGS.manufacturers.config.label',
+        hint: 'SETTINGS.manufacturers.hint',
+        icon: 'fa-solid fa-industry',
+        type: ManufacturerConfig,
+        restricted: true,
+    });
     game.settings.register(BADASS.namespace, 'manufacturers', {
         name: 'SETTINGS.manufacturers.label',
+        label: 'SETTINGS.manufacturers.label',
         hint: 'SETTINGS.manufacturers.hint',
+        icon: 'fa-solid fa-industry',
         scope: 'world',
-        config: true,
+        config: false,
         type: Array,
-        default: '',
+        default: [],
     });
     // #endregion
 }

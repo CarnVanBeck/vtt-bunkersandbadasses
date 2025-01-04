@@ -5,10 +5,7 @@
             <ul>
                 {{#each entries as |element|}}
                     <li class='sidebar-list-item' data-action='editEntry' data-key='{{element.key}}'>
-                        {{#if manufacturer.icon}}
-                        <img class="icon" src="{{element.icon}}" />
-                        {{/if}}
-                        {{localize element.name}}
+                        <img class="icon" src="{{element.icon}}" />{{localize element.name}}
                     </li>                        
                 {{/each}}
                 <li class='sidebar-list-item' data-action='addEntry'><i class="fa-solid fa-plus icon"></i>{{localize 'SETTINGS.elements.add.label'}}</li>

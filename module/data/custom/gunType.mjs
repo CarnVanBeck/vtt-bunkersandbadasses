@@ -1,3 +1,5 @@
+import BadassDataModel from '../model.mjs';
+
 /**
  * Definition of the GunType class that is used to preconfigure types for guns
  *
@@ -5,28 +7,44 @@
  * @property {String}   name        Readable name that will be shown in Sheets
  * @property {String}   description A description for this Defense to provide an explanation
  * @property {String}   icon        Path to the image
- * @property {Object[]} levels      Array of GunLevels to specify the scaling
- */
-export class GunType {
-    key = '';
-    name = '';
-    description = '';
-    icon = '';
-    levels = [];
-}
-/**
- * Definition of the GunLevel class that is used to preconfigure types for guns
+ * @property {GunLevel[]} levels      Array of GunLevels to specify the scaling
  *
- * @property {Number}   start  The starting level to find guns with these values
- * @property {Number}   end    The end level to find guns with these values
- * @property {Object[]} accuracy    Array of GunAccuracy instances
- * @property {String}   damage      The damage die that is used for this type
- * @property {Number}   range       The number of squares the gun can be used for
+ * @see GunLevel
  */
-export class GunLevel {
-    start = 0;
-    end = 0;
-    accuracy = [];
-    damage = '';
-    range = 0;
+export default class GunType extends BadassDataModel {
+    /** @override */
+    static defineSchema() {
+        const fields = foundry.data.fields;
+        const schema = {};
+        schema.key = new fields.StringField({
+            required: true,
+            nullable: false,
+            label: 'SETTINGS.gunTypes.key.label',
+            hint: 'SETTINGS.gunTypes.key.hint',
+            default: '',
+        });
+        schema.name = new fields.StringField({
+            required: true,
+            nullable: false,
+            label: 'SETTINGS.gunTypes.name.label',
+            hint: 'SETTINGS.gunTypes.name.hint',
+            default: '',
+        });
+        schema.description = new fields.StringField({
+            label: 'SETTINGS.gunTypes.description.label',
+            hint: 'SETTINGS.gunTypes.description.hint',
+        });
+        schema.icon = new fields.FilePathField({
+            label: 'SETTINGS.gunTypes.icon.label',
+            hint: 'SETTINGS.gunTypes.icon.hint',
+            initial: `${CONFIG.BADASS.systemPath}/assets/standalone/guns/gun.svg`,
+            categories: ['IMAGE'],
+            base64: false,
+        });
+        schema.levels = new fields.ArrayField(new fields.ObjectField(), {
+            label: 'SETTINGS.gunTypes.levels.label',
+            hint: 'SETTINGS.gunTypes.levels.hint',
+        });
+        return schema;
+    }
 }

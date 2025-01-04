@@ -12,7 +12,7 @@ import BadassDataModel from '../model.mjs';
  * @property {Number}   current         The current value of the actors Defense for this instance
  * @property {Number}   recharge        How much the current increases if the Actor wasn't hit
  * @property {Boolean}  isLife          Identifies if the actor counts as dead if this Defense instance gets to current = 0
- * @property {Boolean}   requiresItem    Specifies if the Defense instance requires an Item or values once added to an Actor
+ * @property {Boolean}  requiresItem    Specifies if the Defense instance requires an Item or values once added to an Actor
  * @property {Object}   item            Alternative to specified values (max, current and recharge) a item like a shield or armor can be used
  */
 export default class Defense extends BadassDataModel {

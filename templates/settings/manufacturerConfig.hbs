@@ -1,0 +1,83 @@
+<div class='badass settings'>
+    <section class='sidebar'>
+        <fieldset class='sidebar-list'>
+            <legend>{{localize 'SETTINGS.manufacturers.label'}}</legend>
+            <ul>
+                {{#each entries as |manufacturer|}}
+                    <li class='sidebar-list-item' data-action='editEntry' data-key='{{manufacturer.key}}'>
+                        {{#if manufacturer.icon}}
+                        <img class="icon" src="{{manufacturer.icon}}" />
+                        {{/if}}
+                        {{localize manufacturer.name}}
+                    </li>                        
+                {{/each}}
+                <li class='sidebar-list-item' data-action='addEntry'>
+                    <i class="fa-solid fa-plus icon"></i>
+                    {{localize 'SETTINGS.manufacturers.add.label'}}
+                </li>
+            </ul>
+        </fieldset>
+    </section>
+    {{#if selectedEntry}}
+        <section class='content'>
+            <fieldset>
+                <legend>{{localize 'SETTINGS.manufacturers.edit.label'}}</legend>
+                <label for='manufacturerKey'>{{localize 'SETTINGS.manufacturers.key.label'}}</label>
+                <input
+                    type='text'
+                    id='manufacturerKey'
+                    value='{{selectedEntry.key}}'
+                    data-property='key'
+                    title='{{localize "Settings.manufacturer.key.hint"}}'
+                />
+
+                <label for='manufacturerName'>{{localize 'SETTINGS.manufacturers.name.label'}}</label>
+                <input
+                    type='text'
+                    id='manufacturerName'
+                    value='{{selectedEntry.name}}'
+                    data-property='name'
+                    title='{{localize "Settings.manufacturer.name.hint"}}'
+                />
+
+                <label for='manufacturerDescription'>{{localize 'SETTINGS.manufacturers.description.label'}}</label>
+                <input
+                    type='text'
+                    id='manufacturerDescription'
+                    value='{{selectedEntry.description}}'
+                    data-property='description'
+                    title='{{localize "Settings.manufacturer.description.hint"}}'
+                />
+
+                <label for='manufacturerIcon'>{{localize 'SETTINGS.manufacturers.icon.label'}}</label>
+                <file-picker
+                    type='image'
+                    id='manufacturerIcon'
+                    value='{{selectedEntry.icon}}'
+                    data-property='icon'
+                ></file-picker>
+
+                <label for='manufacturerAllowedForItems'>{{localize 'SETTINGS.manufacturers.allowedForItems.label'}}</label>
+                <multi-select id='manufacturerAllowedForItems' data-property='allowedForItems'>
+                    {{#each itemTypes as |item|}}
+                        <option
+                            value='{{item.type}}'
+                            title='{{localize item.name}}'
+                            {{isInArray item.type ../selectedEntry.allowedForItems}}
+                        >{{localize item.name}}
+                        </option>
+                    {{/each}}
+                </multi-select>
+
+                <div class='settings-buttons'>
+                    <button type='button' class='btn btn-primary' data-action='saveEntry'>
+                        {{localize 'SETTINGS.buttons.save'}}
+                    </button>
+                    <button type='button' class='btn btn-danger' data-action='removeEntry'>
+                        {{localize 'SETTINGS.buttons.remove'}}
+                    </button>
+                </div>
+            </fieldset>
+        </section>
+    {{/if}}
+</div>

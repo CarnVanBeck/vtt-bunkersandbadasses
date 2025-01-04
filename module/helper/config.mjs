@@ -1,6 +1,7 @@
 import Defense from '../data/custom/defense.mjs';
 import Element from '../data/custom/element.mjs';
-import { GunType, GunLevel } from '../data/custom/gunType.mjs';
+import GunType from '../data/custom/gunType.mjs';
+import GunLevel from '../data/custom/gunLevel.mjs';
 import GunAccuracy from '../data/custom/gunAccuracy.mjs';
 
 export const BADASS = {};
