@@ -2,7 +2,7 @@ import BadassDataModel from '../model.mjs';
 
 /**
  * Base class for all items
- * @property {string} description    Html field for the description of the item
+ * @property {String} description    Html field for the description of the item
  */
 export default class BaseItemData extends BadassDataModel {
     static defineSchema() {

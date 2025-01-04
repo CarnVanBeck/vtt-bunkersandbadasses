@@ -5,7 +5,7 @@ import ActorDataModel from './baseActor.mjs';
 /**
  * System definition for Vault Hunter
  *
- * @property {number} xp    Current experience of the Vault Hunter
+ * @property {Number} xp    Current experience of the Vault Hunter
  */
 export default class VaultHunterData extends ActorDataModel {
     /** @inheritDoc */
@@ -55,9 +55,9 @@ export default class VaultHunterData extends ActorDataModel {
 
     /**
      * Called before a new actor is created and committed to the database
-     * @param {object} data
-     * @param {object} options
-     * @param {object} user
+     * @param {Object} data
+     * @param {Object} options
+     * @param {Object} user
      */
     _preCreate(data, options, user) {
         this.#preparePrototypeToken();

@@ -6,7 +6,7 @@ export default class BadassDataModel extends foundry.abstract.TypeDataModel {
      * This additional method will instead use the spread operator to return a simplified
      * version of the data.
      *
-     * @returns {object} Plain object either via deepClone or the spread operator.
+     * @returns {Object} Plain object either via deepClone or the spread operator.
      */
     toPlainObject() {
         return { ...this };
@@ -18,7 +18,7 @@ export default class BadassDataModel extends foundry.abstract.TypeDataModel {
      * the way Foundry saves the data.
      * Foundry uses the toObject method and using it on a DataModel will return an the correct properties
      * defined in the schema but not the values in the properties.
-     * @returns {object} Plain object. Savable to settings.
+     * @returns {Object} Plain object. Savable to settings.
      * @override
      */
     toObject() {

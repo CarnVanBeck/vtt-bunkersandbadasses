@@ -48,7 +48,7 @@ export class BadassActorSheet extends ActorSheet {
     /**
      * Organize and classify Items for Actor sheets.
      *
-     * @param {object} context Context of the current actor sheet
+     * @param {Object} context Context of the current actor sheet
      */
     _prepareItems(context) {
         let { actions, skills, classes, guns, shields, grenadeMods, potions, items } = context.items.reduce(

@@ -5,7 +5,7 @@ import BadassDataModel from '../model.mjs';
 
 /**
  * Base class for all actors
- * @property {number} movement    The amount of squares the actor can move in combat
+ * @property {Number} movement    The amount of squares the actor can move in combat
  */
 export default class BaseActorData extends BadassDataModel {
     static defineSchema() {

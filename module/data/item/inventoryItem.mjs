@@ -2,7 +2,7 @@ import BaseItemData from './baseItem.mjs';
 
 /**
  * Base class for all items that can be put into an inventory
- * @property {number} value    The buying/selling value of the item
+ * @property {Number} value    The buying/selling value of the item
  */
 export default class InventoryItemData extends BaseItemData {
     static defineSchema() {
@@ -14,13 +14,13 @@ export default class InventoryItemData extends BaseItemData {
             integer: true,
             min: 0,
             initial: 0,
-            label: game.i18n.localize('badass.item.value'),
+            label: 'badass.item.value',
         });
         schema.rarity = new fields.StringField({
             required: true,
             nullable: false,
-            initial: "common",
-            label: game.i18n.localize('badass.rarity'),
+            initial: 'common',
+            label: 'badass.rarity',
         });
         schema.equipped = new fields.BooleanField({ initial: false });
         return schema;
