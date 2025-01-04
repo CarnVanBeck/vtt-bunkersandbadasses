@@ -1,8 +1,8 @@
 import * as dataModels from './module/data/_module.mjs';
 import { VaultHunterActor } from './module/documents/actor/vhActor.mjs';
 import { BadassItem } from './module/documents/badassItem.mjs';
-import { BADASS, getDefaultElements } from './module/helper/config.mjs';
-import { preloadHandlebarsTemplates } from './module/helper/preloadTemplates.mjs';
+import { BADASS } from './module/helper/config.mjs';
+import { preloadHandlebarsTemplates, registerHandlebarHelpers } from './module/helper/handlebarHelper.mjs';
 import { registerSettings } from './module/helper/settings.mjs';
 import { GunCardSheet } from './module/sheets/item/gunCard.mjs';
 import { ShieldCardSheet } from './module/sheets/item/shieldCard.mjs';
@@ -47,40 +47,10 @@ Hooks.on('init', () => {
         makeDefault: true,
         label: 'badass.sheets.vaultHunter',
     });
-    return preloadHandlebarsTemplates();
+    preloadHandlebarsTemplates();
+    registerHandlebarHelpers();
 });
 
 Hooks.on('i18nInit', () => {
     console.log('i18nInit');
-});
-
-/**
- * Handlebar Helpers;
- */
-Handlebars.registerHelper('getDiceCount', function (aString) {
-    return aString.split('d')[0];
-});
-
-Handlebars.registerHelper('getDiceSize', function (aString) {
-    return aString.split('d')[1];
-});
-
-Handlebars.registerHelper('equals', function (value, key, opts) {
-    if (value === key) {
-        return opts.fn();
-    } else {
-        return opts.inverse();
-    }
-});
-
-Handlebars.registerHelper('unequals', function (value, key, opts) {
-    if (value === key) {
-        return opts.inverse();
-    } else {
-        return opts.fn();
-    }
-});
-
-Handlebars.registerHelper('isInArray', function (value, array) {
-    return array?.includes(value) ? 'selected' : '';
 });

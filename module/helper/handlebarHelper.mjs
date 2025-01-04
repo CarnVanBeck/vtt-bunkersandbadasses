@@ -3,7 +3,7 @@
  * Pre-loaded templates are compiled and cached for fast access when rendering
  * @return {Promise}
  */
-export const preloadHandlebarsTemplates = async function () {
+export function preloadHandlebarsTemplates() {
     // Define template paths to load
     const templatePaths = {
         // Item Parts
@@ -31,4 +31,46 @@ export const preloadHandlebarsTemplates = async function () {
 
     // Load the template parts
     return loadTemplates(templatePaths);
-};
+}
+
+export function registerHandlebarHelpers() {
+    Handlebars.registerHelper({
+        getProperty: foundry.utils.getProperty,
+        getDiceCount: getDiceCount,
+        getDiceSize: getDiceSize,
+        equals: equals,
+        unequals: unequals,
+        isInArray: isInArray,
+    });
+}
+
+/**
+ * Handlebar Helpers;
+ */
+function getDiceCount(aString) {
+    return aString.split('d')[0];
+}
+
+function getDiceSize(aString) {
+    return aString.split('d')[1];
+}
+
+function equals(value, key, opts) {
+    if (value === key) {
+        return opts.fn();
+    } else {
+        return opts.inverse();
+    }
+}
+
+function unequals(value, key, opts) {
+    if (value === key) {
+        return opts.inverse();
+    } else {
+        return opts.fn();
+    }
+}
+
+function isInArray(value, array) {
+    return array?.includes(value) ? 'selected' : '';
+}
