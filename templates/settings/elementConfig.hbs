@@ -1,0 +1,104 @@
+<div class='badass settings'>
+    <section class='sidebar'>
+        <fieldset class='sidebar-list'>
+            <legend>{{localize 'SETTINGS.elements.label'}}</legend>
+            <ul>
+                {{#each elements as |element|}}
+                    <li class='sidebar-list-item' data-action='editElement' data-key='{{element.key}}'>{{localize
+                            element.name
+                        }}</li>
+                {{/each}}
+                <li class='sidebar-list-item' data-action='addElement'>{{localize 'SETTINGS.elements.add.label'}}</li>
+            </ul>
+        </fieldset>
+    </section>
+    {{#if selectedElement}}
+        <section class='content'>
+            <fieldset>
+                <legend>{{localize 'SETTINGS.elements.edit.label'}}</legend>
+                <label for='elementKey'>{{localize 'SETTINGS.elements.key.label'}}</label>
+                <input
+                    type='text'
+                    id='elementKey'
+                    value='{{selectedElement.key}}'
+                    data-property='key'
+                    title='{{localize "Settings.element.key.hint"}}'
+                />
+
+                <label for='elementName'>{{localize 'SETTINGS.elements.name.label'}}</label>
+                <input
+                    type='text'
+                    id='elementName'
+                    value='{{selectedElement.name}}'
+                    data-property='name'
+                    title='{{localize "Settings.element.name.hint"}}'
+                />
+
+                <label for='elementDescription'>{{localize 'SETTINGS.elements.description.label'}}</label>
+                <input
+                    type='text'
+                    id='elementDescription'
+                    value='{{selectedElement.description}}'
+                    data-property='description'
+                    title='{{localize "Settings.element.description.hint"}}'
+                />
+
+                <label for='elementIcon'>{{localize 'SETTINGS.elements.icon.label'}}</label>
+                <file-picker
+                    type='image'
+                    id='elementIcon'
+                    value='{{selectedElement.icon}}'
+                    data-property='icon'
+                ></file-picker>
+
+                <label for='elementColor'>{{localize 'SETTINGS.elements.color.label'}}</label>
+                <color-picker id='elementColor' value='{{selectedElement.color}}' data-property='color'></color-picker>
+
+                <label for='elementStrongAgainst'>{{localize 'SETTINGS.elements.strongAgainst.label'}}</label>
+                <multi-select id='elementStrongAgainst' data-property='strongAgainst'>
+                    {{#each defenses as |defense|}}
+                        <option
+                            value='{{defense.key}}'
+                            title='{{localize defense.description}}'
+                            {{isInArray defense.key ../selectedElement.strongAgainst}}
+                        >{{localize defense.name}}
+                            ({{defense.key}})</option>
+                    {{/each}}
+                </multi-select>
+
+                <label for='elementWeakAgainst'>{{localize 'SETTINGS.elements.weakAgainst.label'}}</label>
+                <multi-select id='elementWeakAgainst' data-property='weakAgainst'>
+                    {{#each defenses as |defense|}}
+                        <option
+                            value='{{defense.key}}'
+                            title='{{localize defense.description}}'
+                            {{isInArray defense.key ../selectedElement.weakAgainst}}
+                        >{{localize defense.name}}
+                            ({{defense.key}})</option>
+                    {{/each}}
+                </multi-select>
+
+                <label for='elementIgnores'>{{localize 'SETTINGS.elements.ignores.label'}}</label>
+                <multi-select id='elementIgnores' data-property='ignores'>
+                    {{#each defenses as |defense|}}
+                        <option
+                            value='{{defense.key}}'
+                            title='{{localize defense.description}}'
+                            {{isInArray defense.key ../selectedElement.ignores}}
+                        >{{localize defense.name}}
+                            ({{defense.key}})</option>
+                    {{/each}}
+                </multi-select>
+
+                <div class='settings-buttons'>
+                    <button type='button' class='btn btn-primary' data-action='saveElement'>
+                        {{localize 'SETTINGS.elements.save.label'}}
+                    </button>
+                    <button type='button' class='btn btn-danger' data-action='removeElement'>
+                        {{localize 'SETTINGS.elements.delete.label'}}
+                    </button>
+                </div>
+            </fieldset>
+        </section>
+    {{/if}}
+</div>

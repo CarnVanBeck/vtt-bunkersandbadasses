@@ -5,7 +5,7 @@ import { BADASS, getDefaultElements } from './module/helper/config.mjs';
 import { preloadHandlebarsTemplates } from './module/helper/preloadTemplates.mjs';
 import { registerSettings } from './module/helper/settings.mjs';
 import { GunCardSheet } from './module/sheets/item/gunCard.mjs';
-import { ShieldCardSheet} from './module/sheets/item/shieldCard.mjs';
+import { ShieldCardSheet } from './module/sheets/item/shieldCard.mjs';
 import { GrenadeCardSheet } from './module/sheets/item/grenadeCard.mjs';
 import { BadassActorSheet } from './module/sheets/actorSheet.mjs';
 
@@ -26,7 +26,6 @@ Hooks.on('init', () => {
     };
 
     CONFIG.Item.documentClass = BadassItem;
-
 
     // Manufactured Item Sheets
     Items.registerSheet('bunkers-and-badasses', GunCardSheet, {
@@ -80,4 +79,8 @@ Handlebars.registerHelper('unequals', function (value, key, opts) {
     } else {
         return opts.fn();
     }
+});
+
+Handlebars.registerHelper('isInArray', function (value, array) {
+    return array?.includes(value) ? 'selected' : '';
 });

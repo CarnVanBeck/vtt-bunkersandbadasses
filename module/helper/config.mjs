@@ -37,32 +37,32 @@ export function getDefaultDefenses() {
 export function getDefaultElements() {
     let incendiary = new Element();
     incendiary.key = 'inc';
-    incendiary.name = game.i18n.localize('badass.element.incendiary.label');
-    incendiary.description = game.i18n.localize('badass.element.incendiary.hint');
+    incendiary.name = 'badass.element.incendiary.label';
+    incendiary.description = 'badass.element.incendiary.hint';
     incendiary.strongAgainst = ['hp'];
     let corrosive = new Element();
     corrosive.key = 'cor';
-    corrosive.name = game.i18n.localize('badass.element.corrosive.label');
-    corrosive.description = game.i18n.localize('badass.element.corrosive.hint');
+    corrosive.name = 'badass.element.corrosive.label';
+    corrosive.description = 'badass.element.corrosive.hint';
     corrosive.strongAgainst = ['arm'];
     let shock = new Element();
     shock.key = 'shk';
-    shock.name = game.i18n.localize('badass.element.shock.label');
-    shock.description = game.i18n.localize('badass.element.shock.hint');
+    shock.name = 'badass.element.shock.label';
+    shock.description = 'badass.element.shock.hint';
     shock.strongAgainst = ['sld'];
     let explosive = new Element();
     explosive.key = 'xpl';
-    explosive.name = game.i18n.localize('badass.element.explosive.label');
-    explosive.description = game.i18n.localize('badass.element.explosive.hint');
+    explosive.name = 'badass.element.explosive.label';
+    explosive.description = 'badass.element.explosive.hint';
     let radiation = new Element();
     radiation.key = 'rad';
-    radiation.name = game.i18n.localize('badass.element.radiation.label');
-    radiation.description = game.i18n.localize('badass.element.radiation.hint');
+    radiation.name = 'badass.element.radiation.label';
+    radiation.description = 'badass.element.radiation.hint';
     radiation.ignores = ['sld', 'arm'];
     let cryo = new Element();
     cryo.key = 'cry';
-    cryo.name = game.i18n.localize('badass.element.cryo.label');
-    cryo.description = game.i18n.localize('badass.element.cryo.hint');
+    cryo.name = 'badass.element.cryo.label';
+    cryo.description = 'badass.element.cryo.hint';
 
     return [incendiary, corrosive, shock, explosive, radiation, cryo];
 }
@@ -70,8 +70,8 @@ export function getDefaultElements() {
 export function getDefaultGunTypes() {
     let combatRifle = new GunType();
     combatRifle.key = 'cmb';
-    combatRifle.name = game.i18n.localize('badass.item.gun.types.combatRifle.label');
-    combatRifle.description = game.i18n.localize('badass.item.gun.types.combatRifle.hint');
+    combatRifle.name = 'badass.item.gun.types.combatRifle.label';
+    combatRifle.description = 'badass.item.gun.types.combatRifle.hint';
     combatRifle.levels = combatRifleLevels();
 
     return [combatRifle];

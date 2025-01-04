@@ -128,7 +128,7 @@
     "SETTINGS": {
         "defenses": {
             "label": "Defenses",
-            "hint": "",
+            "hint": "You can configure the available Defenses for your World here. These will be used by actors to specify what type of shield, armor or health they have and which element deals what kind of damage to them.",
             "config": {
                 "label": "Configure Defenses"
             },
@@ -152,7 +152,7 @@
                 "hint": "A unique key to identify the Defense.",
                 "error": { "unique": "There can only be one Defense with this key" }
             },
-            "name": { "label": "Name", "hint": "Readable name that will be shown in heets." },
+            "name": { "label": "Name", "hint": "Readable name that will be shown in sheets." },
             "description": {
                 "label": "Description",
                 "hint": "A description for this Defense to provide an explanation which will be shown when hovered over this Defense in a sheet."
@@ -183,7 +183,55 @@
         },
         "elements": {
             "label": "Elements",
-            "hint": ""
+            "hint": "You can configure the available Elements for your World here. These can be used for weapons, shields, grenade mods and more.",
+            "config": {
+                "label": "Configure Elements"
+            },
+            "edit": {
+                "label": "Edit Element"
+            },
+            "add": {
+                "label": "Add Element"
+            },
+            "save": {
+                "label": "Save"
+            },
+            "delete": {
+                "label": "Delete Element"
+            },
+            "default": {
+                "label": "Overwrite with default Elements"
+            },
+            "key": {
+                "label": "Key",
+                "hint": "A unique key to identify the Element.",
+                "error": { "unique": "There can only be one Element with this key" }
+            },
+            "name": { "label": "Name", "hint": "Readable name that will be shown in sheets." },
+            "description": {
+                "label": "Description",
+                "hint": "A description for this Element to provide an explanation which will be shown when hovered over this Element in a sheet."
+            },
+            "icon": {
+                "label": "Icon",
+                "hint": "If you want cool looking damage values select a file for this Element."
+            },
+            "color": {
+                "label": "Color",
+                "hint": "Damage for this Element will use this color in Chat Cards etc."
+            },
+            "strongAgainst": {
+                "label": "Strong against",
+                "hint": "Select the Defenses this Element deals double damage to (e.g. Shock Element deals double damage to Shields)."
+            },
+            "weakAgainst": {
+                "label": "Weak against",
+                "hint": "Select the Defenses this Element only deals half damage to."
+            },
+            "ignores": {
+                "label": "Ignores",
+                "hint": "Select the Defenses this Element ignores when dealing damage (e.g. radiation ignores Shields and Armor and deals damage directly to Health)."
+            }
         },
         "gunTypes": {
             "label": "Gun Types",
