@@ -68,7 +68,13 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
         context.selectedEntry = this.selectedEntry;
 
         this.entries = this.entries ?? game.settings.get(BADASS.namespace, this.settingsName) ?? [];
-
+        // Convert levels property from object to array loaded from settings because foundry saves the levels as an object
+        this.entries = this.entries.map((entry) => {
+            if (entry.levels && typeof entry.levels === 'object' && !Array.isArray(entry.levels)) {
+                entry.levels = Object.values(entry.levels);
+            }
+            return entry;
+        });
         this.entries = this._sortEntries(this.entries);
         context.entries = this.entries;
 
@@ -155,18 +161,24 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
         let key = this.selectedEntry.key;
         let entryIndex = this.entries.findIndex((entry) => entry.key === key);
         let newEntry = {};
+        let needsOverrideEntryModification = false;
         this.element.querySelectorAll('[data-property]').forEach((target) => {
             let prop = target.getAttribute('data-property');
-
-            if (target.type === 'checkbox') {
-                newEntry[prop] = target.checked;
-            } else if (target.type === 'number') {
-                newEntry[prop] = parseInt(target.value, 10);
+            // if either a '.' or '[' is in the property, it should not be written into the newEntry
+            // but we also need to inform that the subclass will need to handle that stuff
+            if (prop.includes('.') || prop.includes('[')) {
+                needsOverrideEntryModification = true;
             } else {
-                newEntry[prop] = target.value;
+                if (target.type === 'checkbox') {
+                    newEntry[prop] = target.checked;
+                } else if (target.type === 'number') {
+                    newEntry[prop] = parseInt(target.value, 10);
+                } else {
+                    newEntry[prop] = target.value;
+                }
             }
         });
-
+        newEntry = this._modifyEntry(newEntry, needsOverrideEntryModification);
         if (this._validateEntryKey(key, newEntry)) return;
         if (this._validateEntry(key, newEntry)) return;
 
@@ -261,6 +273,21 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
      */
     _validateEntry(selectedKey, entry) {
         throw new Error('_validateEntry needs to be overriden.');
+    }
+
+    /**
+     * Method that must be overridden by subclasses to modify the selected entry before saving it.
+     * @param {Object} entry  This is the newEntry prefilled with all the simple values from the form.
+     * @returns {Object}      Return the filled object.
+     * @private
+     * @abstract
+     */
+    _modifyEntry(entry, showError = false) {
+        if (showError)
+            throw new Error(
+                'The fields in this config are too complex to manage them in a generic matter.\n_modifyEntry needs to be overriden.',
+            );
+        return entry;
     }
     // #endregion
 }

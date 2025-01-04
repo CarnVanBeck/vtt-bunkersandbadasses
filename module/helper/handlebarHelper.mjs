@@ -27,6 +27,9 @@ export function preloadHandlebarsTemplates() {
         actorItems: `${CONFIG.BADASS.systemPath}/templates/actor/parts/items.hbs`,
         actorSkills: `${CONFIG.BADASS.systemPath}/templates/actor/parts/skills.hbs`,
         actorEquipment: `${CONFIG.BADASS.systemPath}/templates/actor/parts/equipment.hbs`,
+
+        // Settings
+        gunTypeLevel: `${CONFIG.BADASS.systemPath}/templates/settings/parts/gunTypeLevel.hbs`,
     };
 
     // Load the template parts

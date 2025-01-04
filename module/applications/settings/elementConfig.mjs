@@ -48,7 +48,8 @@ export default class ElementConfig extends BaseConfig {
      * @param {HTMLElement} target   The clicked Html element.
      */
     static async defaultElement(e, target) {
-        this.elements = getDefaultElements();
+        this.entries = getDefaultElements();
+        this.selectedEntry = null;
         this.render();
     }
 

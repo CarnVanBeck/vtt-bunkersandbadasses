@@ -3,11 +3,11 @@ import BadassDataModel from '../model.mjs';
 /**
  * Definition of the GunType class that is used to preconfigure types for guns
  *
- * @property {String}   key         A unique key to identify the type
- * @property {String}   name        Readable name that will be shown in Sheets
- * @property {String}   description A description for this Defense to provide an explanation
- * @property {String}   icon        Path to the image
- * @property {GunLevel[]} levels      Array of GunLevels to specify the scaling
+ * @property {String}       key         A unique key to identify the type
+ * @property {String}       name        Readable name that will be shown in Sheets
+ * @property {String}       description A description for this Defense to provide an explanation
+ * @property {String}       icon        Path to the image
+ * @property {GunLevel[]}   levels      Array of GunLevels to specify the scaling
  *
  * @see GunLevel
  */
@@ -37,7 +37,7 @@ export default class GunType extends BadassDataModel {
         schema.icon = new fields.FilePathField({
             label: 'SETTINGS.gunTypes.icon.label',
             hint: 'SETTINGS.gunTypes.icon.hint',
-            initial: `${CONFIG.BADASS.systemPath}/assets/standalone/guns/gun.svg`,
+            initial: `${CONFIG.BADASS.systemPath}/assets/styleable/guns/pistol.svg`,
             categories: ['IMAGE'],
             base64: false,
         });

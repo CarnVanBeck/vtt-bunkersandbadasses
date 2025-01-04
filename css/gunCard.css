@@ -1,89 +1,123 @@
 .gunCardAccuracy {
-	width: 40%;
-	flex-flow: column
+    width: 40%;
+    flex-flow: column;
 }
 
 .gunCardAccuracy {
-	flex-flow: row;
-	width: 100%;
+    flex-flow: row;
+    width: 100%;
 }
 
 .gunCardD20AndMods {
-	width: 40%;
+    width: 40%;
 }
 
 .gunCardAccuracy .d20 {
-	height: 50px;
+    height: 50px;
 }
 
 .gunCardD20AndMods > input {
-	height: 60px;
-	width: 60px;
-	font-size: 2em;
-	margin: 10px;
+    height: 60px;
+    width: 60px;
+    font-size: 2em;
+    margin: 10px;
 }
 
 .gunCardHitsAndCrits {
-	width: 60%;
+    width: 60%;
 }
 
 .critHitRow > td.hit,
 .critHitRow > td.crit {
-	background-size: 100%;
-	background-position-y: 50%;
-	background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
 }
 
-.critHitRow > td.hit
-{
-	background-image: url(../assets/standalone/hits.svg);
-	background-size: auto 85% ;
+.critHitRow > td.hit {
+    background-image: url(../assets/standalone/hits.svg);
+    background-size: auto 85%;
 }
 
 .critHitRow > td.hit > input,
-.critHitRow > td.crit > input
-{
-	height: 40px;
-	width: 40px;
+.critHitRow > td.crit > input {
+    height: 40px;
+    width: 40px;
 }
 
-.critHitRow > td.crit
-{
-	background-image: url(../assets/standalone/crits.svg);
-	background-size: auto 85% ;
+.critHitRow > td.crit {
+    background-image: url(../assets/standalone/crits.svg);
+    background-size: auto 85%;
 }
 
 .critHitRow > .accuracyLow,
 .critHitRow > .accuracyMid,
 .critHitRow > .accuracyHigh {
-	width: 33%;
+    width: 33%;
 }
 
 .gunCardRange {
-	display: flex;
-	padding-left: calc(50% - 40px);
+    display: flex;
+    padding-left: calc(50% - 40px);
 }
 
 .gunCardRange > input {
-	width: 20px;
+    width: 20px;
 }
 
 .gunCardDamage > svg {
-	width: 30%;
+    width: 30%;
 }
 
 .gunCardDiceMulti {
-	font-size: 2em;
-	line-height: 120px;
-	height: 80px;
-	width: 20%
+    font-size: 2em;
+    line-height: 120px;
+    height: 80px;
+    width: 20%;
 }
 
 .gunCardDamage > input {
-	position: relative;
-	top: calc(50% - 40px);
-	width: 60px;
-	height: 60px;
-	font-size: 2em;
-	margin: 10px;
+    position: relative;
+    top: calc(50% - 40px);
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    margin: 10px;
+}
+
+/* gunType config stuff */
+.badass .gunStats {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-basis: 100%;
+}
+.badass .gunStats-row {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+}
+.badass .gunStats-header {
+    font-weight: bold;
+    color: #d26638;
+}
+.badass .gunStats-col {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.badass .gunStats-cell {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 5px;
+}
+
+.badass .gunStats-cell .gunStatInput {
+    padding: 0;
+    text-align: center;
+    height: fit-content;
+    margin: 0;
+    line-height: initial;
 }

@@ -1,0 +1,76 @@
+<div class='gunStats-row'>
+    <div class='gunStats-col'>
+        <div class='gunStats-cell'>
+            <input
+                type='number'
+                id='start{{index}}'
+                data-sub-property='start'
+                data-level='{{index}}'
+                class='gunStatInput'
+                value='{{start}}'
+            />
+        </div>
+        <div class='gunStats-cell'>
+            <input
+                type='number'
+                id='end{{index}}'
+                data-sub-property='end'
+                data-level='{{index}}'
+                class='gunStatInput'
+                value='{{end}}'
+            />
+        </div>
+    </div>
+    {{#each accuracies as |acc accIndex|}}
+        <div class='gunStats-col'>
+            <div class='gunStats-cell'>
+                <input
+                    type='number'
+                    id='hits{{../index}}-{{accIndex}}'
+                    data-sub-property='hits'
+                    data-level='{{../index}}'
+                    data-accuracy='{{accIndex}}'
+                    class='gunStatInput'
+                    value='{{acc.hits}}'
+                />
+            </div>
+            <div class='gunStats-cell'>
+                <input
+                    type='number'
+                    id='crits{{index}}-{{accIndex}}'
+                    data-sub-property='crits'
+                    data-level='{{../index}}'
+                    data-accuracy='{{accIndex}}'
+                    class='gunStatInput'
+                    value='{{acc.crits}}'
+                />
+            </div>
+        </div>
+    {{/each}}
+    <div class='gunStats-col'>
+        <div class='gunStats-cell'>
+            <input
+                type='text'
+                id='dmg{{index}}'
+                data-sub-property='damage'
+                data-level='{{index}}'
+                class='gunStatInput'
+                title='{{localize "badass.item.gun.damage.label"}}'
+                value='{{damage}}'
+            />
+        </div>
+    </div>
+    <div class='gunStats-col'>
+        <div class='gunStats-cell'>
+            <input
+                type='number'
+                id='range{{index}}'
+                data-sub-property='range'
+                data-level='{{index}}'
+                class='gunStatInput'
+                title='{{localize "badass.item.gun.range.label"}}'
+                value='{{range}}'
+            />
+        </div>
+    </div>
+</div>

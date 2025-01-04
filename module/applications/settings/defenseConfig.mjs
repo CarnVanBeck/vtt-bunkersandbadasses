@@ -63,7 +63,8 @@ export default class DefenseConfig extends BaseConfig {
      * @param {HTMLElement} target   The clicked Html element.
      */
     static async defaultDefense(e, target) {
-        this.defenses = getDefaultDefenses();
+        this.entries = getDefaultDefenses();
+        this.selectedEntry = null;
         this.render();
     }
 

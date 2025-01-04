@@ -1,0 +1,138 @@
+<div class='badass settings'>
+    <section class='sidebar'>
+        <fieldset class='sidebar-list'>
+            <legend>{{localize 'SETTINGS.gunTypes.label'}}</legend>
+            <ul>
+                {{#each entries as |gunType|}}
+                    <li class='sidebar-list-item' data-action='editEntry' data-key='{{gunType.key}}'>
+                        {{#if gunType.icon}}
+                            <img class='icon' src='{{gunType.icon}}' />
+                        {{/if}}
+                        {{localize gunType.name}}
+                    </li>
+                {{/each}}
+                <li class='sidebar-list-item' data-action='addEntry'><i class='fa-solid fa-plus icon'></i>{{localize
+                        'SETTINGS.gunTypes.add.label'
+                    }}</li>
+            </ul>
+        </fieldset>
+    </section>
+    {{#if selectedEntry}}
+        <section class='content'>
+            <fieldset>
+                <legend>{{localize 'SETTINGS.gunTypes.edit.label'}}</legend>
+                <label for='gunTypeKey'>{{localize 'SETTINGS.gunTypes.key.label'}}</label>
+                <input
+                    type='text'
+                    id='gunTypeKey'
+                    value='{{selectedEntry.key}}'
+                    data-property='key'
+                    title='{{localize "Settings.gunType.key.hint"}}'
+                />
+
+                <label for='gunTypeName'>{{localize 'SETTINGS.gunTypes.name.label'}}</label>
+                <input
+                    type='text'
+                    id='gunTypeName'
+                    value='{{selectedEntry.name}}'
+                    data-property='name'
+                    title='{{localize "Settings.gunType.name.hint"}}'
+                />
+
+                <label for='gunTypeDescription'>{{localize 'SETTINGS.gunTypes.description.label'}}</label>
+                <input
+                    type='text'
+                    id='gunTypeDescription'
+                    value='{{selectedEntry.description}}'
+                    data-property='description'
+                    title='{{localize "Settings.gunType.description.hint"}}'
+                />
+
+                <label for='gunTypeIcon'>{{localize 'SETTINGS.gunTypes.icon.label'}}</label>
+                <file-picker
+                    type='image'
+                    id='gunTypeIcon'
+                    value='{{selectedEntry.icon}}'
+                    data-property='icon'
+                ></file-picker>
+
+                <section class='gunStats'>
+                    <div class='gunStats-row gunStats-header'>
+                        <div class='gunStats-col'>
+                            <div class='gunStats-cell'>
+                                <span>{{localize 'badass.item.gun.level.label'}}</span>
+                            </div>
+                        </div>
+                        <div class='gunStats-col'>
+                            {{#each accuracies as |acc index|}}
+                                <div class='gunStats-cell'>
+                                    <div class='gunStats-row'>
+                                        <span>{{localize 'badass.item.gun.accuracy.label'}}</span>
+                                    </div>
+                                    <div class='gunStats-row'>
+                                        <div class='gunStats-col'>
+                                            <input
+                                                type='number'
+                                                id='accLow{{index}}'
+                                                data-sub-property='low'
+                                                data-level='all'
+                                                data-accuracy='{{index}}'
+                                                class='gunStatInput'
+                                                value='{{acc.low}}'
+                                            />
+                                        </div>
+                                        <div class='gunStats-col'>
+                                            <input
+                                                type='number'
+                                                id='accHigh{{index}}'
+                                                data-sub-property='high'
+                                                data-level='all'
+                                                data-accuracy='{{index}}'
+                                                class='gunStatInput'
+                                                value='{{acc.high}}'
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class='gunStats-row'>
+                                        <div class='gunStats-col'>
+                                            <div class='gunStats-cell'>
+                                                <span>{{localize 'badass.item.gun.accuracy.hits'}}</span>
+                                            </div>
+                                        </div>
+                                        <div class='gunStats-col'>
+                                            <div class='gunStats-cell'>
+                                                <span>{{localize 'badass.item.gun.accuracy.crits'}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>
+                        <div class='gunStats-col'>
+                            <div class='gunStats-cell'>
+                                <span>{{localize 'badass.item.gun.damage.label'}}</span>
+                            </div>
+                        </div>
+                        <div class='gunStats-col'>
+                            <div class='gunStats-cell'>
+                                <span>{{localize 'badass.item.gun.range.label'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {{#each selectedEntry.levels as |level index|}}
+                        {{> gunTypeLevel index=index accuracies=level.accuracy}}
+                    {{/each}}
+                </section>
+
+                <div class='settings-buttons'>
+                    <button type='button' class='btn btn-primary' data-action='saveEntry'>
+                        {{localize 'SETTINGS.buttons.save'}}
+                    </button>
+                    <button type='button' class='btn btn-danger' data-action='removeEntry'>
+                        {{localize 'SETTINGS.buttons.remove'}}
+                    </button>
+                </div>
+            </fieldset>
+        </section>
+    {{/if}}
+</div>

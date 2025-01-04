@@ -2,6 +2,7 @@ import { BADASS, getDefaultDefenses, getDefaultElements, getDefaultGunTypes } fr
 import DefenseConfig from '../applications/settings/defenseConfig.mjs';
 import ElementConfig from '../applications/settings/elementConfig.mjs';
 import ManufacturerConfig from '../applications/settings/manufacturerConfig.mjs';
+import GunTypeConfig from '../applications/settings/gunTypeConfig.mjs';
 
 export function registerSettings() {
     game.settings.register(BADASS.namespace, 'migrationVersion', {
@@ -55,11 +56,21 @@ export function registerSettings() {
     // #endregion
 
     // #region Gun Types
+    game.settings.registerMenu(BADASS.namespace, 'gunTypes', {
+        name: 'SETTINGS.gunTypes.label',
+        label: 'SETTINGS.gunTypes.config.label',
+        hint: 'SETTINGS.gunTypes.hint',
+        icon: 'fa-solid fa-gun',
+        type: GunTypeConfig,
+        restricted: true,
+    });
     game.settings.register(BADASS.namespace, 'gunTypes', {
         name: 'SETTINGS.gunTypes.label',
+        label: 'SETTINGS.gunTypes.label',
         hint: 'SETTINGS.gunTypes.hint',
+        icon: 'fa-solid fa-gun',
         scope: 'world',
-        config: true,
+        config: false,
         type: Array,
         default: getDefaultGunTypes(),
     });

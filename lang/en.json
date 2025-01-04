@@ -39,6 +39,13 @@
                 "type": {
                     "label": "Type"
                 },
+                "accuracy": {
+                    "label": "Accuracy",
+                    "min": "Minimum",
+                    "max": "Maximum",
+                    "hits": "Hits",
+                    "crits": "Crits"
+                },
                 "types": {
                     "combatRifle": {
                         "label": "Combat Rifle",
@@ -228,7 +235,36 @@
         },
         "gunTypes": {
             "label": "Gun Types",
-            "hint": ""
+            "hint": "Configure the available Gun Types for your World here. These will be used by guns to specify their type and preconfigured levels.",
+            "config": {
+                "label": "Configure Gun Types"
+            },
+            "edit": {
+                "label": "Edit Gun Type"
+            },
+            "add": {
+                "label": "Add Gun Type"
+            },
+            "default": {
+                "label": "Overwrite with default Gun Types"
+            },
+            "key": {
+                "label": "Key",
+                "hint": "A unique key to identify the Gun Type."
+            },
+            "name": { "label": "Name", "hint": "Readable name that will be shown in sheets." },
+            "description": {
+                "label": "Description",
+                "hint": "A description for this Gun Type to provide some fancy flavor texts when talking about it."
+            },
+            "icon": {
+                "label": "Icon",
+                "hint": "Reading is hard, make it easier by using images!"
+            },
+            "levels": {
+                "label": "Levels",
+                "hint": "Preconfigured levels for this Gun Type that specify the accuracy, damage and range."
+            }
         },
         "manufacturers": {
             "label": "Manufacturers",

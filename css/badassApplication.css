@@ -7,7 +7,7 @@
     height: 100%;
     display: flex;
     flex-flow: column wrap;
-    flex-basis: 33%;
+    flex-basis: 25%;
 }
 .badass.settings .sidebar .sidebar-list {
     flex-basis: 100%;
@@ -42,7 +42,7 @@
     overflow: hidden;
     height: 100%;
     display: flex;
-    flex-basis: 66%;
+    flex-basis: 75%;
 }
 
 .badass.settings .settings-buttons {
