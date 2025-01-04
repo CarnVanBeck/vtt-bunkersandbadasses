@@ -78,11 +78,11 @@ export function getDefaultGunTypes() {
 }
 
 export function getDefaultRarities() {
-    let common = { name: 'common', key: 'com' };
-    let uncommon = { name: 'uncommon', key: 'ucm' };
-    let rare = { name: 'rare', key: 'rar' };
-    let epic = { name: 'epic', key: 'epc' };
-    let legendary = { name: 'legendary', key: 'lgd' };
+    let common = { name: 'common', key: 'common' };
+    let uncommon = { name: 'uncommon', key: 'uncommon' };
+    let rare = { name: 'rare', key: 'rare' };
+    let epic = { name: 'epic', key: 'epic' };
+    let legendary = { name: 'legendary', key: 'legendary' };
     return [common, uncommon, rare, epic, legendary];
 }
 

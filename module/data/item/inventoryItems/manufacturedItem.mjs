@@ -13,6 +13,7 @@ export default class ManufacturedItemData extends InventoryItemData {
             nullable: true,
             label: game.i18n.localize('badass.item.manufacturer.label'),
         });
+        schema.level = new fields.StringField({ label: 'badass.item.gun.level' });
         return schema;
     }
 }

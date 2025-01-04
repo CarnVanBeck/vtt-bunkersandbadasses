@@ -25,7 +25,7 @@ export class ShieldCardSheet extends ManufacturedSheet {
 		const context = super.getData();
 
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
-		context.manufacturers = [{name:"Anshin"}, {name:"Hyperius"}];
+		context.manufacturers = [{name:"Anshin", key:"anshin"}, {name:"Hyperius", key:"hyperius"}];
 
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);
