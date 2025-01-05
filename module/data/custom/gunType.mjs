@@ -21,14 +21,14 @@ export default class GunType extends BadassDataModel {
             nullable: false,
             label: 'SETTINGS.gunTypes.key.label',
             hint: 'SETTINGS.gunTypes.key.hint',
-            default: '',
+            initial: '',
         });
         schema.name = new fields.StringField({
             required: true,
             nullable: false,
             label: 'SETTINGS.gunTypes.name.label',
             hint: 'SETTINGS.gunTypes.name.hint',
-            default: '',
+            initial: '',
         });
         schema.description = new fields.StringField({
             label: 'SETTINGS.gunTypes.description.label',

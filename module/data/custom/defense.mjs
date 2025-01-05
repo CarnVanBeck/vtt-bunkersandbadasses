@@ -25,14 +25,14 @@ export default class Defense extends BadassDataModel {
             nullable: false,
             label: 'SETTINGS.defenses.key.label',
             hint: 'SETTINGS.defenses.key.hint',
-            default: '',
+            initial: '',
         });
         schema.name = new fields.StringField({
             required: true,
             nullable: false,
             label: 'SETTINGS.defenses.name.label',
             hint: 'SETTINGS.defenses.name.hint',
-            default: '',
+            initial: '',
         });
         schema.description = new fields.StringField({
             label: 'SETTINGS.defenses.description.label',
@@ -60,12 +60,12 @@ export default class Defense extends BadassDataModel {
         schema.isLife = new fields.BooleanField({
             label: 'SETTINGS.defenses.isLife.label',
             hint: 'SETTINGS.defenses.isLife.hint',
-            default: false,
+            initial: false,
         });
         schema.requiresItem = new fields.BooleanField({
             label: 'SETTINGS.defenses.requiresItem.label',
             hint: 'SETTINGS.defenses.requiresItem.hint',
-            default: false,
+            initial: false,
         });
         schema.item = new fields.DocumentIdField({
             label: 'SETTINGS.defenses.item.label',

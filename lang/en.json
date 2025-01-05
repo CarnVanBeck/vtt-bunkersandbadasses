@@ -1,9 +1,77 @@
 {
     "badass": {
         "description": "Alternative B&B System for FoundryVTT",
+        "generic": {
+            "mod": {
+                "label": "MOD",
+                "hint": "To specify if something modifies something else."
+            }
+        },
+        "stats": {
+            "acc": {
+                "label": "Accuracy",
+                "short": "ACC"
+            },
+            "dmg": {
+                "label": "Damage",
+                "short": "DMG"
+            },
+            "spd": {
+                "label": "Speed",
+                "short": "SPD"
+            },
+            "mst": {
+                "label": "Mastery",
+                "short": "MST"
+            }
+        },
+        "checks": {
+            "insight": {
+                "label": "Insight",
+                "check": "Insight Check"
+            },
+            "interact": {
+                "label": "Interact",
+                "check": "Interact Check"
+            },
+            "search": {
+                "label": "Search",
+                "check": "Search Check"
+            },
+            "sneak": {
+                "label": "Sneak",
+                "check": "Sneak Check"
+            },
+            "talk": {
+                "label": "Talk",
+                "check": "Talk Check"
+            },
+            "traverse": {
+                "label": "Traverse",
+                "check": "Traverse Check"
+            }
+        },
         "actor": {
             "movement": "Movement",
             "vaultHunter": {
+                "archetype": {
+                    "label": "Archetype"
+                },
+                "class": {
+                    "label": "Class"
+                },
+                "background": {
+                    "label": "Background"
+                },
+                "level": {
+                    "label": "Level"
+                },
+                "actionSkill": {
+                    "label": "Action Skill"
+                },
+                "name": {
+                    "label": "Name"
+                },
                 "xp": {
                     "label": "XP",
                     "hint": "The current experience points your vault hunter has"
@@ -118,17 +186,6 @@
             "legendary": {
                 "label": "Legendary",
                 "color": "orange"
-            }
-        },
-        "sheets": {
-            "vaultHunter": {
-                "label": "Vault Hunter Actor Sheet",
-                "archetype": "Archetype",
-                "class": "Class",
-                "name": "Name",
-                "background": "Background",
-                "level": "Level",
-                "actionSkill": "Action Skill"
             }
         }
     },

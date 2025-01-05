@@ -40,7 +40,7 @@ export default class GunLevel extends BadassDataModel {
             nullable: false,
             label: 'SETTINGS.gunLevels.damage.label',
             hint: 'SETTINGS.gunLevels.damage.hint',
-            default: '1d6',
+            initial: '1d6',
         });
         schema.range = new fields.NumberField({
             required: true,
