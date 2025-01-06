@@ -38,6 +38,27 @@
 
 /********
  * 		*
+ *	D8	*
+ * 		*
+ ********
+ */
+
+.d8 .triangle {
+	fill: aliceblue;
+	stroke: blue;
+	stroke-width: 3;
+	stroke-linejoin: round;
+}
+
+.d8 .diceNumber {
+	fill: gray;
+	stroke: white;
+	font-size: 10em;
+	font-weight: bold;
+}
+
+/********
+ * 		*
  *	D6	*
  * 		*
  ********
