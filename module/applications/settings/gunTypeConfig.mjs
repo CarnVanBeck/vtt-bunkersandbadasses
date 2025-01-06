@@ -1,3 +1,6 @@
+import GunAccuracy from '../../data/custom/gunAccuracy.mjs';
+import GunLevel from '../../data/custom/gunLevel.mjs';
+import GunType from '../../data/custom/gunType.mjs';
 import { BADASS, getDefaultGunTypes } from '../../helper/config.mjs';
 import BaseConfig from './baseConfig.mjs';
 
@@ -32,6 +35,10 @@ export default class GunTypeConfig extends BaseConfig {
         actions: {
             ...BaseConfig.DEFAULT_OPTIONS.actions,
             defaultGunType: GunTypeConfig.defaultGunType,
+            addLevel: GunTypeConfig.addLevel,
+            removeLevel: GunTypeConfig.removeLevel,
+            addAccuracy: GunTypeConfig.addAccuracy,
+            removeAccuracy: GunTypeConfig.removeAccuracy,
         },
     };
     static PARTS = {
@@ -53,6 +60,46 @@ export default class GunTypeConfig extends BaseConfig {
         this.render();
     }
 
+    static addLevel(e, target) {
+        if (!this.selectedEntry.levels) this.selectedEntry.levels = [];
+        let level = new GunLevel();
+        level.accuracy = this.accuracies.map((acc) => {
+            let newAcc = new GunAccuracy();
+            newAcc.hits = 0;
+            newAcc.crits = 0;
+            return newAcc;
+        });
+        this.selectedEntry.levels.push(level);
+        this.render();
+    }
+
+    static removeLevel(e, target) {
+        if (this.selectedEntry.levels.length > 2) {
+            this.selectedEntry.levels.pop();
+        } else {
+            ui.notifications.warn('You cannot remove the last level.');
+        }
+        this.render();
+    }
+
+    static addAccuracy(e, target) {
+        this.selectedEntry.levels.forEach((level) => {
+            level.accuracy.push(new GunAccuracy());
+        });
+        this.render();
+    }
+
+    static removeAccuracy(e, target) {
+        if (this.accuracies.length > 1) {
+            this.selectedEntry.levels.forEach((level) => {
+                level.accuracy.pop();
+            });
+        } else {
+            ui.notifications.warn('You cannot remove the last accuracy.');
+        }
+        this.render();
+    }
+
     // #region overrides
 
     /**
@@ -67,6 +114,7 @@ export default class GunTypeConfig extends BaseConfig {
      */
     _setAdditionalContext(context) {
         this.accuracies = this.entries[0]?.levels[0]?.accuracy;
+        context.hasAccuracies = this.accuracies ? true : false;
         context.accuracies = this.accuracies;
         return context;
     }
@@ -100,7 +148,7 @@ export default class GunTypeConfig extends BaseConfig {
             if (target.type === 'checkbox') {
                 val = target.checked;
             } else if (target.type === 'number') {
-                val = parseInt(target.value, 10);
+                val = target.value === '' ? null : parseInt(target.value, 10);
             } else {
                 val = target.value;
             }
@@ -118,6 +166,19 @@ export default class GunTypeConfig extends BaseConfig {
             }
         });
         return entry;
+    }
+
+    /**
+     * @override
+     */
+    _castEntries(entries) {
+        return entries.map((entry) => {
+            entry.levels = entry.levels.map((level) => {
+                level.accuracy = level.accuracy.map((acc) => new GunAccuracy(acc));
+                return new GunLevel(level);
+            });
+            return new GunType(entry);
+        });
     }
     // #endregion
 }

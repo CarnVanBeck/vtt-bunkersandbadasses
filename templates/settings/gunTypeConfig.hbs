@@ -62,51 +62,70 @@
                             <div class='gunStats-cell'>
                                 <span>{{localize 'badass.item.gun.level.label'}}</span>
                             </div>
+                            <div class='gunStats-cell'>
+                                &nbsp;
+                            </div>
                         </div>
                         <div class='gunStats-col'>
-                            {{#each accuracies as |acc index|}}
-                                <div class='gunStats-cell'>
-                                    <div class='gunStats-row'>
-                                        <span>{{localize 'badass.item.gun.accuracy.label'}}</span>
-                                    </div>
-                                    <div class='gunStats-row'>
-                                        <div class='gunStats-col'>
-                                            <input
-                                                type='number'
-                                                id='accLow{{index}}'
-                                                data-sub-property='low'
-                                                data-level='all'
-                                                data-accuracy='{{index}}'
-                                                class='gunStatInput'
-                                                value='{{acc.low}}'
-                                            />
+                            {{#if hasAccuracies}}
+                                {{#each accuracies as |acc index|}}
+                                    <div class='gunStats-cell'>
+                                        <div class='gunStats-row'>
+                                            <span>{{localize 'badass.item.gun.accuracy.label'}}</span>
                                         </div>
-                                        <div class='gunStats-col'>
-                                            <input
-                                                type='number'
-                                                id='accHigh{{index}}'
-                                                data-sub-property='high'
-                                                data-level='all'
-                                                data-accuracy='{{index}}'
-                                                class='gunStatInput'
-                                                value='{{acc.high}}'
-                                            />
-                                        </div>
-                                    </div>
-                                    <div class='gunStats-row'>
-                                        <div class='gunStats-col'>
-                                            <div class='gunStats-cell'>
-                                                <span>{{localize 'badass.item.gun.accuracy.hits'}}</span>
+                                        <div class='gunStats-row'>
+                                            <div class='gunStats-col'>
+                                                <input
+                                                    type='number'
+                                                    id='accLow{{index}}'
+                                                    data-sub-property='low'
+                                                    data-level='all'
+                                                    data-accuracy='{{index}}'
+                                                    class='gunStatInput'
+                                                    value='{{acc.low}}'
+                                                />
+                                            </div>
+                                            <div class='gunStats-col'>
+                                                <input
+                                                    type='number'
+                                                    id='accHigh{{index}}'
+                                                    data-sub-property='high'
+                                                    data-level='all'
+                                                    data-accuracy='{{index}}'
+                                                    class='gunStatInput'
+                                                    value='{{acc.high}}'
+                                                />
                                             </div>
                                         </div>
-                                        <div class='gunStats-col'>
-                                            <div class='gunStats-cell'>
-                                                <span>{{localize 'badass.item.gun.accuracy.crits'}}</span>
+                                        <div class='gunStats-row'>
+                                            <div class='gunStats-col'>
+                                                <div class='gunStats-cell'>
+                                                    <span>{{localize 'badass.item.gun.accuracy.hits'}}</span>
+                                                </div>
+                                            </div>
+                                            <div class='gunStats-col'>
+                                                <div class='gunStats-cell'>
+                                                    <span>{{localize 'badass.item.gun.accuracy.crits'}}</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                {{/each}}
+                            {{/if}}
+                        </div>
+                        <div class='gunStats-col'>
+                            <div class='gunStats-cell'>
+                                <div class='gunStats-row'>
+                                    <button type='button' data-action='addAccuracy'>
+                                        <i class='fa-solid fa-plus'></i>
+                                    </button>
                                 </div>
-                            {{/each}}
+                                <div class='gunStats-row'>
+                                    <button type='button' data-action='removeAccuracy'>
+                                        <i class='fa-solid fa-minus'></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div class='gunStats-col'>
                             <div class='gunStats-cell'>
@@ -122,6 +141,24 @@
                     {{#each selectedEntry.levels as |level index|}}
                         {{> gunTypeLevel index=index accuracies=level.accuracy}}
                     {{/each}}
+                    <div class='gunStats-row'>
+                        <div class='gunStats-col'>
+                            <div class='gunStats-cell'>
+                                <button type='button' data-action='addLevel'>
+                                    <i class='fa-solid fa-plus'></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='gunStats-row'>
+                        <div class='gunStats-col'>
+                            <div class='gunStats-cell'>
+                                <button type='button' data-action='removeLevel'>
+                                    <i class='fa-solid fa-minus'></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <div class='settings-buttons'>

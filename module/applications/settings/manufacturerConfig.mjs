@@ -1,3 +1,4 @@
+import Manufacturer from '../../data/custom/manufacturer.mjs';
 import { BADASS } from '../../helper/config.mjs';
 import BaseConfig from './baseConfig.mjs';
 
@@ -93,6 +94,15 @@ export default class ManufacturerConfig extends BaseConfig {
      */
     _validateEntry(selectedKey, entry) {
         return false;
+    }
+
+    /**
+     * @override
+     */
+    _castEntries(entries) {
+        return entries.map((entry) => {
+            return new Manufacturer(entry);
+        });
     }
     // #endregion
 }

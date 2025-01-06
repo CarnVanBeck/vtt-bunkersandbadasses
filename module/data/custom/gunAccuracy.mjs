@@ -11,11 +11,6 @@ import BadassDataModel from '../model.mjs';
  * @see GunLevel
  */
 export default class GunAccuracy extends BadassDataModel {
-    low = 0;
-    high = 0;
-    hits = 0;
-    crits = 0;
-
     /** @override */
     static defineSchema() {
         const fields = foundry.data.fields;
@@ -28,8 +23,8 @@ export default class GunAccuracy extends BadassDataModel {
             initial: 0,
         });
         schema.high = new fields.NumberField({
-            required: true,
-            nullable: false,
+            required: false,
+            nullable: true,
             label: 'SETTINGS.gunAccuracy.high.label',
             hint: 'SETTINGS.gunAccuracy.high.hint',
             initial: 1,

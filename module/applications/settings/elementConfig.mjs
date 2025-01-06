@@ -1,3 +1,4 @@
+import Element from '../../data/custom/element.mjs';
 import { BADASS, getDefaultElements } from '../../helper/config.mjs';
 import BaseConfig from './baseConfig.mjs';
 
@@ -90,6 +91,15 @@ export default class ElementConfig extends BaseConfig {
      */
     _validateEntry(selectedKey, entry) {
         return false;
+    }
+
+    /**
+     * @override
+     */
+    _castEntries(entries) {
+        return entries.map((entry) => {
+            return new Element(entry);
+        });
     }
     // #endregion
 }

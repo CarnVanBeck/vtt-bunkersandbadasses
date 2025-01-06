@@ -1,5 +1,6 @@
 import BaseConfig from './baseConfig.mjs';
 import { BADASS, getDefaultDefenses } from '../../helper/config.mjs';
+import Defense from '../../data/custom/defense.mjs';
 
 /**
  * A form application for configuring the available Defenses in this world.
@@ -103,6 +104,15 @@ export default class DefenseConfig extends BaseConfig {
             hasErrors = true;
         }
         return hasErrors;
+    }
+
+    /**
+     * @override
+     */
+    _castEntries(entries) {
+        return entries.map((entry) => {
+            return new Defense(entry);
+        });
     }
     // #endregion
 }

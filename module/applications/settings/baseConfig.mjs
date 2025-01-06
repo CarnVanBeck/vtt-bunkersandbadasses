@@ -68,6 +68,7 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
         context.selectedEntry = this.selectedEntry;
 
         this.entries = this.entries ?? game.settings.get(BADASS.namespace, this.settingsName) ?? [];
+        // special stuff for gunTypes
         // Convert levels property from object to array loaded from settings because foundry saves the levels as an object
         this.entries = this.entries.map((entry) => {
             if (entry.levels && typeof entry.levels === 'object' && !Array.isArray(entry.levels)) {
@@ -127,6 +128,7 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
     static editEntry(e, target) {
         let key = target.getAttribute('data-key');
         this.selectedEntry = this.entries.find((entry) => entry.key === key);
+        this._editEntry();
         this.render();
     }
     // #endregion
@@ -172,7 +174,7 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
                 if (target.type === 'checkbox') {
                     newEntry[prop] = target.checked;
                 } else if (target.type === 'number') {
-                    newEntry[prop] = parseInt(target.value, 10);
+                    newEntry[prop] = target.value === '' ? null : parseInt(target.value, 10);
                 } else {
                     newEntry[prop] = target.value;
                 }
@@ -190,8 +192,8 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
     /**
      * Validate the Entry data and show error messages if necessary.
      * @param {String} selectedKey  The key of the selected Entry.
-     * @param {Entry} entry      The Entry being validated.
-     * @returns {Boolean}            Whether the Entry data is valid.
+     * @param {Entry} entry         The Entry being validated.
+     * @returns {Boolean}           Whether the Entry data is valid.
      * @private
      * @static
      */
@@ -215,7 +217,8 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
      * @private
      */
     static async #onSubmitForm(e, form, formData) {
-        const entries = this.entries;
+        let entries = this.entries;
+        entries = this._castEntries(this.entries);
         await game.settings.set(BADASS.namespace, this.settingsName, entries);
     }
 
@@ -258,6 +261,17 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
     }
 
     /**
+     * Method that allows changes to the selected entry before showing it in the form.
+     * @private
+     * @abstract
+     * @example
+     * this.selectedEntry.levels = [];
+     */
+    _editEntry() {
+        return;
+    }
+
+    /**
      * Method that must be overridden by subclasses to define the validation for the entry.
      * @param {String} selectedKey  The key of the selected Entry.
      * @param {Entry} entry         The Entry being validated.
@@ -276,7 +290,7 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
     }
 
     /**
-     * Method that must be overridden by subclasses to modify the selected entry before saving it.
+     * Method that can be overridden by subclasses to modify the selected entry before saving it.
      * @param {Object} entry  This is the newEntry prefilled with all the simple values from the form.
      * @returns {Object}      Return the filled object.
      * @private
@@ -288,6 +302,17 @@ export default class BaseConfig extends HandlebarsApplicationMixin(ApplicationV2
                 'The fields in this config are too complex to manage them in a generic matter.\n_modifyEntry needs to be overriden.',
             );
         return entry;
+    }
+
+    /**
+     * Method that must be overridden by subclasses cast the entries into the DataModel format to validate them before saving.
+     * @param {Object[]} entries  Array of the entries that get passed by the baseConfig class.
+     * @returns {BadassDataModel[]}        Array of objects casted to the DataModel class.
+     * @private
+     * @abstract
+     */
+    _castEntries(entries) {
+        throw new Error('_castEntries needs to be overriden.');
     }
     // #endregion
 }
