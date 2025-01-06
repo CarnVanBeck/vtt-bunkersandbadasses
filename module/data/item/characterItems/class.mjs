@@ -11,7 +11,5 @@ export default class ClassItemData extends CharacterItemData {
     }
 
     /** @inheritDoc */
-    prepareDerivedData() {
-        this.type = 'class';
-    }
+    prepareDerivedData() {}
 }

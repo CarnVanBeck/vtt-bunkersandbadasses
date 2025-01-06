@@ -13,7 +13,5 @@ export default class SkillItemData extends CharacterItemData {
     }
 
     /** @inheritDoc */
-    prepareDerivedData() {
-        this.type = 'skill';
-    }
+    prepareDerivedData() {}
 }

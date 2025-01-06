@@ -19,14 +19,14 @@ export default class Manufacturer extends BadassDataModel {
             nullable: false,
             label: 'SETTINGS.manufacturer.key.label',
             hint: 'SETTINGS.manufacturer.key.hint',
-            default: '',
+            initial: '',
         });
         schema.name = new fields.StringField({
             required: true,
             nullable: false,
             label: 'SETTINGS.manufacturer.name.label',
             hint: 'SETTINGS.manufacturer.name.hint',
-            default: '',
+            initial: '',
         });
         schema.icon = new fields.FilePathField({
             label: 'SETTINGS.manufacturer.icon.label',

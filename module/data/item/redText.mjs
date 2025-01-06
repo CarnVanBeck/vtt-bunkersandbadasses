@@ -16,7 +16,5 @@ export default class RedTextItemData extends BaseItemData {
     }
 
     /** @inheritDoc */
-    prepareDerivedData() {
-        this.type = 'redText';
-    }
+    prepareDerivedData() {}
 }

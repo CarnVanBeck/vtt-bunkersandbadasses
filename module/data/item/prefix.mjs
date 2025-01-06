@@ -11,7 +11,5 @@ export default class PrefixItemData extends BaseItemData {
     }
 
     /** @inheritDoc */
-    prepareDerivedData() {
-        this.type = 'prefix';
-    }
+    prepareDerivedData() {}
 }

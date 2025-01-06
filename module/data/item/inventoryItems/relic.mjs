@@ -7,7 +7,6 @@ export default class RelicItemData extends InventoryItemData {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();
-        schema.type = new fields.StringField();
         return schema;
     }
 

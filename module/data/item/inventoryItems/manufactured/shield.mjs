@@ -37,7 +37,5 @@ export default class ShieldItemData extends ManufacturedItemData {
     }
 
     /** @inheritDoc */
-    prepareDerivedData() {
-        this.type = 'shield';
-    }
+    prepareDerivedData() {}
 }

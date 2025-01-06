@@ -11,7 +11,5 @@ export default class ActionItemData extends CharacterItemData {
     }
 
     /** @inheritDoc */
-    prepareDerivedData() {
-        this.type = 'action';
-    }
+    prepareDerivedData() {}
 }

@@ -21,14 +21,14 @@ export default class Element extends BadassDataModel {
             nullable: false,
             label: 'SETTINGS.elements.key.label',
             hint: 'SETTINGS.elements.key.hint',
-            default: '',
+            initial: '',
         });
         schema.name = new fields.StringField({
             required: true,
             nullable: false,
             label: 'SETTINGS.elements.name.label',
             hint: 'SETTINGS.elements.name.hint',
-            default: '',
+            initial: '',
         });
         schema.description = new fields.StringField({
             label: 'SETTINGS.elements.description.label',

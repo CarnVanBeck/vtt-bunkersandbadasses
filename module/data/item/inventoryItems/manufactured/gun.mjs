@@ -13,7 +13,7 @@ export default class GunItemData extends ManufacturedItemData {
             integer: true,
             min: 0,
             initial: 5,
-            label: 'badass.item.gun.range'
+            label: 'badass.item.gun.range',
         });
         schema.redText = new fields.DocumentIdField(foundry.documents.BaseItem, {
             label: 'badass.item.gun.redText',
@@ -26,12 +26,9 @@ export default class GunItemData extends ManufacturedItemData {
             nullable: true,
         });
         schema.accuracy = new fields.ArrayField(new fields.ObjectField());
-        schema.type = new fields.StringField({ label: 'badass.item.gun.type' });
         return schema;
     }
 
     /** @inheritDoc */
-    prepareDerivedData() {
-        this.type = 'gun';
-    }
+    prepareDerivedData() {}
 }
