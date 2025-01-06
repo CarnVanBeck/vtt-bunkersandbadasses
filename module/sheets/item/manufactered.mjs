@@ -1,4 +1,4 @@
-import { getDefaultElements, getDefaultRarities } from "../../helper/config.mjs";
+import { getSystemElements, getSystemRarities } from "../../helper/systemValues.mjs";
 
 export class ManufacturedSheet extends ItemSheet {
     
@@ -16,8 +16,8 @@ export class ManufacturedSheet extends ItemSheet {
 		// Add the item's data to context.data for easier access, as well as flags.
 		context.system = itemData.system;
 		context.flags = itemData.flags;
-		context.rarities = getDefaultRarities();
-		context.elements = getDefaultElements();
+		context.rarities = getSystemRarities();
+		context.elements = getSystemElements();
 
 		return context;
 	}
