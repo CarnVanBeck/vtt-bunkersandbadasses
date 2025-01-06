@@ -1,3 +1,4 @@
+import { getSystemManufacturers } from "../../helper/systemValues.mjs";
 import { ManufacturedSheet } from "./manufactered.mjs";
 
 export class ShieldCardSheet extends ManufacturedSheet {
@@ -25,7 +26,7 @@ export class ShieldCardSheet extends ManufacturedSheet {
 		const context = super.getData();
 
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
-		context.manufacturers = [{name:"Anshin", key:"anshin"}, {name:"Hyperius", key:"hyperius"}];
+		context.manufacturers = this.filterManufacturersByType(getSystemManufacturers(), "shield");
 
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);

@@ -1,4 +1,4 @@
-import { getSystemGunTypes } from "../../helper/systemValues.mjs";
+import { getSystemGunTypes, getSystemManufacturers } from "../../helper/systemValues.mjs";
 import { ManufacturedSheet } from "./manufactered.mjs";
 
 export class GunCardSheet extends ManufacturedSheet {
@@ -29,7 +29,7 @@ export class GunCardSheet extends ManufacturedSheet {
 		context.gunTypes = getSystemGunTypes();
 		
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
-		context.manufacturers = [{name:"Dahlia", key:"dahlia"}, {name:"Feriore", key:"feriore"}, {name:"Blackpowder", key: "blackpowder"}];
+		context.manufacturers = this.filterManufacturersByType(getSystemManufacturers(), "gun");
 
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);

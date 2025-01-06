@@ -12,6 +12,10 @@ export function getSystemGunTypes() {
     return game.settings.get(CONFIG.BADASS.namespace, 'gunTypes');
 }
 
+export function getSystemManufacturers() {
+    return game.settings.get(CONFIG.BADASS.namespace, 'manufacturers');
+}
+
 export function getSystemRarities() {
     return getDefaultRarities();
 }
