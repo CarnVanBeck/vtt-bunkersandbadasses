@@ -13,7 +13,7 @@ export default class GunTypeConfig extends BaseConfig {
         super(...args);
         this.settingsName = 'gunTypes';
         this.newEntryName = 'New GunType';
-        this.newEntryKey = 'man';
+        this.newEntryKey = 'gun';
         this.accuracies = null;
     }
 
