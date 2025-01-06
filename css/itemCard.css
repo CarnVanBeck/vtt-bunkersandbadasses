@@ -31,7 +31,8 @@
 .itemDataBlock {
 	width: 40%;
 	flex-flow: column;
-	background-color: rgba(50,50,50,1);
+	background: url("../assets/styleable/itemCardInfoBg.svg");
+	background-repeat: no-repeat;
 	padding: 10px;
 }
 

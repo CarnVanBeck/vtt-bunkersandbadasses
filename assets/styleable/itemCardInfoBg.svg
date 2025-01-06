@@ -1,0 +1,10 @@
+<svg class="itemCardDataBg" viewBox="0 0 220 330" xmlns="http://www.w3.org/2000/svg" >
+	<path class="bgPath"
+		d="m20,22.5 l40,0 l12.5,-12.5 l75,0 l12.5,12.5 l40,0 
+            a20,20 0,0,0 20,20 l0,257.5 a20,20 0,0,0 -20,20
+            l-40,0 l-12.5,12.5 l-75,0 l-12.5,-12.5 l-40,0 
+            a20,20 0,0,0 -20,-20 l0,-257.5 a20,20 0,0,0 20,-20z"	
+	>
+	</path>
+	<rect width="220" height="330" fill="none" stroke="aliceblue" stroke-width="2px"/>
+</svg>
