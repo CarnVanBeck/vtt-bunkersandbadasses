@@ -1,3 +1,24 @@
+/*********
+*        *
+* Bullet *
+*        *
+**********
+*/
+
+
+.bullet #bullet {
+    fill: chocolate;
+}
+
+.bullet #bulletCasing {
+    fill: #eed009;
+}
+
+.bullet #bulletCasingEdge {
+    stroke: black;
+    stroke-width: 0.25px;
+}
+
 /*******
 *      *
 * Cryo *
