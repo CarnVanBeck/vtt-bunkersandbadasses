@@ -21,12 +21,6 @@ export class ManufacturedSheet extends ItemSheet {
 
 		return context;
 	}
-	
-	filterManufacturersByType(unfilteredManufacturers, type) {
-		return unfilteredManufacturers.filter(
-			(element) => {return element.allowedForItems.includes(type);}
-		);
-	}
 
 	/**
 	 * 

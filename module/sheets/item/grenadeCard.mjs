@@ -1,3 +1,4 @@
+import { getSystemGrenadeManufacturers } from "../../helper/systemValues.mjs";
 import { ManufacturedSheet } from "./manufactered.mjs";
 
 export class GrenadeCardSheet extends ManufacturedSheet {
@@ -25,7 +26,7 @@ export class GrenadeCardSheet extends ManufacturedSheet {
 		const context = super.getData();
 
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
-		context.manufacturers = [{name:"Feriore"}, {name:"Malefactor"}];
+		context.manufacturers = getSystemGrenadeManufacturers();
 
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);
