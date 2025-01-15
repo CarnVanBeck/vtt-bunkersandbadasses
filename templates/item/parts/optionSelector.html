@@ -1,6 +1,6 @@
 <select class="{{name}}Selector" >
-    {{!-- log "choices are" choices --}}
-    {{!-- log "selected: " selected --}}
+    {{ log "choices are" choices }}
+    {{ log "selected: " selected }}
     {{#unless selected}}
         <option value="unchosen" selected disabled></option>
     {{/unless}}

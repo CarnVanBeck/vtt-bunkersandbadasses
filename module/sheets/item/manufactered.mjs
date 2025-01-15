@@ -27,18 +27,34 @@ export class ManufacturedSheet extends ItemSheet {
 	 * @param {*} rarity 
 	 */
 	updateRarity(rarity) {
-		this.item.update({"sytem.rarity": rarity});
+		let updateJSON = {
+			"system.rarity": rarity
+		};
+		this.object.update(updateJSON);
 	}
 
 	updateManufaturer(manufacturer) {
-		this.item.update({"sytem.manufacturer": {"name": manufacturer}});
+		let updateJSON = {
+			"system.manufacturer": {
+				"name": manufacturer
+			}
+		};
+		this.object.update(updateJSON);
 	}
 
 	updateType(type) {
-		this.item.update({"sytem.type": type});
+		let updateJSON = {
+			"system.type": type
+		};
+		this.object.update(updateJSON);
 	}
 
-
+	updateElement(element) {
+		let updateJSON = {
+			"system.element": element
+		};
+		this.object.update(updateJSON);
+	}
 
 	/** @override */
 	activateListeners(html) {
@@ -55,6 +71,9 @@ export class ManufacturedSheet extends ItemSheet {
 		});
 		html.find(".typeSelector").on('change', (event) => {
 			this.updateType(event.target.selectedOptions[0].value);
+		});
+		html.find(".elementSelector").on('change', (event) => {
+			this.updateElement(event.target.selectedOptions[0].value);
 		});
 		// Roll handlers, click handlers, etc. would go here.
 

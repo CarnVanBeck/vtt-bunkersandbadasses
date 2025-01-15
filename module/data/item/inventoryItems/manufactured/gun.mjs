@@ -26,6 +26,7 @@ export default class GunItemData extends ManufacturedItemData {
             nullable: true,
         });
         schema.accuracy = new fields.ArrayField(new fields.ObjectField());
+        schema.type = new fields.StringField();
         return schema;
     }
 
