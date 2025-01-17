@@ -1,0 +1,30 @@
+<svg class="itemCardInfoHeaderBg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" >
+	<defs>
+		<style>
+			.headerBgBorder {
+				fill: none;
+				
+				stroke-width: 4px;
+				stroke-dasharray: 10 2 38 1;
+			}
+			.headerBgBorderOuter {
+				stroke: #777;
+			}
+			.headerBgBorderInner {
+				stroke: #aaa;
+			}
+		</style>
+	</defs>
+	<path class="headerBgPath"
+		d="m0,20 l20,-20 h40 l20,20 v40 l-20,20 h-40 l-20,-20z"	
+	>
+	</path>
+	<path class="headerBgBorderOuter headerBgBorder"
+		d="m2,20 l18,-18 h40 l18,18 v40 l-18,18 h-40 l-18,-18z"	
+	>
+	</path>
+	<path class="headerBgBorderInner headerBgBorder"
+		d="m6,22 l16,-16 h36 l16,16 v36 l-16,16 h-36 l-16,-16z"	
+	>
+	</path>
+</svg>
