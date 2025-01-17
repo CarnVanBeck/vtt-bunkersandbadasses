@@ -12,9 +12,7 @@
     </div>
     <div class="itemCardLvlType itemHeaderQuarter" >
         <div class="itemCardLvl" >
-            <select>
-                <option>levelDummy</option>
-            </select>
+            {{> optionSelector choices=levelRange name="level" selected=system.level}}
         </div>
         {{#if itemTypes}}
         <div class="itemCardType" > 

@@ -31,6 +31,13 @@ export class GunCardSheet extends ManufacturedSheet {
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
 		context.manufacturers = getSystemGunManufacturers();
 
+		let levelRangeArray = [];
+		let maxLevel = 30;
+		for (let i = 1; i <= maxLevel; i++) {
+			levelRangeArray.push({"name": i, "key": i});
+		}
+		context.levelRange = levelRangeArray;
+
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);
 

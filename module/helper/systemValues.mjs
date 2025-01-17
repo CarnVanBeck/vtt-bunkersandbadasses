@@ -16,7 +16,15 @@ export function getSystemManufacturers() {
     return game.settings.get(CONFIG.BADASS.namespace, 'manufacturers');
 }
 
-function filterManufacturersByType(unfilteredManufacturers, type) {
+/**
+ * Filter the given unfilteredManufacturers for the given type and return the filtered
+ * list.
+ * 
+ * @param {Array} unfilteredManufacturers   system list with all manufacturers
+ * @param {String} type                     itemType to filter by
+ * @returns {Array}                         filtered list
+ */
+function _filterManufacturersByType(unfilteredManufacturers, type) {
     return unfilteredManufacturers.filter(
         (element) => {return element.allowedForItems.includes(type);}
     );
@@ -24,19 +32,20 @@ function filterManufacturersByType(unfilteredManufacturers, type) {
 
 export function getSystemGunManufacturers() {
     let manufacturerType = "gun";
-    return filterManufacturersByType(getSystemManufacturers(), manufacturerType);
+    return _filterManufacturersByType(getSystemManufacturers(), manufacturerType);
 }
 
 export function getSystemShieldManufacturers() {
     let manufacturerType = "shield";
-    return filterManufacturersByType(getSystemManufacturers(), manufacturerType);
+    return _filterManufacturersByType(getSystemManufacturers(), manufacturerType);
 }
 
 export function getSystemGrenadeManufacturers() {
     let manufacturerType = "grenade";
-    return filterManufacturersByType(getSystemManufacturers(), manufacturerType);
+    return _filterManufacturersByType(getSystemManufacturers(), manufacturerType);
 }
 
 export function getSystemRarities() {
     return getDefaultRarities();
 }
+
