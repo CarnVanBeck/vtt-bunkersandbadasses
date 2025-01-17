@@ -63,7 +63,7 @@
                         <option
                             value='{{defense.key}}'
                             title='{{localize defense.description}}'
-                            {{isInArray defense.key ../selectedEntry.strongAgainst}}
+                            {{selectInArray defense.key ../selectedEntry.strongAgainst}}
                         >{{localize defense.name}}
                             ({{defense.key}})</option>
                     {{/each}}
@@ -75,7 +75,7 @@
                         <option
                             value='{{defense.key}}'
                             title='{{localize defense.description}}'
-                            {{isInArray defense.key ../selectedEntry.weakAgainst}}
+                            {{selectInArray defense.key ../selectedEntry.weakAgainst}}
                         >{{localize defense.name}}
                             ({{defense.key}})</option>
                     {{/each}}
@@ -87,7 +87,7 @@
                         <option
                             value='{{defense.key}}'
                             title='{{localize defense.description}}'
-                            {{isInArray defense.key ../selectedEntry.ignores}}
+                            {{selectInArray defense.key ../selectedEntry.ignores}}
                         >{{localize defense.name}}
                             ({{defense.key}})</option>
                     {{/each}}

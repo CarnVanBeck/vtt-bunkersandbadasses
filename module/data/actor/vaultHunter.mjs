@@ -2,6 +2,7 @@ import ClassItemData from '../item/characterItems/class.mjs';
 import SkillItemData from '../item/characterItems/skill.mjs';
 import ActorDataModel from './baseActor.mjs';
 
+const fields = foundry.data.fields;
 /**
  * System definition for Vault Hunter
  *
@@ -10,8 +11,121 @@ import ActorDataModel from './baseActor.mjs';
 export default class VaultHunterData extends ActorDataModel {
     /** @inheritDoc */
     static defineSchema() {
-        const fields = foundry.data.fields;
         const schema = super.defineSchema();
+        schema.archetype = new fields.StringField({
+            required: false,
+            nullable: true,
+            initial: '',
+            label: 'badass.actor.vaultHunter.archetype.label',
+            hint: 'badass.actor.vaultHunter.archetype.hint',
+        });
+        schema.background = new fields.StringField({
+            required: false,
+            nullable: true,
+            initial: '',
+            label: 'badass.actor.vaultHunter.archetype.label',
+            hint: 'badass.actor.vaultHunter.archetype.hint',
+        });
+        schema.level = new fields.NumberField({
+            required: true,
+            nullable: false,
+            integer: true,
+            min: 1,
+            initial: 1,
+            label: 'badass.actor.vaultHunter.level.label',
+            hint: 'badass.actor.vaultHunter.level.hint',
+        });
+
+        schema.stats = new fields.SchemaField({
+            acc: VaultHunterData.getStatField(),
+            dmg: VaultHunterData.getStatField(),
+            spd: VaultHunterData.getStatField(),
+            mst: VaultHunterData.getStatField(),
+        });
+        schema.checks = new fields.SchemaField({
+            insight: VaultHunterData.getCheckField(),
+            interact: VaultHunterData.getCheckField(),
+            search: VaultHunterData.getCheckField(),
+            sneak: VaultHunterData.getCheckField(),
+            talk: VaultHunterData.getCheckField(),
+            traverse: VaultHunterData.getCheckField(),
+        });
+        schema.initiative = new fields.SchemaField({
+            miscMod: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
+            miscHint: new fields.StringField({
+                required: false,
+                nullable: true,
+                initial: '',
+            }),
+            bonus: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
+            sum: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
+        });
+
+        schema.defenses = new fields.ArrayField(new fields.ObjectField({}));
+
+        schema.badassRank = new fields.NumberField({
+            required: true,
+            nullable: false,
+            integer: true,
+            min: 1,
+            initial: 1,
+            label: 'badass.actor.vaultHunter.badassRank.label',
+            hint: 'badass.actor.vaultHunter.badassRank.hint',
+        });
+
+        schema.favoredGuns = new fields.ArrayField(
+            new fields.StringField({
+                required: true,
+                nullable: false,
+                initial: '',
+            }),
+            {
+                required: false,
+                nullable: true,
+                label: 'badass.actor.vaultHunter.favoredGuns.label',
+                hint: 'badass.actor.vaultHunter.favoredGuns.hint',
+            },
+        );
+        schema.melee = new fields.SchemaField({
+            die: new fields.StringField({
+                required: true,
+                nullable: false,
+                initial: '1d6',
+            }),
+            mod: new fields.NumberField({
+                required: true,
+                nullable: false,
+                integer: true,
+                initial: 0,
+            }),
+            bonus: new fields.NumberField({
+                required: true,
+                nullable: false,
+                integer: true,
+                initial: 0,
+            }),
+            sum: new fields.NumberField({
+                required: true,
+                nullable: false,
+                integer: true,
+                initial: 0,
+            }),
+        });
 
         schema.xp = new fields.NumberField({
             required: true,
@@ -19,9 +133,25 @@ export default class VaultHunterData extends ActorDataModel {
             integer: true,
             min: 0,
             initial: 0,
-            label: 'badass.actor.vh.xp.label',
-            hint: 'badass.actor.vh.xp.hint',
+            label: 'badass.actor.vaultHunter.xp.label',
+            hint: 'badass.actor.vaultHunter.xp.hint',
         });
+
+        schema.characterInfoHtml = new fields.HTMLField({
+            required: false,
+            nullable: true,
+            initial: '',
+            label: 'badass.actor.characterInfo.label',
+            hint: 'badass.actor.characterInfo.hint',
+        });
+        schema.backgroundHtml = new fields.HTMLField({
+            required: false,
+            nullable: true,
+            initial: '',
+            label: 'badass.actor.background.label',
+            hint: 'badass.actor.background.hint',
+        });
+
         schema.equippableItemConfig = new fields.ArrayField(new fields.ObjectField(), {
             required: true,
             nullable: false,
@@ -30,27 +160,99 @@ export default class VaultHunterData extends ActorDataModel {
             required: true,
             nullable: false,
         });
-        schema.skills = new fields.ArrayField(new fields.EmbeddedDataField(SkillItemData));
-        schema.classes = new fields.ArrayField(new fields.EmbeddedDataField(ClassItemData));
-        schema.characterInfo = new fields.HTMLField({
-            required: false,
-            nullable: true,
-            label: 'badass.actor.characterInfo.label',
-            hint: 'badass.actor.characterInfo.hint',
-        });
-        schema.background = new fields.HTMLField({
-            required: false,
-            nullable: true,
-            label: 'badass.actor.background.label',
-            hint: 'badass.actor.background.hint',
-        });
 
         return schema;
     }
 
-    /** @inheritDoc */
+    static getStatField() {
+        return new fields.SchemaField({
+            base: new fields.NumberField({
+                required: true,
+                nullable: false,
+                integer: true,
+                min: 0,
+                initial: 0,
+                label: 'badass.stats.acc.label',
+                hint: 'badass.stats.acc.hint',
+            }),
+            mod: new fields.StringField({
+                required: false,
+                nullable: true,
+                initial: '',
+            }),
+            bonus: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
+            sum: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
+        });
+    }
+
+    static getCheckField() {
+        return new fields.SchemaField({
+            base: new fields.NumberField({
+                required: true,
+                nullable: false,
+                integer: true,
+                min: 0,
+                initial: 0,
+                label: 'badass.stats.acc.label',
+                hint: 'badass.stats.acc.hint',
+            }),
+            mod: new fields.StringField({
+                required: false,
+                nullable: true,
+                initial: '',
+            }),
+            miscMod: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
+            miscHint: new fields.StringField({
+                required: false,
+                nullable: true,
+                initial: '',
+            }),
+            bonus: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
+            sum: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
+        });
+    }
+
     prepareDerivedData() {
-        this.type = 'vaultHunter';
+        for (let stat in this.stats) {
+            this.stats[stat].sum = this.stats[stat].base + this.stats[stat].bonus;
+            this.stats[stat].mod = Math.floor(this.stats[stat].sum / 2);
+        }
+
+        for (let check in this.checks) {
+            let base = 0;
+            if (check === 'insight') base = this.stats.acc.mod;
+            if (check === 'interact') base = this.stats.acc.mod;
+            if (check === 'search') base = this.stats.mst.mod;
+            if (check === 'sneak') base = this.stats.mst.mod;
+            if (check === 'talk') base = this.stats.spd.mod;
+            if (check === 'traverse') base = this.stats.spd.mod;
+            this.checks[check].sum = this.checks[check].base + this.checks[check].bonus + this.checks[check].miscMod;
+        }
     }
 
     /**

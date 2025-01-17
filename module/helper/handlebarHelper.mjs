@@ -20,14 +20,6 @@ export function preloadHandlebarsTemplates() {
         // elements
         elementAcid: `${CONFIG.BADASS.systemPath}/assets/styleable/elements/acid.html`,
         elementCryo: `${CONFIG.BADASS.systemPath}/assets/styleable/elements/cryo.html`,
-
-        actorActions: `${CONFIG.BADASS.systemPath}/templates/actor/parts/actions.hbs`,
-        actorActiveEffects: `${CONFIG.BADASS.systemPath}/templates/actor/parts/activeEffects.hbs`,
-        actorDefense: `${CONFIG.BADASS.systemPath}/templates/actor/parts/defense.hbs`,
-        actorItems: `${CONFIG.BADASS.systemPath}/templates/actor/parts/items.hbs`,
-        actorSkills: `${CONFIG.BADASS.systemPath}/templates/actor/parts/skills.hbs`,
-        actorEquipment: `${CONFIG.BADASS.systemPath}/templates/actor/parts/equipment.hbs`,
-
         // Settings
         gunTypeLevel: `${CONFIG.BADASS.systemPath}/templates/settings/parts/gunTypeLevel.hbs`,
     };
@@ -43,7 +35,8 @@ export function registerHandlebarHelpers() {
         getDiceSize: getDiceSize,
         equals: equals,
         unequals: unequals,
-        isInArray: isInArray,
+        selectInArray: selectInArray,
+        checkInArray: checkInArray,
     });
 }
 
@@ -74,6 +67,10 @@ function unequals(value, key, opts) {
     }
 }
 
-function isInArray(value, array) {
+function selectInArray(value, array) {
     return array?.includes(value) ? 'selected' : '';
+}
+
+function checkInArray(value, array) {
+    return array?.includes(value) ? 'checked' : '';
 }

@@ -1,0 +1,23 @@
+<section class="actor-section actor-defenses">
+        {{#each actor.defenses as |def|}}
+            <div class="actor-row" data-item-id="{{def.key}}">
+                <div class="actor-col">
+                    <h2>{{localize def.name}}</h4>
+                </div>
+                </br>
+                <div class="actor-col">
+                    <label for="defense_{{def.key}}_current">Current</label>
+                    <input name="defense_{{def.key}}_current" type="number" value="{{def.current}}" max="{{def.max}}" min="0" />
+                </div>
+                <div class="actor-col">
+                    <label for="defense_{{def.key}}_max">Max</label>
+                    <input name="defense_{{def.key}}_max" type="number" value="{{def.max}}" min="0" />
+                </div>
+            </div>
+        {{/each}}
+        {{#if user.isGM}}
+            <div class="actor-section-footer">
+                <a data-action="addDefense" data-action="addDefense">{{localize "badass.sheets.actor.defenses.add"}}</a>
+            </div>
+        {{/if}}
+</section>

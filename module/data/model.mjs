@@ -22,6 +22,7 @@ export default class BadassDataModel extends foundry.abstract.TypeDataModel {
      * @override
      */
     toObject() {
+        //TODO: @CarnVanBeck foundry.utils.deepClone auschecken
         let obj = {};
         for (let key in this) {
             obj[key] = this[key];

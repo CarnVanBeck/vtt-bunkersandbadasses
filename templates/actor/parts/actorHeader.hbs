@@ -1,0 +1,70 @@
+<section class='actor-section'>
+    <div class='actor-row'>
+        <div class='actor-col col-1'>
+            placeholder for image
+        </div>
+        <div class='actor-col'>
+            <label for='archetype' class='actor-label'>
+                {{localize 'badass.sheets.vaultHunter.archetype'}}
+            </label>
+            <input
+                name='system.archetype'
+                type='text'
+                value='{{system.archetype}}'
+                placeholder='{{localize "badass.sheets.vaultHunter.archetype"}}'
+            />
+        </div>
+        <div class='actor-col col-2'>
+            <label for='class' class='actor-label'>
+                {{localize 'badass.sheets.vaultHunter.class'}}
+            </label>
+            <input
+                name='system.class'
+                type='text'
+                value='{{system.class}}'
+                placeholder='{{localize "badass.sheets.vaultHunter.class"}}'
+            />
+        </div>
+    </div>
+    <div class='actor-row'>
+        <div class='actor-col col-3'>
+            <label for='actor.name' class='actor-label'>{{localize 'badass.sheets.vaultHunter.name'}}</label>
+            <input
+                name='name'
+                type='text'
+                value='{{actor.name}}'
+                placeholder='{{localize "badass.sheets.vaultHunter.name"}}'
+            />
+        </div>
+        <div class='actor-col col-3'>
+            <label for='actor.background' class='actor-label'>
+                {{localize 'badass.sheets.vaultHunter.background'}}</label>
+            <input
+                name='system.background'
+                type='text'
+                value='{{system.background}}'
+                placeholder='{{localize "badass.sheets.vaultHunter.background"}}'
+            />
+        </div>
+        <div class='actor-col col-1'>
+            <label for='actor.level' class='actor-label'>{{localize 'badass.sheets.vaultHunter.level'}}</label>
+            <input
+                name='system.level'
+                type='text'
+                value='{{system.level}}'
+                placeholder='{{localize "badass.sheets.vaultHunter.level"}}'
+            />
+        </div>
+    </div>
+    <div class='resources'>
+        <label for='system.actionSkill.value' class='actor-label'>{{localize
+                'badass.sheets.vaultHunter.actionSkill'
+            }}</label>
+        <input
+            name='system.actionSkill.value'
+            type='text'
+            value='{{system.actionSkill.value}}'
+            placeholder='{{localize "badass.sheets.vaultHunter.actionSkill"}}'
+        />
+    </div>
+</section>

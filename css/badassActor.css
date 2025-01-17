@@ -1,0 +1,78 @@
+.badass {
+    .actor-section {
+        display: flex;
+        flex-flow: column nowrap;
+        flex-basis: 100%;
+    }
+    .actor-row {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 100%;
+    }
+
+    .actor-col {
+        display: flex;
+        flex-flow: column nowrap;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    .col-1 {
+        flex-basis: 1;
+    }
+    .col-2 {
+        flex-basis: 2;
+    }
+    .col-3 {
+        flex-basis: 3;
+    }
+
+    /* Favored Gun specials */
+    .actor-favored-guns {
+        display: flex;
+        flex-flow: column nowrap;
+        flex-basis: 100%;
+    }
+    .actor-favored-gun {
+        display: flex;
+        flex-flow: row nowrap;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    .actor-favored-gun img {
+        border: 0;
+        height: 22px;
+        color: #6e7075;
+    }
+
+    /* Defense specials */
+
+    /* Actor stats */
+
+    /* Footer */
+    .actor-section-footer {
+        height: 5px;
+        border: 1px dashed #6e7075;
+        background-color: white;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .actor-section-footer:hover {
+        height: 15px;
+    }
+    .actor-section-footer a {
+        display: none;
+        height: 0px;
+        font-size: 12px;
+        text-align: center;
+        display: block;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+    .actor-section-footer:hover a {
+        height: 15px;
+    }
+}

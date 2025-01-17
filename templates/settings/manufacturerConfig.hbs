@@ -63,7 +63,7 @@
                         <option
                             value='{{item.type}}'
                             title='{{localize item.name}}'
-                            {{isInArray item.type ../selectedEntry.allowedForItems}}
+                            {{selectInArray item.type ../selectedEntry.allowedForItems}}
                         >{{localize item.name}}
                         </option>
                     {{/each}}

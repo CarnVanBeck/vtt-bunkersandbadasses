@@ -11,13 +11,36 @@ export default class BaseActorData extends BadassDataModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = {};
-        schema.movement = new fields.NumberField({
-            required: true,
-            nullable: false,
-            integer: true,
-            min: 0,
-            initial: 0,
-            label: 'badass.actor.movement',
+        schema.movement = new fields.SchemaField({
+            base: new fields.NumberField({
+                required: true,
+                nullable: false,
+                integer: true,
+                initial: 3,
+            }),
+            miscMod: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
+            miscHint: new fields.StringField({
+                required: false,
+                nullable: true,
+                initial: '',
+            }),
+            bonus: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
+            sum: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                initial: 0,
+            }),
         });
         schema.defenses = new fields.ArrayField(new fields.ObjectField(), {
             required: false,

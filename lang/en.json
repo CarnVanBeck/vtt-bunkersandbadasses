@@ -86,7 +86,7 @@
                 "label": "Description"
             },
             "manufacturer": {
-                "label": "Description"
+                "label": "Manufacturer"
             },
             "gun": {
                 "level": {
@@ -186,6 +186,26 @@
             "legendary": {
                 "label": "Legendary",
                 "color": "orange"
+            }
+        }
+    },
+    "SHEETS": {
+        "actor": {
+            "vaultHunter": {
+                "label": "Vault Hunter",
+                "hint": "Vault Hunters are the main characters of the Borderlands series. They are the playable characters and the protagonists of the story. Each Vault Hunter has a unique skill and three skill trees to choose from."
+            },
+            "nonVaultHunter": {
+                "label": "Non-Vault Hunter",
+                "hint": "Non-Vault Hunters are the NPCs of the Borderlands series. They are the enemies and the supporting characters of the story. Non-Vault Hunters can be anything from bandits to robots."
+            },
+            "environmental": {
+                "label": "Environmental",
+                "hint": "Environmental Actors are the world itself. They are the non-living parts of the world that can still interact with the players. Environmental Actors can be anything from a door to a trap."
+            },
+            "minion": {
+                "label": "Minion",
+                "hint": "Minions are the sidekicks of the characters. They are the companions and the pets of the actors. Minions can be anything from a robot to a skag."
             }
         }
     },

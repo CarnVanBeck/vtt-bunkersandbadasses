@@ -1,17 +1,407 @@
 {
     "badass": {
         "description": "Alternatives B&B System für FoundryVTT",
+        "generic": {
+            "mod": {
+                "label": "MOD",
+                "hint": "To specify if something modifies something else."
+            }
+        },
+        "stats": {
+            "acc": {
+                "label": "Zielgenauigkeit",
+                "short": "ACC"
+            },
+            "dmg": {
+                "label": "Schaden",
+                "short": "DMG"
+            },
+            "spd": {
+                "label": "Geschwindigkeit",
+                "short": "SPD"
+            },
+            "mst": {
+                "label": "Meisterschaft",
+                "short": "MST"
+            }
+        },
+        "checks": {
+            "insight": {
+                "label": "Einsicht",
+                "check": "Einsichtsprobe"
+            },
+            "interact": {
+                "label": "Interagieren",
+                "check": "Interaktionsprobe"
+            },
+            "search": {
+                "label": "Suchen",
+                "check": "Such-Probe"
+            },
+            "sneak": {
+                "label": "Schleichen",
+                "check": "Schleichen-Probe"
+            },
+            "talk": {
+                "label": "Reden",
+                "check": "Reden-Probe"
+            },
+            "traverse": {
+                "label": "Durchqueren",
+                "check": "Durchqueren-Probe"
+            }
+        },
         "actor": {
-            "movement": "Bewegung",
+            "movement": "Bewegungsrate",
             "vaultHunter": {
+                "archetype": {
+                    "label": "Archetyp"
+                },
+                "class": {
+                    "label": "Klasse"
+                },
+                "background": {
+                    "label": "Hintergrund"
+                },
+                "level": {
+                    "label": "Stufe"
+                },
+                "actionSkill": {
+                    "label": "Aktionsfähigkeit"
+                },
+                "name": {
+                    "label": "Name"
+                },
                 "xp": {
                     "label": "EP",
-                    "hint": "Die aktuelle Erfahrungspunkte die dein Kammerjäger hat"
+                    "hint": "Die aktuellen Erfahrungspunkte die dein Kammerjäger hat"
                 }
             }
         },
         "item": {
-            "value": "Wert"
+            "value": {
+                "label": "Wert"
+            },
+            "description": {
+                "label": "Beschreibung"
+            },
+            "manufacturer": {
+                "label": "Hersteller"
+            },
+            "gun": {
+                "level": {
+                    "label": "Stufe"
+                },
+                "damage": {
+                    "label": "Schaden"
+                },
+                "range": {
+                    "label": "Reichweite"
+                },
+                "redText": {
+                    "label": "Rot-Text"
+                },
+                "prefix": {
+                    "label": "Präfix"
+                },
+                "type": {
+                    "label": "Art"
+                },
+                "accuracy": {
+                    "label": "Zielgenauigkeit",
+                    "min": "Minimum",
+                    "max": "Maximum",
+                    "hits": "Treffer",
+                    "crits": "Kritisch"
+                },
+                "types": {
+                    "combatRifle": {
+                        "label": "Combat Rifle",
+                        "hint": "Heavy, high-velocity guns. Consisting of both burst-fire Combat Rifles and fully-automated machine guns. If you like military-style assault rifles -- the kind wielded by square-jawed men with close-shaved haircuts who say things like \"to hell with the chain of command, it's time to do what's right\" -- you'll want one of these."
+                    }
+                }
+            }
+        },
+        "defense": {
+            "shield": {
+                "label": "Schild",
+                "hint": "Verwendet einen Schild und erhält doppelten Schaden durch Schockschaden."
+            },
+            "armor": {
+                "label": "Rüstung",
+                "hint": "Verwendet für Charaktere mit der `Gerüstet` Eigenschaft und erhält doppelten Schaden durch Korrosionsschaden."
+            },
+            "hp": {
+                "label": "Health",
+                "hint": "Used for actors with the Flesh trait and takes double damage from Incendiary damage."
+            },
+            "generic": {
+                "label": "Health",
+                "hint": "Used if the actor doesn't have any weaknesses against any element."
+            }
+        },
+        "element": {
+            "incendiary": {
+                "label": "Incendiary",
+                "hint": "Incendiary is a fancy way to say fire. Incendiary damage deals double damage to targets with exposed Flesh. Once Shields or Armor are depleted, all Health damage is double for Flesh targets. Mmmm smells like chicken."
+            },
+            "corrosive": {
+                "label": "Corrosive",
+                "hint": "Magical melty stuff that eats through Armor and Metal, dealing double Damage."
+            },
+            "shock": {
+                "label": "Shock",
+                "hint": "Ben Franklin never meant for it to be used as a weapon. Shock damage deals double damage to Shields."
+            },
+            "explosive": {
+                "label": "Explosive",
+                "hint": "Explosive damage makes a big BOOM and always includes Splash, which deals additional half Damage to all adjacent squares. Explosive also has a 30% chance to cause Knockback, kicking the target back one square away from Damage source."
+            },
+            "radiation": {
+                "label": "Radiation",
+                "hint": "Makes you glow from the inside and out. Radiation damage can penetrate through Shields and deal damage directly to Health. If a target dies while taking Radiation Damage, they explode and deal 3d6 Splash Radiation damage."
+            },
+            "cryo": {
+                "label": "Cryo",
+                "hint": "Cryo = really cold. Targets hit by Cryo damage are Slowed, which means they can only move one square for one turn after being hit and get -2 to Traverse Checks. If a target is hit again with Cryo, they become Frozen. A Frozen target can either move one square on their turn or make a Melee Attack."
+            }
+        },
+        "rarity": {
+            "common": {
+                "label": "Common",
+                "color": "white"
+            },
+            "uncommon": {
+                "label": "Uncommon",
+                "color": "green"
+            },
+            "rare": {
+                "label": "Rare",
+                "color": "blue"
+            },
+            "epic": {
+                "label": "Epic",
+                "color": "purple"
+            },
+            "legendary": {
+                "label": "Legendary",
+                "color": "orange"
+            }
+        }
+    },
+    "SHEETS": {
+        "actor": {
+            "vaultHunter": {
+                "label": "Vault Hunter",
+                "hint": "Vault Hunters are the main characters of the Borderlands series. They are the playable characters and the protagonists of the story. Each Vault Hunter has a unique skill and three skill trees to choose from."
+            },
+            "nonVaultHunter": {
+                "label": "Non-Vault Hunter",
+                "hint": "Non-Vault Hunters are the NPCs of the Borderlands series. They are the enemies and the supporting characters of the story. Non-Vault Hunters can be anything from bandits to robots."
+            },
+            "environmental": {
+                "label": "Environmental",
+                "hint": "Environmental Actors are the world itself. They are the non-living parts of the world that can still interact with the players. Environmental Actors can be anything from a door to a trap."
+            },
+            "minion": {
+                "label": "Minion",
+                "hint": "Minions are the sidekicks of the characters. They are the companions and the pets of the actors. Minions can be anything from a robot to a skag."
+            }
+        }
+    },
+    "SETTINGS": {
+        "errors": {
+            "key": {
+                "unique": "There can only be one entry with this key"
+            },
+            "order": {
+                "unique": "There can only be one entry with this order"
+            }
+        },
+        "defenses": {
+            "label": "Defenses",
+            "hint": "You can configure the available Defenses for your World here. These will be used by actors to specify what type of shield, armor or health they have and which element deals what kind of damage to them.",
+            "config": {
+                "label": "Configure Defenses"
+            },
+            "edit": {
+                "label": "Edit Defense"
+            },
+            "add": {
+                "label": "Add Defense"
+            },
+            "default": {
+                "label": "Overwrite with default Defenses"
+            },
+            "key": {
+                "label": "Key",
+                "hint": "A unique key to identify the Defense."
+            },
+            "name": { "label": "Name", "hint": "Readable name that will be shown in sheets." },
+            "description": {
+                "label": "Description",
+                "hint": "A description for this Defense to provide an explanation which will be shown when hovered over this Defense in a sheet."
+            },
+            "order": {
+                "label": "Order",
+                "hint": "The order in which the defense instances will be used during the damage calculation (lower entries will be damaged first)."
+            },
+            "max": { "label": "Max", "hint": "The maximum value for this Defense." },
+            "current": { "label": "Current", "hint": "The current value of this Defense." },
+            "recharge": {
+                "label": "Recharge",
+                "hint": "How much the current value increases per round if the actor wasn't hit."
+            },
+            "isLife": {
+                "label": "Is life",
+                "hint": "Identifies if the actor counts as dead if this Defense gets to current = 0."
+            },
+            "requiresItem": {
+                "label": "Requires an Item",
+                "hint": "Specifies if the Defense requires an Item or if it uses values."
+            },
+            "item": {
+                "label": "Item",
+                "hint": "If *Requires an Item* is set to true, this defense won't use the max, current etc. values but values from an item."
+            }
+        },
+        "elements": {
+            "label": "Elements",
+            "hint": "You can configure the available Elements for your World here. These can be used for weapons, shields, grenade mods and more.",
+            "config": {
+                "label": "Configure Elements"
+            },
+            "edit": {
+                "label": "Edit Element"
+            },
+            "add": {
+                "label": "Add Element"
+            },
+            "default": {
+                "label": "Overwrite with default Elements"
+            },
+            "key": {
+                "label": "Key",
+                "hint": "A unique key to identify the Element."
+            },
+            "name": { "label": "Name", "hint": "Readable name that will be shown in sheets." },
+            "description": {
+                "label": "Description",
+                "hint": "A description for this Element to provide an explanation which will be shown when hovered over this Element in a sheet."
+            },
+            "icon": {
+                "label": "Icon",
+                "hint": "If you want cool looking damage values select a file for this Element."
+            },
+            "color": {
+                "label": "Color",
+                "hint": "Damage for this Element will use this color in Chat Cards etc."
+            },
+            "strongAgainst": {
+                "label": "Strong against",
+                "hint": "Select the Defenses this Element deals double damage to (e.g. Shock Element deals double damage to Shields)."
+            },
+            "weakAgainst": {
+                "label": "Weak against",
+                "hint": "Select the Defenses this Element only deals half damage to."
+            },
+            "ignores": {
+                "label": "Ignores",
+                "hint": "Select the Defenses this Element ignores when dealing damage (e.g. radiation ignores Shields and Armor and deals damage directly to Health)."
+            }
+        },
+        "gunTypes": {
+            "label": "Gun Types",
+            "hint": "Configure the available Gun Types for your World here. These will be used by guns to specify their type and preconfigured levels.",
+            "config": {
+                "label": "Configure Gun Types"
+            },
+            "edit": {
+                "label": "Edit Gun Type"
+            },
+            "add": {
+                "label": "Add Gun Type"
+            },
+            "default": {
+                "label": "Overwrite with default Gun Types"
+            },
+            "key": {
+                "label": "Key",
+                "hint": "A unique key to identify the Gun Type."
+            },
+            "name": { "label": "Name", "hint": "Readable name that will be shown in sheets." },
+            "description": {
+                "label": "Description",
+                "hint": "A description for this Gun Type to provide some fancy flavor texts when talking about it."
+            },
+            "icon": {
+                "label": "Icon",
+                "hint": "Reading is hard, make it easier by using images!"
+            },
+            "levels": {
+                "label": "Levels",
+                "hint": "Preconfigured levels for this Gun Type that specify the accuracy, damage and range."
+            }
+        },
+        "manufacturers": {
+            "label": "Manufacturers",
+            "hint": "You can configure available Manufacturers for your World here. These will be used by guns, shields etc.",
+            "config": {
+                "label": "Configure Manufacturers"
+            },
+            "edit": {
+                "label": "Edit Manufacturer"
+            },
+            "add": {
+                "label": "Add Manufacturer"
+            },
+            "key": {
+                "label": "Key",
+                "hint": "A unique key to identify the Manufacturer."
+            },
+            "name": { "label": "Name", "hint": "Readable name that will be shown in sheets." },
+            "description": {
+                "label": "Description",
+                "hint": "A description for this Manufacturer to provide some fancy flavor texts when talking about it."
+            },
+            "icon": {
+                "label": "Icon",
+                "hint": "Every Manufacturer needs some kind of logo to be worth their salt."
+            },
+            "allowedForItems": {
+                "label": "Allowed for Items",
+                "hint": "Select the Item Types this Manufacturer produces."
+            },
+            "allowedForGunTypes": {
+                "label": "Allowed for Guns",
+                "hint": "Select the Gun Types this Manufacturer produces."
+            }
+        },
+        "buttons": {
+            "save": "Save",
+            "remove": "Remove"
+        }
+    },
+    "TYPES": {
+        "Actor": {
+            "vaultHunter": "Vault Hunter",
+            "nonVaultHunter": "Non-Vault Hunter",
+            "environmental": "Environmental",
+            "minion": "Minion"
+        },
+        "Item": {
+            "action": "Action",
+            "armor": "Armor",
+            "class": "Class",
+            "grenadeMod": "Grenade Mod",
+            "gun": "Gun",
+            "potion": "Potion",
+            "prefix": "Prefix",
+            "quest": "Quest Item",
+            "redText": "Red Text",
+            "relic": "Relic",
+            "shield": "Shield",
+            "skill": "Skill"
         }
     }
 }

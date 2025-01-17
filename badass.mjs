@@ -8,6 +8,7 @@ import { GunCardSheet } from './module/sheets/item/gunCard.mjs';
 import { ShieldCardSheet } from './module/sheets/item/shieldCard.mjs';
 import { GrenadeCardSheet } from './module/sheets/item/grenadeCard.mjs';
 import { BadassActorSheet } from './module/sheets/actorSheet.mjs';
+import BadassVaultHunterSheetV2 from './module/applications/actor/badassVaultHunterSheetV2.mjs';
 
 Hooks.on('init', () => {
     console.log('init');
@@ -17,6 +18,7 @@ Hooks.on('init', () => {
     // Apply Badass DataModels
     CONFIG.Actor.dataModels = {
         vaultHunter: dataModels.vaultHunter,
+        nonVaultHunter: dataModels.baseActor,
     };
     CONFIG.Actor.documentClass = VaultHunterActor;
     CONFIG.Item.dataModels = {
@@ -28,25 +30,32 @@ Hooks.on('init', () => {
     CONFIG.Item.documentClass = BadassItem;
 
     // Manufactured Item Sheets
-    Items.registerSheet('bunkers-and-badasses', GunCardSheet, {
+    Items.registerSheet(CONFIG.BADASS.namespace, GunCardSheet, {
         types: ['gun'],
         makeDefault: true,
     });
-    Items.registerSheet('bunkers-and-badasses', ShieldCardSheet, {
+    Items.registerSheet(CONFIG.BADASS.namespace, ShieldCardSheet, {
         types: ['shield'],
         makeDefault: true,
     });
-    Items.registerSheet('bunkers-and-badasses', GrenadeCardSheet, {
+    Items.registerSheet(CONFIG.BADASS.namespace, GrenadeCardSheet, {
         types: ['grenadeMod'],
         makeDefault: true,
     });
 
     // Actor Sheets
     Actors.unregisterSheet('core', ActorSheet);
-    Actors.registerSheet(BADASS.namespace, BadassActorSheet, {
+
+    // Actors.registerSheet(BADASS.namespace, BadassActorSheet, {
+    //     makeDefault: true,
+    //     label: 'badass.sheets.vaultHunter',
+    // });
+    DocumentSheetConfig.registerSheet(Actor, CONFIG.BADASS.namespace, BadassVaultHunterSheetV2, {
+        types: ['vaultHunter'],
         makeDefault: true,
-        label: 'badass.sheets.vaultHunter',
+        label: 'SHEETS.actor.vaultHunter.label',
     });
+
     preloadHandlebarsTemplates();
     registerHandlebarHelpers();
 });
