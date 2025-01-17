@@ -33,7 +33,7 @@
 	width: 40%;
 	flex-flow: column;
 	border: 10px solid;
-	border-image-slice: 52 fill;
+	border-image-slice: 27% fill;
 	border-image-source: url("../assets/standalone/itemCardInfoHeaderBg.svg");
 	border-image-width: 10px;
 	border-image-repeat: round;
