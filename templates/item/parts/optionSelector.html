@@ -12,8 +12,11 @@
                 {{!-- log "selected! " choice.name --}}
             {{/equals}}
         >
-            {{!--localize choice.name--}}
-            {{choice.name}}
+            {{#if (isNumber choice.name)}}
+                {{choice.name}}
+            {{else}}
+                {{localize choice.name}}
+            {{/if}}
         </option>
     {{/each}}
 </select>

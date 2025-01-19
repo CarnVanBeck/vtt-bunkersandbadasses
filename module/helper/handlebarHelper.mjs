@@ -37,6 +37,8 @@ export function registerHandlebarHelpers() {
         unequals: unequals,
         selectInArray: selectInArray,
         checkInArray: checkInArray,
+        isInArray: isInArray,
+        isNumber: isNumber
     });
 }
 
@@ -73,4 +75,8 @@ function selectInArray(value, array) {
 
 function checkInArray(value, array) {
     return array?.includes(value) ? 'checked' : '';
+}
+
+function isNumber(value) {
+    return (typeof(value) === "number");
 }
