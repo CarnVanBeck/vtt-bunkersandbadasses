@@ -31,11 +31,6 @@ export class GunCardSheet extends ManufacturedSheet {
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
 		context.manufacturers = getSystemGunManufacturers();
 
-		let levelRangeArray = [];
-		let maxLevel = 30;
-		for (let i = 1; i <= maxLevel; i++) {
-			levelRangeArray.push({"name": i, "key": i});
-		}
 		// set default if no accuracy is present
 		if(context.data.system.accuracy.length == 0) {
 			context.data.system.accuracy = [
@@ -44,7 +39,6 @@ export class GunCardSheet extends ManufacturedSheet {
 				{low: 16, 			hits: 0, crits: 0}
 			]
 		}
-		context.levelRange = levelRangeArray;
 
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);
@@ -66,9 +60,8 @@ export class GunCardSheet extends ManufacturedSheet {
 		this.object.update(updateJSON);
 	}
 
-	updateLevelAndGunSpecifics(newLevel) {
+	updateLevelAndGunSpecifics(newLevel, gunLevelData) {
 		super.updateLevel(newLevel);
-		let gunLevelData = getGunAccuracyByLevel(newLevel, this.getData().data.system.type);
 		this.updateLevelData(
 			gunLevelData.accuracy,
 			gunLevelData.damage,
@@ -76,9 +69,20 @@ export class GunCardSheet extends ManufacturedSheet {
 		);
 	}
 
+	showErrorWindow(error) {
+		//ToDO: Switch to a error window or thelike
+		console.error(error);
+	}
+
 	/** @override */
 	updateLevel(newLevel) {
-		this.updateLevelAndGunSpecifics(newLevel);
+		let gunType = this.getData().data.system.type
+		let gunLevelData = getGunAccuracyByLevel(newLevel, gunType);
+		if(gunLevelData == undefined) {
+			this.showErrorWindow("It seems there exists no data for level: " + newLevel + " and type: " + gunType );
+			return;
+		}
+		this.updateLevelAndGunSpecifics(newLevel, gunLevelData);
 	}
 	
 	/** @override */

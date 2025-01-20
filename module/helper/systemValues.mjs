@@ -27,7 +27,7 @@ function _findGunAccuracyByType(gunList, gunType) {
 }
 
 function _findGunLevelData(levelList, gunLevel) {
-    let gunLevelData = {};
+    let gunLevelData;
     for (let accuracy of levelList) {
         if((accuracy.start <= gunLevel)
             & (gunLevel <= accuracy.end)) 
