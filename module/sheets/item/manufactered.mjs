@@ -24,6 +24,17 @@ export class ManufacturedSheet extends ItemSheet {
 
 	/**
 	 * 
+	 * @param {*} level 
+	 */
+	updateLevel(level) {
+		let updateJSON = {
+			"system.level": level
+		};
+		this.object.update(updateJSON);
+	}
+
+	/**
+	 * 
 	 * @param {*} rarity 
 	 */
 	updateRarity(rarity) {
@@ -68,6 +79,9 @@ export class ManufacturedSheet extends ItemSheet {
 		});
 		html.find(".raritySelector").on('change', (event) => {
 			this.updateRarity(event.target.selectedOptions[0].value);
+		});
+		html.find(".levelInput").on('change', (event) => {
+			this.updateLevel(event.target.value);
 		});
 		html.find(".typeSelector").on('change', (event) => {
 			this.updateType(event.target.selectedOptions[0].value);

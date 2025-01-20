@@ -24,10 +24,10 @@
 				<div class="itemDataHeader" > {{localize "badass.item.gun.damage.label"}} </div>
 				<div class="gunCardDamage itemCardFlex">
 					{{#if system.damage}}
-						{{> (concat "d" system.damage.dice.size)}}
+						{{> (concat "d" (getDiceSize system.damage))}}
 					<div class="gunCardDiceMulti">
-						{{#equals 2 system.damage.dice.count}}
-							x{{system.damage.dice.count}}
+						{{#equals 2 system.damage}}
+							x{{getDiceCount system.damage}}
 						{{/equals}}
 					</div>
 					{{/if}}

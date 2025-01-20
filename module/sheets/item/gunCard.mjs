@@ -54,32 +54,31 @@ export class GunCardSheet extends ManufacturedSheet {
 
 	/**
 	 * 
-	 * @param {*} rarity 
+	 * @param {*} rarity
 	 */
-	updateLevel(level) {
+	updateLevelData(accuracyList, damageDie, gunRange) {
 		let updateJSON = {
-			"system.level": level
+			"system.accuracy": accuracyList,
+			"system.damage": damageDie,
+			"system.range": gunRange
 		};
+		console.log(updateJSON);
 		this.object.update(updateJSON);
 	}
 
-	/**
-	 * 
-	 * @param {*} rarity 
-	 */
-	updateAccuracyByLevel(newLevel) {
-		let accuracyList = getGunAccuracyByLevel(
-			newLevel, this.getData().data.system.type
+	updateLevelAndGunSpecifics(newLevel) {
+		super.updateLevel(newLevel);
+		let gunLevelData = getGunAccuracyByLevel(newLevel, this.getData().data.system.type);
+		this.updateLevelData(
+			gunLevelData.accuracy,
+			gunLevelData.damage,
+			gunLevelData.range
 		);
-		let updateJSON = {
-			"system.accuracy": accuracyList
-		};
-		console.log(this.object.update(updateJSON));
 	}
 
-	updateLevelAndAccuracy(newLevel) {
-		this.updateLevel(newLevel);
-		this.updateAccuracyByLevel(newLevel);
+	/** @override */
+	updateLevel(newLevel) {
+		this.updateLevelAndGunSpecifics(newLevel);
 	}
 	
 	/** @override */
@@ -92,9 +91,6 @@ export class GunCardSheet extends ManufacturedSheet {
 		// Roll handlers, click handlers, etc. would go here.
 
 		// Active Effect management
-		html.find(".levelInput").on('change', (event) => {
-			this.updateLevelAndAccuracy(event.target.value);
-		});
 		html.on('click', '.effect-control', (ev) =>
 			onManageActiveEffect(ev, this.item)
 		);

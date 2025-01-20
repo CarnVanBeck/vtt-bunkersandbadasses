@@ -26,24 +26,23 @@ function _findGunAccuracyByType(gunList, gunType) {
     return foundGunType;
 }
 
-function _findGunAccuracyByLevel(levelList, gunLevel) {
-    let foundAccuracy = {};
+function _findGunLevelData(levelList, gunLevel) {
+    let gunLevelData = {};
     for (let accuracy of levelList) {
         if((accuracy.start <= gunLevel)
             & (gunLevel <= accuracy.end)) 
         {
-            foundAccuracy = accuracy;
+            gunLevelData = accuracy;
         }
     }
-    return foundAccuracy.accuracy;
+    return gunLevelData;
 }
 
 
 export function getGunAccuracyByLevel(level, gunType) {
     let completeGunList = game.settings.get(CONFIG.BADASS.namespace, 'gunTypes');
     let gunList = _findGunAccuracyByType(completeGunList, gunType);
-    let accuracyList = _findGunAccuracyByLevel(gunList.levels, level);
-    return accuracyList;
+    return _findGunLevelData(gunList.levels, level);
 }
 
 /**

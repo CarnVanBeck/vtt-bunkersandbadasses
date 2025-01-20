@@ -15,6 +15,8 @@ export function preloadHandlebarsTemplates() {
         // Dices
         d4: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d4.hbs`,
         d6: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d6.hbs`,
+        d8: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d8.hbs`,
+        d10: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d10.hbs`,
         d20: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d20.hbs`,
 
         // elements
