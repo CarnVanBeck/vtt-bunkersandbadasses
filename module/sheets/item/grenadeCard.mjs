@@ -4,7 +4,7 @@ import { ManufacturedSheet } from "./manufactered.mjs";
 export class GrenadeCardSheet extends ManufacturedSheet {
     
     get template() {
-        return `systems/vtt-bunkersandbadasses/templates/item/grenadeCard.html`;
+        return `systems/vtt-bunkersandbadasses/templates/item/grenadeCard.hbs`;
     }
 
 	static get defaultOptions() {

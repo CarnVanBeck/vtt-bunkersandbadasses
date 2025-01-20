@@ -4,7 +4,7 @@ import { ManufacturedSheet } from "./manufactered.mjs";
 export class ShieldCardSheet extends ManufacturedSheet {
     
     get template() {
-        return `systems/vtt-bunkersandbadasses/templates/item/shieldCard.html`;
+        return `systems/vtt-bunkersandbadasses/templates/item/shieldCard.hbs`;
     }
 
 	static get defaultOptions() {

@@ -7,19 +7,19 @@ export function preloadHandlebarsTemplates() {
     // Define template paths to load
     const templatePaths = {
         // Item Parts
-        optionSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/optionSelector.html`,
-        manuItemHeader: `${CONFIG.BADASS.systemPath}/templates/item/parts/manufacturedItemHeader.html`,
+        optionSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/optionSelector.hbs`,
+        manuItemHeader: `${CONFIG.BADASS.systemPath}/templates/item/parts/manufacturedItemHeader.hbs`,
         // Gun parts
-        gunCardHitLine: `${CONFIG.BADASS.systemPath}/templates/item/parts/gunCardAccuracyLine.html`,
+        gunCardHitLine: `${CONFIG.BADASS.systemPath}/templates/item/parts/gunCardAccuracyLine.hbs`,
 
         // Dices
-        d4: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d4.html`,
-        d6: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d6.html`,
-        d20: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d20.html`,
+        d4: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d4.hbs`,
+        d6: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d6.hbs`,
+        d20: `${CONFIG.BADASS.systemPath}/assets/styleable/dice/d20.hbs`,
 
         // elements
-        elementAcid: `${CONFIG.BADASS.systemPath}/assets/styleable/elements/acid.html`,
-        elementCryo: `${CONFIG.BADASS.systemPath}/assets/styleable/elements/cryo.html`,
+        elementAcid: `${CONFIG.BADASS.systemPath}/assets/styleable/elements/acid.hbs`,
+        elementCryo: `${CONFIG.BADASS.systemPath}/assets/styleable/elements/cryo.hbs`,
         // Settings
         gunTypeLevel: `${CONFIG.BADASS.systemPath}/templates/settings/parts/gunTypeLevel.hbs`,
     };

@@ -4,7 +4,7 @@ import { ManufacturedSheet } from "./manufactered.mjs";
 export class GunCardSheet extends ManufacturedSheet {
     
     get template() {
-        return `systems/vtt-bunkersandbadasses/templates/item/gunCard.html`;
+        return `systems/vtt-bunkersandbadasses/templates/item/gunCard.hbs`;
     }
 
 	static get defaultOptions() {
