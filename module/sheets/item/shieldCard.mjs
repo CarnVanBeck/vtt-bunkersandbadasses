@@ -12,8 +12,8 @@ export class ShieldCardSheet extends ManufacturedSheet {
 		
 		return foundry.utils.mergeObject(options, {
             classes: ["sheet", "shield-card"],
-            width: 500,
-            height: 500,
+            width: 550,
+            height: 550,
             blockFavTab: true,
 			makeDefault: true
         });

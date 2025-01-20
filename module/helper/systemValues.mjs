@@ -16,6 +16,36 @@ export function getSystemManufacturers() {
     return game.settings.get(CONFIG.BADASS.namespace, 'manufacturers');
 }
 
+function _findGunAccuracyByType(gunList, gunType) {
+    let foundGunType = {};
+    for (let singleGunType of gunList) {
+        if(singleGunType.key === gunType) {
+            foundGunType = singleGunType;
+        }
+    }
+    return foundGunType;
+}
+
+function _findGunAccuracyByLevel(levelList, gunLevel) {
+    let foundAccuracy = {};
+    for (let accuracy of levelList) {
+        if((accuracy.start <= gunLevel)
+            & (gunLevel <= accuracy.end)) 
+        {
+            foundAccuracy = accuracy;
+        }
+    }
+    return foundAccuracy.accuracy;
+}
+
+
+export function getGunAccuracyByLevel(level, gunType) {
+    let completeGunList = game.settings.get(CONFIG.BADASS.namespace, 'gunTypes');
+    let gunList = _findGunAccuracyByType(completeGunList, gunType);
+    let accuracyList = _findGunAccuracyByLevel(gunList.levels, level);
+    return accuracyList;
+}
+
 /**
  * Filter the given unfilteredManufacturers for the given type and return the filtered
  * list.

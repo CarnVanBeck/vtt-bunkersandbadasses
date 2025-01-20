@@ -12,7 +12,14 @@
     </div>
     <div class="itemCardLvlType itemHeaderQuarter" >
         <div class="itemCardLvl" >
-            {{> optionSelector choices=levelRange name="level" selected=system.level}}
+            Level:
+            <input class="levelInput"
+                onfocus="this.select()"
+                value="{{system.level}}"
+                name="system.level"
+                type="number" data-dtype="Number"
+                min="1"
+            />
         </div>
         {{#if itemTypes}}
         <div class="itemCardType" > 

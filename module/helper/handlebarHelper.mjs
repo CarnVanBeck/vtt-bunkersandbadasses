@@ -37,7 +37,6 @@ export function registerHandlebarHelpers() {
         unequals: unequals,
         selectInArray: selectInArray,
         checkInArray: checkInArray,
-        isInArray: isInArray,
         isNumber: isNumber
     });
 }

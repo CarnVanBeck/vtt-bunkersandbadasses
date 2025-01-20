@@ -1,6 +1,10 @@
 <tr class="critHitRow">
 	<td class="accuracyLow accuracyLine">
-		{{range}}
+		{{#if high}}
+			{{low}}-{{high}}
+		{{else}}
+			{{low}}+
+		{{/if}}
 	</td>
 	<td class="hit">
 		<input class="itemCardInput"
