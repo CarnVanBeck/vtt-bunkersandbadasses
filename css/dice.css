@@ -38,6 +38,48 @@
 
 /********
  * 		*
+ *	D12	*
+ * 		*
+ ********
+ */
+
+.d12 .pentagon {
+	fill: aliceblue;
+	stroke: blue;
+	stroke-width: 3;
+	stroke-linejoin: round;
+}
+
+.d12 .diceNumber {
+	fill: gray;
+	stroke: white;
+	font-size: 7em;
+	font-weight: bold;
+}
+
+ /********
+ * 		*
+ *	D10	*
+ * 		*
+ ********
+ */
+
+.d10 .tetragon {
+	fill: aliceblue;
+	stroke: blue;
+	stroke-width: 3;
+	stroke-linejoin: round;
+}
+
+.d10 .diceNumber {
+	fill: gray;
+	stroke: white;
+	font-size: 10em;
+	font-weight: bold;
+}
+
+/********
+ * 		*
  *	D8	*
  * 		*
  ********

@@ -4,7 +4,7 @@
 	<defs>
 		<style>
 			#pistol {
-				fill: lightgrey;
+				fill: #222;
 			}
 		</style>
 	</defs>
