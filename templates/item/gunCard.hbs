@@ -15,11 +15,11 @@
 						/>
 						MOD
 					</div>
-					<table class="gunCardHitsAndCrits" >
+					<div class="gunCardHitsAndCrits" >
 						{{#each system.accuracy}}
 							{{> "gunCardHitLine" low=low high=high hitCategory="none" hits=hits crits=crits}}
 						{{/each}}
-					</table>
+					</div>
 				</div>
 				<div class="itemDataHeader" > {{localize "badass.item.gun.damage.label"}} </div>
 				<div class="gunCardDamage itemCardFlex">

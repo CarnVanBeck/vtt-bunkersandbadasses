@@ -27,27 +27,37 @@
     width: 60%;
 }
 
-.critHitRow > td.hit,
-.critHitRow > td.crit {
+.critHitRow {
+    display: flex;
+    height: 3em;
+    line-height: 3em;
+}
+
+.accuracyLine {
+    width: 10em;
+}
+
+.critHitRow > div.hit,
+.critHitRow > div.crit {
     background-size: 100%;
-    background-position-y: 50%;
+    background-position: 50%;
     background-repeat: no-repeat;
 }
 
-.critHitRow > td.hit {
+.critHitRow > div.hit {
     background-image: url(../assets/standalone/hits.svg);
-    background-size: auto 85%;
+    background-size: auto 95%;
 }
 
-.critHitRow > td.hit > input,
-.critHitRow > td.crit > input {
+.critHitRow > div.hit > input,
+.critHitRow > div.crit > input {
     height: 40px;
     width: 40px;
 }
 
-.critHitRow > td.crit {
+.critHitRow > div.crit {
     background-image: url(../assets/standalone/crits.svg);
-    background-size: auto 85%;
+    background-size: auto 95%;
 }
 
 .critHitRow > .accuracyLow,

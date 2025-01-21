@@ -1,25 +1,27 @@
-<tr class="critHitRow">
-	<td class="accuracyLow accuracyLine">
+<div class="critHitRow">
+	<div class="accuracyLine">
 		{{#if high}}
 			{{low}}-{{high}}
 		{{else}}
 			{{low}}+
 		{{/if}}
-	</td>
-	<td class="hit">
-		<input class="itemCardInput"
+	</div>
+	<div class="hit">
+		<input class="itemCardInput accuracyInput"
 			onfocus="this.select()"
-			value="{{hits}}" 
-			name="system.accuracy.{{hitCategory}}.hits"
+			value="{{hits}}"
+			data-index={{@index}}
+			data-item="hits"
 			type="number" data-dtype="Number"
 		/>
-	</td>
-	<td class="crit">
-		<input class="itemCardInput"
+	</div>
+	<div class="crit">
+		<input class="itemCardInput accuracyInput"
 			onfocus="this.select()"
 			value="{{crits}}" 
-			name="system.accuracy.{{hitCategory}}.crits"
+			data-index={{@index}}
+			data-item="crits"
 			type="number" data-dtype="Number"
 		/>
-	</td>
-</tr>
+	</div>
+</div>

@@ -56,7 +56,15 @@ export class GunCardSheet extends ManufacturedSheet {
 			"system.damage": damageDie,
 			"system.range": gunRange
 		};
-		console.log(updateJSON);
+		this.object.update(updateJSON);
+	}
+
+	updateSingleAccuracyValue(nValue, vIndex, vType) {
+		let accuracyList = this.object.system.accuracy;
+		accuracyList[vIndex][vType] = nValue;
+		let updateJSON = {
+			"system.accuracy": accuracyList,
+		};
 		this.object.update(updateJSON);
 	}
 
@@ -70,8 +78,11 @@ export class GunCardSheet extends ManufacturedSheet {
 	}
 
 	showErrorWindow(error) {
-		//ToDO: Switch to a error window or thelike
-		console.error(error);
+		ui.notifications.warn(error, {
+			permanent: true,
+			//localize: true,
+			console: true,
+		});
 	}
 
 	/** @override */
@@ -93,7 +104,13 @@ export class GunCardSheet extends ManufacturedSheet {
 		if (!this.isEditable) return;
 
 		// Roll handlers, click handlers, etc. would go here.
-
+		html.find(".accuracyInput").on('change', (event) => {
+			this.updateSingleAccuracyValue(
+				event.target.value,
+				event.target.dataset["index"],
+				event.target.dataset["item"]
+			);
+		});
 		// Active Effect management
 		html.on('click', '.effect-control', (ev) =>
 			onManageActiveEffect(ev, this.item)
