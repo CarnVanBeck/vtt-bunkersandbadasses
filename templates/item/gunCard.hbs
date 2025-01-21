@@ -26,9 +26,9 @@
 					{{#if system.damage}}
 						{{> (concat "d" (getDiceSize system.damage))}}
 					<div class="gunCardDiceMulti">
-						{{#equals 2 system.damage}}
-							x{{getDiceCount system.damage}}
-						{{/equals}}
+						{{#unequals 1 (getDiceCount system.damage)}}
+							x{{getDiceCount ../system.damage}}
+						{{/unequals}}
 					</div>
 					{{/if}}
 					<input class="itemCardInput"
