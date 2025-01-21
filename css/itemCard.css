@@ -21,6 +21,7 @@
 
 .itemCardName > input{
 	height: 1.8em;
+	text-align: center;
 }
 
 .itemCardLvlType {
@@ -35,6 +36,7 @@
 .itemLevelLabel {
 	height: 1.8em;
 	line-height: 1.8em;
+	text-align: center;
 }
 
 .itemCardType {
@@ -64,6 +66,7 @@
 .levelInput[type="Number"] {
 	height: 2em;
 	width: 100%;
+	text-align: center;
 }
 
 .itemCardInput[type="Number"] {
