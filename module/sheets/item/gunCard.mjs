@@ -40,6 +40,11 @@ export class GunCardSheet extends ManufacturedSheet {
 			]
 		}
 
+		//TODO: Remove this temporary fix
+		if(context.data.system.type == undefined) {
+			context.data.system.type = 'ptl';
+		}
+
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);
 
@@ -104,6 +109,13 @@ export class GunCardSheet extends ManufacturedSheet {
 		if (!this.isEditable) return;
 
 		// Roll handlers, click handlers, etc. would go here.
+		html.find(".prePictureSelector").on('click', (event) => {
+			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+		});
+		html.find(".pictureSelector").on('click', (event) => {
+			super.updateType(event.target.dataset["key"]);
+			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+		});
 		html.find(".accuracyInput").on('change', (event) => {
 			this.updateSingleAccuracyValue(
 				event.target.value,

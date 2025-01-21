@@ -1,0 +1,10 @@
+<div class="{{name}}PicSelector prePictureSelector" >
+    {{#each choices as | choice | }}
+        {{#equals ../selected choice.key}} 
+            <img class="prePicOption"
+                src="{{choice.icon}}" alt="{{choice.name}}" title="{{choice.name}}"
+            >
+            </img>
+        {{/equals}}
+    {{/each}}
+</div>

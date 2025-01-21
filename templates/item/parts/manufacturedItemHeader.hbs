@@ -12,18 +12,19 @@
     </div>
     <div class="itemCardLvlType itemHeaderQuarter" >
         <div class="itemCardLvl" >
-            {{localize "badass.item.gun.level.label"}}:
-            <input class="levelInput"
-                onfocus="this.select()"
-                value="{{system.level}}"
-                name="system.level"
-                type="number" data-dtype="Number"
-                min="1"
-            />
+            <div class="itemLevelLabel">
+                {{localize "badass.item.gun.level.label"}}:
+            </div>
+            <div class="itemLevelInput">
+                <input class="levelInput" onfocus="this.select()" value="{{system.level}}"
+                    name="system.level" type="number" data-dtype="Number" min="1"
+                />
+            </div>
         </div>
         {{#if itemTypes}}
         <div class="itemCardType" > 
-            {{> optionSelector choices=itemTypes name="type" selected=system.type}}
+            {{> prePicSelector choices=itemTypes name="type" selected=system.type}}
+            {{> pictureSelector choices=itemTypes name="type" selected=system.type}}
         </div>
         {{/if}}
     </div>

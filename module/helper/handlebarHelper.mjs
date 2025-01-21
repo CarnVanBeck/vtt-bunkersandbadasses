@@ -8,7 +8,10 @@ export function preloadHandlebarsTemplates() {
     const templatePaths = {
         // Item Parts
         optionSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/optionSelector.hbs`,
+        pictureSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/pictureSelector.hbs`,
+        prePicSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/prePicSelector.hbs`,
         manuItemHeader: `${CONFIG.BADASS.systemPath}/templates/item/parts/manufacturedItemHeader.hbs`,
+
         // Gun parts
         gunCardHitLine: `${CONFIG.BADASS.systemPath}/templates/item/parts/gunCardAccuracyLine.hbs`,
 

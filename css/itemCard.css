@@ -23,8 +23,47 @@
 	height: 1.8em;
 }
 
+.itemCardLvlType {
+	display: flex;
+	flex-flow: row;
+}
+
+.itemCardLvl {
+	width: 30%;
+}
+
+.itemLevelLabel {
+	height: 1.8em;
+	line-height: 1.8em;
+}
+
+.itemCardType {
+	height: 1.8em;
+	width: 67%;
+}
+
+.prePictureSelector img, 
+.pictureSelector img {
+	margin: 0em 0em 0em 0.5em;
+	height: 3.8em;
+	cursor: pointer;
+}
+
+.pictureSelector {
+	position: relative;
+	display: flex;
+	background: url(../../../ui/parchment.jpg) repeat;
+	flex-flow: column;
+	align-content: center;
+}
+
+.picNoneDisplay {
+	display: none;
+}
+
 .levelInput[type="Number"] {
-	width: 50%;
+	height: 2em;
+	width: 100%;
 }
 
 .itemCardInput[type="Number"] {
