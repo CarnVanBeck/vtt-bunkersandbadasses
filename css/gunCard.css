@@ -66,6 +66,44 @@
     width: 33%;
 }
 
+.gunCardDiceMulti {
+    font-size: 1.4em;
+    line-height: 120px;
+    height: 80px;
+}
+
+.gunCardDicePer {
+    line-height: 80px;
+    height: 100%;
+    width: 40px;
+    font-size: 12px;
+    background-image: url(../assets/standalone/hits.svg);
+    background-size: 95% auto;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    text-align: center;
+}
+
+.gunCardDicePlus {
+    line-height: 80px;
+    height: 100%;
+    width: 10px;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    left: 4px;
+    
+}
+
+.gunCardDamage > input {
+    position: relative;
+    top: calc(50% - 40px);
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    margin: 10px;
+}
+
 .gunCardRange {
     display: flex;
     padding-left: calc(50% - 40px);
@@ -79,21 +117,6 @@
     width: 30%;
 }
 
-.gunCardDiceMulti {
-    font-size: 2em;
-    line-height: 120px;
-    height: 80px;
-    width: 20%;
-}
-
-.gunCardDamage > input {
-    position: relative;
-    top: calc(50% - 40px);
-    width: 60px;
-    height: 60px;
-    font-size: 2em;
-    margin: 10px;
-}
 
 /* gunType config stuff */
 .badass .gunStats {

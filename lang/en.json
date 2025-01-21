@@ -107,6 +107,9 @@
                 "type": {
                     "label": "Type"
                 },
+                "per": {
+                    "label": "PER"
+                },
                 "accuracy": {
                     "label": "Accuracy",
                     "min": "Minimum",
