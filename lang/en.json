@@ -5,6 +5,10 @@
             "mod": {
                 "label": "MOD",
                 "hint": "To specify if something modifies something else."
+            },
+            "square": {
+                "label": "square",
+                "short": "SQ"
             }
         },
         "stats": {

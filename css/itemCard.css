@@ -40,7 +40,6 @@
 }
 
 .itemCardType {
-	height: 1.8em;
 	width: 67%;
 }
 
@@ -75,7 +74,7 @@
 }
 
 .itemDataBlock {
-	margin: 25px 0em;
+	margin: 15px 0em;
 	width: 40%;
 	flex-flow: column;
 	border: 10px solid;
@@ -83,7 +82,7 @@
 	border-image-source: url("../assets/standalone/itemCardInfoHeaderBg.svg");
 	border-image-width: 10px;
 	border-image-repeat: round;
-	padding: 10px;
+	padding: 5px;
 	align-items: center;
 }
 
@@ -101,7 +100,7 @@
 
 .itemDataHeader:nth-of-type(1) {
 	position: relative;
-	top: -30.5px;
+	top: -24.5px;
 }
 
 .itemCardPicture {
@@ -111,8 +110,41 @@
 	align-items: center;
 }
 
+.itemCardElementNotes {
+	display: flex;
+}
+
 .itemCardElements {
-	width: 20%;
+	/**
+	 * TODO: Replace when ElementPictureSelector is implemented
+	 *  	 4em;
+	 */
+	width: 7em;
+	height: 7em;
+
+}
+
+.itemCardDescription {
+	width: calc(100% - 7em);
+}
+
+.itemCardRedText {
+	color: darkred;
+	font-weight: bold;
+	display: flex;
+}
+
+.itemCardRedTextLabel,
+.itemCardBMInfoLabel {
+	/**
+	 * TODO: Replace when ElementPictureSelector is implemented
+	 *  	 4em;
+	 */
+	width: 7em;
+}
+
+.itemCardBMInfo {
+	display: flex;
 }
 
 .itemCardValue {

@@ -1,0 +1,35 @@
+<div class="itemCardElementNotes" >
+    <div class="itemCardElements" >
+        {{> optionSelector choices=elements name="element" selected=system.element}}
+    </div>
+    <div class="itemCardDescription" >
+        <input type="text" name="system.description" value="{{system.description}}">
+        {{!--editor system.description target="system.description" --}}
+    </div>
+</div>
+<div class="itemCardRedNotes" >
+    <div class="itemCardRedText" >
+        <div class="itemCardRedTextLabel">
+            {{localize "badass.item.gun.redText.label"}}
+        </div>
+        <input type="text" name="system.redText" value="{{system.redText}}">
+        {{!--editor system.redText target="system.redText" class="itemCardRedText"--}}
+    </div>
+    <div class="itemCardBMInfo" >
+        <div class="itemCardBMInfoLabel">
+            {{!--localize "badass.item.gun.redText.label"--}}
+            BM Notes
+        </div>
+        <input type="text" name="system.bmText" value="{{system.bmText}}">
+        {{!--editor system.bmText target="system.bmText" --}}
+    </div>
+</div>
+<div class="itemCardValue" >
+    <input class="itemCardInput"
+        onfocus="this.select()"
+        value="{{system.value}}"
+        name="system.value"
+        type="number" data-dtype="Number"
+    />
+    {{localize "badass.item.value.label"}}
+</div>

@@ -13,7 +13,7 @@
 							name="system.statMods.acc"
 							type="number" data-dtype="Number"
 						/>
-						MOD
+						{{localize "badass.generic.mod.label"}}
 					</div>
 					<div class="gunCardHitsAndCrits" >
 						{{#each system.accuracy}}
@@ -52,29 +52,13 @@
 						name="system.range"
 						type="number" data-dtype="Number"
 					/> 
-					<div> SQ </div>
+					<div>{{localize "badass.generic.square.short"}}</div>
 				</div>
 			</div>
 			<div class="itemCardPicture" >
 				<img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
 			</div>
 		</div>
-		<div class="gunCardElementNotes" >
-			<div class="itemCardElements" >
-				{{> optionSelector choices=elements name="element" selected=system.element}}
-			</div>
-			<div class="gunCardNotes" >
-				Lorem ipsum
-			</div>
-		</div>
-		<div class="itemCardValue" >
-			<input class="itemCardInput"
-				onfocus="this.select()"
-				value="{{system.value}}"
-				name="system.value"
-				type="number" data-dtype="Number"
-			/> 
-			Gold
-		</div>
+		{{> manuItemNotes}}
 	</div>
 </form>

@@ -15,11 +15,7 @@ export default class GunItemData extends ManufacturedItemData {
             initial: 5,
             label: 'badass.item.gun.range',
         });
-        schema.redText = new fields.DocumentIdField(foundry.documents.BaseItem, {
-            label: 'badass.item.gun.redText',
-            required: false,
-            nullable: true,
-        });
+        schema.redText = new fields.StringField({label: 'badass.item.gun.redText'});
         schema.prefix = new fields.DocumentIdField(foundry.documents.BaseItem, {
             label: 'badass.item.gun.prefix',
             required: false,

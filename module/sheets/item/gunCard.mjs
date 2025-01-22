@@ -13,7 +13,7 @@ export class GunCardSheet extends ManufacturedSheet {
 		return foundry.utils.mergeObject(options, {
             classes: ["sheet", "gun-card"],
             width: 600,
-            height: 600,
+            height: 650,
             blockFavTab: true,
 			makeDefault: true
         });

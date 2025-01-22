@@ -11,6 +11,7 @@ export function preloadHandlebarsTemplates() {
         pictureSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/pictureSelector.hbs`,
         prePicSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/prePicSelector.hbs`,
         manuItemHeader: `${CONFIG.BADASS.systemPath}/templates/item/parts/manufacturedItemHeader.hbs`,
+        manuItemNotes: `${CONFIG.BADASS.systemPath}/templates/item/parts/manufacturedItemNotes.hbs`,
 
         // Gun parts
         gunCardHitLine: `${CONFIG.BADASS.systemPath}/templates/item/parts/gunCardAccuracyLine.hbs`,
@@ -51,11 +52,11 @@ export function registerHandlebarHelpers() {
  * Handlebar Helpers;
  */
 function getDiceCount(aString) {
-    return aString.split('d')[0];
+    return Number.parseInt(aString.split('d')[0]);
 }
 
 function getDiceSize(aString) {
-    return aString.split('d')[1];
+    return Number.parseInt(aString.split('d')[1]);
 }
 
 function equals(value, key, opts) {
