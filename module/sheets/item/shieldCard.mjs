@@ -13,7 +13,7 @@ export class ShieldCardSheet extends ManufacturedSheet {
 		return foundry.utils.mergeObject(options, {
             classes: ["sheet", "shield-card"],
             width: 550,
-            height: 550,
+            height: 600,
             blockFavTab: true,
 			makeDefault: true
         });
@@ -24,6 +24,14 @@ export class ShieldCardSheet extends ManufacturedSheet {
 	getData() {
 		// Retrieve base data structure.
 		const context = super.getData();
+
+		context.shields = [{
+			description: "",
+			icon: "systems/vtt-bunkersandbadasses/assets/standalone/shield.svg",
+			key: "shd",
+			name: "shield"
+		}];
+		context.system.type = "shd";
 
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
 		context.manufacturers = getSystemShieldManufacturers();

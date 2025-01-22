@@ -86,6 +86,14 @@ export class ManufacturedSheet extends ItemSheet {
 		html.find(".typeSelector").on('change', (event) => {
 			this.updateType(event.target.selectedOptions[0].value);
 		});
+		html.find(".prePictureSelector").on('click', (event) => {
+			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+		});
+		html.find(".pictureSelector").on('click', (event) => {
+			this.updateType(event.target.dataset["key"]);
+			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+		});
+		
 		html.find(".elementSelector").on('change', (event) => {
 			this.updateElement(event.target.selectedOptions[0].value);
 		});

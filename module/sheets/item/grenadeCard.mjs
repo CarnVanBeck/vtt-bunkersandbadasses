@@ -13,7 +13,7 @@ export class GrenadeCardSheet extends ManufacturedSheet {
 		return foundry.utils.mergeObject(options, {
             classes: ["sheet", "grenade-card"],
             width: 550,
-            height: 550,
+            height: 600,
             blockFavTab: true,
 			makeDefault: true
         });
@@ -24,6 +24,14 @@ export class GrenadeCardSheet extends ManufacturedSheet {
 	getData() {
 		// Retrieve base data structure.
 		const context = super.getData();
+
+		context.grenades = [{
+			description: "",
+			icon: "systems/vtt-bunkersandbadasses/assets/standalone/grenade.svg",
+			key: "gnd",
+			name: "grenade"
+		}];
+		context.system.type = "gnd";
 
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
 		context.manufacturers = getSystemGrenadeManufacturers();

@@ -1,0 +1,44 @@
+<svg class="shieldIcon" width="400" height="400" 
+    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <style>
+            .shieldIcon {
+                --grenadeDarkGreen: #154915;
+                --grenadeMediumGreen: #17773c;
+            }
+            .shieldIcon #honigwabe {
+                stroke: var(--grenadeDarkGreen);
+                stroke-width: 8;
+                fill: var(--grenadeMediumGreen);
+            }
+            .shieldBorder {
+                stroke-width: 10;
+                stroke: var(--grenadeDarkGreen);
+                fill: url(#honigwabe);
+            }
+            .grenadeStick {
+                fill: var(--grenadeDarkGreen);
+            }
+        </style>
+        <pattern id="honigwabe" x="0" y="0" width="154" height="91" 
+            patternUnits="userSpaceOnUse" 
+            patternTransform="scale(1.2,1.2) translate(-13.5,0)"
+        >
+            <desc>Honigwabe</desc>
+            <symbol id="einzelWabe">
+                <polygon points="28,1 80,1 106,46 80,91 28,91 2,46" />
+            </symbol>
+            <use href="#einzelWabe" transform="translate(-28,0)" />
+            <use href="#einzelWabe" transform="translate(50,45)" />
+            <use href="#einzelWabe" transform="translate(50,-45)" />
+            <use href="#einzelWabe" transform="translate(126,0)" />
+        </pattern>
+    </defs>
+	<path class="shieldBorder" 
+        d="m240,100 a140,140 0,1,1 -80,0 v-20 h20 v-20 h40 v20 h20 z"
+    />
+    <path class="grenadeStick" 
+        d="m150,50 h80 q150,0 150,200 h20 q0,-220 -160,-220 h-80 z"
+    />
+</svg>

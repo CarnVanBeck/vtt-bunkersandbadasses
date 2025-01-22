@@ -1,12 +1,12 @@
-<svg id="rocketLauncher" viewBox="0 0 75 30" height="450" width="650"
+<svg class="rocketLauncher" viewBox="0 0 75 30" height="450" width="650"
 	xmlns="http://www.w3.org/2000/svg" 
 >
 	<defs>
 		<style>
-			#rocketLauncher {
-				--rocketLauncherBlack: #222;
+			.rocketLauncher {
+				--rocketLauncherBlack: #333;
 			}
-			#rocketLauncher .rLauncher {
+			.rocketLauncher .rLauncher {
 				mask: url(#cut);
 				fill: var(--rocketLauncherBlack);
 			}

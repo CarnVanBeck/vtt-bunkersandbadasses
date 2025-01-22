@@ -1,12 +1,12 @@
-<svg id="combatRifle" viewBox="0 0 75 30" height="450" width="650"
+<svg class="combatRifle" viewBox="0 0 75 30" height="450" width="650"
 	xmlns="http://www.w3.org/2000/svg" 
 >
 	<defs>
 		<style>
-			#combatRifle {
-				--combatRifleBlack: #222;
+			.combatRifle {
+				--combatRifleBlack: #333;
 			}
-			#combatRifle .cRifle {
+			.combatRifle .cRifle {
 				mask: url(#cut);
 				fill: var(--combatRifleBlack);
 			}
