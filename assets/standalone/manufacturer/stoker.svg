@@ -1,0 +1,51 @@
+<svg id="stockerIcon" width="720" height="160" viewBox="0 0 720 160"
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<style>
+			.letter {
+				fill: #333;
+			}
+			.symbol {
+
+			}
+		</style>
+		<mask id="stokerStarCutout">
+			<rect x="250" y="20" width="100" height="120" fill="white"/>
+			<path fill="black" 
+				d="m295,40 l-10,30 h-32 l26,19 l-10,30 l25,-23
+				l25,23 l-10,-30 l26,-19 h-32 z"
+			/>
+			<path fill="white" 
+				d="m295,60 l-5,15 h-16 l13,9.5 l-5,15 l12.5,-11.5
+				l12.5,11.5 l-5,-15 l13,-9.5 h-16 z"
+			/>
+		</mask>
+		<mask id="stokerRCutout">
+			<rect x="595" y="20" width="100" height="120" fill="white"/>
+			<path fill="black" 
+				d="m630,60 v15 h20 l10,-10 v-5 z"
+			/>
+		</mask>
+	</defs>
+	<rect width="720" height="160" fill="#eee"/>
+	<path id="stokerS" class="letter"
+		d="m120,20 h-100 v35 l50,50 h-50 v35 h100 v-30 l-50,-50 h50 z" 
+	/>
+	<path id="stokerT" class="letter"
+		d="m235,20 h-100 v35 h33 v85 h34 v-85 h33 z" 
+	/>
+	<path id="stokerO" class="letter" mask="url(#stokerStarCutout)"
+		d="m350,20 h-100 v120 h100 z" 
+	/>
+	<path id="stokerK" class="letter"
+		d="m465,20 h-35 v30 l-10,10 h-20 v-40 h-35 v120
+			h35 v-40 h20 l10,10 v30 h35 v-50 l-10,-10 l10,-10 z" 
+	/>
+	<path id="stokerE" class="letter"
+		d="m580,20 h-100 v50 l10,10 l-10,10 v50 h100 v-40 h-60 l20,-20 l-20,-20 h60 z" 
+	/>
+	<path id="stokerR" class="letter" mask="url(#stokerRCutout)"
+		d="m695,20 h-100 v120 h35 v-30 h20 l10,10 v20 h35 v-40 l-10,-10 l10,-10" 
+	/>
+</svg>

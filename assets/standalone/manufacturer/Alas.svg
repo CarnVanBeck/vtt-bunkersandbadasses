@@ -1,0 +1,35 @@
+<svg id="alasIcon" width="500" height="160" viewBox="0 0 500 160"
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<style>
+			.letter {
+				fill: #333;
+			}
+			.symbol {
+
+			}
+		</style>
+		<symbol id="alasA">
+			<path
+				d="m80,20 l60,120 h-20 l-40,-80 l-30,60 h50 l10,20 h-90 z"
+			/>
+		</symbol>
+	</defs>
+	<rect width="500" height="160" fill="#eee"/>
+	<use href="#alasA" class="letter" ></use>
+	<path id="alasL" class="letter"
+		d="m150,20 h20 v100 h30 l-10,20 h-40" 
+	/>
+	<use href="#alasA" class="letter" transform="translate(180,0)"></use>
+	<path id="alasS" class="letter"
+		d="m380,20 h-50 q-35,0 -35,35 q0,35 35,35 
+			h25 q15,0 15,15 q0,15 -15,15 h-35 l10,20
+			h25 q35,0 35,-35 q0,-35 -35,-35 
+			h-25 q-15,0 -15,-15 q0,-15 15,-15 h50 z"
+	/>
+	<g id="alasExclamation" class="letter">
+		<rect x="400" y="20" width="20" height="90"/>
+		<rect x="400" y="120" width="20" height="20"/>
+	</g>
+</svg>
