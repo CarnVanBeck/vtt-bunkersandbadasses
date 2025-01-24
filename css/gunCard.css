@@ -26,8 +26,9 @@
 
 .gunCardModText {
     position: relative;
-    top: -0.25em;
+    top: -0.75em;
     margin-bottom: -1em;
+    text-align: center;
 }
 
 .gunCardHitsAndCrits {
@@ -71,6 +72,14 @@
 .critHitRow > .accuracyMid,
 .critHitRow > .accuracyHigh {
     width: 33%;
+}
+
+.itemCardPicture {
+	height: 320px;
+}
+
+.itemCardPicture > img {
+	height: inherit;
 }
 
 .gunCardDiceMulti {

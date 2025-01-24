@@ -23,8 +23,8 @@
         </div>
         {{#if itemTypes}}
         <div class="itemCardType" > 
-            {{> prePicSelector choices=itemTypes name="type" selected=system.type}}
-            {{> pictureSelector choices=itemTypes name="type" selected=system.type}}
+            {{> prePicSelector choices=itemTypes name="type" selected=system.type descriptor=true}}
+            {{> pictureSelector choices=itemTypes name="type" selected=system.type descriptor=true}}
         </div>
         {{/if}}
     </div>

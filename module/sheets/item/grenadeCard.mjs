@@ -29,7 +29,7 @@ export class GrenadeCardSheet extends ManufacturedSheet {
 			description: "",
 			icon: "systems/vtt-bunkersandbadasses/assets/standalone/grenade.svg",
 			key: "gnd",
-			name: "grenade"
+			name: "Grenade"
 		}];
 		context.system.type = "gnd";
 

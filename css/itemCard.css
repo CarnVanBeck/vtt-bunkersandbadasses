@@ -60,6 +60,16 @@
 	align-content: center;
 }
 
+.typeText {
+	position: relative;
+	height: 0px;
+	font-size: 10px;
+	bottom: 18px;
+	left: 8px;
+	color: black;
+	pointer-events: none;
+}
+
 .picNoneDisplay {
 	display: none;
 }

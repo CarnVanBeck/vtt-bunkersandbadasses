@@ -5,6 +5,11 @@
                 src="{{choice.icon}}" alt="{{choice.name}}" title="{{choice.name}}"
             >
             </img>
+            {{#if ../../descriptor}}
+            <div class="typeText">
+                {{choice.name}}
+            </div>
+            {{/if}}
         {{/equals}}
     {{/each}}
 </div>

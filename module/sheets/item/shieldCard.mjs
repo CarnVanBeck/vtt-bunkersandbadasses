@@ -29,7 +29,7 @@ export class ShieldCardSheet extends ManufacturedSheet {
 			description: "",
 			icon: "systems/vtt-bunkersandbadasses/assets/standalone/shield.svg",
 			key: "shd",
-			name: "shield"
+			name: "Shield"
 		}];
 		context.system.type = "shd";
 
