@@ -76,7 +76,7 @@
 }
 
 .itemDataBlock {
-	margin: 15px 0em;
+	margin: 15px 0em 5px 0em;
 	width: 40%;
 	flex-flow: column;
 	border: 10px solid;

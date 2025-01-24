@@ -13,7 +13,7 @@ export class GunCardSheet extends ManufacturedSheet {
 		return foundry.utils.mergeObject(options, {
             classes: ["sheet", "gun-card"],
             width: 600,
-            height: 650,
+            height: 600,
             blockFavTab: true,
 			makeDefault: true
         });
@@ -31,7 +31,7 @@ export class GunCardSheet extends ManufacturedSheet {
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
 		context.manufacturers = getSystemGunManufacturers();
 
-		// set default if no accuracy is present
+		// Fallback: Set default if no accuracy is present
 		if(context.data.system.accuracy.length == 0) {
 			context.data.system.accuracy = [
 				{low: 2, high: 7, hits: 0, crits: 0},
@@ -95,7 +95,8 @@ export class GunCardSheet extends ManufacturedSheet {
 		let gunType = this.getData().data.system.type
 		let gunLevelData = getGunAccuracyByLevel(newLevel, gunType);
 		if(gunLevelData == undefined) {
-			this.showErrorWindow("It seems there exists no data for level: " + newLevel + " and type: " + gunType );
+			let gunTypeName = this.getData().gunTypes.find((value, index, array) => {return (gunType == value.key)}).name;
+			this.showErrorWindow("It seems there exists no data for a " + gunTypeName + " of level: " + newLevel);
 			return;
 		}
 		this.updateLevelAndGunSpecifics(newLevel, gunLevelData);
