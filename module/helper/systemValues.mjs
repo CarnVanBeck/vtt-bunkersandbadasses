@@ -70,7 +70,7 @@ export function getSystemShieldManufacturers() {
 }
 
 export function getSystemGrenadeManufacturers() {
-    let manufacturerType = "grenade";
+    let manufacturerType = "grenadeMod";
     return _filterManufacturersByType(getSystemManufacturers(), manufacturerType);
 }
 

@@ -35,7 +35,7 @@ export class GrenadeCardSheet extends ManufacturedSheet {
 
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
 		context.manufacturers = getSystemGrenadeManufacturers();
-
+		
 		// Prepare active effects for easier access
 		//context.effects = prepareActiveEffectCategories(this.item.effects);
 

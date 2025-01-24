@@ -1,3 +1,23 @@
+{{!-- build clickable item for selected choice --}}
+<div class="{{name}}PicSelector prePictureSelector" >
+    {{#each choices as | choice | }}
+        {{#equals ../selected choice.key}} 
+            <img class="prePicOption"
+                src="{{choice.icon}}" alt="{{choice.name}}" title="{{choice.name}}"
+            >
+            </img>
+            {{#if ../../descriptor}}
+            <div class="typeText">
+                {{choice.name}}
+            </div>
+            {{/if}}
+        {{/equals}}
+    {{/each}}
+    {{#unless selected}}
+        <img class="prePicOption" alt="Select {{name}} !" title="Select {{name}} !">
+    {{/unless}}
+</div>
+{{!-- build clickable item for all items in list --}}
 <div class="{{name}}PicSelector pictureSelector picNoneDisplay" >
     {{#each choices as | choice | }}
         {{#if choice.icon}}

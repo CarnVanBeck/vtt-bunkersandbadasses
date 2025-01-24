@@ -1,10 +1,10 @@
 <div class="itemCardHeader itemCardFlex" >
     <div class="itemCardManRar itemHeaderQuarter" >
         <div class="itemCardManufacturer">
-            {{> optionSelector choices=manufacturers name="manufacturer" selected=system.manufacturer.name}}
+            {{> pictureSelector choices=manufacturers name="manufacturer" selected=system.manufacturer.name}}
         </div>
         <div class="itemCardRarity">
-            {{> optionSelector choices=rarities name="rarity" selected=system.rarity}}
+            {{> pictureSelector choices=rarities name="rarity" selected=system.rarity descriptor=true}}
         </div>
     </div>
     <div class="itemCardName" >
@@ -23,7 +23,6 @@
         </div>
         {{#if itemTypes}}
         <div class="itemCardType" > 
-            {{> prePicSelector choices=itemTypes name="type" selected=system.type descriptor=true}}
             {{> pictureSelector choices=itemTypes name="type" selected=system.type descriptor=true}}
         </div>
         {{/if}}

@@ -29,6 +29,7 @@
     top: -0.75em;
     margin-bottom: -1em;
     text-align: center;
+    z-index: 1;
 }
 
 .gunCardHitsAndCrits {

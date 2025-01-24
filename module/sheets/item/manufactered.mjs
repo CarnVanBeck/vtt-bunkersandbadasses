@@ -18,6 +18,9 @@ export class ManufacturedSheet extends ItemSheet {
 		context.flags = itemData.flags;
 		context.rarities = getSystemRarities();
 		context.elements = getSystemElements();
+		if(!context.data.system.rarity) {
+			context.data.system.rarity = context.rarities[0].key;
+		}
 
 		return context;
 	}
@@ -67,6 +70,10 @@ export class ManufacturedSheet extends ItemSheet {
 		this.object.update(updateJSON);
 	}
 
+	validateKeyInList(manufacturerList, key) {
+		return (manufacturerList.find((value, index, array) => {return (key == value.key)}) != undefined);
+	}
+
 	/** @override */
 	activateListeners(html) {
 		super.activateListeners(html);
@@ -74,26 +81,24 @@ export class ManufacturedSheet extends ItemSheet {
 		// Everything below here is only needed if the sheet is editable
 		if (!this.isEditable) return;
 
-		html.find(".manufacturerSelector").on('change', (event) => {
-			this.updateManufaturer(event.target.selectedOptions[0].value);
-		});
-		html.find(".raritySelector").on('change', (event) => {
-			this.updateRarity(event.target.selectedOptions[0].value);
-		});
 		html.find(".levelInput").on('change', (event) => {
 			this.updateLevel(event.target.value);
-		});
-		html.find(".typeSelector").on('change', (event) => {
-			this.updateType(event.target.selectedOptions[0].value);
 		});
 		html.find(".prePictureSelector").on('click', (event) => {
 			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
 		});
-		html.find(".pictureSelector").on('click', (event) => {
+		html.find(".typePicOption").on('click', (event) => {
 			this.updateType(event.target.dataset["key"]);
 			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
 		});
-		
+		html.find(".manufacturerPicOption").on('click', (event) => {
+			this.updateManufaturer(event.target.dataset["key"]);
+			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+		})
+		html.find(".rarityPicOption").on('click', (event) => {
+			this.updateRarity(event.target.dataset["key"]);
+			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+		})
 		html.find(".elementSelector").on('change', (event) => {
 			this.updateElement(event.target.selectedOptions[0].value);
 		});

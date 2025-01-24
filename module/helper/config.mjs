@@ -79,11 +79,11 @@ export function getDefaultGunTypes() {
 }
 
 export function getDefaultRarities() {
-    let common = { name: 'common', key: 'common' };
-    let uncommon = { name: 'uncommon', key: 'uncommon' };
-    let rare = { name: 'rare', key: 'rare' };
-    let epic = { name: 'epic', key: 'epic' };
-    let legendary = { name: 'legendary', key: 'legendary' };
+    let common = { name: 'common', key: 'common', icon: "systems/vtt-bunkersandbadasses/assets/standalone/rarity/common.svg"};
+    let uncommon = { name: 'uncommon', key: 'uncommon', icon: "systems/vtt-bunkersandbadasses/assets/standalone/rarity/uncommon.svg" };
+    let rare = { name: 'rare', key: 'rare', icon: "systems/vtt-bunkersandbadasses/assets/standalone/rarity/rare.svg" };
+    let epic = { name: 'epic', key: 'epic', icon: "systems/vtt-bunkersandbadasses/assets/standalone/rarity/epic.svg" };
+    let legendary = { name: 'legendary', key: 'legendary', icon: "systems/vtt-bunkersandbadasses/assets/standalone/rarity/legendary.svg" };
     return [common, uncommon, rare, epic, legendary];
 }
 

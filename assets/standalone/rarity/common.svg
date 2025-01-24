@@ -1,0 +1,12 @@
+<svg id="common" width="150" height="15" viewBox="0 0 150 15"
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<style>
+			.commonBg {
+				fill: #eee;
+			}
+		</style>
+	</defs>
+	<rect class="commonBg" width="150" height="15"/>
+</svg>

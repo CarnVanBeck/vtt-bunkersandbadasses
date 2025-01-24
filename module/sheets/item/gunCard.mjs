@@ -40,8 +40,8 @@ export class GunCardSheet extends ManufacturedSheet {
 			]
 		}
 
-		//TODO: Remove this temporary fix
-		if(context.data.system.type == undefined) {
+		//Fallback to a default type if no or nonevalid present
+		if(super.validateKeyInList(context.gunTypes, context.type) ) {
 			context.data.system.type = 'ptl';
 		}
 
