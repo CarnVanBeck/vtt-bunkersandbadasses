@@ -1,0 +1,48 @@
+<svg class="d12" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+	<defs>
+		<style>
+			.d12 .pentagon {
+				fill: aliceblue;
+				stroke: blue;
+				stroke-width: 3;
+				stroke-linejoin: round;
+			}
+			
+			.d12 .diceNumber {
+				fill: gray;
+				stroke: white;
+				font-size: 9em;
+				font-weight: bold;
+			}
+		</style>
+	</defs>
+	<path class="pentagon"
+		d="m150,120 l0,120 l96,48 l96,-72 l-60,-120 z"	
+	>
+	</path>
+	<path class="pentagon"
+		d="m150,120 l0,120 l-72,24 l-36,-84 l60,-96 z"	
+	>
+	</path>
+	<path class="pentagon"
+		d="m150,120 l-48,-36 l72,-36 l84,12 l24,36 z"	
+	>
+	</path>
+	<path class="pentagon"
+		d="m150,240 l96,48 l-36,48 l-72,0 l-60,-72 z"	
+	>
+	</path>
+	<path class="pentagon"
+		d="m246,288 l-36,48 l72,-36 l72,-72 l-12,-12 z"	
+	>
+	</path>
+	<path class="pentagon"
+		d="m354,228 l-12,-12 l-60,-120 l-24,-36 l60,60 z"	
+	>
+	</path>
+	<text class="diceNumber"
+		x="206" y="85" stroke="aliceblue"
+		transform="rotate(26) translate(10,30)" >
+		12
+	</text>
+</svg>

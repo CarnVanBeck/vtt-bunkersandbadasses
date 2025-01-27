@@ -1,0 +1,42 @@
+<svg class="d10" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+	<defs>
+		<style>
+			.d10 .tetragon {
+				fill: aliceblue;
+				stroke: blue;
+				stroke-width: 3;
+				stroke-linejoin: round;
+			}
+
+			.d10 .diceNumber {
+				fill: gray;
+				stroke: white;
+				font-size: 10em;
+				font-weight: bold;
+			}
+		</style>
+	</defs>
+	<path class="tetragon"
+		d="m350,100 l-220,-20 l-40,40 l40,40z"	
+	>
+	</path>
+	<path class="tetragon"
+		d="m350,100 l-220,60 l30,90 l100,50z"	
+	>
+	</path>
+	<path class="tetragon"
+		d="m350,100 l-90,200 l30,60 l60,-60z"	
+	>
+	</path>
+	<path class="tetragon"
+		d="m60,350 l30,-230 l40,40 l30,90 z">
+	</path>
+	<path class="tetragon"
+		d="m60,350 l100,-100 l100,50 l30,60z">
+	</path>
+	<text class="diceNumber"
+		x="180" y="60" 
+		transform="rotate(50) translate(75,-50)" >
+		0
+	</text>
+</svg>

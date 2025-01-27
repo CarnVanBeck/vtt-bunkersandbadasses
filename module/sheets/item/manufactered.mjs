@@ -94,11 +94,11 @@ export class ManufacturedSheet extends ItemSheet {
 		html.find(".manufacturerPicOption").on('click', (event) => {
 			this.updateManufaturer(event.target.dataset["key"]);
 			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
-		})
+		});
 		html.find(".rarityPicOption").on('click', (event) => {
 			this.updateRarity(event.target.dataset["key"]);
 			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
-		})
+		});
 		html.find(".elementSelector").on('change', (event) => {
 			this.updateElement(event.target.selectedOptions[0].value);
 		});

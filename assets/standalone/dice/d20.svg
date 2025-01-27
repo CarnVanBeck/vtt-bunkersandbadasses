@@ -1,0 +1,99 @@
+<svg class="d20" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="400" height="400">
+	<defs>
+		<style>
+			.d20 {
+				--diceBlue : #3030ff;
+				--diceLine : rgba(125,125,255,0.4);
+				--diceTransparent : rgba(200,200,200,0.3);
+			}
+
+			.d20 .triangle {
+				stroke: var(--diceLine, beige);
+				stroke-width: 3;
+				stroke-linejoin: round;
+			}
+
+			.d20 .triangle:nth-child(3n) {
+				fill: url(#blueCloud1);
+			}
+
+			.d20 .triangle:nth-child(3n + 1) {
+				fill: url(#blueCloud2);
+			}
+
+			.d20 .triangle:nth-child(3n + 2) {
+				fill: url(#blueCloud3);
+			}
+
+			.d20 .diceNumber {
+				fill: white;
+				stroke: white;
+				font-size: 6em;
+				font-weight: bold;
+			}
+		</style>
+		<linearGradient id="blueCloud1" x1="20%" x2="80%" y1="40%" y2="65%">
+			<stop offset="30%" stop-color="var(--diceBlue, blue)" />
+			<stop offset="100%" stop-color="var(--diceTransparent, transparent)" />
+		</linearGradient>
+		<linearGradient id="blueCloud2" x1="80%" x2="10%" y1="0%" y2="65%">
+			<stop offset="30%" stop-color="var(--diceBlue, blue)" />
+			<stop offset="100%" stop-color="var(--diceTransparent, transparent)" />
+		</linearGradient>
+		<linearGradient id="blueCloud3" x1="20%" x2="70%" y1="60%" y2="15%">
+			<stop offset="10%" stop-color="var(--diceBlue, blue)" />
+			<stop offset="100%" stop-color="var(--diceTransparent, transparent)" />
+		</linearGradient>
+
+	</defs>
+	<path class="triangle"
+		d="m165,5 l185,115 l-215,65 z"
+	>
+	</path>
+	<path class="triangle"
+		d="m165,5 l185,115 l-15,-60 z"
+	>
+	</path>
+	<path class="triangle"
+		d="m165,5 l-30,180 l-128,-25 z"
+	>
+	</path>
+	<path class="triangle"
+		d="m135,185 l-48,185 l-80,-210 z"
+	>
+	</path>
+	<path class="triangle"
+		d="m135,185 l160,180 l-208,5 z"
+	>
+	</path>
+	<path class="triangle"
+		d="m135,185 l160,180 l55,-245 z"
+	>
+	</path>
+	<path class="triangle"
+		d="m135,185 l160,180 l55,-245 z"
+	>
+	</path>
+	<path class="triangle"
+		d="m350,120 l65,130 l-80,-190 z"
+	>
+	</path>
+	<path class="triangle"
+		d="m350,120 l65,130 l-120,115 z"
+	>
+	</path>
+	<path class="triangle"
+		d="m295,365 l-35,30 l-172,-25 z"
+	>
+	</path>
+
+	<text class="diceNumber"
+		x="180" y="60" 
+		transform="rotate(-17) translate(-58,140)" >
+		20
+	</text>
+	<text class="diceNumber"
+		x="100" y="60" 
+		transform="rotate(-100) translate(-280,50)" >
+	</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg class="d8" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+	<defs>
+		<style>
+			.d8 .triangle {
+				fill: aliceblue;
+				stroke: blue;
+				stroke-width: 3;
+				stroke-linejoin: round;
+			}
+
+			.d8 .diceNumber {
+				fill: gray;
+				stroke: white;
+				font-size: 10em;
+				font-weight: bold;
+			}
+		</style>
+	</defs>
+	<path class="triangle"
+		d="m255,240 l-25,-200 l-180,140  z"	
+	>
+	</path>
+    <path class="triangle"
+		d="m255,240 l-25,-200 l100,200 z"	
+	>
+	</path>
+    <path class="triangle"
+		d="m255,240 l-115,110 l190,-110 z"	
+	>
+	</path>
+    <path class="triangle"
+		d="m255,240 l-115,110 l-90,-170 z"	
+	>
+	</path>
+	<text class="diceNumber"
+		x="186" y="70" 
+		transform="rotate(18) translate(-10,70)" >
+		8
+	</text>
+</svg>

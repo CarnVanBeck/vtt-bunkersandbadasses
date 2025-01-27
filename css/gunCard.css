@@ -79,8 +79,19 @@
 	height: 320px;
 }
 
-.itemCardPicture > img {
-	height: inherit;
+.gunCardDamageDie {
+    height: 80px;
+}
+
+.damageDiePicSelector {
+    height: 2.5em;
+    width: 2.5em;
+}
+
+.damageDiePicSelector.prePictureSelector,
+.damageDiePicSelector.pictureSelector > * {
+    height: 80px;
+    width: 80px;
 }
 
 .gunCardDiceMulti {
@@ -119,6 +130,10 @@
     height: 60px;
     font-size: 2em;
     margin: 10px;
+}
+
+.itemCardPicture > img {
+	height: inherit;
 }
 
 .gunCardRange {

@@ -25,8 +25,13 @@
 				</div>
 				<div class="itemDataHeader" > {{localize "badass.item.gun.damage.label"}} </div>
 				<div class="gunCardDamage itemCardFlex">
+					<div class="gunCardDamageDie">
 					{{#if system.damage}}
-						{{> (concat "d" (getDiceSize system.damage))}}
+						{{!--
+							{{> (concat "d" (getDiceSize system.damage))}}
+						--}}
+						{{> pictureSelector choices=dice name="damageDie" selected=(concat "d" (getDiceSize system.damage))}}
+					</div>
 					<div class="gunCardDiceMulti">
 						{{#unequals 1 (getDiceCount system.damage)}}
 							x{{getDiceCount ../system.damage}}

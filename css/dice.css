@@ -1,3 +1,10 @@
+svg {
+	--diceColor: aliceblue;
+	--diceStroke: blue;
+	--diceNumberColor: gray;
+	--diceNumberStroke: white;
+}
+
 /********
  * 		*
  *	D20	*
@@ -5,7 +12,7 @@
  ********
  */
 
- .d20 {
+.d20 {
 	--diceBlue : #3030ff;
 	--diceLine : rgba(125,125,255,0.4);
 	--diceTransparent : rgba(200,200,200,0.3);
@@ -44,15 +51,15 @@
  */
 
 .d12 .pentagon {
-	fill: aliceblue;
-	stroke: blue;
+	fill: var(--diceColor);
+	stroke: var(--diceStroke);
 	stroke-width: 3;
 	stroke-linejoin: round;
 }
 
 .d12 .diceNumber {
-	fill: gray;
-	stroke: white;
+	fill: var(--diceNumberColor);
+	stroke: var(--diceNumberStroke);
 	font-size: 7em;
 	font-weight: bold;
 }
@@ -65,15 +72,15 @@
  */
 
 .d10 .tetragon {
-	fill: aliceblue;
-	stroke: blue;
+	fill: var(--diceColor);
+	stroke: var(--diceStroke);
 	stroke-width: 3;
 	stroke-linejoin: round;
 }
 
 .d10 .diceNumber {
-	fill: gray;
-	stroke: white;
+	fill: var(--diceNumberColor);
+	stroke: var(--diceNumberStroke);
 	font-size: 10em;
 	font-weight: bold;
 }
@@ -86,15 +93,15 @@
  */
 
 .d8 .triangle {
-	fill: aliceblue;
-	stroke: blue;
+	fill: var(--diceColor);
+	stroke: var(--diceStroke);
 	stroke-width: 3;
 	stroke-linejoin: round;
 }
 
 .d8 .diceNumber {
-	fill: gray;
-	stroke: white;
+	fill: var(--diceNumberColor);
+	stroke: var(--diceNumberStroke);
 	font-size: 10em;
 	font-weight: bold;
 }
@@ -107,15 +114,15 @@
  */
  
 .d6 .quadrat {
-	fill: aliceblue;
-	stroke: blue;
+	fill: var(--diceColor);
+	stroke: var(--diceStroke);
 	stroke-width: 3;
 	stroke-linejoin: round;
 }
 
 .d6 .diceNumber {
-	fill: gray;
-	stroke: white;
+	fill: var(--diceNumberColor);
+	stroke: var(--diceNumberStroke);
 	font-size: 10em;
 	font-weight: bold;
 }
@@ -128,15 +135,15 @@
  */
  
 .d4 .triangle {
-	fill: aliceblue;
-	stroke: blue;
+	fill: var(--diceColor);
+	stroke: var(--diceStroke);
 	stroke-width: 3;
 	stroke-linejoin: round;
 }
 
 .d4 .diceNumber {
-	fill: gray;
-	stroke: white;
+	fill: var(--diceNumberColor);
+	stroke: var(--diceNumberStroke);
 	font-size: 10em;
 	font-weight: bold;
 }

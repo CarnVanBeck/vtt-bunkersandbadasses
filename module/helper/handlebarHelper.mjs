@@ -59,7 +59,7 @@ function getDiceSize(aString) {
 }
 
 function equals(value, key, opts) {
-    if (value === key) {
+    if (value == key) {
         return opts.fn();
     } else {
         return opts.inverse();
@@ -67,7 +67,7 @@ function equals(value, key, opts) {
 }
 
 function unequals(value, key, opts) {
-    if (value === key) {
+    if (value == key) {
         return opts.inverse();
     } else {
         return opts.fn();

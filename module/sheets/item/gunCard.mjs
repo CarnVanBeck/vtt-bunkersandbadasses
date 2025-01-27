@@ -1,4 +1,4 @@
-import { getSystemGunTypes, getSystemGunManufacturers, getGunAccuracyByLevel } from "../../helper/systemValues.mjs";
+import { getSystemGunTypes, getSystemGunManufacturers, getGunAccuracyByLevel, getSystemDice } from "../../helper/systemValues.mjs";
 import { ManufacturedSheet } from "./manufactered.mjs";
 
 export class GunCardSheet extends ManufacturedSheet {
@@ -30,6 +30,8 @@ export class GunCardSheet extends ManufacturedSheet {
 		
 		//context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
 		context.manufacturers = getSystemGunManufacturers();
+
+		context.dice = getSystemDice();
 
 		// Fallback: Set default if no accuracy is present
 		if(context.data.system.accuracy.length == 0) {
@@ -69,6 +71,14 @@ export class GunCardSheet extends ManufacturedSheet {
 		accuracyList[vIndex][vType] = nValue;
 		let updateJSON = {
 			"system.accuracy": accuracyList,
+		};
+		this.object.update(updateJSON);
+	}
+
+	updateDie(damageDie) {
+		let damage =  "1" + damageDie;
+		let updateJSON = {
+			"system.damage": damage
 		};
 		this.object.update(updateJSON);
 	}
@@ -117,6 +127,10 @@ export class GunCardSheet extends ManufacturedSheet {
 				event.target.dataset["item"]
 			);
 		});
+		html.find(".damageDiePicOption").on('click', (event) => {
+			this.updateDie(event.target.dataset["key"]);
+			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+		})
 		// Active Effect management
 		html.on('click', '.effect-control', (ev) =>
 			onManageActiveEffect(ev, this.item)
