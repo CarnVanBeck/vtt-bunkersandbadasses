@@ -11,17 +11,17 @@
 			.d4 .diceNumber {
 				fill: gray;
 				stroke: white;
-				font-size: 10em;
+				font-size: 12em;
 				font-weight: bold;
 			}
 		</style>
 	</defs>
 	<path class="triangle"
-		d="m90,350 l50,-250 l150,200 z"	
+		d="m100,350 l60,-300 l180,240 z"	
 	>
 	</path>
 	<path class="triangle"
-		d="m90,350 l50,-250 l-75,200 z"	
+		d="m100,350 l60,-300 l-90,240 z"	
 	>
 	</path>
 	<text class="diceNumber"

@@ -3,11 +3,11 @@
 >
 	<defs>
 		<style>
+			.manufacturerBg {
+				fill: #eee;
+			}
 			.letter {
 				fill: #333;
-			}
-			.symbol {
-
 			}
 		</style>
 		<mask id="stokerStarCutout">
@@ -28,7 +28,7 @@
 			/>
 		</mask>
 	</defs>
-	<rect width="720" height="160" fill="#eee"/>
+	<rect class="manufacturerBg" width="720" height="160" />
 	<path id="stokerS" class="letter"
 		d="m120,20 h-100 v35 l50,50 h-50 v35 h100 v-30 l-50,-50 h50 z" 
 	/>

@@ -3,6 +3,12 @@
 >
 	<defs>
 		<style>
+			.manufacturerBg {
+				fill: #eee;
+			}
+			.letter {
+				fill: #333;
+			}
 			.letterText {
 				fill: #333;
 				font-size: 140px;

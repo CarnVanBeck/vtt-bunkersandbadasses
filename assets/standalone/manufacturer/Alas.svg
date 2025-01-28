@@ -3,11 +3,11 @@
 >
 	<defs>
 		<style>
+			.manufacturerBg {
+				fill: #eee;
+			}
 			.letter {
 				fill: #333;
-			}
-			.symbol {
-
 			}
 		</style>
 		<symbol id="alasA">
@@ -16,7 +16,7 @@
 			/>
 		</symbol>
 	</defs>
-	<rect width="500" height="160" fill="#eee"/>
+	<rect class="manufacturerBg" width="500" height="160"/>
 	<use href="#alasA" class="letter" ></use>
 	<path id="alasL" class="letter"
 		d="m150,20 h20 v100 h30 l-10,20 h-40" 
