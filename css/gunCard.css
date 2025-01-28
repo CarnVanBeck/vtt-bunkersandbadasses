@@ -96,8 +96,23 @@
 
 .gunCardDiceMulti {
     font-size: 1.4em;
-    line-height: 120px;
-    height: 80px;
+    line-height: 24px;
+    height: 20px;
+    display: flex;
+    margin: 50px 0px 0px 0px;
+    position: relative;
+    left: -16px;
+    width: 0px;
+}
+
+.gunCardDiceMultiInput[type="number"] {
+    height: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.gunCardSingleDice {
+    color: #333 !important;
 }
 
 .gunCardDicePer {

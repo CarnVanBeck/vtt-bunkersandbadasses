@@ -75,8 +75,8 @@ export class GunCardSheet extends ManufacturedSheet {
 		this.object.update(updateJSON);
 	}
 
-	updateDie(damageDie) {
-		let damage =  "1" + damageDie;
+	updateDie(damageDie, dieCount) {
+		let damage =  dieCount + damageDie;
 		let updateJSON = {
 			"system.damage": damage
 		};
@@ -128,8 +128,16 @@ export class GunCardSheet extends ManufacturedSheet {
 			);
 		});
 		html.find(".damageDiePicOption").on('click', (event) => {
-			this.updateDie(event.target.dataset["key"]);
+			let dieCount = this.object.system.damage.split("d")[0];
+			let dieValue = event.target.dataset["key"];
+			this.updateDie(dieValue, dieCount);
 			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+		})
+		html.find(".gunCardDiceMultiInput").on('change', (event) => {
+			let delimiter = "d";
+			let dieCount = event.target.value;
+			let dieValue = delimiter + this.object.system.damage.split(delimiter)[1];
+			this.updateDie(dieValue, dieCount);
 		})
 		// Active Effect management
 		html.on('click', '.effect-control', (ev) =>

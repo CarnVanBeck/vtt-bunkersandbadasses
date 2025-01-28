@@ -26,7 +26,7 @@
 	</path>
 	<text class="diceNumber"
 		x="180" y="60" 
-		transform="rotate(-14) translate(-115,270)" >
+		transform="rotate(-14) translate(-105,270)" >
 		4
 	</text>
 </svg>

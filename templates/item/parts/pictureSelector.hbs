@@ -20,13 +20,13 @@
 {{!-- build clickable item for all items in list --}}
 <div class="{{name}}PicSelector pictureSelector picNoneDisplay" >
     {{#each choices as | choice | }}
-        {{#if choice.icon}}
+        {{#if choice.icon includeZero=false}}
             <img class="{{../name}}PicOption PicOption {{../name}}PicOption{{choice.key}}"
                 src="{{choice.icon}}" alt="{{choice.name}}" title="{{choice.name}}" data-key="{{choice.key}}"
             >
             </img>
         {{else}}
-            <div data-key="{{choice.key}}">
+            <div class="PicOption {{../name}}{{choice.key}}" data-key="{{choice.key}}">
                 {{choice.name}}
             </div>
         {{/if}}

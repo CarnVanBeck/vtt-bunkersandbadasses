@@ -9,29 +9,14 @@
 
 					</div>
 					<div class="shieldCapacityData itemCardFlex">
-						<input class="itemCardInput"
-							onfocus="this.select()"
-							value="{{system.current}}"
-							name="system.current"
-							type="number" data-dtype="Number"
-						/>
+						{{> stdInput inputClass="itemCardInput" inputValue=system.current inputName="system.current"}}
 						/
-						<input class="itemCardInput"
-							onfocus="this.select()"
-							value="{{system.max}}"
-							name="system.max"
-							type="number" data-dtype="Number"
-						/>
+						{{> stdInput inputClass="itemCardInput" inputValue=system.max inputName="system.max"}}
 					</div>
 				</div>
 				<div class="itemDataHeader" > REGEN </div>
-				<div class="shieldRegen"> 
-					<input class="itemCardInput"
-						onfocus="this.select()"
-						value="{{system.regen}}"
-						name="system.regen"
-						type="number" data-dtype="Number"
-					/> 	
+				<div class="shieldRegen">
+					{{> stdInput inputClass="itemCardInput" inputValue=system.regen inputName="system.regen"}}
 				</div>
 			</div>
 			<div class="itemCardPicture" >

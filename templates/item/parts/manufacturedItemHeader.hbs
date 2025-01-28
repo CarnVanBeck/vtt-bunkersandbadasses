@@ -16,9 +16,7 @@
                 {{localize "badass.item.gun.level.label"}}:
             </div>
             <div class="itemLevelInput">
-                <input class="levelInput" onfocus="this.select()" value="{{system.level}}"
-                    name="system.level" type="number" data-dtype="Number" min="1"
-                />
+                {{> stdInput inputClass="itemCardInput" inputValue=system.level inputName="system.level"}}
             </div>
         </div>
         {{#if itemTypes}}
