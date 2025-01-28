@@ -18,9 +18,6 @@ export class ManufacturedSheet extends ItemSheet {
 		context.flags = itemData.flags;
 		context.rarities = getSystemRarities();
 		context.elements = getSystemElements();
-		if(!context.data.system.rarity) {
-			context.data.system.rarity = context.rarities[0].key;
-		}
 
 		return context;
 	}

@@ -28,14 +28,15 @@
 						{{/if}}
 					</div>
 					<div class="gunCardDiceMulti">
-						<div class="gunCardMultiSign{{#equals (getDiceCount system.damage) 1}} gunCardSingleDice{{/equals}}">x</div>
 						{{#if system.damage}}
+							<div class="gunCardMultiSign{{#equals (getDiceCount system.damage) 1}} gunCardSingleDice{{/equals}}">x</div>
 							<input class="gunCardDiceMultiInput	{{#equals (getDiceCount system.damage) 1}}gunCardSingleDice{{/equals}}"
 								onfocus="this.select()"
 								value="{{getDiceCount system.damage}}"
 								min="1"	type="number" data-dtype="Number"
 							/>
 						{{else}}
+							<div class="gunCardMultiSign gunCardSingleDice">x</div>
 							<input class="gunCardDiceMultiInput gunCardSingleDice"
 								onfocus="this.select()"
 								value="1" min="1" type="number" data-dtype="Number"
