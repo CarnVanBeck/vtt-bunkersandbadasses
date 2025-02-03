@@ -28,6 +28,14 @@ export function getSystemManufacturers() {
     return game.settings.get(CONFIG.BADASS.namespace, 'manufacturers');
 }
 
+export function getDefaultAccuracy() {
+    return [
+        {low: 2, high: 7, hits: 0, crits: 0},
+        {low: 8, high: 15, hits: 0, crits: 0},
+        {low: 16, 			hits: 0, crits: 0}
+    ];
+}
+
 function _findGunAccuracyByType(gunList, gunType) {
     let foundGunType = {};
     for (let singleGunType of gunList) {

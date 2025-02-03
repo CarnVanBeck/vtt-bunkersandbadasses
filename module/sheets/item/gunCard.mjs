@@ -1,4 +1,4 @@
-import { getSystemGunTypes, getSystemGunManufacturers, getGunAccuracyByLevel, getSystemDice } from "../../helper/systemValues.mjs";
+import { getSystemGunTypes, getSystemGunManufacturers, getGunAccuracyByLevel, getSystemDice, getDefaultAccuracy } from "../../helper/systemValues.mjs";
 import { ManufacturedSheet } from "./manufactered.mjs";
 
 export class GunCardSheet extends ManufacturedSheet {
@@ -35,11 +35,7 @@ export class GunCardSheet extends ManufacturedSheet {
 
 		// Fallback: Set default if no accuracy is present
 		if(context.data.system.accuracy.length == 0) {
-			context.data.system.accuracy = [
-				{low: 2, high: 7, hits: 0, crits: 0},
-				{low: 8, high: 15, hits: 0, crits: 0},
-				{low: 16, 			hits: 0, crits: 0}
-			]
+			context.data.system.accuracy = getDefaultAccuracy();
 		}
 
 		//Fallback to a default type if no or nonevalid present
@@ -67,7 +63,7 @@ export class GunCardSheet extends ManufacturedSheet {
 	}
 
 	updateSingleAccuracyValue(nValue, vIndex, vType) {
-		let accuracyList = this.object.system.accuracy;
+		let accuracyList = this.object.system.accuracy ? this.object.system.accuracy: getDefaultAccuracy();
 		accuracyList[vIndex][vType] = nValue;
 		let updateJSON = {
 			"system.accuracy": accuracyList,
@@ -83,6 +79,20 @@ export class GunCardSheet extends ManufacturedSheet {
 		this.object.update(updateJSON);
 	}
 
+	updateFromDamageDie(event) {
+		let dieCount = this.object.system.damage ? this.object.system.damage.split("d")[0] : 1;
+		let dieValue = event.target.dataset["key"];
+		this.updateDie(dieValue, dieCount);
+		event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+	}
+
+	updateFromDieMulti(event) {
+		let delimiter = "d";
+		let dieCount = event.target.value;
+		let dieValue = this.object.system.damage ? (delimiter + this.object.system.damage.split(delimiter)[1]) : "d4";
+		this.updateDie(dieValue, dieCount);
+	}
+	
 	updateLevelAndGunSpecifics(newLevel, gunLevelData) {
 		super.updateLevel(newLevel);
 		this.updateLevelData(
@@ -128,16 +138,10 @@ export class GunCardSheet extends ManufacturedSheet {
 			);
 		});
 		html.find(".damageDiePicOption").on('click', (event) => {
-			let dieCount = this.object.system.damage.split("d")[0];
-			let dieValue = event.target.dataset["key"];
-			this.updateDie(dieValue, dieCount);
-			event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+			this.updateFromDamageDie(event);
 		})
 		html.find(".gunCardDiceMultiInput").on('change', (event) => {
-			let delimiter = "d";
-			let dieCount = event.target.value;
-			let dieValue = delimiter + this.object.system.damage.split(delimiter)[1];
-			this.updateDie(dieValue, dieCount);
+			this.updateFromDieMulti(event);
 		})
 		// Active Effect management
 		html.on('click', '.effect-control', (ev) =>
