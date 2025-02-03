@@ -1,4 +1,4 @@
-<div class="itemCardElementNotes" >
+<div class="itemCardElementNotes item{{system.rarity}}" >
     <div class="itemCardElements" >
         {{> optionSelector choices=elements name="element" selected=system.element}}
     </div>
@@ -7,7 +7,7 @@
         {{!--editor system.description target="system.description" --}}
     </div>
 </div>
-<div class="itemCardRedNotes" >
+<div class="itemCardRedNotes item{{system.rarity}}" >
     <div class="itemCardRedText" >
         <div class="itemCardRedTextLabel">
             {{localize "badass.item.gun.redText.label"}}

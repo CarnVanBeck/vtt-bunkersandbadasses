@@ -1,7 +1,7 @@
 <form class="gunItemSheet {{cssClass}}" autocomplete="off">
-	<div class="itemCardSheet {{system.rarity.colorValue}}" >
+	<div class="itemCardSheet item{{system.rarity}}" >
 		{{> manuItemHeader manufacturers=manufacturers itemTypes=gunTypes itemType=type}}
-		<div class="gunCardRollAndImage itemCardFlex" >
+		<div class="itemCardRollAndImage itemCardFlex item{{system.rarity}}" >
 			<div class="itemDataBlock itemCardFlex" >
 				<div class="itemDataHeader" > {{localize "badass.item.gun.accuracy.label"}} </div>
 				<div class="gunCardAccuracy itemCardFlex" >

@@ -9,6 +9,50 @@ body {
 	--legendaryColor: #f68c1e;
 }
 
+/*
+ * Rarity border styles
+ */
+.itemCardManRar,
+.itemCardLvlType,
+.itemCardRollAndImage,
+.itemCardElementNotes,
+.itemCardRedNotes {
+	border-width: 2px;
+	border-style: solid;
+}
+
+.itemCardManRar,
+.itemCardLvlType,
+.itemCardRollAndImage,
+.itemCardElementNotes {
+	border-bottom-width: 0px;
+}
+
+.itemCardElementNotes,
+.itemCardRedNotes {
+	border-top-width: 0px;
+}
+
+.itemcommon {
+	border-color: var(--commonColor);
+}
+
+.itemuncommon {
+	border-color: var(--uncommonColor);
+}
+
+.itemrare {
+	border-color: var(--rareColor);
+}
+
+.itemepic {
+	border-color: var(--epicColor);
+
+}
+.itemlegendary {
+	border-color: var(--legendaryColor);
+}
+
 .itemCardSheet {
 	color: white;
 }

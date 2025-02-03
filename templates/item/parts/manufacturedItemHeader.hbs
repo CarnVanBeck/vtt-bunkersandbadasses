@@ -1,5 +1,5 @@
 <div class="itemCardHeader itemCardFlex" >
-    <div class="itemCardManRar itemHeaderQuarter" >
+    <div class="itemCardManRar itemHeaderQuarter item{{system.rarity}}" >
         <div class="itemCardManufacturer">
             {{> pictureSelector choices=manufacturers name="manufacturer" selected=system.manufacturer.name}}
         </div>
@@ -10,7 +10,7 @@
     <div class="itemCardName" >
         <input class="itemCardNameInput" name="name" type="text" value="{{item.name}}" placeholder="{{itemDescriptor}} Name"/>
     </div>
-    <div class="itemCardLvlType itemHeaderQuarter" >
+    <div class="itemCardLvlType itemHeaderQuarter item{{system.rarity}}" >
         <div class="itemCardLvl" >
             <div class="itemLevelLabel">
                 {{localize "badass.item.gun.level.label"}}:
