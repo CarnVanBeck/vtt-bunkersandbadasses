@@ -1,0 +1,41 @@
+{{!-- build clickable item for selected choice --}}
+<div class="{{name}}PicSelector prePictureSelector" >
+    {{#each choices as | choice | }}
+        {{#equals ../selected choice.key}}
+            {{> (lookup choice 'hbs') classList="prePicOption" alt=choice.name title=choice.name }}
+            {{#if ../../descriptor}}
+            <div class="typeText">
+                {{choice.name}}
+            </div>
+            {{/if}}
+        {{/equals}}
+    {{/each}}
+    {{#unless selected}}
+        <img class="prePicOption" alt="Select {{name}} !" title="Select {{name}} !">
+    {{/unless}}
+</div>
+{{!-- build clickable item for all items in list --}}
+<div class="{{name}}PicSelector pictureSelector picNoneDisplay" >
+    {{#each choices as | choice | }}
+        <div class="{{concat ../name "PicOption PicOption "../name "PicOption" choice.key}}"
+            alt={{choice.name}} title={{choice.name}} data-key={{choice.key}} >
+        {{#if choice.hbs includeZero=false}}
+            {{> (lookup choice 'hbs')
+                alt=choice.name
+                title=choice.name
+                classList="PicOptionImage"
+                data-key=choice.key
+            }}
+        {{else}}
+            <div class="PicOption {{../name}}{{choice.key}}" data-key="{{choice.key}}">
+                {{choice.name}}
+            </div>
+        {{/if}}
+        {{#if ../descriptor}}
+            <div class="typeText">
+                {{choice.name}}
+            </div>
+        {{/if}}
+        </div>
+    {{/each}}
+</div>

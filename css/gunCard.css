@@ -83,15 +83,23 @@
     height: 80px;
 }
 
+.damageDiePicSelector.prePictureSelector {
+    height: 80px;
+    width: 80px;
+}
+
 .damageDiePicSelector {
-    height: 2.5em;
     width: 2.5em;
 }
 
-.damageDiePicSelector.prePictureSelector,
+.damageDiePicSelector.pictureSelector {
+    position: relative;
+    left: 20px;
+}
+
 .damageDiePicSelector.pictureSelector > * {
-    height: 80px;
-    width: 80px;
+    height: 2.5em;
+    width: 2.5em;
 }
 
 .gunCardDiceMulti {

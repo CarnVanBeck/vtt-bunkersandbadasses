@@ -22,9 +22,9 @@
 				<div class="gunCardDamage itemCardFlex">
 					<div class="gunCardDamageDie">
 						{{#if system.damage}}
-							{{> pictureSelector choices=dice name="damageDie" selected=(concat "d" (getDiceSize system.damage))}}
+							{{> hbsSelector choices=dice name="damageDie" selected=(concat "d" (getDiceSize system.damage))}}
 						{{else}}
-							{{> pictureSelector choices=dice name="damageDie"}}
+							{{> hbsSelector choices=dice name="damageDie"}}
 						{{/if}}
 					</div>
 					<div class="gunCardDiceMulti">

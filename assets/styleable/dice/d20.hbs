@@ -1,4 +1,9 @@
-<svg class="d20" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<svg class="d20 {{classList}}" 
+	{{#if alt}} alt={{alt}} {{/if}} 
+	{{#if title}} title={{title}} {{/if}}
+	{{#if data.key}} data-key={{choice.key}} {{/if}}
+	viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg"
+>
 	<defs>
 		<linearGradient id="blueCloud1" x1="20%" x2="80%" y1="40%" y2="65%">
 			<stop offset="30%" stop-color="var(--diceBlue, blue)" />

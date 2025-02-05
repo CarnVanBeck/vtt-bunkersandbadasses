@@ -81,14 +81,14 @@ export class GunCardSheet extends ManufacturedSheet {
 
 	updateFromDamageDie(event) {
 		let dieCount = this.object.system.damage ? this.object.system.damage.split("d")[0] : 1;
-		let dieValue = event.target.dataset["key"];
+		let dieValue = event.delegateTarget.dataset["key"];
 		this.updateDie(dieValue, dieCount);
 		event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
 	}
 
 	updateFromDieMulti(event) {
 		let delimiter = "d";
-		let dieCount = event.target.value;
+		let dieCount = event.delegateTarget.value;
 		let dieValue = this.object.system.damage ? (delimiter + this.object.system.damage.split(delimiter)[1]) : "d4";
 		this.updateDie(dieValue, dieCount);
 	}

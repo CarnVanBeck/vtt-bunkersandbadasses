@@ -9,6 +9,7 @@ export function preloadHandlebarsTemplates() {
         // Item Parts
         optionSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/optionSelector.hbs`,
         pictureSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/pictureSelector.hbs`,
+        hbsSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/hbsSelector.hbs`,
         manuItemHeader: `${CONFIG.BADASS.systemPath}/templates/item/parts/manufacturedItemHeader.hbs`,
         manuItemNotes: `${CONFIG.BADASS.systemPath}/templates/item/parts/manufacturedItemNotes.hbs`,
         stdInput: `${CONFIG.BADASS.systemPath}/templates/item/parts/stdInput.hbs`,

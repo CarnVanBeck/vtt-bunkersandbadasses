@@ -1,6 +1,6 @@
 svg {
-	--diceColor: aliceblue;
-	--diceStroke: blue;
+	--diceColor: var(--user-color, aliceblue);
+	--diceStroke: var(--user-color, blue);
 	--diceNumberColor: gray;
 	--diceNumberStroke: white;
 }

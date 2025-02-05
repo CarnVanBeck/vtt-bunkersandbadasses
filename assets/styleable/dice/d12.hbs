@@ -1,4 +1,9 @@
-<svg class="d12" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" >
+<svg class="d12 {{classList}}" 
+	{{#if alt}} alt={{alt}} {{/if}} 
+	{{#if title}} title={{title}} {{/if}}
+	{{#if data.key}} data-key={{choice.key}} {{/if}}
+	viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg"
+>
 	<path class="pentagon"
 		d="m130,100 l0,100 l80,40 l80,-60 l-50,-100 z"	
 	>

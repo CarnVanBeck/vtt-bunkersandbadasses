@@ -6,12 +6,11 @@ export function getSystemDefenses() {
 
 export function getSystemDice() {
     return [
-        {name: "d4", key:"d4", icon:"systems/vtt-bunkersandbadasses/assets/standalone/dice/d4.svg"},
-        {name: "d6", key:"d6", icon:"systems/vtt-bunkersandbadasses/assets/standalone/dice/d6.svg"},
-        {name: "d8", key:"d8", icon:"systems/vtt-bunkersandbadasses/assets/standalone/dice/d8.svg"},
-        {name: "d10", key:"d10", icon:"systems/vtt-bunkersandbadasses/assets/standalone/dice/d10.svg"},
-        {name: "d12", key:"d12", icon:"systems/vtt-bunkersandbadasses/assets/standalone/dice/d12.svg"},
-        {name: "d20", key:"d20", icon:"systems/vtt-bunkersandbadasses/assets/standalone/dice/d20.svg"},
+        {name: "d4", key:"d4", hbs:"d4"},
+        {name: "d6", key:"d6", hbs:"d6"},
+        {name: "d8", key:"d8", hbs:"d8"},
+        {name: "d10", key:"d10", hbs:"d10"},
+        {name: "d12", key:"d12", hbs:"d12"},
     ];
 }
 
