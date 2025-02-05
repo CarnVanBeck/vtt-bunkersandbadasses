@@ -82,7 +82,7 @@ export class ManufacturedSheet extends ItemSheet {
 			this.updateLevel(event.target.value);
 		});
 		html.find(".prePictureSelector").on('click', (event) => {
-			event.delegateTarget.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+			event.delegateTarget.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
 		});
 		html.find(".typePicOption").on('click', (event) => {
 			this.updateType(event.target.dataset["key"]);
