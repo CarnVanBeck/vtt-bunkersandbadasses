@@ -1,7 +1,7 @@
 import { BADASS, getDefaultElements, getDefaultRarities } from "./config.mjs";
 
 export function getSystemDefenses() {
-    return game.settings.get(CONFIG.BADASS.namespace, 'defenseTypes');
+    return game.settings.get(CONFIG.BADASS.namespace, 'defenses');
 }
 
 export function getSystemDice() {
