@@ -393,10 +393,13 @@
             "hintShort": "Let you Import or Export System defined Settings",
             "hintLong": "This Utility is used to Import & Export Systemvalues like gun types, manufacturers and the like. Every imported setting will be overwritten completely s be careful",
             "srcfile": "Source File",
+            "noFile": "No File available",
             "import": "Import",
             "export": "Export",
             "cancel": "Cancel",
             "updated": "Updated the system data for",
+            "failed": "Update failed for",
+            "unregistered": "is an unregistered setting",
             "settings": "Settings"
         }
     },
