@@ -3,25 +3,27 @@ import { getSystemDefenses, getSystemElements, getSystemGunTypes, getSystemManuf
 
 export function simulateGetSaveFile() {
 	let htmlA = document.createElement("a");
-	let url = URL.createObjectURL(getSaveFile());
+	let url = URL.createObjectURL(getSettingsSaveFile());
 	htmlA.href = url;
 	htmlA.download = "settings.json";
 	document.body.appendChild(htmlA);
 	htmlA.click();
 	setTimeout(function() {
 		document.body.removeChild(htmlA);
-		window.URL.revokeObjectURL(url);  
+		window.URL.revokeObjectURL(url);
 	}, 0);
 }
 
-export function getSaveFile() {
+export function getSettingsSaveFile() {
+	// key has to be the same as in game.settings or the re-import will fail
 	let systemDataSets = {
 		"gunTypes" : getSystemGunTypes(),
-	 	"defenses" : getSystemDefenses(),
 		"elements" : getSystemElements(),
+	 	"defenses" : getSystemDefenses(),
 		"manufacturers" : getSystemManufacturers()
 	}
-	return new File([JSON.stringify(systemDataSets)], "settings.json", {type: "application/json",});
+	let stringified = JSON.stringify(systemDataSets, undefined, 4); 
+	return new File([stringified], "settings.json", {type: "application/json",});
 }
 
 export function simulateLoadSaveFile() {
