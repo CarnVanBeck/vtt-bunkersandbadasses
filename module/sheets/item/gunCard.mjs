@@ -63,7 +63,8 @@ export class GunCardSheet extends ManufacturedSheet {
 	}
 
 	updateSingleAccuracyValue(nValue, vIndex, vType) {
-		let accuracyList = this.object.system.accuracy ? this.object.system.accuracy: getDefaultAccuracy();
+		let accuracySize = this.object.system.accuracy.length
+		let accuracyList = accuracySize > 0 ? this.object.system.accuracy: getDefaultAccuracy();
 		accuracyList[vIndex][vType] = nValue;
 		let updateJSON = {
 			"system.accuracy": accuracyList,
@@ -88,7 +89,7 @@ export class GunCardSheet extends ManufacturedSheet {
 
 	updateFromDieMulti(event) {
 		let delimiter = "d";
-		let dieCount = event.delegateTarget.value;
+		let dieCount = event.target.value;
 		let dieValue = this.object.system.damage ? (delimiter + this.object.system.damage.split(delimiter)[1]) : "d4";
 		this.updateDie(dieValue, dieCount);
 	}

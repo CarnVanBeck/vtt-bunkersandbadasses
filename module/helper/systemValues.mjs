@@ -14,9 +14,8 @@ export function getSystemDice() {
     ];
 }
 
-
 export function getSystemElements() {
-    return getDefaultElements();
+    return game.settings.get(CONFIG.BADASS.namespace, 'elements');
 }
 
 export function getSystemGunTypes() {

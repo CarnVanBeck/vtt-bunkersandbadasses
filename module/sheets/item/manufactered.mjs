@@ -71,6 +71,10 @@ export class ManufacturedSheet extends ItemSheet {
 		return (manufacturerList.find((value, index, array) => {return (key == value.key)}) != undefined);
 	}
 
+	togglePicSelectDropdown(event) {
+		event.delegateTarget.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+	}
+
 	/** @override */
 	activateListeners(html) {
 		super.activateListeners(html);
@@ -86,15 +90,15 @@ export class ManufacturedSheet extends ItemSheet {
 		});
 		html.find(".typePicOption").on('click', (event) => {
 			this.updateType(event.target.dataset["key"]);
-			event.delegateTarget.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+			this.togglePicSelectDropdown(event);
 		});
 		html.find(".manufacturerPicOption").on('click', (event) => {
 			this.updateManufaturer(event.target.dataset["key"]);
-			event.delegateTarget.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+			this.togglePicSelectDropdown(event);
 		});
 		html.find(".rarityPicOption").on('click', (event) => {
 			this.updateRarity(event.target.dataset["key"]);
-			event.delegateTarget.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+			this.togglePicSelectDropdown(event);
 		});
 		html.find(".elementSelector").on('change', (event) => {
 			this.updateElement(event.target.selectedOptions[0].value);
@@ -106,5 +110,5 @@ export class ManufacturedSheet extends ItemSheet {
 			onManageActiveEffect(ev, this.item)
 		);
 	}
-		
+	
 }
