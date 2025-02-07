@@ -387,6 +387,17 @@
         "buttons": {
             "save": "Save",
             "remove": "Remove"
+        },
+        "io": {
+            "label":"I/O Settings",
+            "hintShort": "Let you Import or Export System defined Settings",
+            "hintLong": "This Utility is used to Import & Export Systemvalues like gun types, manufacturers and the like. Every imported setting will be overwritten completely s be careful",
+            "srcfile": "Source File",
+            "import": "Import",
+            "export": "Export",
+            "cancel": "Cancel",
+            "updated": "Updated the system data for",
+            "settings": "Settings"
         }
     },
     "TYPES": {

@@ -1,0 +1,23 @@
+<div class='badass settingsIO'>
+    <div class="dialog-content">
+        <p class="notes">{{localize "SETTINGS.io.hintLong"}}</p>
+        <div class="form-group">
+            <label for="data">{{localize "SETTINGS.io.srcfile"}}</label>
+            <input type="file" name="data" accept=".json">
+        </div>
+    </div>
+    <div class="dialog-buttons" style="display: flex; flex-flow: row;">
+        <button class="dialog-button import default bright" data-action="importSettings">
+            <i class="fas fa-file-import"></i>
+            {{localize "SETTINGS.io.import"}}
+        </button>
+        <a class="dialog-button button export default bright" data-action="exportSettings">
+            <i class="fas fa-file-export"></i>
+            {{localize "SETTINGS.io.export"}}
+        </a>
+        <button class="dialog-button no" data-button="no" data-action="no">
+            <i class="fas fa-times"></i>
+            {{localize "SETTINGS.io.cancel"}}
+        </button>
+    </div>
+</div>

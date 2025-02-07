@@ -3,6 +3,7 @@ import DefenseConfig from '../applications/settings/defenseConfig.mjs';
 import ElementConfig from '../applications/settings/elementConfig.mjs';
 import ManufacturerConfig from '../applications/settings/manufacturerConfig.mjs';
 import GunTypeConfig from '../applications/settings/gunTypeConfig.mjs';
+import SettingsIO from '../applications/settings/settingsIO.mjs';
 
 export function registerSettings() {
     game.settings.register(BADASS.namespace, 'migrationVersion', {
@@ -96,4 +97,14 @@ export function registerSettings() {
         default: [],
     });
     // #endregion
+
+    // #region Manufacturers
+    game.settings.registerMenu(BADASS.namespace, 'settingsIO', {
+        name: 'SETTINGS.io.label',
+        label: 'SETTINGS.io.label',
+        hint: 'SETTINGS.io.hintShort',
+        icon: 'fa-solid fa-industry',
+        type: SettingsIO,
+        restricted: true,
+    });
 }
