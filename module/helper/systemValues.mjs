@@ -11,6 +11,7 @@ export function getSystemDice() {
         {name: "d8", key:"d8", hbs:"d8"},
         {name: "d10", key:"d10", hbs:"d10"},
         {name: "d12", key:"d12", hbs:"d12"},
+        {name: "d20", key:"d20", hbs:"d20"},
     ];
 }
 
