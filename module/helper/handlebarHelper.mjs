@@ -30,6 +30,29 @@ export function preloadHandlebarsTemplates() {
         elementCryo: `${CONFIG.BADASS.systemPath}/assets/styleable/elements/cryo.hbs`,
         // Settings
         gunTypeLevel: `${CONFIG.BADASS.systemPath}/templates/settings/parts/gunTypeLevel.hbs`,
+
+        // Actor Parts
+        vhTabDetails: `${CONFIG.BADASS.systemPath}/templates/actor/parts/tabs/vhTabDetails.hbs`,
+        vhTabInventory: `${CONFIG.BADASS.systemPath}/templates/actor/parts/tabs/vhTabInventory.hbs`,
+        vhTabOverview: `${CONFIG.BADASS.systemPath}/templates/actor/parts/tabs/vhTabOverview.hbs`,
+
+        vhArchetypeFeats: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhArchetypeFeats.hbs`,
+        vhBackgrounds: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhBackgrounds.hbs`,
+        vhBadass: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhBadass.hbs`,
+        vhChecks: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhChecks.hbs`,
+        vhDefenses: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhDefenses.hbs`,
+        vhFavoredGuns: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhFavoredGuns.hbs`,
+        vhGold: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhGold.hbs`,
+        vhGrenades: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhGrenades.hbs`,
+        vhHeader: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhHeader.hbs`,
+        vhInitiative: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhInitiative.hbs`,
+        vhMelee: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhMelee.hbs`,
+        vhMovement: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhMovement.hbs`,
+        vhPlaceholder: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhPlaceholder.hbs`,
+        vhPotions: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhPotions.hbs`,
+        vhSkills: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhSkills.hbs`,
+        vhTraits: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhTraits.hbs`,
+        vhXP: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhXP.hbs`,
     };
 
     // Load the template parts
@@ -45,7 +68,7 @@ export function registerHandlebarHelpers() {
         unequals: unequals,
         selectInArray: selectInArray,
         checkInArray: checkInArray,
-        isNumber: isNumber
+        isNumber: isNumber,
     });
 }
 
@@ -85,5 +108,5 @@ function checkInArray(value, array) {
 }
 
 function isNumber(value) {
-    return (typeof(value) === "number");
+    return typeof value === 'number';
 }

@@ -11,17 +11,9 @@ export default class BadassVaultHunterSheetV2 extends BadassActorSheetV2 {
     };
 
     static PARTS = {
-        header: {
+        sheet: {
             id: 'header',
-            template: `${BADASS.systemPath}/templates/actor/parts/actorHeader.hbs`,
-        },
-        defenses: {
-            id: 'defenses',
-            template: `${BADASS.systemPath}/templates/actor/parts/actorDefenses.hbs`,
-        },
-        favoredGuns: {
-            id: 'favoredGuns',
-            template: `${BADASS.systemPath}/templates/actor/parts/actorFavoredGuns.hbs`,
+            template: `${BADASS.systemPath}/templates/actor/vaultHunter.hbs`,
         },
     };
 

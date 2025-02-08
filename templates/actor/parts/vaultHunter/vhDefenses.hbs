@@ -1,4 +1,5 @@
-<section class="actor-section actor-defenses">
+<section class="actor-section">
+    <h2 title="{{localize 'SHEETS.actor.vaultHunter.defenses.hint'}}">{{localize 'SHEETS.actor.vaultHunter.defenses.label'}}</h2>
         {{#each actor.defenses as |def|}}
             <div class="actor-row" data-item-id="{{def.key}}">
                 <div class="actor-col">
@@ -17,7 +18,7 @@
         {{/each}}
         {{#if user.isGM}}
             <div class="actor-section-footer">
-                <a data-action="addDefense" data-action="addDefense">{{localize "badass.sheets.actor.defenses.add"}}</a>
+                <a data-action="addDefense" data-action="addDefense">{{localize "SHEETS.actor.vaultHunter.defenses.add"}}</a>
             </div>
         {{/if}}
 </section>

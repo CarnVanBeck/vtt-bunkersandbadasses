@@ -200,7 +200,91 @@
         "actor": {
             "vaultHunter": {
                 "label": "Vault Hunter",
-                "hint": "Vault Hunters are the main characters of the Borderlands series. They are the playable characters and the protagonists of the story. Each Vault Hunter has a unique skill and three skill trees to choose from."
+                "hint": "Vault Hunters are the main characters of the Borderlands series. They are the playable characters and the protagonists of the story. Each Vault Hunter has a unique skill and three skill trees to choose from.",
+                "name": {
+                    "label": "Name",
+                    "hint": "The name of your Vault Hunter."
+                },
+                "archetype": {
+                    "label": "Archetype",
+                    "hint": "The Archetype of your Vault Hunter."
+                },
+                "class": {
+                    "label": "Class",
+                    "hint": "The Class of your Vault Hunter."
+                },
+                "background": {
+                    "label": "Background",
+                    "hint": "The Background of your Vault Hunter."
+                },
+                "level": {
+                    "label": "Level",
+                    "hint": "The current level of your Vault Hunter."
+                },
+                "actionSkill": {
+                    "label": "Action Skill",
+                    "hint": "The Action Skill of your Vault Hunter."
+                },
+                "xp": {
+                    "label": "XP",
+                    "hint": "The current experience points your Vault Hunter has."
+                },
+                "defenses": {
+                    "label": "Defenses",
+                    "hint": "The stuff that keeps your Vault Hunter alive.",
+                    "add": "Add Defense"
+                },
+                "favoredGun": {
+                    "label": "Favored Gun",
+                    "hint": "The types of guns your Vault Hunter prefers to use."
+                },
+                "meleeDie": {
+                    "label": "Melee Die",
+                    "hint": "The die your Vault Hunter uses for melee attacks."
+                },
+                "movement": {
+                    "label": "Movement",
+                    "hint": "The movement speed in squares of your Vault Hunter."
+                },
+                "badassRank": {
+                    "label": "Badass Rank",
+                    "hint": "The Badass Rank of your Vault Hunter."
+                },
+                "badassTokens": {
+                    "label": "Badass Tokens",
+                    "hint": "How many Badass Tokens your Vault Hunter has."
+                },
+                "gold": {
+                    "label": "Gold",
+                    "hint": "The amount of gold your Vault Hunter has."
+                },
+                "initative": {
+                    "label": "Initiative",
+                    "hint": "The initiative modifier of your Vault Hunter."
+                },
+                "grenades": {
+                    "label": "Grenades",
+                    "hint": "The amount of grenades your Vault Hunter has."
+                },
+                "potions": {
+                    "label": "Potions",
+                    "hint": "The amount of potions your Vault Hunter has."
+                },
+                "checks": {
+                    "label": "Checks"
+                },
+                "skills": {
+                    "label": "Skills",
+                    "hint": "The skills of your Vault Hunter."
+                },
+                "backgroundTraits": {
+                    "label": "Background Traits",
+                    "hint": "The traits granted by your Vault Hunter's background."
+                },
+                "archetypeFeats": {
+                    "label": "Archetype Feats",
+                    "hint": "The feats granted by your Vault Hunter's archetype."
+                }
             },
             "nonVaultHunter": {
                 "label": "Non-Vault Hunter",
@@ -389,7 +473,7 @@
             "remove": "Remove"
         },
         "io": {
-            "label":"I/O Settings",
+            "label": "I/O Settings",
             "hintShort": "Let you Import or Export System defined Settings",
             "hintLong": "This Utility is used to Import & Export Systemvalues like gun types, manufacturers and the like. Every imported setting will be overwritten completely s be careful",
             "srcfile": "Source File",
