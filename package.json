@@ -1,0 +1,8 @@
+{
+  "name": "vtt-bunkersandbadasses",
+  "description": "Bunkers and Badasses system for Foundry VTT",
+  "main": "badass.mjs",
+  "devDependencies": {
+    "prettier": "^3.4.2"
+  }
+}
