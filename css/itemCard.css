@@ -221,6 +221,7 @@ body {
 .itemDataHeader:nth-of-type(1) {
 	position: relative;
 	top: -24.5px;
+	margin-bottom: -1.5em;
 }
 
 .itemCardPicture {

@@ -1,27 +1,34 @@
-<div class="critHitRow">
-	<div class="accuracyLine">
-		{{#if high}}
-			{{low}}-{{high}}
-		{{else}}
-			{{low}}+
-		{{/if}}
-	</div>
-	<div class="hit">
-		<input class="itemCardInput accuracyInput"
-			onfocus="this.select()"
-			value="{{hits}}"
-			data-index={{@index}}
-			data-item="hits"
-			type="number" data-dtype="Number"
-		/>
-	</div>
-	<div class="crit">
-		<input class="itemCardInput accuracyInput"
-			onfocus="this.select()"
-			value="{{crits}}" 
-			data-index={{@index}}
-			data-item="crits"
-			type="number" data-dtype="Number"
-		/>
-	</div>
+<div class='critHitRow'>
+    <div class='accuracyLine'>
+        {{#if high}}
+            {{low}}-{{high}}
+        {{else}}
+            {{low}}+
+        {{/if}}
+    </div>
+    <div class='hit'>
+        <input
+            class='itemCardInput accuracyInput'
+            onfocus='this.select()'
+            value='{{hits}}'
+            data-index={{@index}}
+            data-item='hits'
+            min='0'
+            type='number'
+            data-dtype='Number'
+        />
+    </div>
+    <div class='crit'>
+        <input
+            class='itemCardInput accuracyInput'
+            onfocus='this.select()'
+            value='{{crits}}'
+            data-index={{@index}}
+            data-item='crits'
+            min='0'
+            type='number'
+            data-dtype='Number'
+        />
+    </div>
+
 </div>
