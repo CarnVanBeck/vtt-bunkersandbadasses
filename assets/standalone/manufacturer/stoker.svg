@@ -4,7 +4,7 @@
 	<defs>
 		<style>
 			.manufacturerBg {
-				fill: #eee;
+				fill: transparent;
 			}
 			.letter {
 				fill: #333;

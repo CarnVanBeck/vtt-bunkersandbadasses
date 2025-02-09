@@ -1,23 +1,23 @@
 svg {
-	--diceColor: var(--user-color, aliceblue);
-	--diceStroke: var(--user-dice-stroke, blue);
-	--diceNumberColor: var(--user-dice-number-color, gray);
-	--diceNumberStroke: var(--user-dice-number-stroke, white);
+    --diceColor: var(--user-color, aliceblue);
+    --diceStroke: var(--user-dice-stroke, blue);
+    --diceNumberColor: var(--user-dice-number-color, gray);
+    --diceNumberStroke: var(--user-dice-number-stroke, white);
 }
 
 .dice .triangle,
 .dice .tetragon,
 .dice .quadrat,
 .dice .pentagon {
-	fill: var(--diceColor);
-	stroke: var(--diceStroke);
-	stroke-width: 3;
-	stroke-linejoin: round;
+    fill: var(--diceColor);
+    stroke: var(--diceStroke);
+    stroke-width: 3;
+    stroke-linejoin: round;
 }
 
 .dice .diceNumber {
-	fill: var(--diceNumberColor);
-	stroke: var(--diceNumberStroke);
+    fill: var(--diceNumberColor);
+    stroke: var(--diceNumberStroke);
 }
 /********
  * 		*
@@ -27,8 +27,8 @@ svg {
  */
 
 .d20 .diceNumber {
-	font-size: 6em;
-	font-weight: bold;
+    font-size: 6em;
+    font-weight: bold;
 }
 
 /********
@@ -39,11 +39,11 @@ svg {
  */
 
 .d12 .diceNumber {
-	font-size: 7em;
-	font-weight: bold;
+    font-size: 7em;
+    font-weight: bold;
 }
 
- /********
+/********
  * 		*
  *	D10	*
  * 		*
@@ -51,8 +51,8 @@ svg {
  */
 
 .d10 .diceNumber {
-	font-size: 10em;
-	font-weight: bold;
+    font-size: 10em;
+    font-weight: bold;
 }
 
 /********
@@ -63,8 +63,8 @@ svg {
  */
 
 .d8 .diceNumber {
-	font-size: 10em;
-	font-weight: bold;
+    font-size: 10em;
+    font-weight: bold;
 }
 
 /********
@@ -75,8 +75,8 @@ svg {
  */
 
 .d6 .diceNumber {
-	font-size: 10em;
-	font-weight: bold;
+    font-size: 10em;
+    font-weight: bold;
 }
 
 /********
@@ -87,6 +87,6 @@ svg {
  */
 
 .d4 .diceNumber {
-	font-size: 10em;
-	font-weight: bold;
+    font-size: 10em;
+    font-weight: bold;
 }

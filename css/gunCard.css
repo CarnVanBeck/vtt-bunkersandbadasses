@@ -75,7 +75,7 @@
 }
 
 .itemCardPicture {
-	height: 320px;
+    height: 320px;
 }
 
 .gunCardDamageDie {
@@ -112,7 +112,7 @@
     width: 0px;
 }
 
-.gunCardDiceMultiInput[type="number"] {
+.gunCardDiceMultiInput[type='number'] {
     height: 20px;
     font-size: 20px;
     color: white;
@@ -142,7 +142,6 @@
     text-align: center;
     position: relative;
     left: 4px;
-    
 }
 
 .gunCardDamage > input {
@@ -155,7 +154,7 @@
 }
 
 .itemCardPicture > img {
-	height: inherit;
+    height: inherit;
 }
 
 .gunCardRange {
@@ -170,7 +169,6 @@
 .gunCardDamage > svg {
     width: 30%;
 }
-
 
 /* gunType config stuff */
 .badass .gunStats {
@@ -208,3 +206,4 @@
     margin: 0;
     line-height: initial;
 }
+

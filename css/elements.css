@@ -5,7 +5,6 @@
 **********
 */
 
-
 .bullet #bullet {
     fill: chocolate;
 }
@@ -42,13 +41,13 @@
 ********
 */
 .elementAcid {
-    --dark: #21240F; 
-    --light: #38462F;
-    --acid: #4EF70F;
+    --dark: #21240f;
+    --light: #38462f;
+    --acid: #4ef70f;
 }
 
 #acidArc {
-    stroke-width:1;
+    stroke-width: 1;
     stroke: #000;
 }
 
@@ -74,17 +73,17 @@
 */
 
 .elementExplosive {
-    --light: #835C28;
+    --light: #835c28;
     --dark: #603905;
-    --edge: #160402; 
-    --nob: #2A0208;
+    --edge: #160402;
+    --nob: #2a0208;
     --explosive: #ffea00;
     --explosiveDark: #ccbb00;
 }
 .elementExplosive #explosiveSymbol {
-    animation-name:				explFlash;
-    animation-duration:			5s;
-    animation-iteration-count:	infinite;
+    animation-name: explFlash;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 @keyframes explFlash {
     0% {
@@ -92,13 +91,13 @@
     }
     45% {
         fill: var(--explosiveDark);
-    }	
+    }
     55% {
         fill: var(--explosiveDark);
     }
     100% {
         fill: var(--explosive);
-    }	
+    }
 }
 
 /*************
@@ -109,11 +108,11 @@
 */
 
 .elementIncendiary {
-    --light: #651B00;
-    --dark: #4A1000;
-    --edge: #100101; 
-    --nob: #2A0208;
-    --incendiary: #FDB329;
+    --light: #651b00;
+    --dark: #4a1000;
+    --edge: #100101;
+    --nob: #2a0208;
+    --incendiary: #fdb329;
 }
 .elementIncendiary .incendiaryPath {
     fill: var(--incendiary, #bfb8c9);
@@ -129,10 +128,10 @@
 */
 
 .elementRadiation {
-    --dark: #3C4168; 
-    --light: #424A16;
-    --nob: #2A0208;
-    --radiation: #CCD63E;
+    --dark: #3c4168;
+    --light: #424a16;
+    --nob: #2a0208;
+    --radiation: #ccd63e;
 }
 
 .elementRadiation .radiationOuterCircle {
@@ -151,9 +150,9 @@
 .elementShock {
     --light: #252656;
     --dark: #101141;
-    --edge: #1B0329; 
-    --nob: #2A0208;
-    --shock: #26E3F5;
+    --edge: #1b0329;
+    --nob: #2a0208;
+    --shock: #26e3f5;
 }
 .elementShock .lightning {
     fill: var(--shock, #bfb8c9);
@@ -169,9 +168,9 @@
 */
 
 .elementSelector .elementSelectorAcid {
-    background-image: url("/foundry/systems/vtt-bunkersandbadasses/assets/standalone/elements/acid.svg");
+    background-image: url('/foundry/systems/vtt-bunkersandbadasses/assets/standalone/elements/acid.svg');
 }
 
 .elementSelector .elementSelectorCryo {
-    background-image: url("/foundry/systems/vtt-bunkersandbadasses/assets/standalone/elements/cryo.svg");
+    background-image: url('/foundry/systems/vtt-bunkersandbadasses/assets/standalone/elements/cryo.svg');
 }

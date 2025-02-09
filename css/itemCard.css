@@ -1,12 +1,12 @@
-@import "./gunCard.css";
-@import "./shieldCard.css";
+@import './gunCard.css';
+@import './shieldCard.css';
 
 body {
-	--commonColor: #cbd2d8;
-	--uncommonColor: #4e9d42;
-	--rareColor: #009cbf;
-	--epicColor: #9552a1;
-	--legendaryColor: #f68c1e;
+    --commonColor: #cbd2d8;
+    --uncommonColor: #4e9d42;
+    --rareColor: #009cbf;
+    --epicColor: #9552a1;
+    --legendaryColor: #f68c1e;
 }
 
 /*
@@ -17,262 +17,263 @@ body {
 .itemCardRollAndImage,
 .itemCardElementNotes,
 .itemCardRedNotes {
-	border-width: 2px;
-	border-style: solid;
+    border-width: 2px;
+    border-style: solid;
 }
 
 .itemCardManRar,
 .itemCardLvlType,
 .itemCardRollAndImage,
 .itemCardElementNotes {
-	border-bottom-width: 0px;
+    border-bottom-width: 0px;
 }
 
 .itemCardElementNotes,
 .itemCardRedNotes {
-	border-top-width: 0px;
+    border-top-width: 0px;
 }
 
 .itemcommon {
-	border-color: var(--commonColor);
+    border-color: var(--commonColor);
 }
 
 .itemuncommon {
-	border-color: var(--uncommonColor);
+    border-color: var(--uncommonColor);
 }
 
 .itemrare {
-	border-color: var(--rareColor);
+    border-color: var(--rareColor);
 }
 
 .itemepic {
-	border-color: var(--epicColor);
-
+    border-color: var(--epicColor);
 }
 .itemlegendary {
-	border-color: var(--legendaryColor);
+    border-color: var(--legendaryColor);
 }
 
 .itemCardSheet {
-	color: white;
+    color: white;
 }
 
 .itemCardFlex {
-	display:flex;
+    display: flex;
 }
 
 .itemHeaderQuarter {
-	width: 25%;
+    width: 25%;
 }
 
 .itemCardManufacturer {
-	height: 2.7em;
+    height: 2.7em;
 }
 
 .itemCardRarity {
-	height: 1em;
+    height: 1em;
 }
 
 .itemCardName {
-	width: 50%;
-	font-size: 2em;
-	line-height: 2em;
+    width: 50%;
+    font-size: 2em;
+    line-height: 2em;
 }
 
-.itemCardName > input{
-	height: 1.8em;
-	text-align: center;
+.itemCardName > input {
+    height: 1.8em;
+    text-align: center;
 }
 
 .itemCardLvlType {
-	display: flex;
-	flex-flow: row;
+    display: flex;
+    flex-flow: row;
 }
 
 .itemCardLvl {
-	width: 30%;
+    width: 30%;
 }
 
 .itemLevelLabel {
-	height: 1.8em;
-	line-height: 1.8em;
-	text-align: center;
+    height: 1.8em;
+    line-height: 1.8em;
+    text-align: center;
 }
 
 .itemCardType {
-	height: 4em;
-	width: 67%;
+    height: 4em;
+    width: 67%;
 }
 
 .typeText {
-	position: relative;
-	height: 0px;
-	font-size: 10px;
-	font-weight: bold;
-	left: 8px;
-	color: black;
-	pointer-events: none;
+    position: relative;
+    height: 0px;
+    font-size: 10px;
+    font-weight: bold;
+    left: 8px;
+    color: black;
+    pointer-events: none;
+	margin-right: 8px;
 }
 
-.prePictureSelector > *, 
+.prePictureSelector > *,
 .pictureSelector > * {
-	cursor: pointer;
-	width: max-content;
+    cursor: pointer;
+    object-fit: contain;
+    width: inherit;
 }
 
 .typePicSelector > img {
-	height: 3.8em;
+    height: 3.8em;
 }
 
 .manufacturerPicSelector > * {
-	height: 2.7em;
+    height: 2.7em;
 }
 
-.typePicSelector.prePictureSelector,
-.typePicSelector.pictureSelector {
-	width: 6em;
+.prePictureSelector {
+    display: flex;
+    flex-flow: column;
 }
 
 .typePicSelector > .typeText {
-	bottom: 18px;
+    bottom: 18px;
 }
 
 .rarityPicSelector > .PicOption {
-	width: 100%;
+    width: 100%;
 }
 
 .rarityPicSelector.prePictureSelector > .typeText {
-	bottom: 18px;
+    bottom: 18px;
 }
 
 .rarityPicSelector > .typeText {
-	bottom: 15px;
+    bottom: 15px;
 }
 
 .raritycommon {
-	background-color: var(--commonColor);
+    background-color: var(--commonColor);
 }
 
 .rarityuncommon {
-	background-color: var(--uncommonColor);
+    background-color: var(--uncommonColor);
 }
 
 .rarityrare {
-	background-color: var(--rareColor);
+    background-color: var(--rareColor);
 }
 
 .rarityepic {
-	background-color: var(--epicColor);
+    background-color: var(--epicColor);
 }
 
 .raritylegendary {
-	background-color: var(--legendaryColor);
+    background-color: var(--legendaryColor);
 }
 
 .pictureSelector {
-	position: relative;
-	display: flex;
-	background: url(../../../ui/parchment.jpg) repeat;
-	flex-flow: column;
-	align-content: center;
-	z-index: 10;
+    position: relative;
+    display: flex;
+    background: url(../../../ui/parchment.jpg) repeat;
+    flex-flow: column;
+    align-content: center;
+    z-index: 10;
 }
 
 .picNoneDisplay {
-	display: none;
+    display: none;
 }
 
-.levelInput[type="Number"] {
-	height: 2em;
-	width: 100%;
-	text-align: center;
+.levelInput[type='Number'] {
+    height: 2em;
+    width: 100%;
+    text-align: center;
 }
 
-.itemCardInput[type="Number"] {
-	color: white;
-	text-align: center;
+.itemCardInput[type='Number'] {
+    color: white;
+    text-align: center;
 }
 
 .itemDataBlock {
-	margin: 15px 0em 5px 0em;
-	width: 40%;
-	flex-flow: column;
-	border: 10px solid;
-	border-image-slice: 27% fill;
-	border-image-source: url("../assets/standalone/itemCardInfoHeaderBg.svg");
-	border-image-width: 10px;
-	border-image-repeat: round;
-	padding: 5px;
-	align-items: center;
+    margin: 15px 0em 5px 0em;
+    width: 40%;
+    flex-flow: column;
+    border: 10px solid;
+    border-image-slice: 27% fill;
+    border-image-source: url('../assets/standalone/itemCardInfoHeaderBg.svg');
+    border-image-width: 10px;
+    border-image-repeat: round;
+    padding: 5px;
+    align-items: center;
 }
 
 .itemDataHeader {
-	text-align: center;
-	height: 25px;
-	line-height: 25px;
-	padding: 0em 1.5em;
-	border-image-slice: 7 fill;
-	border-image-source: url("../assets/standalone/itemCardInfoHeaderBg.svg");
-	border-image-width: 40px;
-	border-image-repeat: round;
-	width: max-content;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    padding: 0em 1.5em;
+    border-image-slice: 7 fill;
+    border-image-source: url('../assets/standalone/itemCardInfoHeaderBg.svg');
+    border-image-width: 40px;
+    border-image-repeat: round;
+    width: max-content;
 }
 
 .itemDataHeader:nth-of-type(1) {
-	position: relative;
-	top: -24.5px;
-	margin-bottom: -1.5em;
+    position: relative;
+    top: -24.5px;
+    margin-bottom: -1.5em;
 }
 
 .itemCardPicture {
-	width: 60%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .itemCardElementNotes {
-	display: flex;
+    display: flex;
 }
 
 .itemCardElements {
-	/**
+    /**
 	 * TODO: Replace when ElementPictureSelector is implemented
 	 *  	 4em;
 	 */
-	width: 7em;
-	height: 7em;
-
+    width: 7em;
+    height: 7em;
 }
 
 .itemCardDescription {
-	width: calc(100% - 7em);
+    width: calc(100% - 7em);
 }
 
 .itemCardRedText {
-	color: darkred;
-	font-weight: bold;
-	display: flex;
+    color: darkred;
+    font-weight: bold;
+    display: flex;
 }
 
 .itemCardRedTextLabel,
 .itemCardBMInfoLabel {
-	/**
+    /**
 	 * TODO: Replace when ElementPictureSelector is implemented
 	 *  	 4em;
 	 */
-	width: 7em;
+    width: 7em;
 }
 
 .itemCardBMInfo {
-	display: flex;
+    display: flex;
 }
 
 .itemCardValue {
-	float: right;
-	width: 20%;
+    float: right;
+    width: 20%;
 }
 
 .itemCardValue input {
-	width:  max(50px, 50%);
+    width: max(50px, 50%);
 }
+
