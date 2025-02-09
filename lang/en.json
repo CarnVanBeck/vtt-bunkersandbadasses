@@ -428,6 +428,21 @@
                 "hint": "Select the Gun Types this Manufacturer produces."
             }
         },
+        "levels": {
+            "label": "Levels",
+            "hint": "You can configure the available Levels for your World here. These will be used by your Vault Hunter to specify the max level aswell as the required xp per level to level up.",
+            "config": "Configure Vault Hunter Levels",
+            "remove": "Remove Level",
+            "add": "Add Level",
+            "default": "Overwrite with default Levels",
+            "level": {
+                "label": "Level"
+            },
+            "xpSegment": {
+                "label": "XP Segment",
+                "hint": "The amount of XP per segment for this level."
+            }
+        },
         "buttons": {
             "save": "Save",
             "remove": "Remove"

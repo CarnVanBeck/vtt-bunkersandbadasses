@@ -1,0 +1,41 @@
+<div class="badass settings" style="display: block">
+    <section>
+        <div class="content content-full">
+            <div class="content-grid">
+                {{#each entries as |lvl id|}}
+                <div class="content-grid-item">
+                    <div class="badass-input">
+                        <input
+                            type="text"
+                            id="lvl{{ id }}_level"
+                            value="{{ lvl.level }}"
+                            data-level="{{ lvl.level }}"
+                            data-property="level"
+                            title="{{localize 'SETTINGS.levels.level.hint'}}"
+                        />
+                    </div>
+                    <div class="badass-input">
+                        <input
+                            type="text"
+                            id="lvl{{ id }}_xpSegment"
+                            value="{{ lvl.xpSegment }}"
+                            data-level="{{ lvl.level }}"
+                            data-property="xpSegment"
+                            title="{{localize 'SETTINGS.levels.xpSegment.hint'}}"
+                        />
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    <div class="settings-buttons">
+        <button type="button" class="btn btn-primary" data-action="addLevel">
+            {{localize 'SETTINGS.levels.add'}}
+        </button>
+        <button type="button" class="btn btn-danger" data-action="removeLevel">
+            {{localize 'SETTINGS.levels.remove'}}
+        </button>
+    </div>
+</div>

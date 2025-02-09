@@ -1,4 +1,17 @@
 .badass {
+
+    .badass-input {
+        padding: 0px 5px;
+    }
+    .badass-input label {
+        display: block;
+        margin-bottom: 2px;
+    }
+    .badass-input input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
     .settings {
         display: flex;
     }
@@ -45,6 +58,20 @@
             height: 100%;
             display: flex;
             flex-basis: 75%;
+        }
+
+        .content-full {
+            flex-basis: 100%;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .content-grid .content-grid-item {
+            display: flex;
+            flex-wrap: wrap;
         }
         
         .settings-buttons {

@@ -1,9 +1,10 @@
-import { BADASS, getDefaultDefenses, getDefaultElements } from './config.mjs';
+import { BADASS, getDefaultDefenses, getDefaultElements, getDefaultVaultHunterLevels } from './config.mjs';
 import DefenseConfig from '../applications/settings/defenseConfig.mjs';
 import ElementConfig from '../applications/settings/elementConfig.mjs';
 import ManufacturerConfig from '../applications/settings/manufacturerConfig.mjs';
 import GunTypeConfig from '../applications/settings/gunTypeConfig.mjs';
 import SettingsIO from '../applications/settings/settingsIO.mjs';
+import VaultHunterLevelConfig from '../applications/settings/vhLevelConfig.mjs';
 
 export function registerSettings() {
     game.settings.register(BADASS.namespace, 'migrationVersion', {
@@ -98,7 +99,27 @@ export function registerSettings() {
     });
     // #endregion
 
-    // #region Manufacturers
+    // #region levels
+    game.settings.registerMenu(BADASS.namespace, 'levels', {
+        name: 'SETTINGS.levels.label',
+        label: 'SETTINGS.levels.config',
+        hint: 'SETTINGS.levels.hint',
+        icon: 'fa-solid fa-user',
+        type: VaultHunterLevelConfig,
+        restricted: true,
+    });
+    game.settings.register(BADASS.namespace, 'levels', {
+        name: 'SETTINGS.levels.label',
+        label: 'SETTINGS.levels.label',
+        hint: 'SETTINGS.levels.hint',
+        icon: 'fa-solid fa-user',
+        scope: 'world',
+        config: false,
+        type: Array,
+        default: getDefaultVaultHunterLevels(),
+    });
+    // #endregion
+
     game.settings.registerMenu(BADASS.namespace, 'settingsIO', {
         name: 'SETTINGS.io.label',
         label: 'SETTINGS.io.label',
