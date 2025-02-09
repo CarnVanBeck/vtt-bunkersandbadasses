@@ -1,4 +1,4 @@
-import { BADASS, getDefaultDefenses, getDefaultElements, getDefaultGunTypes } from './config.mjs';
+import { BADASS, getDefaultDefenses, getDefaultElements } from './config.mjs';
 import DefenseConfig from '../applications/settings/defenseConfig.mjs';
 import ElementConfig from '../applications/settings/elementConfig.mjs';
 import ManufacturerConfig from '../applications/settings/manufacturerConfig.mjs';
@@ -73,7 +73,7 @@ export function registerSettings() {
         scope: 'world',
         config: false,
         type: Array,
-        default: getDefaultGunTypes(),
+        default: [],
     });
     // #endregion
 

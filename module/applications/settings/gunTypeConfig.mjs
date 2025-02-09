@@ -1,7 +1,7 @@
 import GunAccuracy from '../../data/custom/gunAccuracy.mjs';
 import GunLevel from '../../data/custom/gunLevel.mjs';
 import GunType from '../../data/custom/gunType.mjs';
-import { BADASS, getDefaultGunTypes } from '../../helper/config.mjs';
+import { BADASS } from '../../helper/config.mjs';
 import BaseConfig from './baseConfig.mjs';
 
 /**
@@ -22,19 +22,11 @@ export default class GunTypeConfig extends BaseConfig {
         id: `${BADASS.namespace}.gunTypeConfig`,
         window: {
             ...BaseConfig.DEFAULT_OPTIONS.window,
-            controls: [
-                {
-                    icon: 'fa-solid fa-database',
-                    action: 'defaultGunType',
-                    label: 'SETTINGS.gunTypes.default.label',
-                },
-            ],
             icon: 'fa-solid fa-wand-magic-sparkles',
             title: 'SETTINGS.gunTypes.config.label',
         },
         actions: {
             ...BaseConfig.DEFAULT_OPTIONS.actions,
-            defaultGunType: GunTypeConfig.defaultGunType,
             addLevel: GunTypeConfig.addLevel,
             removeLevel: GunTypeConfig.removeLevel,
             addAccuracy: GunTypeConfig.addAccuracy,
@@ -48,17 +40,6 @@ export default class GunTypeConfig extends BaseConfig {
         },
         ...BaseConfig.PARTS,
     };
-
-    /**
-     * Set the context Defenses to the default values defined by the system.
-     * @param {PointerEvent} event  The triggering event.
-     * @param {HTMLElement} target   The clicked Html element.
-     */
-    static async defaultGunType(e, target) {
-        this.entries = getDefaultGunTypes();
-        this.selectedEntry = null;
-        this.render();
-    }
 
     static addLevel(e, target) {
         if (!this.selectedEntry.levels) this.selectedEntry.levels = [];
