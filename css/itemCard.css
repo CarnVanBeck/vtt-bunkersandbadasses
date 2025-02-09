@@ -142,10 +142,7 @@ body {
     width: 100%;
 }
 
-.rarityPicSelector.prePictureSelector > .typeText {
-    bottom: 18px;
-}
-
+.rarityPicSelector.prePictureSelector > .typeText,
 .rarityPicSelector > .typeText {
     bottom: 15px;
 }
