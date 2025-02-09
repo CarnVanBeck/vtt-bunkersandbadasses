@@ -110,4 +110,3 @@ function checkInArray(value, array) {
 function isNumber(value) {
     return typeof value === 'number';
 }
-
