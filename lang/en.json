@@ -120,57 +120,7 @@
                     "max": "Maximum",
                     "hits": "Hits",
                     "crits": "Crits"
-                },
-                "types": {
-                    "combatRifle": {
-                        "label": "Combat Rifle",
-                        "hint": "Heavy, high-velocity guns. Consisting of both burst-fire Combat Rifles and fully-automated machine guns. If you like military-style assault rifles -- the kind wielded by square-jawed men with close-shaved haircuts who say things like \"to hell with the chain of command, it's time to do what's right\" -- you'll want one of these."
-                    }
                 }
-            }
-        },
-        "defense": {
-            "shield": {
-                "label": "Shield",
-                "hint": "Used by Shields and takes double damage from Shock damage."
-            },
-            "armor": {
-                "label": "Armor",
-                "hint": "Used for actors with the Armored trait and takes double damage from Corrosive damage."
-            },
-            "hp": {
-                "label": "Health",
-                "hint": "Used for actors with the Flesh trait and takes double damage from Incendiary damage."
-            },
-            "generic": {
-                "label": "Health",
-                "hint": "Used if the actor doesn't have any weaknesses against any element."
-            }
-        },
-        "element": {
-            "incendiary": {
-                "label": "Incendiary",
-                "hint": "Incendiary is a fancy way to say fire. Incendiary damage deals double damage to targets with exposed Flesh. Once Shields or Armor are depleted, all Health damage is double for Flesh targets. Mmmm smells like chicken."
-            },
-            "corrosive": {
-                "label": "Corrosive",
-                "hint": "Magical melty stuff that eats through Armor and Metal, dealing double Damage."
-            },
-            "shock": {
-                "label": "Shock",
-                "hint": "Ben Franklin never meant for it to be used as a weapon. Shock damage deals double damage to Shields."
-            },
-            "explosive": {
-                "label": "Explosive",
-                "hint": "Explosive damage makes a big BOOM and always includes Splash, which deals additional half Damage to all adjacent squares. Explosive also has a 30% chance to cause Knockback, kicking the target back one square away from Damage source."
-            },
-            "radiation": {
-                "label": "Radiation",
-                "hint": "Makes you glow from the inside and out. Radiation damage can penetrate through Shields and deal damage directly to Health. If a target dies while taking Radiation Damage, they explode and deal 3d6 Splash Radiation damage."
-            },
-            "cryo": {
-                "label": "Cryo",
-                "hint": "Cryo = really cold. Targets hit by Cryo damage are Slowed, which means they can only move one square for one turn after being hit and get -2 to Traverse Checks. If a target is hit again with Cryo, they become Frozen. A Frozen target can either move one square on their turn or make a Melee Attack."
             }
         },
         "rarity": {
@@ -198,9 +148,19 @@
     },
     "SHEETS": {
         "actor": {
+            "generic": {
+                "tabs": {
+                    "activeEffects": "Active Effects"
+                }
+            },
             "vaultHunter": {
                 "label": "Vault Hunter",
                 "hint": "Vault Hunters are the main characters of the Borderlands series. They are the playable characters and the protagonists of the story. Each Vault Hunter has a unique skill and three skill trees to choose from.",
+                "tabs": {
+                    "overview": "Overview",
+                    "inventory": "Inventory",
+                    "details": "Details"
+                },
                 "name": {
                     "label": "Name",
                     "hint": "The name of your Vault Hunter."
