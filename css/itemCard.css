@@ -138,8 +138,10 @@ body {
     bottom: 18px;
 }
 
-.rarityPicSelector > .PicOption {
-    width: 100%;
+.rarityPicSelector > .PicOption,
+.rarityPicSelector > .prePicOption {
+    height: 16px;
+    object-fit: cover;
 }
 
 .rarityPicSelector.prePictureSelector > .typeText,
