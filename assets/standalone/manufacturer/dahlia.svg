@@ -1,0 +1,43 @@
+<svg id="dahliaIcon" width="600" height="160" viewBox="0 0 600 160"
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<style>
+			.manufacturerBg {
+				fill: transparent;
+			}
+			.letter {
+				fill: #666;
+			}
+		</style>
+		<symbol id="dahliaA">
+			<path class="upperA"
+				d="m163,20 h14 l24,62 h-62 z"
+			/>
+			<path class="lowerA"
+				d="m134,97 h72 l18,43 h-18 l-12,-27 h-38 l-12,27 h-28z"
+			/>
+		</symbol>
+		<mask id="dahliaDCutouts">
+			<rect x="20" y="20" width="100" height="120" fill="white"/>
+			<path 
+				d="m58,40 h27 q10,0 10,10 v60 q0,10 -10,10 h-27 z" fill="black">
+			</path>
+		</mask>
+	</defs>
+	<rect class="manufacturerBg" width="500" height="160"/>
+	<path id="dahliaD" class="letter" mask="url(#dahliaDCutouts)"
+		d="m20,20 h70 q20,0 20,20 v80 q0,20 -20,20 h-70 z" 
+	/>
+	<use href="#dahliaA" class="letter" ></use>
+	<path id="dahliaH" class="letter"
+		d="m230,20 h35 v50 h34 v-50 h16 v120 h-16 v-50 h-34 v50 h-35 z" 
+	/>
+	<path id="dahliaL" class="letter"
+		d="m326,20 h35 v105 h35 v15 h-70 z" 
+	/>
+	<path id="dahliaI" class="letter"
+		d="m404,20 h35 v120 h-35 z" 
+	/>
+	<use href="#dahliaA" class="letter" transform="translate(332,0)"></use>
+</svg>

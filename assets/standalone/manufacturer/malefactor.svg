@@ -1,0 +1,57 @@
+<svg id="malefactorIcon" width="1000" height="160" viewBox="0 0 1000 160"
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<style>
+			.manufacturerBg {
+				fill: transparent;
+			}
+			.letter {
+				fill: #333;
+			}
+		</style>
+		<symbol id="malefactorA">
+			<path id="singleBulletChamber" class="letter"
+				d="m142,136 l57,-118 l57,118 h-20 l-37,-75 l-37,75 z"
+			/>
+			<path id="singleBulletChamber" class="letter"
+				d="m180,136 l18,-34 l18,34 z"
+			/>
+		</symbol>
+		<mask id="oCuttouts">
+			<rect x="778" y="18" width="120" height="120" fill="white"/>
+			<path d="m798,38 h55 v78 h-55 z" fill="black"/>
+		</mask>
+		<mask id="rCuttouts">
+			<rect x="880" y="18" width="120" height="120" fill="white"/>
+			<path d="m902,38 h55 v28 h-55 z" fill="black"/>
+		</mask>
+	</defs>
+	<rect class="manufacturerBg" x="0" y="0" width="1200" height="240"/>
+	<path id="M" class="letter" mask="url(#bCuttouts)"
+		d="m15,18 h20 l40,95 l40,-95 h20 v118 h-20 v-70 l-30,70 h-20 l-30,-70 v70 h-20 z" 
+	/>
+	<use href="#malefactorA"></use>
+	<path id="malefactorL" class="letter"
+		d="m262,18 h20 v98 h60 v20 h-80 z"
+	/>
+	<path id="malefactorE" class="letter"
+		d="m350,18 h80 v20 h-60 v28 h60 v20 h-60 v30 h60 v20 h-80 z"
+	/>
+	<path id="malefactorF" class="letter"
+		d="m438,18 h95 l-10,20 h-65 v28 h50 l-10,20 h-40 v50 h-20 z"
+	/>
+	<use href="#malefactorA" transform="translate(345,0)"></use>
+	<path id="malefactorC" class="letter"
+		d="m610,18 h72 v20 h-52 v78 h52 v20 h-72 z"
+	/>
+	<path id="malefactorT" class="letter"
+		d="m690,18 h80 v20 h-30 v98 h-20 v-98 h-30 z"
+	/>
+	<path id="malefactorO" class="letter" mask="url(#oCuttouts)"
+		d="m778,18 h95 v118 h-95 z"
+	/>
+	<path id="malefactorR" class="letter" mask="url(#rCuttouts)"
+		d="m880,18 h100 v65 h-25 l25,53 h-20 l-25,-53 h-33 v53 h-20z"
+	/>
+</svg>
