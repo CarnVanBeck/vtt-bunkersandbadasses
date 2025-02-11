@@ -8,7 +8,7 @@ import { GunCardSheet } from './module/sheets/item/gunCard.mjs';
 import { ShieldCardSheet } from './module/sheets/item/shieldCard.mjs';
 import { GrenadeCardSheet } from './module/sheets/item/grenadeCard.mjs';
 import { BadassActorSheet } from './module/sheets/actorSheet.mjs';
-import BadassVaultHunterSheetV2 from './module/applications/actor/badassVaultHunterSheetV2.mjs';
+import VaultHunterSheetV2 from './module/applications/actor/vaultHunterSheetV2.mjs';
 
 Hooks.on('init', () => {
     console.log('init');
@@ -50,7 +50,7 @@ Hooks.on('init', () => {
     //     makeDefault: true,
     //     label: 'badass.sheets.vaultHunter',
     // });
-    DocumentSheetConfig.registerSheet(Actor, CONFIG.BADASS.namespace, BadassVaultHunterSheetV2, {
+    DocumentSheetConfig.registerSheet(Actor, CONFIG.BADASS.namespace, VaultHunterSheetV2, {
         types: ['vaultHunter'],
         makeDefault: true,
         label: 'SHEETS.actor.vaultHunter.label',
