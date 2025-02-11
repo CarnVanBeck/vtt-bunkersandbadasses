@@ -1,4 +1,4 @@
-import Element from '../../data/custom/element.mjs';
+import Element from '../../data/custom/system/element.mjs';
 import { BADASS, getDefaultElements } from '../../helper/config.mjs';
 import BaseConfig from './baseConfig.mjs';
 

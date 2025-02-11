@@ -1,5 +1,5 @@
-import Defense from '../data/custom/defense.mjs';
-import Element from '../data/custom/element.mjs';
+import Defense from '../data/custom/system/defense.mjs';
+import Element from '../data/custom/system/element.mjs';
 
 export const BADASS = {};
 BADASS.namespace = 'vtt-bunkersandbadasses';

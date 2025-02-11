@@ -1,7 +1,7 @@
 import ManufacturedItemData from '../manufacturedItem.mjs';
 
 /**
- * System definition for a shield
+ * System definition for a defense items like shields or armor
  */
 export default class ShieldItemData extends ManufacturedItemData {
     static defineSchema() {
@@ -13,7 +13,6 @@ export default class ShieldItemData extends ManufacturedItemData {
             integer: true,
             min: 0,
             initial: 20,
-            //label: game.i18n.localize('badass.item.value'),
         });
         schema.max = new fields.NumberField({
             required: true,
@@ -21,7 +20,6 @@ export default class ShieldItemData extends ManufacturedItemData {
             integer: true,
             min: 0,
             initial: 20,
-            //label: game.i18n.localize('badass.item.value'),
         });
         schema.recharge = new fields.NumberField({
             required: true,
@@ -29,13 +27,8 @@ export default class ShieldItemData extends ManufacturedItemData {
             integer: true,
             min: 0,
             initial: 5,
-            //label: game.i18n.localize('badass.item.value'),
         });
-        schema.element = new fields.ObjectField();
-        schema.effect = new fields.ObjectField();
+        schema.defenseType = new fields.StringField();
         return schema;
     }
-
-    /** @inheritDoc */
-    prepareDerivedData() {}
 }

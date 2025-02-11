@@ -2,7 +2,6 @@ import BadassActorSheetV2 from './badassActorSheetV2.mjs';
 import { BADASS } from '../../helper/config.mjs';
 import DefenseConfig from '../settings/defenseConfig.mjs';
 import { getSystemGunTypes } from '../../helper/systemValues.mjs';
-import TestItemData from '../../data/test.mjs';
 
 export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
     static DEFAULT_OPTIONS = {
@@ -38,10 +37,6 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
     };
 
     async _prepareContext(options) {
-        let anonTest = { name: 'anon', defense: 'defense' };
-        let dataModelTest = new TestItemData();
-        dataModelTest.validate({ changes: anonTest });
-
         const context = await super._prepareContext(options);
 
         if (!this.tabGroups.primary) this.tabGroups.primary = 'overview';

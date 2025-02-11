@@ -1,9 +1,9 @@
-import CharacterItemData from '../characterItem.mjs';
+import BaseModel from '../baseModel.mjs';
 
 /**
  * System definition for an action
  */
-export default class ActionItemData extends CharacterItemData {
+export default class Action extends BaseModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();

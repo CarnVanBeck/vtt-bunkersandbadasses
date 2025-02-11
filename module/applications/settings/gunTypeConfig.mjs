@@ -1,6 +1,6 @@
-import GunAccuracy from '../../data/custom/gunAccuracy.mjs';
-import GunLevel from '../../data/custom/gunLevel.mjs';
-import GunType from '../../data/custom/gunType.mjs';
+import GunAccuracy from '../../data/custom/system/structure/gunAccuracy.mjs';
+import GunLevel from '../../data/custom/system/structure/gunLevel.mjs';
+import GunType from '../../data/custom/system/gunType.mjs';
 import { BADASS } from '../../helper/config.mjs';
 import BaseConfig from './baseConfig.mjs';
 

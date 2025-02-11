@@ -23,8 +23,11 @@ Hooks.on('init', () => {
     CONFIG.Actor.documentClass = VaultHunterActor;
     CONFIG.Item.dataModels = {
         gun: dataModels.gun,
-        redText: dataModels.redText,
-        prefix: dataModels.prefix,
+        defense: dataModels.defense,
+        grenadeMod: dataModels.grenadeMod,
+        potion: dataModels.potion,
+        questItem: dataModels.questItem,
+        relic: dataModels.relic,
     };
 
     CONFIG.Item.documentClass = BadassItem;
@@ -35,7 +38,7 @@ Hooks.on('init', () => {
         makeDefault: true,
     });
     Items.registerSheet(CONFIG.BADASS.namespace, ShieldCardSheet, {
-        types: ['shield'],
+        types: ['defense'],
         makeDefault: true,
     });
     Items.registerSheet(CONFIG.BADASS.namespace, GrenadeCardSheet, {

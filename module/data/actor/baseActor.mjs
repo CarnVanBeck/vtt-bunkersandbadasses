@@ -1,5 +1,5 @@
-import BaseItemData from '../item/baseItem.mjs';
-import ActionItemData from '../item/characterItems/action.mjs';
+import Action from '../custom/character/action.mjs';
+import Defense from '../custom/system/defense.mjs';
 import InventoryItemData from '../item/inventoryItem.mjs';
 import BadassDataModel from '../model.mjs';
 
@@ -42,30 +42,18 @@ export default class BaseActorData extends BadassDataModel {
                 initial: 0,
             }),
         });
-        schema.defenses = new fields.ArrayField(new fields.ObjectField(), {
-            required: false,
-            nullable: true,
-            label: 'badass.actor.defense.label',
-            hint: 'badass.actor.defense.hint',
-        });
-        schema.inventory = new fields.ArrayField(new fields.EmbeddedDataField(InventoryItemData));
-        schema.actions = new fields.ArrayField(new fields.EmbeddedDataField(ActionItemData));
+        schema.defenses = new fields.ArrayField(new fields.EmbeddedDataField(Defense));
+        schema.actions = new fields.ArrayField(new fields.EmbeddedDataField(Action));
         schema.notes = new fields.StringField({
             required: false,
             nullable: true,
-            label: 'badass.actor.notes.label',
-            hint: 'badass.actor.notes.hint',
         });
         schema.publicInfo = new fields.HTMLField({
             required: false,
             nullable: true,
-            label: 'badass.actor.publicInfo.label',
-            hint: 'badass.actor.publicInfo.hint',
         });
         schema.tookDamage = new fields.BooleanField({
             initial: false,
-            label: 'badass.actor.tookDamage.label',
-            hint: 'badass.actor.tookDamage.hint',
         });
         return schema;
     }

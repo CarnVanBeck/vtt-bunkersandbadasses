@@ -8,7 +8,8 @@ export default class BaseItemData extends BadassDataModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = {};
-        schema.description = new fields.HTMLField({ label: game.i18n.localize('badass.item.description.label') });
+        schema.description = new fields.HTMLField();
+        schema.effects = new fields.ArrayField(new fields.ObjectField());
         return schema;
     }
 }

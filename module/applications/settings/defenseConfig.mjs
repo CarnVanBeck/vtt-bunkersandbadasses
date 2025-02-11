@@ -1,6 +1,6 @@
 import BaseConfig from './baseConfig.mjs';
 import { BADASS, getDefaultDefenses } from '../../helper/config.mjs';
-import Defense from '../../data/custom/defense.mjs';
+import Defense from '../../data/custom/system/defense.mjs';
 
 /**
  * A form application for configuring the available Defenses in this world.

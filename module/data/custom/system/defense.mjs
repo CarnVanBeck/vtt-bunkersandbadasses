@@ -1,3 +1,5 @@
+import BaseModel from '../baseModel.mjs';
+
 /**
  * Definition of the Defense class that is used on actors
  * to specify stuff like shields, hp and so on
@@ -13,22 +15,11 @@
  * @property {Boolean}  requiresItem    Specifies if the Defense instance requires an Item or values once added to an Actor
  * @property {Object}   item            Alternative to specified values (max, current and recharge) a item like a shield or armor can be used
  */
-export default class Defense extends foundry.abstract.DataModel {
+export default class Defense extends BaseModel {
     /** @override */
     static defineSchema() {
         const fields = foundry.data.fields;
-        const schema = {};
-        schema.key = new fields.StringField({
-            required: true,
-            nullable: false,
-            initial: '',
-        });
-        schema.name = new fields.StringField({
-            required: true,
-            nullable: false,
-            initial: '',
-        });
-        schema.description = new fields.StringField();
+        const schema = super.defineSchema();
         schema.order = new fields.NumberField({
             required: true,
             nullable: false,

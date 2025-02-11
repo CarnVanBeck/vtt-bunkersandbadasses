@@ -62,7 +62,13 @@
                     "label": "Archetype"
                 },
                 "class": {
-                    "label": "Class"
+                    "label": "Class",
+                    "skills": {
+                        "label": "Skills",
+                        "tier": {
+                            "label": "Tier"
+                        }
+                    }
                 },
                 "background": {
                     "label": "Background"
@@ -470,18 +476,12 @@
             "minion": "Minion"
         },
         "Item": {
-            "action": "Action",
-            "armor": "Armor",
-            "class": "Class",
             "grenadeMod": "Grenade Mod",
             "gun": "Gun",
             "potion": "Potion",
-            "prefix": "Prefix",
             "quest": "Quest Item",
-            "redText": "Red Text",
             "relic": "Relic",
-            "shield": "Shield",
-            "skill": "Skill"
+            "defense": "Defense"
         }
     }
 }

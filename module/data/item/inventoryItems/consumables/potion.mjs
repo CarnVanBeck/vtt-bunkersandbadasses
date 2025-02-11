@@ -1,9 +1,9 @@
-import BaseItemData from './baseItem.mjs';
+import ConsumableItemData from '../consumableItem.mjs';
 
 /**
- * Base class for all classes, skills and actions
+ * System definition for a potion
  */
-export default class CharacterItemData extends BaseItemData {
+export default class PotionItemData extends ConsumableItemData {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();

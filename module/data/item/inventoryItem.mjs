@@ -14,13 +14,11 @@ export default class InventoryItemData extends BaseItemData {
             integer: true,
             min: 0,
             initial: 0,
-            label: 'badass.item.value',
         });
         schema.rarity = new fields.StringField({
             required: true,
             nullable: false,
             initial: 'common',
-            label: 'badass.rarity',
         });
         schema.equipped = new fields.BooleanField({ initial: false });
         return schema;

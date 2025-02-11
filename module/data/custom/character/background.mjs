@@ -1,12 +1,13 @@
-import CharacterItemData from '../characterItem.mjs';
+import BaseModel from '../baseModel.mjs';
 
 /**
- * System definition for a class
+ * System definition for a background
  */
-export default class ClassItemData extends CharacterItemData {
+export default class Background extends BaseModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();
+        schema.effects = new fields.ArrayField(new fields.ObjectField());
         return schema;
     }
 

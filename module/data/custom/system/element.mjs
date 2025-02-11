@@ -1,3 +1,5 @@
+import BaseModel from '../baseModel.mjs';
+
 /**
  * Definition of the Element class that is used by lots of things
  *
@@ -10,24 +12,13 @@
  * @property {String[]} weakAgainst     Array of Defense keys this element deals half damage to
  * @property {String[]} ignores         Array of Defense keys this element ignores, skiping them in the damage calculation
  */
-export default class Element extends foundry.abstract.DataModel {
+export default class Element extends BaseModel {
     /** @override */
     static defineSchema() {
         const fields = foundry.data.fields;
-        const schema = {};
-        schema.key = new fields.StringField({
-            required: true,
-            nullable: false,
-            initial: '',
-        });
-        schema.name = new fields.StringField({
-            required: true,
-            nullable: false,
-            initial: '',
-        });
-        schema.description = new fields.StringField();
+        const schema = super.defineSchema();
         schema.icon = new fields.FilePathField({
-            initial: `${CONFIG.BADASS.systemPath}/assets/standalone/elements/explosive.svg`,
+            initial: `${CONFIG.BADASS.systemPath}/assets/stylable/elements/bullet.svg`,
             categories: ['IMAGE'],
             base64: false,
         });

@@ -60,25 +60,13 @@
             }
         },
         "Item": {
-            "class": {
-                "HTMLFields": ["description"]
-            },
-            "skill": {
-                "HTMLFields": ["description"]
-            },
-            "action": {
-                "HTMLFields": ["description"]
-            },
             "gun": {
                 "HTMLFields": ["description"]
             },
             "grenadeMod": {
                 "HTMLFields": ["description"]
             },
-            "shield": {
-                "HTMLFields": ["description"]
-            },
-            "armor": {
+            "defense": {
                 "HTMLFields": ["description"]
             },
             "potion": {
@@ -87,13 +75,7 @@
             "relic": {
                 "HTMLFields": ["description"]
             },
-            "quest": {
-                "HTMLFields": ["description"]
-            },
-            "redText": {
-                "HTMLFields": ["description"]
-            },
-            "prefix": {
+            "questItem": {
                 "HTMLFields": ["description"]
             }
         }

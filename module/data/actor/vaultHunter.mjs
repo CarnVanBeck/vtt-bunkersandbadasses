@@ -1,6 +1,5 @@
-import ClassItemData from '../item/characterItems/class.mjs';
-import SkillItemData from '../item/characterItems/skill.mjs';
-import ActorDataModel from './baseActor.mjs';
+import BaseActorData from './baseActor.mjs';
+import Archetype from '../custom/character/archetype.mjs';
 
 const fields = foundry.data.fields;
 /**
@@ -8,17 +7,11 @@ const fields = foundry.data.fields;
  *
  * @property {Number} xp    Current experience of the Vault Hunter
  */
-export default class VaultHunterData extends ActorDataModel {
+export default class VaultHunterData extends BaseActorData {
     /** @inheritDoc */
     static defineSchema() {
         const schema = super.defineSchema();
-        schema.archetype = new fields.StringField({
-            required: false,
-            nullable: true,
-            initial: '',
-            label: 'badass.actor.vaultHunter.archetype.label',
-            hint: 'badass.actor.vaultHunter.archetype.hint',
-        });
+        schema.archetype = new fields.ArrayField(new fields.EmbeddedDataField(Archetype));
         schema.background = new fields.StringField({
             required: false,
             nullable: true,

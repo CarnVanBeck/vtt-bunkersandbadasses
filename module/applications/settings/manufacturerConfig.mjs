@@ -1,4 +1,4 @@
-import Manufacturer from '../../data/custom/manufacturer.mjs';
+import Manufacturer from '../../data/custom/system/manufacturer.mjs';
 import { BADASS } from '../../helper/config.mjs';
 import BaseConfig from './baseConfig.mjs';
 

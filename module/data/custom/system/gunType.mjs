@@ -1,4 +1,5 @@
-import GunLevel from './gunLevel.mjs';
+import BaseModel from '../baseModel.mjs';
+import GunLevel from './structure/gunLevel.mjs';
 
 /**
  * Definition of the GunType class that is used to preconfigure types for guns
@@ -11,22 +12,11 @@ import GunLevel from './gunLevel.mjs';
  *
  * @see GunLevel
  */
-export default class GunType extends foundry.abstract.DataModel {
+export default class GunType extends BaseModel {
     /** @override */
     static defineSchema() {
         const fields = foundry.data.fields;
-        const schema = {};
-        schema.key = new fields.StringField({
-            required: true,
-            nullable: false,
-            initial: '',
-        });
-        schema.name = new fields.StringField({
-            required: true,
-            nullable: false,
-            initial: '',
-        });
-        schema.description = new fields.StringField();
+        const schema = super.defineSchema();
         schema.icon = new fields.FilePathField({
             initial: `${CONFIG.BADASS.systemPath}/assets/styleable/guns/pistol.svg`,
             categories: ['IMAGE'],
