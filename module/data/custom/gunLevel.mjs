@@ -1,4 +1,4 @@
-import BadassDataModel from '../model.mjs';
+import GunAccuracy from './gunAccuracy.mjs';
 
 /**
  * Definition of the GunLevel class that is used to preconfigure the levels for a GunType
@@ -12,7 +12,7 @@ import BadassDataModel from '../model.mjs';
  * @see GunType
  * @see GunAccuracy
  */
-export default class GunLevel extends BadassDataModel {
+export default class GunLevel extends foundry.abstract.DataModel {
     /** @override */
     static defineSchema() {
         const fields = foundry.data.fields;
@@ -20,33 +20,22 @@ export default class GunLevel extends BadassDataModel {
         schema.start = new fields.NumberField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.gunLevels.start.label',
-            hint: 'SETTINGS.gunLevels.start.hint',
             initial: 0,
         });
         schema.end = new fields.NumberField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.gunLevels.end.label',
-            hint: 'SETTINGS.gunLevels.end.hint',
             initial: 0,
         });
-        schema.accuracy = new fields.ArrayField(new fields.ObjectField(), {
-            label: 'SETTINGS.gunTypes.accuracies.label',
-            hint: 'SETTINGS.gunTypes.accuracies.hint',
-        });
+        schema.accuracy = new fields.ArrayField(new fields.EmbeddedDataField(GunAccuracy));
         schema.damage = new fields.StringField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.gunLevels.damage.label',
-            hint: 'SETTINGS.gunLevels.damage.hint',
             initial: '1d6',
         });
         schema.range = new fields.NumberField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.gunLevels.range.label',
-            hint: 'SETTINGS.gunLevels.range.hint',
             initial: 0,
         });
         return schema;

@@ -1,5 +1,3 @@
-import BadassDataModel from '../model.mjs';
-
 /**
  * Definition of the Gun Accuracy class that is used by GunLevels to determin the hits and crits per dice roll
  *
@@ -10,7 +8,7 @@ import BadassDataModel from '../model.mjs';
  *
  * @see GunLevel
  */
-export default class GunAccuracy extends BadassDataModel {
+export default class GunAccuracy extends foundry.abstract.DataModel {
     /** @override */
     static defineSchema() {
         const fields = foundry.data.fields;
@@ -18,30 +16,26 @@ export default class GunAccuracy extends BadassDataModel {
         schema.low = new fields.NumberField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.gunAccuracy.low.label',
-            hint: 'SETTINGS.gunAccuracy.low.hint',
             initial: 0,
+            min: 0,
         });
         schema.high = new fields.NumberField({
             required: false,
             nullable: true,
-            label: 'SETTINGS.gunAccuracy.high.label',
-            hint: 'SETTINGS.gunAccuracy.high.hint',
             initial: 1,
+            min: 0,
         });
         schema.hits = new fields.NumberField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.gunAccuracy.hits.label',
-            hint: 'SETTINGS.gunAccuracy.hits.hint',
             initial: 0,
+            min: 0,
         });
         schema.crits = new fields.NumberField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.gunAccuracy.crits.label',
-            hint: 'SETTINGS.gunAccuracy.crits.hint',
             initial: 0,
+            min: 0,
         });
         return schema;
     }

@@ -1,4 +1,3 @@
-import BadassDataModel from '../model.mjs';
 /**
  * Definition of the Element class that is used by lots of things
  *
@@ -11,7 +10,7 @@ import BadassDataModel from '../model.mjs';
  * @property {String[]} weakAgainst     Array of Defense keys this element deals half damage to
  * @property {String[]} ignores         Array of Defense keys this element ignores, skiping them in the damage calculation
  */
-export default class Element extends BadassDataModel {
+export default class Element extends foundry.abstract.DataModel {
     /** @override */
     static defineSchema() {
         const fields = foundry.data.fields;
@@ -19,44 +18,23 @@ export default class Element extends BadassDataModel {
         schema.key = new fields.StringField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.elements.key.label',
-            hint: 'SETTINGS.elements.key.hint',
             initial: '',
         });
         schema.name = new fields.StringField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.elements.name.label',
-            hint: 'SETTINGS.elements.name.hint',
             initial: '',
         });
-        schema.description = new fields.StringField({
-            label: 'SETTINGS.elements.description.label',
-            hint: 'SETTINGS.elements.description.hint',
-        });
+        schema.description = new fields.StringField();
         schema.icon = new fields.FilePathField({
-            label: 'SETTINGS.elements.icon.label',
-            hint: 'SETTINGS.elements.icon.hint',
             initial: `${CONFIG.BADASS.systemPath}/assets/standalone/elements/explosive.svg`,
             categories: ['IMAGE'],
             base64: false,
         });
-        schema.color = new fields.ColorField({
-            label: 'SETTINGS.elements.color.label',
-            hint: 'SETTINGS.elements.color.hint',
-        });
-        schema.strongAgainst = new fields.ArrayField(new fields.StringField(), {
-            label: 'SETTINGS.elements.strongAgainst.label',
-            hint: 'SETTINGS.elements.strongAgainst.hint',
-        });
-        schema.weakAgainst = new fields.ArrayField(new fields.StringField(), {
-            label: 'SETTINGS.elements.weakAgainst.label',
-            hint: 'SETTINGS.elements.weakAgainst.hint',
-        });
-        schema.ignores = new fields.ArrayField(new fields.StringField(), {
-            label: 'SETTINGS.elements.ignores.label',
-            hint: 'SETTINGS.elements.ignores.hint',
-        });
+        schema.color = new fields.ColorField();
+        schema.strongAgainst = new fields.ArrayField(new fields.StringField());
+        schema.weakAgainst = new fields.ArrayField(new fields.StringField());
+        schema.ignores = new fields.ArrayField(new fields.StringField());
         return schema;
     }
 }

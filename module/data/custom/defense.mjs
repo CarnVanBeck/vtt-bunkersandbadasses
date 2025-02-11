@@ -1,5 +1,3 @@
-import BadassDataModel from '../model.mjs';
-
 /**
  * Definition of the Defense class that is used on actors
  * to specify stuff like shields, hp and so on
@@ -15,7 +13,7 @@ import BadassDataModel from '../model.mjs';
  * @property {Boolean}  requiresItem    Specifies if the Defense instance requires an Item or values once added to an Actor
  * @property {Object}   item            Alternative to specified values (max, current and recharge) a item like a shield or armor can be used
  */
-export default class Defense extends BadassDataModel {
+export default class Defense extends foundry.abstract.DataModel {
     /** @override */
     static defineSchema() {
         const fields = foundry.data.fields;
@@ -23,54 +21,39 @@ export default class Defense extends BadassDataModel {
         schema.key = new fields.StringField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.defenses.key.label',
-            hint: 'SETTINGS.defenses.key.hint',
             initial: '',
         });
         schema.name = new fields.StringField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.defenses.name.label',
-            hint: 'SETTINGS.defenses.name.hint',
             initial: '',
         });
-        schema.description = new fields.StringField({
-            label: 'SETTINGS.defenses.description.label',
-            hint: 'SETTINGS.defenses.description.hint',
-        });
+        schema.description = new fields.StringField();
         schema.order = new fields.NumberField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.defenses.order.label',
-            hint: 'SETTINGS.defenses.order.hint',
+            integer: true,
             initial: 0,
         });
         schema.max = new fields.NumberField({
-            label: 'SETTINGS.defenses.max.label',
-            hint: 'SETTINGS.defenses.max.hint',
+            integer: true,
+            min: 0,
         });
         schema.current = new fields.NumberField({
-            label: 'SETTINGS.defenses.current.label',
-            hint: 'SETTINGS.defenses.current.hint',
+            integer: true,
+            min: 0,
         });
         schema.recharge = new fields.NumberField({
-            label: 'SETTINGS.defenses.recharge.label',
-            hint: 'SETTINGS.defenses.recharge.hint',
+            integer: true,
+            min: 0,
         });
         schema.isLife = new fields.BooleanField({
-            label: 'SETTINGS.defenses.isLife.label',
-            hint: 'SETTINGS.defenses.isLife.hint',
             initial: false,
         });
         schema.requiresItem = new fields.BooleanField({
-            label: 'SETTINGS.defenses.requiresItem.label',
-            hint: 'SETTINGS.defenses.requiresItem.hint',
             initial: false,
         });
-        schema.item = new fields.DocumentIdField({
-            label: 'SETTINGS.defenses.item.label',
-            hint: 'SETTINGS.defenses.item.hint',
-        });
+        schema.item = new fields.DocumentIdField();
         return schema;
     }
 }

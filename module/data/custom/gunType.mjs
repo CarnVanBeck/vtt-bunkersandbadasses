@@ -1,4 +1,4 @@
-import BadassDataModel from '../model.mjs';
+import GunLevel from './gunLevel.mjs';
 
 /**
  * Definition of the GunType class that is used to preconfigure types for guns
@@ -11,7 +11,7 @@ import BadassDataModel from '../model.mjs';
  *
  * @see GunLevel
  */
-export default class GunType extends BadassDataModel {
+export default class GunType extends foundry.abstract.DataModel {
     /** @override */
     static defineSchema() {
         const fields = foundry.data.fields;
@@ -19,32 +19,20 @@ export default class GunType extends BadassDataModel {
         schema.key = new fields.StringField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.gunTypes.key.label',
-            hint: 'SETTINGS.gunTypes.key.hint',
             initial: '',
         });
         schema.name = new fields.StringField({
             required: true,
             nullable: false,
-            label: 'SETTINGS.gunTypes.name.label',
-            hint: 'SETTINGS.gunTypes.name.hint',
             initial: '',
         });
-        schema.description = new fields.StringField({
-            label: 'SETTINGS.gunTypes.description.label',
-            hint: 'SETTINGS.gunTypes.description.hint',
-        });
+        schema.description = new fields.StringField();
         schema.icon = new fields.FilePathField({
-            label: 'SETTINGS.gunTypes.icon.label',
-            hint: 'SETTINGS.gunTypes.icon.hint',
             initial: `${CONFIG.BADASS.systemPath}/assets/styleable/guns/pistol.svg`,
             categories: ['IMAGE'],
             base64: false,
         });
-        schema.levels = new fields.ArrayField(new fields.ObjectField(), {
-            label: 'SETTINGS.gunTypes.levels.label',
-            hint: 'SETTINGS.gunTypes.levels.hint',
-        });
+        schema.levels = new fields.ArrayField(new fields.EmbeddedDataField(GunLevel));
         return schema;
     }
 }
