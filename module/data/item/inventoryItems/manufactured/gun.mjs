@@ -28,7 +28,6 @@ export default class GunItemData extends ManufacturedItemData {
         schema.redText = new fields.EmbeddedDataField(RedText);
         schema.prefix = new fields.EmbeddedDataField(Prefix);
         schema.accuracy = new fields.ArrayField(new fields.EmbeddedDataField(GunAccuracy));
-        schema.type = new fields.StringField();
         return schema;
     }
 }
