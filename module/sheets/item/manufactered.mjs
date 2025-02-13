@@ -22,57 +22,84 @@ export class ManufacturedSheet extends ItemSheet {
     }
 
     /**
-     *
-     * @param {*} level
+     * Update system.level with a new value
+     * 
+     * @param {*} level         the updated value
      */
     updateLevel(level) {
         let updateJSON = {
             'system.level': level,
         };
-        this.object.update(updateJSON);
+        return this.object.update(updateJSON);
     }
 
     /**
-     *
-     * @param {*} rarity
+     * Update system.rarity with a new value
+     * 
+     * @param {*} rarity        the updated value
      */
     updateRarity(rarity) {
         let updateJSON = {
             'system.rarity': rarity,
         };
-        this.object.update(updateJSON);
+        return this.object.update(updateJSON);
     }
 
+    /**
+     * Update system.manufacturer with a new name
+     * 
+     * @param {*} manufacturer  the updated value
+     */
     updateManufaturer(manufacturer) {
         let updateJSON = {
             'system.manufacturer': {
                 name: manufacturer,
             },
         };
-        this.object.update(updateJSON);
+        return this.object.update(updateJSON);
     }
 
+    /**
+     * Update system.type with a new value
+     * 
+     * @param {*} type          the updated value
+     */
     updateType(type) {
         let updateJSON = {
             'system.type': type,
         };
-        this.object.update(updateJSON);
+        return this.object.update(updateJSON);
     }
 
+    /**
+     * Update system.element with a new value
+     * 
+     * @param {*} element       the updated value
+     */
     updateElement(element) {
         let updateJSON = {
             'system.element': element,
         };
-        this.object.update(updateJSON);
+        return this.object.update(updateJSON);
     }
 
-    validateKeyInList(manufacturerList, key) {
-        return (
-            manufacturerList.find((value, index, array) => {
-                return key == value.key;
-            }) != undefined
-        );
+    validateKeyInList(validateList, key) {
+        let found = false;
+        for(let validateItem of validateList) {
+            if(validateItem.key == key) {
+                found = true;
+            }
+        }
+        return found
     }
+
+    showErrorWindow(error) {
+		ui.notifications.warn(error, {
+			permanent: true,
+			//localize: true,
+			console: true,
+		});
+	}
 
     togglePicSelectDropdown(event) {
         event.delegateTarget.parentNode.parentNode.querySelector('.pictureSelector').classList.toggle('picNoneDisplay');
@@ -112,3 +139,4 @@ export class ManufacturedSheet extends ItemSheet {
         html.on('click', '.effect-control', (ev) => onManageActiveEffect(ev, this.item));
     }
 }
+

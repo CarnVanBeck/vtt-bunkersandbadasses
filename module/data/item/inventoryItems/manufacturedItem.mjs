@@ -13,6 +13,7 @@ export default class ManufacturedItemData extends InventoryItemData {
         });
         schema.level = new fields.NumberField();
         schema.element = new fields.EmbeddedDataField(Element);
+        schema.type = new fields.StringField();
         return schema;
     }
 }

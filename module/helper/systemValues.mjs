@@ -35,6 +35,16 @@ export function getDefaultAccuracy() {
     ];
 }
 
+function _findNonLifeDefense(defenseList) {
+    let foundDefenses = [];
+    for (let singleDefense of defenseList) {
+        if (!singleDefense.isLife) {
+            foundDefenses.push(singleDefense);
+        }
+    }
+    return foundDefenses;
+}
+
 function _findGunAccuracyByType(gunList, gunType) {
     let foundGunType = {};
     for (let singleGunType of gunList) {
@@ -88,6 +98,10 @@ export function getSystemShieldManufacturers() {
 export function getSystemGrenadeManufacturers() {
     let manufacturerType = 'grenadeMod';
     return _filterManufacturersByType(getSystemManufacturers(), manufacturerType);
+}
+
+export function getSystemLifeDefenses() {
+    return _findNonLifeDefense(getSystemDefenses());
 }
 
 export function getSystemRarities() {

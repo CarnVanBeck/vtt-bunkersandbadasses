@@ -24,7 +24,7 @@
                 src="{{choice.icon}}" alt="{{choice.name}}" title="{{choice.name}}" data-key="{{choice.key}}"
             />
         {{else}}
-            <div class="PicOption {{../name}}{{choice.key}}" data-key="{{choice.key}}">
+            <div class="{{../name}}PicOption PicOption {{../name}}{{choice.key}}" data-key="{{choice.key}}">
                 {{choice.name}}
             </div>
         {{/if}}
