@@ -56,8 +56,8 @@ export class GunCardSheet extends ManufacturedSheet {
 	updateLevelData(accuracyList, damageDie, gunRange) {
 		let updateJSON = {
 			"system.accuracy": accuracyList,
-			"system.damage": damageDie,
-			"system.range": gunRange
+			"system.damage.base": damageDie,
+			"system.range.base": gunRange
 		};
 		this.object.update(updateJSON);
 	}
@@ -75,22 +75,22 @@ export class GunCardSheet extends ManufacturedSheet {
 	updateDie(damageDie, dieCount) {
 		let damage =  dieCount + damageDie;
 		let updateJSON = {
-			"system.damage": damage
+			"system.damage.base": damage
 		};
 		this.object.update(updateJSON);
 	}
 
 	updateFromDamageDie(event) {
-		let dieCount = this.object.system.damage ? this.object.system.damage.split("d")[0] : 1;
+		let dieCount = this.object.system.damage.base ? this.object.system.damage.base.split("d")[0] : 1;
 		let dieValue = event.delegateTarget.dataset["key"];
 		this.updateDie(dieValue, dieCount);
-		event.target.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
+		event.delegateTarget.parentNode.parentNode.querySelector(".pictureSelector").classList.toggle("picNoneDisplay");
 	}
 
 	updateFromDieMulti(event) {
 		let delimiter = "d";
 		let dieCount = event.target.value;
-		let dieValue = this.object.system.damage ? (delimiter + this.object.system.damage.split(delimiter)[1]) : "d4";
+		let dieValue = this.object.system.damage.base ? (delimiter + this.object.system.damage.base.split(delimiter)[1]) : "d4";
 		this.updateDie(dieValue, dieCount);
 	}
 	

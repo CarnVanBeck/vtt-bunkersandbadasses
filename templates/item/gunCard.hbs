@@ -21,18 +21,18 @@
 				<div class="itemDataHeader" > {{localize "badass.item.gun.damage.label"}} </div>
 				<div class="gunCardDamage itemCardFlex">
 					<div class="gunCardDamageDie">
-						{{#if system.damage}}
-							{{> hbsSelector choices=dice name="damageDie" selected=(concat "d" (getDiceSize system.damage))}}
+						{{#if system.damage.base}}
+							{{> hbsSelector choices=dice name="damageDie" selected=(concat "d" (getDiceSize system.damage.base))}}
 						{{else}}
 							{{> hbsSelector choices=dice name="damageDie"}}
 						{{/if}}
 					</div>
 					<div class="gunCardDiceMulti">
-						{{#if system.damage}}
-							<div class="gunCardMultiSign{{#equals (getDiceCount system.damage) 1}} gunCardSingleDice{{/equals}}">x</div>
-							<input class="gunCardDiceMultiInput	{{#equals (getDiceCount system.damage) 1}}gunCardSingleDice{{/equals}}"
+						{{#if system.damage.base}}
+							<div class="gunCardMultiSign{{#equals (getDiceCount system.damage.base) 1}} gunCardSingleDice{{/equals}}">x</div>
+							<input class="gunCardDiceMultiInput	{{#equals (getDiceCount system.damage.base) 1}}gunCardSingleDice{{/equals}}"
 								onfocus="this.select()"
-								value="{{getDiceCount system.damage}}"
+								value="{{getDiceCount system.damage.base}}"
 								min="1"	type="number" data-dtype="Number"
 							/>
 						{{else}}
@@ -53,7 +53,7 @@
 				</div>
 				<div class="itemDataHeader gunCardRange">
 					<div> {{localize "badass.item.gun.range.label"}}: </div>
-					{{> stdInput inputClass="itemCardInput" inputValue=system.range inputName="system.range" minimum='0'}}
+					{{> stdInput inputClass="itemCardInput" inputValue=system.range.base inputName="system.range.base" minimum='0'}}
 					<div>{{localize "badass.generic.square.short"}}</div>
 				</div>
 			</div>

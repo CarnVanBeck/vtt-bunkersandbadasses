@@ -11,12 +11,12 @@
 					<div class="shieldCapacityData itemCardFlex">
 						{{> stdInput inputClass="itemCardInput" inputValue=system.current inputName="system.current" minimum='0'}}
 						/
-						{{> stdInput inputClass="itemCardInput" inputValue=system.max inputName="system.max" minimum='0'}}
+						{{> stdInput inputClass="itemCardInput" inputValue=system.max.base inputName="system.max.base" minimum='0'}}
 					</div>
 				</div>
 				<div class="itemDataHeader" > REGEN </div>
 				<div class="shieldRegen">
-					{{> stdInput inputClass="itemCardInput" inputValue=system.regen inputName="system.regen"}}
+					{{> stdInput inputClass="itemCardInput" inputValue=system.regen.base inputName="system.regen.base"}}
 				</div>
 			</div>
 			<div class="itemCardPicture" >
