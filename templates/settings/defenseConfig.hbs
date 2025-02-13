@@ -45,6 +45,14 @@
                     title='{{localize "Settings.defense.description.hint"}}'
                 />
 
+                <label for='elementIcon'>{{localize 'SETTINGS.elements.icon.label'}}</label>
+                <file-picker
+                    type='image'
+                    id='elementIcon'
+                    value='{{selectedEntry.icon}}'
+                    data-property='icon'
+                ></file-picker>
+
                 <label for='defenseOrder'>{{localize 'SETTINGS.defenses.order.label'}}</label>
                 <input
                     type='number'

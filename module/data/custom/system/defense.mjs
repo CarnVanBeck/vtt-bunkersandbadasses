@@ -20,6 +20,11 @@ export default class Defense extends BaseModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();
+        schema.icon = new fields.FilePathField({
+            initial: `${CONFIG.BADASS.systemPath}/assets/standalone/defense/shield.svg`,
+            categories: ['IMAGE'],
+            base64: false,
+        });
         schema.order = new fields.NumberField({
             required: true,
             nullable: false,
