@@ -1,5 +1,5 @@
 /**
- * BaseModifyableNumeric acts as a container for 
+ * BaseModifyableNumeric acts as a container for
  */
 export default class BaseModifyableNumeric extends foundry.abstract.DataModel {
     static defineSchema() {
@@ -25,6 +25,40 @@ export default class BaseModifyableNumeric extends foundry.abstract.DataModel {
             }),
         };
         return schema;
+    }
+
+    /** override */
+    async validate({
+        changes,
+        clean = false,
+        fallback = false,
+        dropInvalidEmbedded = false,
+        strict = true,
+        fields = true,
+        joint,
+    } = {}) {
+        await super.validate({ changes, clean, fallback, dropInvalidEmbedded, strict, fields, joint });
+        this._checkAndUpdateSum();
+    }
+
+    /**
+     * Check if value calculation is still correct and update the sum value if necassary
+     */
+    _checkAndUpdateSum() {
+        if (this.sum != this.base + this.mod) {
+            this.sum = this.base + this.mod;
+            this.updateSource({ sum: this.sum });
+        }
+    }
+
+    /**
+     * Check if value calculation is still correct and update the base value if necassary
+     */
+    _checkAndUpdateBase() {
+        if (this.sum != this.base + this.mod) {
+            this.base = this.sum - this.mod;
+            this.updateSource({ base: this.base });
+        }
     }
     /**
      * Convert the schema to a plain object.
