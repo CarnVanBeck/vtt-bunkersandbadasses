@@ -111,7 +111,7 @@ body {
     left: 8px;
     color: black;
     pointer-events: none;
-	margin-right: 8px;
+    margin-right: 8px;
 }
 
 .prePictureSelector > *,
@@ -276,3 +276,15 @@ body {
     width: max(50px, 50%);
 }
 
+/**
+ * Generic Item CSS
+ */
+
+.genericListRow {
+    display: flex;
+}
+
+.itemKey {
+    width: 120px;
+    line-height: 22px;
+}

@@ -1,0 +1,70 @@
+<form class="genericItemSheet shieldItemSheet {{ cssClass }}" autocomplete="off">
+    <div class="genericListRow">
+        <div class="itemKey">
+            name
+        </div>
+        <div class="itemKey">
+            <input class="itemCardInput" value="{{item.name}}" name="item.name" />
+        </div>
+    </div>
+    <div class="genericListRow">
+        <div class="itemKey">manufacturer</div>
+        <div class="itemKey">
+        {{> optionSelector choices=manufacturers name="manufacturer" selected=system.manufacturer}}
+        </div>
+    </div>
+    <div class="genericListRow">
+        <div class="itemKey">rarity</div>
+        <div class="itemKey">
+        {{> optionSelector choices=rarities name="rarity" selected=system.rarity}}
+        </div>
+    </div>
+    <div class="genericListRow">
+        <div class="itemKey">level</div>
+        <div class="itemKey">
+        {{> stdInput inputClass="itemCardInput" inputValue=system.level inputName='system.name' minimum='0'}}
+        </div>
+    </div>
+    <div class="genericListRow">
+        <div class="itemKey">type</div>
+        <div class="itemKey">
+        {{> optionSelector choices=shields name="rarity" selected=system.type}}
+        </div>
+    </div>
+    <div class="genericListRow">
+        <div class="itemKey">current</div>
+        <div class="itemKey">
+        {{> stdInput inputClass="itemCardInput" inputValue=system.current inputName='system.current' minimum='0'}}
+        </div>
+    </div>
+    <div class="genericListRow">
+        <div class="itemKey">max_base</div>
+        <div class="itemKey">
+        {{> stdInput inputClass="itemCardInput" inputValue=system.max.base inputName='system.max.base' minimum='0'}}
+        </div>
+    </div>
+    <div class="genericListRow">
+        <div class="itemKey">max_modifier</div>
+        <div class="itemKey">
+        {{> stdInput inputClass="itemCardInput" inputValue=system.max.mod inputName='system.max.mod'}}
+        </div>
+    </div>
+    <div class="genericListRow">
+        <div class="itemKey">regen_base</div>
+        <div class="itemKey">
+        {{> stdInput inputClass="itemCardInput" inputValue=system.regen.base inputName='system.regen.base' minimum='0'}}
+        </div>
+    </div>
+    <div class="genericListRow">
+        <div class="itemKey">regen_mod</div>
+        <div class="itemKey">
+        {{> stdInput inputClass="itemCardInput" inputValue=system.regen.mod inputName='system.regen.mod'}}
+        </div>
+    </div>
+    <div class="genericListRow">
+        <div class="itemKey">value</div>
+        <div class="itemKey">
+        {{> stdInput inputClass="itemCardInput" inputValue=system.value inputName='system.value'}}
+        </div>
+    </div>
+</form>

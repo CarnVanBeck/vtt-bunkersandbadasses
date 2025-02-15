@@ -1,10 +1,9 @@
-import { getSystemLifeDefenses, getSystemShieldManufacturers } from '../../helper/systemValues.mjs';
+import { getSystemShieldManufacturers } from '../../helper/systemValues.mjs';
 import { ManufacturedSheet } from './manufactered.mjs';
 
-export class ShieldCardSheet extends ManufacturedSheet {
+export class GenericItemCardSheet extends ItemSheet {
     get template() {
-        //return `systems/vtt-bunkersandbadasses/templates/item/shieldCard.hbs`;
-        return `systems/vtt-bunkersandbadasses/templates/item/genericShieldCard.hbs`;
+        return `systems/vtt-bunkersandbadasses/templates/item/genericItemCard.hbs`;
     }
 
     static get defaultOptions() {
@@ -24,17 +23,21 @@ export class ShieldCardSheet extends ManufacturedSheet {
         // Retrieve base data structure.
         const context = super.getData();
 
-        context.shields = getSystemLifeDefenses();
-        
+        context.shields = [
+            {
+                description: '',
+                icon: 'systems/vtt-bunkersandbadasses/assets/standalone/shield.svg',
+                key: 'shd',
+                name: 'Shield',
+            },
+        ];
+        context.system.type = 'shd';
+
         //context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
         context.manufacturers = getSystemShieldManufacturers();
 
         // Prepare active effects for easier access
         //context.effects = prepareActiveEffectCategories(this.item.effects);
-        if(!this.validateKeyInList(context.shields, context.data.system.type) ) {
-			this.showErrorWindow("typeKey: " + context.data.system.type + " is invalid");
-			context.data.system.type = null;
-		}
 
         return context;
     }

@@ -1,0 +1,13 @@
+<form class="shieldItemSheet {{cssClass}}" autocomplete="off">
+	{{#each system as | sysValue | }}
+    {{log sysValue}}
+        <div class="genericListRow">
+            <div class="itemKey">{{@key}}</div>
+            {{#if (isNumber sysValue)}}
+                {{> stdInput inputClass="itemCardInput" inputValue=sysValue inputName=@key minimum='0'}}
+            {{else}}
+                <input class="{{inputClass}}" value="{{sysValue}}" name="{{@key}}"/>
+            {{/if}}
+        </div>
+    {{/each}}
+</form>
