@@ -9,7 +9,7 @@
 			#blackpowderIcon .manufacturerBg {
 				fill: transparent;
 			}
-			#blackpowderIcon .letter {
+			.letter {
 				fill: var(--icon-color);
 			}
 		</style>

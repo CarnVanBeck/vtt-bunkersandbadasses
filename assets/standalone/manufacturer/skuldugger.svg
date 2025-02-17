@@ -1,0 +1,26 @@
+<svg id="pangoblinIcon" width="800" height="160" viewBox="0 0 1000 160"
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<style>
+			#pangoblinIcon {
+				--icon-color: #666;
+			}
+			#pangoblinIcon .manufacturerBg {
+				fill: transparent;
+			}
+			#pangoblinIcon .letter {
+				fill: var(--icon-color);
+			}
+			#pangoblinIcon .letterText {
+				fill: var(--icon-color);
+				font-size: 140px;
+				text-anchor: middle;
+			}
+		</style>
+	</defs>
+	<rect class="manufacturerBg" width="800" height="160" />
+	<text class="letterText" x="420" y="130">
+		SKULDUGGER
+	</text>
+</svg>

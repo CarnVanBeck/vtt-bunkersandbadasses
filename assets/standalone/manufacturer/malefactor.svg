@@ -9,7 +9,7 @@
 			#malefactorIcon .manufacturerBg {
 				fill: transparent;
 			}
-			#malefactorIcon .letter {
+			.letter {
 				fill: var(--icon-color);
 			}
 		</style>

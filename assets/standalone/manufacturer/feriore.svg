@@ -9,7 +9,7 @@
 			#ferioreIcon .manufacturerBg {
 				fill: transparent;
 			}
-			#ferioreIcon .letter {
+			.letter {
 				fill: var(--icon-color);
 			}
 		</style>

@@ -153,10 +153,6 @@
     margin: 10px;
 }
 
-.itemCardPicture > img {
-    height: inherit;
-}
-
 .gunCardRange {
     display: flex;
     padding-left: calc(50% - 40px);
