@@ -1,0 +1,57 @@
+<svg id="hyperiusIcon" width="850" height="160" viewBox="0 0 850 160"
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<style>
+			#hyperiusIcon {
+				--icon-color: #666;
+			}
+			#hyperiusIcon .manufacturerBg {
+				fill: transparent;
+			}
+			#hyperiusIcon .letter {
+				fill: #666;
+			}
+		</style>
+	</defs>
+	<rect class="manufacturerBg" x="0" y="0" width="1200" height="240"/>
+	<path id="hyperiusHLBar" class="letter"
+		d="m14,18 h10 v118 h-10 z" 
+	/>
+	<path id="hyperiusH" class="letter"
+		d="m34,18 h18 v55 h60 v15 h-60 v48 h-18 z" 
+	/>
+	<path id="hyperiusHRBar" class="letter"
+		d="m124,18 h18 v118 h-18 z" 
+	/>
+	<path id="hyperiusY" class="letter"
+		d="m150,18 h22 l46,68 v50 h-18 v-42z" 
+	/>
+	<path id="hyperiusP" class="letter"
+		d="m247,18 h75 q25,0 25,35 q0,35 -25,35 h-24 v-16 h20 q14,0 14,-19 q0,-19 -14,-19
+		h-55 v102 h-16z" 
+	/>
+	<path id="hyperiusE1" class="letter"
+		d="m364,18 h88 v16 h-72 v86 h72 v16 h-88z" 
+	/>
+	<path id="hyperiusE2" class="letter"
+		d="m394,71 h57 v16 h-57z"
+	/>
+	<path id="hyperiusR" class="letter"
+		d="m469,18 h75 q25,0 25,35 q0,35 -25,35 l25,48 h-18 l-32,-64 h20 q14,0 14,-19 q0,-19 -14,-19
+		h-55 v102 h-16z"
+	/>
+	<path id="hyperiusI" class="letter"
+		d="m585,18 h16 v118 h-16 z"
+	/>
+	<path id="hyperiusUoutter" class="letter"
+		d="m620,18 h10 l2,2 v102 h72 v-102 l2,-2 h10 l2,2 v102 l-8,12 h-84 l-8,-12 v-102 z"
+	/>
+	<path id="hyperiusUinner" class="letter"
+		d="m644,21 h5 v84 h38 v-84 h5 v84 l-2,4 h-44 l-2,-4 z"
+	/>
+	<path id="hyperiusS" class="letter"
+		d="m806,18 v16 h-30 q-20,0 -20,19 q0,19 20,19 h10 q32,0 32,32 q0,31 -23,31 h-66
+		v-16 h58 q14,0 14,-16 q0,-15 -16,-16 h-10 q-35,0 -35,-34 q0,-35 35,-35 z"
+	/>
+</svg>

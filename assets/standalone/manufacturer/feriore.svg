@@ -1,0 +1,41 @@
+<svg id="ferioreIcon" width="850" height="200" viewBox="0 0 850 200"
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<style>
+			#ferioreIcon {
+				--icon-color: #666;
+			}
+			#ferioreIcon .manufacturerBg {
+				fill: transparent;
+			}
+			#ferioreIcon .letter {
+				fill: var(--icon-color);
+			}
+		</style>
+		<mask id="ferioreOCuttouts">
+			<rect x="430" y="74" width="150" height="120" fill="white"/>
+			<ellipse cx="508" cy="123" rx="30" ry="22" fill="black"/>
+		</mask>
+		<mask id="ferioreRCuttouts">
+			<rect x="260" y="70" width="140" height="120" fill="white"/>
+			<path d="m297,98 h34 q8,0 8,9 q0,8-8,9 h-34 z" fill="black"/>
+		</mask>
+	</defs>
+	<rect class="manufacturerBg" x="0" y="0" width="1200" height="240"/>
+	<path id="ferioreF" class="letter"
+		d="m20,24 h118 v38 h-58 v32 h58 v38 h-58 v40 h-60z" 
+	/>
+	<rect id="ferioreBlank" class="letter" x="150" y="24" width="665" height="38"/>
+	<path id="ferioreE" class="letter"
+		d="m150,74 h102 v26 h-67 v12 h61 v22 h-61 v12 h67 v26 h-102 z" 
+	/>
+	<path id="ferioreR" class="letter" mask="url(#ferioreRCuttouts)"
+		d="m262,74 h80 q38,0 40,25 q2,27 -20,27 v2 q18,0 18,23 v21 h-42 v-27 q0,-5 -5,-5
+		h-36 v32 h-35z"
+	/>
+	<rect id="ferioreI" class="letter" x="397" y="74" width="36" height="98"/>
+	<ellipse id="ferioreO" cx="508" cy="123" rx="69" ry="49" class="letter" mask="url(#ferioreOCuttouts)"/>
+	<use href="#ferioreR" transform="translate(322,0)"></use>
+	<use href="#ferioreE" transform="translate(563,0)"></use>
+</svg>
