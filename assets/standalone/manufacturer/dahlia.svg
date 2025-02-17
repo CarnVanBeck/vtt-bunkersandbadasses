@@ -3,11 +3,14 @@
 >
 	<defs>
 		<style>
-			.manufacturerBg {
+			#dahliaIcon {
+				--icon-color: #666;
+			}
+			#dahliaIcon .manufacturerBg {
 				fill: transparent;
 			}
-			.letter {
-				fill: #666;
+			#dahliaIcon .letter {
+				fill: var(--icon-color);
 			}
 		</style>
 		<symbol id="dahliaA">

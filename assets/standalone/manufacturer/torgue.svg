@@ -1,0 +1,68 @@
+<svg id="torgueIcon" width="850" height="200" viewBox="0 0 570 200"
+	xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<style>
+			#torgueIcon {
+				--icon-color: #666;
+			}
+			#torgueIcon .manufacturerBg {
+				fill: transparent;
+			}
+			#torgueIcon .letter {
+				fill: var(--icon-color);
+			}
+			#torgueIcon .line {
+				stroke: var(--icon-color);
+				stroke-width: 4px;
+			}
+		</style>
+		<mask id="torgueOCuttouts">
+			<rect x="80" y="20" width="150" height="140" fill="white"/>
+			<path d="m142,42 h9 q3,0 2,3 l-22,74 q-2,3 -4,3 h-9 q-2,0 -1,-3 l22,-74 q1,-3 4,-3 z" fill="black"/>
+		</mask>
+		<mask id="torgueRCuttouts">
+			<rect x="150" y="20" width="150" height="140" fill="white"/>
+			<path d="m212,42 h11 q3,0 2,3 l-7,24 q-2,3 -4,3 h-9 q-2,0 -1,-3 z" fill="black"/>
+		</mask>
+	</defs>
+	<rect class="manufacturerBg" x="0" y="0" width="1200" height="240"/>
+	<path id="torgueT" class="letter"
+		d="m55,20 h60 l-7.5,22.5 h-18 l-29,100.5 h-24 l29,-100.5 h-18 z" 
+	/>
+	<path id="torgueO" class="letter" mask="url(#torgueOCuttouts)"
+		d="m130,20 h40 q15,0 11,12 l-29,99 q-4,12 -18,12 
+		h-40 q-8,0 -6,-12 l29,-99 q4,-12 18,-12 z" 
+	/>
+	<path id="torgueR" class="letter" mask="url(#torgueRCuttouts)"
+		d="m193,20 h49 q15,0 11,12 l-13,45 q-2,7 -11,9 q7,2 6,9 l-14,48 h-25 l14,-48
+		q1,-3 -1,-3 h-12 l-15,51 h-24z"
+	/>
+	<path id="torgueG" class="letter"
+		d="m272,20 h48 l-6,23 h-28 q-2,0 -3,3 l-22,75 q-2,3 3,3 h10 l9,-32 h-5 l6,-22
+		h30 l-22,73 h-40 q-25,0 -14,-30 l23,-80 q4,-13 12,-13 z"
+	/>
+	<path id="torgueU" class="letter"
+		d="m336,20 h25 l-29,100 q-1,3 3,3 h10 l30,-103 h25 l-37,123 h-40 q-25,0 -14,-30z"
+	/>
+	<path id="torgueE" class="letter"
+		d="m407,20 h48 l-6,23 h-22 l-6,23 h21 l-6,21 h-21 l-11,34 h22 l-6,22 h-50z"
+	/>
+	<g id="torgueLines" class="line">
+		<line id="tTopLine" x1="31" x2="286" y1="159" y2="159"/>
+		<line id="tTopLine" x1="27" x2="257" y1="170.5" y2="170.5"/>
+		<line id="tTopLine" x1="23" x2="286" y1="182" y2="182"/>
+	</g>
+	<g id="torgueSword" class="letter">
+		<rect id="torgueSwordShaft" x="261" y="165" width="28" height="10" />
+		<path id="torgueSwordKnauf"
+			d="m292,157 l8,-8 l8,8 l-12,13.5 l12,13.5 l-8,8 l-8,-8 z"
+		/>
+		<path id="torgueSwordUpperBlade"
+			d="m312,159 h104 l18,10 h-132 z"
+		/>
+		<path id="torgueSwordUpperBlade"
+			d="m302,171 h132 l-18,10 h-104 z"
+		/>
+	</g>
+</svg>

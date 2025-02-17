@@ -3,11 +3,14 @@
 >
 	<defs>
 		<style>
-			.manufacturerBg {
+			#malefactorIcon {
+				--icon-color: #666;
+			}
+			#malefactorIcon .manufacturerBg {
 				fill: transparent;
 			}
-			.letter {
-				fill: #333;
+			#malefactorIcon .letter {
+				fill: var(--icon-color);
 			}
 		</style>
 		<symbol id="malefactorA">

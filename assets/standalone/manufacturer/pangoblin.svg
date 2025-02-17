@@ -3,20 +3,23 @@
 >
 	<defs>
 		<style>
-			.manufacturerBg {
+			#pangoblinIcon {
+				--icon-color: #666;
+			}
+			#pangoblinIcon .manufacturerBg {
 				fill: transparent;
 			}
-			.letter {
-				fill: #333;
+			#pangoblinIcon .letter {
+				fill: var(--icon-color);
 			}
-			.letterText {
-				fill: #333;
+			#pangoblinIcon .letterText {
+				fill: var(--icon-color);
 				font-size: 140px;
 				text-anchor: middle;
 			}
 		</style>
 	</defs>
-	<rect width="800" height="160" fill="#eee"/>
+	<rect class="manufacturerBg" width="800" height="160" />
 	<text class="letterText" x="400" y="130">
 		PANGOBLIN
 	</text>

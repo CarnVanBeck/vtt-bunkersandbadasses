@@ -3,11 +3,14 @@
 >
 	<defs>
 		<style>
-			.manufacturerBg {
+			#blackpowderIcon {
+				--icon-color: #666;
+			}
+			#blackpowderIcon .manufacturerBg {
 				fill: transparent;
 			}
-			.letter {
-				fill: #333;
+			#blackpowderIcon .letter {
+				fill: var(--icon-color);
 			}
 		</style>
 		<symbol id="blackpowderbulletChamber">

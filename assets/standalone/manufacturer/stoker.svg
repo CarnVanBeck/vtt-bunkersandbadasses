@@ -3,11 +3,14 @@
 >
 	<defs>
 		<style>
-			.manufacturerBg {
+			#stockerIcon {
+				--icon-color: #666;
+			}
+			#stockerIcon .manufacturerBg {
 				fill: transparent;
 			}
-			.letter {
-				fill: #333;
+			#stockerIcon .letter {
+				fill: var(--icon-color);
 			}
 		</style>
 		<mask id="stokerStarCutout">

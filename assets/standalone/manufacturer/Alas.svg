@@ -3,11 +3,14 @@
 >
 	<defs>
 		<style>
-			.manufacturerBg {
+			#alasIcon {
+				--icon-color: #666;
+			}
+			#alasIcon .manufacturerBg {
 				fill: transparent;
 			}
-			.letter {
-				fill: #333;
+			#alasIcon .letter {
+				fill: var(--icon-color);
 			}
 		</style>
 		<symbol id="alasA">
