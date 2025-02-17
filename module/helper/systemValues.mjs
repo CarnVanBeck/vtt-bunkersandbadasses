@@ -1,9 +1,24 @@
 import { BADASS, getDefaultElements, getDefaultRarities } from './config.mjs';
 
+/**
+ * Interface Module to easily access system relevant Data
+ * 
+ */
+
+/**
+ * Get an array of system defenses from the data system
+ * 
+ * @returns     array of system defenses
+ */
 export function getSystemDefenses() {
     return game.settings.get(CONFIG.BADASS.namespace, 'defenses');
 }
 
+/**
+ * Get a predefined array of dice used by the system. Each entry contain name, key and a dedicated hbs
+ * 
+ * @returns 
+ */
 export function getSystemDice() {
     return [
         { name: 'd4', key: 'd4', hbs: 'd4' },
@@ -15,18 +30,38 @@ export function getSystemDice() {
     ];
 }
 
+/**
+ * Get an array of system elements from the data system
+ * 
+ * @returns     array of system elements
+ */
 export function getSystemElements() {
     return game.settings.get(CONFIG.BADASS.namespace, 'elements');
 }
 
+/**
+ * Get an array of system gunTypes from the data system
+ * 
+ * @returns     array of system gunTypes
+ */
 export function getSystemGunTypes() {
     return game.settings.get(CONFIG.BADASS.namespace, 'gunTypes');
 }
 
+/**
+ * Get an array of system manufacturers from the data system
+ * 
+ * @returns     array of system manufacturers
+ */
 export function getSystemManufacturers() {
     return game.settings.get(CONFIG.BADASS.namespace, 'manufacturers');
 }
 
+/**
+ * Get a predefined array of accuracy values with range, hits and crits
+ * 
+ * @returns 
+ */
 export function getDefaultAccuracy() {
     return [
         { low: 2, high: 7, hits: 0, crits: 0 },
@@ -35,6 +70,12 @@ export function getDefaultAccuracy() {
     ];
 }
 
+/**
+ * Filter the given defenseList for values that havent been signed as 'life'
+ * 
+ * @param {*} defenseList       array with all defenses
+ * @returns                     array of filter defenses
+ */
 function _findNonLifeDefense(defenseList) {
     let foundDefenses = [];
     for (let singleDefense of defenseList) {
@@ -45,6 +86,13 @@ function _findNonLifeDefense(defenseList) {
     return foundDefenses;
 }
 
+/**
+ * Lookup the single object of a given gunType in the given gunList
+ * 
+ * @param {*} gunList       the complete array of gunTypes
+ * @param {*} gunType       the desired gunType
+ * @returns                 the single object with the relevant accuracy array
+ */
 function _findGunAccuracyByType(gunList, gunType) {
     let foundGunType = {};
     for (let singleGunType of gunList) {
@@ -91,7 +139,7 @@ export function getSystemGunManufacturers() {
 }
 
 export function getSystemShieldManufacturers() {
-    let manufacturerType = 'shield';
+    let manufacturerType = 'defense';
     return _filterManufacturersByType(getSystemManufacturers(), manufacturerType);
 }
 
