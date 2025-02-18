@@ -231,6 +231,11 @@ body {
     align-items: center;
 }
 
+.itemCardPicture > img {
+    height: inherit;
+    object-fit: scale-down;
+}
+
 .itemCardElementNotes {
     display: flex;
 }

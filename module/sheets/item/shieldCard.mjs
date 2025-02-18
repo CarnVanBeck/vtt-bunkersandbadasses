@@ -3,8 +3,8 @@ import { ManufacturedSheet } from './manufactered.mjs';
 
 export class ShieldCardSheet extends ManufacturedSheet {
     get template() {
-        //return `systems/vtt-bunkersandbadasses/templates/item/shieldCard.hbs`;
-        return `systems/vtt-bunkersandbadasses/templates/item/genericShieldCard.hbs`;
+        return `systems/vtt-bunkersandbadasses/templates/item/shieldCard.hbs`;
+        //return `systems/vtt-bunkersandbadasses/templates/item/genericShieldCard.hbs`;
     }
 
     static get defaultOptions() {

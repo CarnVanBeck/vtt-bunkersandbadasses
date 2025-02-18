@@ -5,6 +5,7 @@ import { BADASS } from './module/helper/config.mjs';
 import { preloadHandlebarsTemplates, registerHandlebarHelpers } from './module/helper/handlebarHelper.mjs';
 import { registerSettings } from './module/helper/settings.mjs';
 import { GunCardSheet } from './module/sheets/item/gunCard.mjs';
+import { GunCardSheetV2 } from './module/sheets/item/gunCardV2.mjs';
 import { ShieldCardSheet } from './module/sheets/item/shieldCard.mjs';
 import { GrenadeCardSheet } from './module/sheets/item/grenadeCard.mjs';
 import { BadassActorSheet } from './module/sheets/actorSheet.mjs';
@@ -36,6 +37,10 @@ Hooks.on('init', () => {
     Items.registerSheet(CONFIG.BADASS.namespace, GunCardSheet, {
         types: ['gun'],
         makeDefault: true,
+    });
+    Items.registerSheet(CONFIG.BADASS.namespace, GunCardSheetV2, {
+        types: ['gun'],
+        makeDefault: false,
     });
     Items.registerSheet(CONFIG.BADASS.namespace, ShieldCardSheet, {
         types: ['defense'],

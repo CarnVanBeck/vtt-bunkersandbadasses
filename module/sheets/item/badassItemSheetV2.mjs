@@ -14,14 +14,14 @@ export default class BadassItemSheetV2 extends HandlebarsApplicationMixin(ItemSh
 
     static DEFAULT_OPTIONS = {
         position: {
-            width: 550,
-            height: 600,
+            width: 620,
+            height: 620,
         },
         form: {
             submitOnChange: true,
         },
         window: {
-            contentClasses: ['badass', 'sheet', 'item'],
+            resizable: true,
         },
     };
 

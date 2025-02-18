@@ -1,0 +1,60 @@
+<div class="itemCardRollAndImage itemCardFlex item{{system.rarity}}" >
+    <div class="itemDataBlock itemCardFlex" >
+        <div class="itemDataHeader" > {{localize "badass.item.gun.accuracy.label"}} </div>
+        <div class="gunCardAccuracy itemCardFlex" >
+            <div class="gunCardD20AndMods" >
+                {{> "d20"}}
+                {{> stdInput inputClass="itemCardInput" inputValue=system.statMods.acc inputName="system.statMods.acc"}}
+                <div class="gunCardModText">
+                    {{localize "badass.generic.mod.label"}}
+                </div>
+            </div>
+            <div class="gunCardHitsAndCrits" >
+                {{#each system.accuracy}}
+                    {{> "gunCardHitLine" low=low high=high hitCategory="none" hits=hits crits=crits}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="itemDataHeader" > {{localize "badass.item.gun.damage.label"}} </div>
+        <div class="gunCardDamage itemCardFlex">
+            <div class="gunCardDamageDie">
+                {{#if system.damage.base}}
+                    {{> hbsSelector choices=dice name="damageDie" selected=(concat "d" (getDiceSize system.damage.base))}}
+                {{else}}
+                    {{> hbsSelector choices=dice name="damageDie"}}
+                {{/if}}
+            </div>
+            <div class="gunCardDiceMulti">
+                {{#if system.damage.base}}
+                    <div class="gunCardMultiSign{{#equals (getDiceCount system.damage.base) 1}} gunCardSingleDice{{/equals}}">x</div>
+                    <input class="gunCardDiceMultiInput	{{#equals (getDiceCount system.damage.base) 1}}gunCardSingleDice{{/equals}}"
+                        onfocus="this.select()"
+                        value="{{getDiceCount system.damage.base}}"
+                        min="1"	type="number" data-dtype="Number"
+                    />
+                {{else}}
+                    <div class="gunCardMultiSign gunCardSingleDice">x</div>
+                    <input class="gunCardDiceMultiInput gunCardSingleDice"
+                        onfocus="this.select()"
+                        value="1" min="1" type="number" data-dtype="Number"
+                    />
+                {{/if}}
+            </div>
+            <div class="gunCardDicePer">
+                {{localize "badass.item.gun.per.label"}}
+            </div>
+            <div class="gunCardDicePlus">
+                +
+            </div>
+            {{> stdInput inputClass="itemCardInput" inputValue=system.statMods.dmg inputName="system.statMods.dmg"}}
+        </div>
+        <div class="itemDataHeader gunCardRange">
+            <div> {{localize "badass.item.gun.range.label"}}: </div>
+            {{> stdInput inputClass="itemCardInput" inputValue=system.range.base inputName="system.range.base" minimum='0'}}
+            <div>{{localize "badass.generic.square.short"}}</div>
+        </div>
+    </div>
+    <div class="itemCardPicture" >
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    </div>
+</div>
