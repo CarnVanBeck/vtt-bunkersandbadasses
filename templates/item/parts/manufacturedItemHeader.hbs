@@ -16,7 +16,7 @@
                 {{localize "badass.item.gun.level.label"}}:
             </div>
             <div class="itemLevelInput">
-                {{> stdInput inputClass="levelInput" inputValue=system.level inputName="system.level"}}
+                {{> stdInput inputClass="levelInput" inputValue=system.level inputName="system.level" data-action="updateLevel"}}
             </div>
         </div>
         {{#if itemTypes}}

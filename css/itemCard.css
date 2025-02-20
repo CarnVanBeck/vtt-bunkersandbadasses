@@ -1,12 +1,14 @@
 @import './gunCard.css';
 @import './shieldCard.css';
 
-body {
+.itemCardSheet {
     --commonColor: #cbd2d8;
     --uncommonColor: #4e9d42;
     --rareColor: #009cbf;
     --epicColor: #9552a1;
     --legendaryColor: #f68c1e;
+    color: white;
+    padding: 4px;
 }
 
 /*
@@ -52,10 +54,6 @@ body {
     border-color: var(--legendaryColor);
 }
 
-.itemCardSheet {
-    color: white;
-}
-
 .itemCardFlex {
     display: flex;
 }
@@ -78,8 +76,10 @@ body {
     line-height: 2em;
 }
 
-.itemCardName > input {
-    height: 1.8em;
+.itemCardName > input[type="text"] {
+    height: 90%;
+    font-size: inherit;
+    line-height: inherit;
     text-align: center;
 }
 
@@ -182,15 +182,16 @@ body {
     display: none;
 }
 
-.levelInput[type='Number'] {
+input.levelInput[type='Number'] {
     height: 2em;
     width: 100%;
     text-align: center;
 }
 
-.itemCardInput[type='Number'] {
+input.itemCardInput[type='Number'] {
     color: white;
     text-align: center;
+    padding: 0;
 }
 
 .itemDataBlock {
@@ -204,6 +205,7 @@ body {
     border-image-repeat: round;
     padding: 5px;
     align-items: center;
+    color: white;
 }
 
 .itemDataHeader {

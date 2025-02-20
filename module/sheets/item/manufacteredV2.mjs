@@ -1,3 +1,4 @@
+import { BADASS } from '../../helper/config.mjs';
 import { getSystemElements, getSystemRarities } from '../../helper/systemValues.mjs';
 import BadassItemSheetV2 from './badassItemSheetV2.mjs';
 
@@ -10,22 +11,22 @@ export class ManufacturedSheet extends BadassItemSheetV2 {
         ...BadassItemSheetV2.DEFAULT_OPTIONS,
         actions: {
             updateManufaturer: ManufacturedSheet.updateManufaturer,
-            updateLevel: ManufacturedSheet.updateLevel,
+            updateLevel: ManufacturedSheet.updateLevelV2,
             updateRarity: ManufacturedSheet.updateRarity,
             updateType: ManufacturedSheet.updateType,
-            updateElement:ManufacturedSheet.updateElement,
+            updateElement: ManufacturedSheet.updateElement,
         },
     };
     static PARTS = {
         header: {
-            template: `systems/vtt-bunkersandbadasses/templates/item/parts/manufacturedItemHeader.hbs`,
+            template: `${BADASS.systemPath}/templates/item/parts/manufacturedItemHeader.hbs`,
         },
-		body: {
-			template: ``,
-		},
-		notes: {
-			template: `systems/vtt-bunkersandbadasses/templates/item/parts/manufacturedItemNotes.hbs`,
-		},
+        data: {
+            template: ``,
+        },
+        notes: {
+            template: `${BADASS.systemPath}/templates/item/parts/manufacturedItemNotes.hbs`,
+        },
     };
 
     /** @override */
@@ -141,7 +142,7 @@ export class ManufacturedSheet extends BadassItemSheetV2 {
         if (!this.isEditable) return;
 
         html.find('.levelInput').on('change', (event) => {
-            this.updateLevel(event.target.value);
+            this.updateLevelV2(event);
         });
         html.find('.prePictureSelector').on('click', (event) => {
             event.delegateTarget.parentNode.querySelector('.pictureSelector').classList.toggle('picNoneDisplay');
@@ -165,6 +166,10 @@ export class ManufacturedSheet extends BadassItemSheetV2 {
 
         // Active Effect management
         html.on('click', '.effect-control', (ev) => onManageActiveEffect(ev, this.item));
+    }
+
+    static updateLevelV2(event) {
+        this.updateLevel(event.target.value);
     }
 }
 

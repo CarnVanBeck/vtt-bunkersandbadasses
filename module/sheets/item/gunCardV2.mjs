@@ -1,3 +1,4 @@
+import { BADASS } from '../../helper/config.mjs';
 import {
     getSystemGunTypes,
     getSystemGunManufacturers,
@@ -16,18 +17,20 @@ export class GunCardSheetV2 extends ManufacturedSheet {
     static DEFAULT_OPTIONS = {
         ...ManufacturedSheet.DEFAULT_OPTIONS,
         window: {
-            contentClasses: ['sheet', 'itemCard', 'gun-card', 'scrollable'],
-			icon: ``,
+            contentClasses: ['sheet', 'itemCardSheet', 'gun-card', 'scrollable'],
+            icon: `fa-solid fa-gun`,
         },
         actions: {
+            ...ManufacturedSheet.DEFAULT_OPTIONS.actions,
             updateFromDamageDie: GunCardSheetV2.updateFromDamageDie,
         },
     };
     static PARTS = {
-		...ManufacturedSheet.PARTS,
-        body: {
-			template: `systems/vtt-bunkersandbadasses/templates/item/parts/gunCardDataAndImage.hbs`,
-		}
+        ...ManufacturedSheet.PARTS,
+        data: {
+            id: "dataAndImage",
+            template: `${BADASS.systemPath}/templates/item/parts/gunCardDataAndImage.hbs`,
+        },
     };
 
     /** @override */
@@ -52,6 +55,10 @@ export class GunCardSheetV2 extends ManufacturedSheet {
         if (super.validateKeyInList(context.gunTypes, context.type)) {
             context.system.type = 'ptl';
         }
+
+        // additions for manufactured item header  without changed  contexts
+        context.itemTypes = context.gunTypes;
+        context.itemType = context.type;
 
         // Prepare active effects for easier access
         //context.effects = prepareActiveEffectCategories(this.item.effects);

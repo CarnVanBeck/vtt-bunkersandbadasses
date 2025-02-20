@@ -16,7 +16,7 @@
     height: 50px;
 }
 
-.gunCardD20AndMods > input {
+.gunCardD20AndMods > input[type="Number"] {
     height: 60px;
     width: 60px;
     font-size: 2em;
@@ -61,6 +61,7 @@
 .critHitRow > div.crit > input {
     height: 40px;
     width: 40px;
+    background: none;
 }
 
 .critHitRow > div.crit {
@@ -112,10 +113,12 @@
     width: 0px;
 }
 
-.gunCardDiceMultiInput[type='number'] {
+input.gunCardDiceMultiInput[type='number'] {
     height: 20px;
     font-size: 20px;
     color: white;
+    padding: 0;
+    text-align: center;
 }
 
 .gunCardSingleDice {
@@ -144,7 +147,7 @@
     left: 4px;
 }
 
-.gunCardDamage > input {
+.gunCardDamage > input[type="Number"] {
     position: relative;
     top: calc(50% - 40px);
     width: 60px;
@@ -158,8 +161,9 @@
     padding-left: calc(50% - 40px);
 }
 
-.gunCardRange > input {
+.gunCardRange > input[type="Number"] {
     width: 20px;
+    height: inherit;
 }
 
 .gunCardDamage > svg {

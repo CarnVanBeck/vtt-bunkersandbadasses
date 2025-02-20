@@ -11,6 +11,7 @@ export function preloadHandlebarsTemplates() {
         pictureSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/pictureSelector.hbs`,
         hbsSelector: `${CONFIG.BADASS.systemPath}/templates/item/parts/hbsSelector.hbs`,
         manuItemHeader: `${CONFIG.BADASS.systemPath}/templates/item/parts/manufacturedItemHeader.hbs`,
+        gunCardDataAndImage: `${CONFIG.BADASS.systemPath}/templates/item/parts/gunCardDataAndImage.hbs`,
         manuItemNotes: `${CONFIG.BADASS.systemPath}/templates/item/parts/manufacturedItemNotes.hbs`,
         stdInput: `${CONFIG.BADASS.systemPath}/templates/item/parts/stdInput.hbs`,
 
