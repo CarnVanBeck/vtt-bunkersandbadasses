@@ -18,7 +18,7 @@ export class GunCardSheetV2 extends ManufacturedSheet {
         ...ManufacturedSheet.DEFAULT_OPTIONS,
         window: {
             contentClasses: ['sheet', 'itemCardSheet', 'gun-card', 'scrollable'],
-            icon: `fa-solid fa-gun`,
+            icon: `fa-duotone fa-regular fa-raygun`,
         },
         actions: {
             ...ManufacturedSheet.DEFAULT_OPTIONS.actions,

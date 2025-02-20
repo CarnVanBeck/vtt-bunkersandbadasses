@@ -1,0 +1,66 @@
+<svg class="epBar" width="1000" height="50" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+	<defs>
+		<style>
+			.epBar {
+				--darkBlue: #22A9AC;
+				--lightBlue: #27D6DB;
+				--darkGrey: #bbb;
+				--lightGrey: #ddd;
+                --percent: 0.21;
+			}
+			
+            #bgPatternRect {
+                fill: var(--darkGrey);
+                stroke: black;
+                stroke-width: 4px;
+            }
+
+            #genPatternRect {
+                fill: var(--lightBlue);
+                stroke: black;
+                stroke-width: 3px;
+            }
+
+			.bar {
+				stroke-width: 3px;
+				opacity: 0.8;
+			}
+			
+			#backgroundBar { 
+				fill: url(#greyLine);
+                stroke: black;
+			}
+			
+			#foregroundBar { 
+				fill: url(#genericLine);
+                stroke: none;
+				clip-path: polygon(
+					-2px 0px, 
+					calc(964px * var(--percent, 1)) 0px,
+					calc(964px * var(--percent, 1)) 50px,
+					-2px 50px
+				);
+			}
+		</style>
+		<pattern id="greyLine"
+			x="20" y="0" width="96" height="50" patternUnits="userSpaceOnUse"
+		>
+			<desc>greyLine</desc>
+			<rect id="bgPatternRect" x="0" y="0" width="96" height="50" />
+		</pattern>
+        <pattern id="genericLine"
+			x="20" y="0" width="96" height="50" patternUnits="userSpaceOnUse"
+		>
+			<desc>genericLine</desc>
+			<rect id="genPatternRect" x="0" y="0" width="96" height="50" />
+		</pattern>
+        <symbol id="genericBar">
+			<rect x="20" y="10" width="960" height="30" />
+        </symbol>
+        <symbol id="epBar">
+			<rect x="20" y="11" width="960" height="28" />
+        </symbol>
+	</defs>
+    <use href="#genericBar" id="backgroundBar" class="bar" />
+	<use href="#epBar" id="foregroundBar"/>
+</svg>

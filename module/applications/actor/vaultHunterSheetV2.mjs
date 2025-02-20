@@ -32,7 +32,7 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
             template: `${BADASS.systemPath}/templates/actor/parts/tabs/activeEffects.hbs`,
         },
         xp: {
-            template: `${BADASS.systemPath}/templates/actor/parts/vaultHunter/vhXP.hbs`,
+            template: `${BADASS.systemPath}/templates/actor/parts/vaultHunter/epBar.hbs`,
         },
     };
 
@@ -71,6 +71,10 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
                 cssClass: this.tabGroups.primary === 'activeEffects' ? 'active' : '',
             },
         };
+
+        //prepare ep bar
+        // TODO: do a real calculation
+        context.actor.epPercent = 0.45;
 
         context.gunTypes = getSystemGunTypes();
         return context;
