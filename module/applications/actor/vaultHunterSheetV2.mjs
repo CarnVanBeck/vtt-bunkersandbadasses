@@ -86,6 +86,19 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
                 cssClass: this.tabGroups.primary === 'activeEffects' ? 'active' : '',
             },
         };
+
+        /**
+         * Dummy Value Block to develop the handlebars templates
+         */
+
+        //prepare ep bar
+        // TODO: do a real calculation
+        context.actor.epPercent = 0.45;
+
+        // End dummy Values
+
+        context.gunTypes = getSystemGunTypes();
+        return context;
     }
 
     /**
@@ -134,3 +147,4 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
         new DefenseConfig().render(true);
     }
 }
+

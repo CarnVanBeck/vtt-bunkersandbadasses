@@ -51,8 +51,125 @@
     }
 
     /* Defense specials */
+    .actorBlockHeader {
+        display: block;
+        text-align: center;
+        background-color: rgba(110, 112, 117, 0.5);
+    }
+
+    .actorSheetValue {
+        width: 35px;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .actorSheetPlus,
+    .actorSheetEquals
+    {
+        width: 5%;
+        font-size: 0.75em;
+        text-align: center;
+        margin: 10px 0 0 0;
+    }
+
+    .actorSheetSum
+    {
+        width: 40px;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .actorStatMod {
+        font-size: 1.8em;
+        width: 55%;
+        text-align: center;
+    }
 
     /* Actor stats */
+
+    .singleStatBlock {
+        display: block;
+    }
+
+    .singleStatValue {
+        width: 55%;
+    }
+
+    .singleStatBlock {
+        min-width: 90px;
+    }
+
+    /* Actor initivative */
+    .initiativeBlock,
+    .movementBlock {
+        display: flex;
+        flex-flow: row;
+        margin: 0 0 0 -80px;
+    }
+
+    .initName,
+    .movementName {
+        width: 120px;
+        line-height: 2em;
+    }
+    
+    .initModValue,
+    .movementModValue {
+        width: 10%;
+    }
+
+    /* underline and Boxes */
+    .underlineBox {
+        border-bottom: grey 2px solid;
+    }
+
+    .tlbrBox {
+        border: grey 2px solid;
+    }
+
+    /* Actor checks */
+    .skillBlock {
+        display: flex;
+        margin: 0.5em 0 0 10%;
+    }
+    
+    .skillName {
+        width: 25%;
+        margin: 5px 0 0 0;
+    }
+    
+    .skillStatModName,
+    .skillMiscModName
+    {
+        width: 10%;
+        font-size: 0.75em;
+        text-align: center;
+        margin: 5px 0 0 0;
+    }
+
+    .meleeDieValue {
+        width: calc(100% - 40px);
+    }
+
+    .goldBlock {
+        height: 40px;
+    }
+
+    .goldName {
+        width: 60px;
+        height: 38px;
+        line-height: 40px;
+    }
+
+    .placeHolder {
+        height: 80px;
+        align-items: center;
+    }
+    .chamberPlaceholder .chamber {
+        stroke: rgb(110, 112, 117);
+        stroke-width: 40;
+        fill: none;
+    }
 
     /* Footer */
     .actor-section-footer {

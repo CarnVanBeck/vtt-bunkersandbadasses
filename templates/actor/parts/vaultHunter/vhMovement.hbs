@@ -1,1 +1,14 @@
-<section class="actor-section">Placeholder Movement</section>
+<section class="actor-section">
+    {{#with system.movement as | movement | }}
+    <div class="movementBlock">
+        <div class="actorBlockHeader movementName">{{!--localize--}} MOVEMENT</div>
+        <div class="actorSheetValue movementModValue underlineBox">{{movement.base}}</div>
+        <div class="actorSheetPlus">+</div>
+        <div class="actorSheetValue movementModValue underlineBox">{{ ../system.stats.spd.mod }}</div>
+        <div class="actorSheetPlus">+</div>
+        <div class="actorSheetValue movementModValue underlineBox">{{ movement.bonus }}</div>
+        <div class="actorSheetEquals">=</div>
+        <div class="actorSheetSum skillSumValue tlbrBox">{{ movement.sum }}</div>
+    </div>
+    {{/with}}
+</section>
