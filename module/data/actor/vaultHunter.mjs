@@ -1,5 +1,6 @@
 import BaseActorData from './baseActor.mjs';
 import Archetype from '../custom/character/archetype.mjs';
+import { getXPSegmentByLevel } from '../../helper/systemValues.mjs';
 
 const fields = foundry.data.fields;
 /**
@@ -11,7 +12,7 @@ export default class VaultHunterData extends BaseActorData {
     /** @inheritDoc */
     static defineSchema() {
         const schema = super.defineSchema();
-        schema.archetype = new fields.ArrayField(new fields.EmbeddedDataField(Archetype));
+        schema.archetypes = new fields.ArrayField(new fields.EmbeddedDataField(Archetype));
         schema.background = new fields.StringField({
             required: false,
             nullable: true,
@@ -28,7 +29,29 @@ export default class VaultHunterData extends BaseActorData {
             label: 'badass.actor.vaultHunter.level.label',
             hint: 'badass.actor.vaultHunter.level.hint',
         });
-
+        schema.xp = new fields.SchemaField({
+            current: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                min: 0,
+                initial: 0,
+            }),
+            segment: new fields.NumberField({
+                required: false,
+                nullable: true,
+                integer: true,
+                min: 1,
+                initial: 100,
+            }),
+            nextLevelPercentage: new fields.NumberField({
+                required: false,
+                nullable: true,
+                min: 0,
+                max: 100,
+                initial: 0,
+            }),
+        });
         schema.stats = new fields.SchemaField({
             acc: VaultHunterData.getStatField(),
             dmg: VaultHunterData.getStatField(),
@@ -118,16 +141,6 @@ export default class VaultHunterData extends BaseActorData {
                 integer: true,
                 initial: 0,
             }),
-        });
-
-        schema.xp = new fields.NumberField({
-            required: true,
-            nullable: false,
-            integer: true,
-            min: 0,
-            initial: 0,
-            label: 'badass.actor.vaultHunter.xp.label',
-            hint: 'badass.actor.vaultHunter.xp.hint',
         });
 
         schema.characterInfoHtml = new fields.HTMLField({
@@ -246,6 +259,12 @@ export default class VaultHunterData extends BaseActorData {
             if (check === 'traverse') base = this.stats.spd.mod;
             this.checks[check].sum = this.checks[check].base + this.checks[check].bonus + this.checks[check].miscMod;
         }
+
+        for (let at in this.archetypes) {
+            this.level += at.level;
+        }
+        this.xp.segment = getXPSegmentByLevel(this.level);
+        this.xp.nextLevelPercentage = this.xp.current / (this.xp.segment * 10);
     }
 
     /**

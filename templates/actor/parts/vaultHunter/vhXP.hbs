@@ -1,1 +1,22 @@
-<section class="actor-section">Placeholder XP</section>
+<section class="actor-section" style="max-height: 50px">
+    <div class="actor-row">
+        <div class="actor-col col-2">
+            <div class="badass-input">
+                <label
+                    for="system.xp.current"
+                    class="actor-label"
+                    title="{{localize 'SHEETS.actor.vaultHunter.xp.hint'}}"
+                >
+                    {{localize 'SHEETS.actor.vaultHunter.xp.label'}}
+                </label>
+                <input
+                    name="system.xp.current"
+                    type="text"
+                    value="{{ system.xp.current }}"
+                    placeholder="{{localize 'SHEETS.actor.vaultHunter.xp.label'}}"
+                />
+            </div>
+        </div>
+        <div class="actor-col col-10">{{> epBar}}</div>
+    </div>
+</section>

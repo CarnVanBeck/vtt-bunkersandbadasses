@@ -2,12 +2,12 @@ import { BADASS, getDefaultElements, getDefaultRarities } from './config.mjs';
 
 /**
  * Interface Module to easily access system relevant Data
- * 
+ *
  */
 
 /**
  * Get an array of system defenses from the data system
- * 
+ *
  * @returns     array of system defenses
  */
 export function getSystemDefenses() {
@@ -16,8 +16,8 @@ export function getSystemDefenses() {
 
 /**
  * Get a predefined array of dice used by the system. Each entry contain name, key and a dedicated hbs
- * 
- * @returns 
+ *
+ * @returns
  */
 export function getSystemDice() {
     return [
@@ -32,7 +32,7 @@ export function getSystemDice() {
 
 /**
  * Get an array of system elements from the data system
- * 
+ *
  * @returns     array of system elements
  */
 export function getSystemElements() {
@@ -41,7 +41,7 @@ export function getSystemElements() {
 
 /**
  * Get an array of system gunTypes from the data system
- * 
+ *
  * @returns     array of system gunTypes
  */
 export function getSystemGunTypes() {
@@ -50,7 +50,7 @@ export function getSystemGunTypes() {
 
 /**
  * Get an array of system manufacturers from the data system
- * 
+ *
  * @returns     array of system manufacturers
  */
 export function getSystemManufacturers() {
@@ -59,8 +59,8 @@ export function getSystemManufacturers() {
 
 /**
  * Get a predefined array of accuracy values with range, hits and crits
- * 
- * @returns 
+ *
+ * @returns
  */
 export function getDefaultAccuracy() {
     return [
@@ -72,7 +72,7 @@ export function getDefaultAccuracy() {
 
 /**
  * Filter the given defenseList for values that havent been signed as 'life'
- * 
+ *
  * @param {*} defenseList       array with all defenses
  * @returns                     array of filter defenses
  */
@@ -88,7 +88,7 @@ function _findNonLifeDefense(defenseList) {
 
 /**
  * Lookup the single object of a given gunType in the given gunList
- * 
+ *
  * @param {*} gunList       the complete array of gunTypes
  * @param {*} gunType       the desired gunType
  * @returns                 the single object with the relevant accuracy array
@@ -113,12 +113,6 @@ function _findGunLevelData(levelList, gunLevel) {
     return gunLevelData;
 }
 
-export function getGunAccuracyByLevel(level, gunType) {
-    let completeGunList = game.settings.get(CONFIG.BADASS.namespace, 'gunTypes');
-    let gunList = _findGunAccuracyByType(completeGunList, gunType);
-    return _findGunLevelData(gunList.levels, level);
-}
-
 /**
  * Filter the given unfilteredManufacturers for the given type and return the filtered
  * list.
@@ -131,6 +125,17 @@ function _filterManufacturersByType(unfilteredManufacturers, type) {
     return unfilteredManufacturers.filter((element) => {
         return element.allowedForItems.includes(type);
     });
+}
+
+export function getXPSegmentByLevel(level) {
+    let levels = game.settings.get(CONFIG.BADASS.namespace, 'levels');
+    return levels.find((lvl) => lvl.level === level).xpSegment;
+}
+
+export function getGunAccuracyByLevel(level, gunType) {
+    let completeGunList = game.settings.get(CONFIG.BADASS.namespace, 'gunTypes');
+    let gunList = _findGunAccuracyByType(completeGunList, gunType);
+    return _findGunLevelData(gunList.levels, level);
 }
 
 export function getSystemGunManufacturers() {
@@ -155,4 +160,3 @@ export function getSystemLifeDefenses() {
 export function getSystemRarities() {
     return getDefaultRarities();
 }
-

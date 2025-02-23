@@ -1,88 +1,104 @@
-<section class="actor-section" style="max-height: 150px">
+<section class="actor-section" style="max-height: 165px">
     <div class="actor-row">
         <div class="actor-col col-1">placeholder for image</div>
         <div class="actor-col">
-            <label for="archetype" class="actor-label" title="{{localize 'SHEETS.actor.vaultHunter.archetype.hint'}}">
-                {{localize 'SHEETS.actor.vaultHunter.archetype.label'}}
-            </label>
-            <input
-                name="system.archetype"
-                type="text"
-                value="{{ system.archetype }}"
-                placeholder="{{localize 'SHEETS.actor.vaultHunter.archetype.label'}}"
-            />
+            <div class="badass-input">
+                <label
+                    for="archetype"
+                    class="actor-label"
+                    title="{{localize 'SHEETS.actor.vaultHunter.archetype.hint'}}"
+                >
+                    {{localize 'SHEETS.actor.vaultHunter.archetype.label'}}
+                </label>
+                <input
+                    name="system.archetype"
+                    type="text"
+                    value="{{ system.archetype }}"
+                    placeholder="{{localize 'SHEETS.actor.vaultHunter.archetype.label'}}"
+                />
+            </div>
         </div>
         <div class="actor-col col-2">
-            <label for="class" class="actor-label" title="{{localize 'SHEETS.actor.vaultHunter.class.hint'}}">
-                {{localize 'SHEETS.actor.vaultHunter.class.label'}}
-            </label>
-            <input
-                name="system.class"
-                type="text"
-                value="{{ system.class }}"
-                placeholder="{{localize 'SHEETS.actor.vaultHunter.class.label'}}"
-            />
+            <div class="badass-input">
+                <label for="class" class="actor-label" title="{{localize 'SHEETS.actor.vaultHunter.class.hint'}}">
+                    {{localize 'SHEETS.actor.vaultHunter.class.label'}}
+                </label>
+                <input
+                    name="system.class"
+                    type="text"
+                    value="{{ system.class }}"
+                    placeholder="{{localize 'SHEETS.actor.vaultHunter.class.label'}}"
+                />
+            </div>
         </div>
     </div>
     <div class="actor-row">
         <div class="actor-col col-3">
-            <label
-                for="actor.name"
-                class="actor-label"
-                title="{{localize 'SHEETS.actor.vaultHunter.name.hint'}}"
-                >{{localize 'SHEETS.actor.vaultHunter.name.label'}}</label
-            >
-            <input
-                name="actor.name"
-                type="text"
-                value="{{ actor.name }}"
-                placeholder="{{localize 'SHEETS.actor.vaultHunter.name.label'}}"
-            />
+            <div class="badass-input">
+                <label
+                    for="name"
+                    class="actor-label"
+                    title="{{localize 'SHEETS.actor.vaultHunter.name.hint'}}"
+                    >{{localize 'SHEETS.actor.vaultHunter.name.label'}}</label
+                >
+                <input
+                    name="name"
+                    type="text"
+                    value="{{ actor.name }}"
+                    placeholder="{{localize 'SHEETS.actor.vaultHunter.name.label'}}"
+                />
+            </div>
         </div>
         <div class="actor-col col-3">
-            <label
-                for="actor.background"
-                class="actor-label"
-                title="{{localize 'SHEETS.actor.vaultHunter.background.hint'}}"
-            >
-                {{localize 'SHEETS.actor.vaultHunter.background.label'}}</label
-            >
-            <input
-                name="system.background"
-                type="text"
-                value="{{ system.background }}"
-                placeholder="{{localize 'SHEETS.actor.vaultHunter.background.label'}}"
-            />
+            <div class="badass-input">
+                <label
+                    for="actor.background"
+                    class="actor-label"
+                    title="{{localize 'SHEETS.actor.vaultHunter.background.hint'}}"
+                >
+                    {{localize 'SHEETS.actor.vaultHunter.background.label'}}</label
+                >
+                <input
+                    name="system.background"
+                    type="text"
+                    value="{{ system.background }}"
+                    placeholder="{{localize 'SHEETS.actor.vaultHunter.background.label'}}"
+                />
+            </div>
         </div>
         <div class="actor-col col-1">
-            <label
-                for="actor.level"
-                class="actor-label"
-                title="{{localize 'SHEETS.actor.vaultHunter.level.hint'}}"
-                >{{localize 'SHEETS.actor.vaultHunter.level.label'}}</label
-            >
-            <input
-                name="system.level"
-                type="text"
-                value="{{ system.level }}"
-                placeholder="{{localize 'SHEETS.actor.vaultHunter.level.label'}}"
-            />
+            <div class="badass-input">
+                <label
+                    for="actor.level"
+                    class="actor-label"
+                    title="{{localize 'SHEETS.actor.vaultHunter.level.hint'}}"
+                    >{{localize 'SHEETS.actor.vaultHunter.level.label'}}</label
+                >
+                <input
+                    name="system.level"
+                    type="text"
+                    value="{{ system.level }}"
+                    placeholder="{{localize 'SHEETS.actor.vaultHunter.level.label'}}"
+                />
+            </div>
         </div>
     </div>
     <div class="resources">
-        <label
-            for="system.actionSkill.value"
-            class="actor-label"
-            title="{{localize 'SHEETS.actor.vaultHunter.actionSkill.hint'}}"
-            >{{localize
-                'SHEETS.actor.vaultHunter.actionSkill.label'
-            }}</label
-        >
-        <input
-            name="system.actionSkill.value"
-            type="text"
-            value="{{ system.actionSkill.value }}"
-            placeholder="{{localize 'SHEETS.actor.vaultHunter.actionSkill.label'}}"
-        />
+        <div class="badass-input">
+            <label
+                for="system.actionSkill.value"
+                class="actor-label"
+                title="{{localize 'SHEETS.actor.vaultHunter.actionSkill.hint'}}"
+                >{{localize
+                    'SHEETS.actor.vaultHunter.actionSkill.label'
+                }}</label
+            >
+            <input
+                name="system.actionSkill.value"
+                type="text"
+                value="{{ system.actionSkill.value }}"
+                placeholder="{{localize 'SHEETS.actor.vaultHunter.actionSkill.label'}}"
+            />
+        </div>
     </div>
 </section>

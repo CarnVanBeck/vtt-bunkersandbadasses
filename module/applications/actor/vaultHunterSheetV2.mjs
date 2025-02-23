@@ -19,29 +19,44 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
             // Foundry-provided generic template
             template: 'templates/generic/tab-navigation.hbs',
         },
-        tabOverview: {
+        overview: {
             template: `${BADASS.systemPath}/templates/actor/parts/tabs/vhTabOverview.hbs`,
         },
-        tabInventory: {
+        inventory: {
             template: `${BADASS.systemPath}/templates/actor/parts/tabs/vhTabInventory.hbs`,
         },
-        tabDetails: {
+        details: {
             template: `${BADASS.systemPath}/templates/actor/parts/tabs/vhTabDetails.hbs`,
+            scrollable: [''],
         },
-        tabActiveEffects: {
+        activeEffects: {
             template: `${BADASS.systemPath}/templates/actor/parts/tabs/activeEffects.hbs`,
         },
         xp: {
-            template: `${BADASS.systemPath}/templates/actor/parts/vaultHunter/epBar.hbs`,
+            template: `${BADASS.systemPath}/templates/actor/parts/vaultHunter/vhXP.hbs`,
         },
     };
 
     async _prepareContext(options) {
         const context = await super._prepareContext(options);
+        context.tabs = this._getTabs();
+        context.gunTypes = getSystemGunTypes();
+        console.error('context', context);
+        return context;
+    }
 
-        if (!this.tabGroups.primary) this.tabGroups.primary = 'overview';
+    /** @override */
+    async _preparePartContext(partId, context) {
+        if (['overview', 'inventory', 'details', 'activeEffects'].includes(partId)) {
+            context.tab = context.tabs[partId];
+        }
+        return context;
+    }
 
-        context.tabs = {
+    _getTabs() {
+        this.tabGroups.primary = this.tabGroups.primary ?? 'overview';
+
+        return {
             overview: {
                 label: game.i18n.localize('SHEETS.actor.vaultHunter.tabs.overview'),
                 icon: 'fas fa-home',
@@ -71,14 +86,8 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
                 cssClass: this.tabGroups.primary === 'activeEffects' ? 'active' : '',
             },
         };
-
-        //prepare ep bar
-        // TODO: do a real calculation
-        context.actor.epPercent = 0.45;
-
-        context.gunTypes = getSystemGunTypes();
-        return context;
     }
+
     /**
      * Organize and classify Items for Actor sheets.
      *

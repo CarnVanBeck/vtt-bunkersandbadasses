@@ -33,6 +33,12 @@ export default class Archetype extends BaseModel {
                 initial: 0,
             }),
         });
+        schema.level = new fields.NumberField({
+            required: true,
+            nullable: false,
+            integer: true,
+            initial: 0,
+        });
         schema.levels = new fields.ArrayField(
             new fields.SchemaField({
                 level: new fields.NumberField({
