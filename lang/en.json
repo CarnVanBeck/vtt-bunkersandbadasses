@@ -152,6 +152,20 @@
             }
         }
     },
+    "BROWSER": {
+        "import": {
+            "label": "Import",
+            "hint": "Import a JSON file to add new stuff to your world."
+        },
+        "export": {
+            "label": "Export",
+            "hint": "Export all stuff from your world to a JSON file."
+        },
+        "actorStuffBrowser": {
+            "label": "Actor Stuff Browser",
+            "hint": "This is the Actor Stuff Browser. Here you can find all the stuff you need for your actors. You can search for archetypes, classes, skills and actions. You can also add new stuff or edit existing stuff."
+        }
+    },
     "SHEETS": {
         "actor": {
             "generic": {

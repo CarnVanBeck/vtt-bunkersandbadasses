@@ -8,8 +8,8 @@ import { GunCardSheet } from './module/sheets/item/gunCard.mjs';
 import { GunCardSheetV2 } from './module/sheets/item/gunCardV2.mjs';
 import { ShieldCardSheet } from './module/sheets/item/shieldCard.mjs';
 import { GrenadeCardSheet } from './module/sheets/item/grenadeCard.mjs';
-import { BadassActorSheet } from './module/sheets/actorSheet.mjs';
 import VaultHunterSheetV2 from './module/applications/actor/vaultHunterSheetV2.mjs';
+import BrowserManager from './module/applications/browser/browserManager.mjs';
 
 Hooks.on('init', () => {
     console.log('init');
@@ -66,6 +66,11 @@ Hooks.on('init', () => {
 
     preloadHandlebarsTemplates();
     registerHandlebarHelpers();
+});
+
+Hooks.on('canvasReady', () => {
+    console.log('canvasReady');
+    BrowserManager.injectButtons();
 });
 
 Hooks.on('i18nInit', () => {
