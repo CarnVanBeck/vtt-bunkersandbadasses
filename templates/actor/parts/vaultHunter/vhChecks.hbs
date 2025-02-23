@@ -1,1 +1,16 @@
-<section class="actor-section">Placeholder Checks</section>
+<section class="actor-section tlbrBox">
+    <div class="actorBlockHeader skillHeader">CHECKS</div>
+    {{#each system.checks as | skill | }}
+    <div class="skillBlock {{ @key }}">
+        <div class="skillName">{{ @key }}</div>
+        <div class="skillStatModName">{{ skill.mod }} MOD</div>
+        <div class="actorSheetValue skillStatModValue underlineBox">{{skill.base}}</div>
+        <div class="actorSheetPlus">+</div>
+        <div class="skillMiscModName">MISC MOD</div>
+        <div class="actorSheetValue skillMiscModValue underlineBox">{{ skill.miscMod }}</div>
+        <div class="actorSheetEquals">=</div>
+        <div class="actorSheetSum skillSumValue tlbrBox">{{ skill.sum }}</div>
+    </div>
+    {{/each}}
+</section>
+

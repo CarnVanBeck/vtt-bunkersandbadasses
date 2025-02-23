@@ -127,3 +127,4 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
         new DefenseConfig().render(true);
     }
 }
+
