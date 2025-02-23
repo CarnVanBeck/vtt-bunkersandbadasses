@@ -41,7 +41,6 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
         const context = await super._prepareContext(options);
         context.tabs = this._getTabs();
         context.gunTypes = getSystemGunTypes();
-        console.error('context', context);
         return context;
     }
 
@@ -94,39 +93,33 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
      * @param {Object} context Context of the current actor sheet
      */
     _prepareItems(context) {
-        let { actions, skills, classes, archetypes, guns, shields, grenadeMods, potions, items } = context.items.reduce(
+        let { guns, grenadeMods, defenseItems, potions, relics, questItems, items } = context.items.reduce(
             (retVal, item) => {
-                if (item.type === 'action') retVal.actions.push(item);
-                else if (item.type === 'skill') retVal.skills.push(item);
-                else if (item.type === 'class') retVal.classes.push(item);
-                else if (item.type === 'archetype') retVal.archetypes.push(item);
-                else if (item.type === 'gun') retVal.guns.push(item);
-                else if (item.type === 'shield') retVal.shields.push(item);
+                if (item.type === 'gun') retVal.guns.push(item);
                 else if (item.type === 'grenadeMod') retVal.grenadeMods.push(item);
+                else if (item.type === 'defense') retVal.defenseItems.push(item);
                 else if (item.type === 'potion') retVal.potions.push(item);
+                else if (item.type === 'relic') retVal.relics.push(item);
+                else if (item.type === 'questItem') retVal.questItems.push(item);
                 else items.push(item);
                 return retVal;
             },
             {
-                actions: [],
-                skills: [],
-                classes: [],
-                archetypes: [],
                 guns: [],
-                shields: [],
                 grenadeMods: [],
+                defenseItems: [],
                 potions: [],
+                relics: [],
+                questItems: [],
                 items: [],
             },
         );
-        context.actions = actions;
-        context.skills = skills;
-        context.classes = classes;
-        context.archetypes = archetypes;
         context.guns = guns;
-        context.shields = shields;
         context.grenadeMods = grenadeMods;
+        context.defenseItems = defenseItems;
         context.potions = potions;
+        context.relics = relics;
+        context.quests = quests;
         context.items = items;
     }
 

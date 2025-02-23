@@ -1,6 +1,7 @@
 import BaseActorData from './baseActor.mjs';
 import Archetype from '../custom/character/archetype.mjs';
 import { getXPSegmentByLevel } from '../../helper/systemValues.mjs';
+import Class from '../custom/character/class.mjs';
 
 const fields = foundry.data.fields;
 /**
@@ -13,6 +14,12 @@ export default class VaultHunterData extends BaseActorData {
     static defineSchema() {
         const schema = super.defineSchema();
         schema.archetypes = new fields.ArrayField(new fields.EmbeddedDataField(Archetype));
+        schema.archetype = new fields.StringField({
+            required: false,
+            nullable: true,
+            initial: '',
+        });
+        schema.class = new fields.ArrayField(new fields.EmbeddedDataField(Class));
         schema.background = new fields.StringField({
             required: false,
             nullable: true,
@@ -91,8 +98,6 @@ export default class VaultHunterData extends BaseActorData {
                 initial: 0,
             }),
         });
-
-        schema.defenses = new fields.ArrayField(new fields.ObjectField({}));
 
         schema.badassRank = new fields.NumberField({
             required: true,
@@ -244,6 +249,8 @@ export default class VaultHunterData extends BaseActorData {
     }
 
     prepareDerivedData() {
+        this.archetypeNames = this.archetypes.map((archetype) => archetype.name).join('/');
+
         for (let stat in this.stats) {
             this.stats[stat].sum = this.stats[stat].base + this.stats[stat].bonus;
             this.stats[stat].mod = Math.floor(this.stats[stat].sum / 2);

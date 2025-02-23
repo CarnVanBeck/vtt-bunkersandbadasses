@@ -4,7 +4,7 @@
         <div class="actor-col">
             <div class="badass-input">
                 <label
-                    for="archetype"
+                    for="system.archetype"
                     class="actor-label"
                     title="{{localize 'SHEETS.actor.vaultHunter.archetype.hint'}}"
                 >
@@ -12,6 +12,7 @@
                 </label>
                 <input
                     name="system.archetype"
+                    disabled
                     type="text"
                     value="{{ system.archetype }}"
                     placeholder="{{localize 'SHEETS.actor.vaultHunter.archetype.label'}}"

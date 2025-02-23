@@ -6,7 +6,7 @@ import BaseModel from '../baseModel.mjs';
 /**
  * System definition for a class
  */
-export default class ClassItemData extends BaseModel {
+export default class Class extends BaseModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();
