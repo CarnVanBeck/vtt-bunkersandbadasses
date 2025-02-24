@@ -8,7 +8,7 @@ import { GunCardSheet } from './module/sheets/item/gunCard.mjs';
 import { GunCardSheetV2 } from './module/sheets/item/gunCardV2.mjs';
 import { ShieldCardSheet } from './module/sheets/item/shieldCard.mjs';
 import { GrenadeCardSheet } from './module/sheets/item/grenadeCard.mjs';
-import VaultHunterSheetV2 from './module/applications/actor/vaultHunterSheetV2.mjs';
+import VaultHunterSheetV2 from './module/sheets/actor/vaultHunterSheetV2.mjs';
 import BrowserManager from './module/applications/browser/browserManager.mjs';
 
 Hooks.on('init', () => {

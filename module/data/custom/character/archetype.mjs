@@ -1,9 +1,9 @@
-import BaseModel from '../baseModel.mjs';
+import CharacterModel from '../characterModel.mjs';
 
 /**
  * System definition for an archetype
  */
-export default class Archetype extends BaseModel {
+export default class Archetype extends CharacterModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();

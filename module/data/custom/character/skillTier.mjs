@@ -1,10 +1,10 @@
-import BaseModel from '../baseModel.mjs';
+import CharacterModel from '../characterModel.mjs';
 import Skill from './skill.mjs';
 
 /**
  * System definition for a skill
  */
-export default class SkillTier extends BaseModel {
+export default class SkillTier extends CharacterModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();

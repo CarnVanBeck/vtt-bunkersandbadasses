@@ -1,12 +1,13 @@
-<section class="actor-section actor-row statLine">
+<section class="badass-section badass-row statLine">
     {{#each system.stats as | singleStat | }}
     <div class="singleStatBlock tlbrBox">
-        <div class="actorBlockHeader singleStatName">{{localize (concat "badass.stats." @key ".label")}}({{localize (concat "badass.stats." @key ".short")}})</div>
-        <div class="singleStatValueMod actor-row">
-            <div class="actorSheetValue singleStatValue">{{singleStat.sum}}</div>
-            <div class="actorStatMod singleStatMod tlbrBox">{{singleStat.mod}}</div>
+        <div class="actorBlockHeader singleStatName">
+            {{localize (concat "badass.stats." @key ".label")}}({{localize (concat "badass.stats." @key ".short")}})
+        </div>
+        <div class="singleStatValueMod badass-row">
+            <div class="actorSheetValue singleStatValue">{{ singleStat.sum }}</div>
+            <div class="actorStatMod singleStatMod tlbrBox">{{ singleStat.mod }}</div>
         </div>
     </div>
     {{/each}}
 </section>
-

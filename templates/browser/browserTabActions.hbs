@@ -1,0 +1,17 @@
+<section class="tab col-12 {{ tab.cssClass }}" data-group="primary" data-tab="actions">
+    <h3>Actions</h3>
+    <div class="browser">
+        <div class="sidebar">
+            Sidebar
+
+            <button type="button" data-action="addAction">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="content">
+            <div class="browser-available-items">
+                {{> browserAvailableItems items=actions}}
+            </div>
+        </div>
+    </div>
+</section>

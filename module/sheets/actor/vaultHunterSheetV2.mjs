@@ -1,6 +1,6 @@
 import BadassActorSheetV2 from './badassActorSheetV2.mjs';
 import { BADASS } from '../../helper/config.mjs';
-import DefenseConfig from '../settings/defenseConfig.mjs';
+import DefenseConfig from '../../applications/settings/defenseConfig.mjs';
 import { getSystemGunTypes } from '../../helper/systemValues.mjs';
 
 export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
@@ -16,7 +16,6 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
             template: `${BADASS.systemPath}/templates/actor/parts/vaultHunter/vhHeader.hbs`,
         },
         tabs: {
-            // Foundry-provided generic template
             template: 'templates/generic/tab-navigation.hbs',
         },
         overview: {
@@ -46,7 +45,7 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
 
     /** @override */
     async _preparePartContext(partId, context) {
-        if (['overview', 'inventory', 'details', 'activeEffects'].includes(partId)) {
+        if (context.tabs[partId]) {
             context.tab = context.tabs[partId];
         }
         return context;
@@ -127,4 +126,3 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
         new DefenseConfig().render(true);
     }
 }
-

@@ -54,6 +54,9 @@ export function preloadHandlebarsTemplates() {
         vhSkills: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhSkills.hbs`,
         vhTraits: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhTraits.hbs`,
         epBar: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/epBar.hbs`,
+
+        //browser parts
+        browserAvailableItems: `${CONFIG.BADASS.systemPath}/templates/browser/parts/browserAvailableItems.hbs`,
     };
 
     // Load the template parts

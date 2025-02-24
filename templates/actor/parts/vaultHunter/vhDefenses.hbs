@@ -1,23 +1,23 @@
-<section class="actor-section">
+<section class="badass-section">
     <h2 title="{{localize 'SHEETS.actor.vaultHunter.defenses.hint'}}">{{localize 'SHEETS.actor.vaultHunter.defenses.label'}}</h2>
         {{#each actor.defenses as |def|}}
-            <div class="actor-row" data-item-id="{{def.key}}">
-                <div class="actor-col">
+            <div class="badass-row" data-item-id="{{def.key}}">
+                <div class="badass-col">
                     <h2>{{localize def.name}}</h4>
                 </div>
                 </br>
-                <div class="actor-col">
+                <div class="badass-col">
                     <label for="defense_{{def.key}}_current">Current</label>
                     <input name="defense_{{def.key}}_current" type="number" value="{{def.current}}" max="{{def.max}}" min="0" />
                 </div>
-                <div class="actor-col">
+                <div class="badass-col">
                     <label for="defense_{{def.key}}_max">Max</label>
                     <input name="defense_{{def.key}}_max" type="number" value="{{def.max}}" min="0" />
                 </div>
             </div>
         {{/each}}
         {{#if user.isGM}}
-            <div class="actor-section-footer">
+            <div class="badass-section-footer">
                 <a data-action="addDefense" data-action="addDefense">{{localize "SHEETS.actor.vaultHunter.defenses.add"}}</a>
             </div>
         {{/if}}

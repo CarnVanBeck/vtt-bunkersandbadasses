@@ -163,7 +163,29 @@
         },
         "actorStuffBrowser": {
             "label": "Actor Stuff Browser",
-            "hint": "This is the Actor Stuff Browser. Here you can find all the stuff you need for your actors. You can search for archetypes, classes, skills and actions. You can also add new stuff or edit existing stuff."
+            "hint": "This is the Actor Stuff Browser. Here you can find all the stuff you need for your actors. You can search for archetypes, classes, skills and actions. You can also add new stuff or edit existing stuff.",
+            "tabs": {
+                "actions": {
+                    "label": "Actions",
+                    "hint": "Actions are the abilities of an actor."
+                },
+                "archetypes": {
+                    "label": "Archetypes",
+                    "hint": "Archetypes are the basic character types of a Vault Hunter."
+                },
+                "classes": {
+                    "label": "Classes",
+                    "hint": "Classes are the different roles a Vault Hunter can take."
+                },
+                "skills": {
+                    "label": "Skills",
+                    "hint": "Skills are things that modify the abilities and attributes of a Vault Hunter."
+                },
+                "backgrounds": {
+                    "label": "Backgrounds",
+                    "hint": "Backgrounds are the history of a Vault Hunter."
+                }
+            }
         }
     },
     "SHEETS": {
@@ -206,8 +228,14 @@
                     "hint": "The Action Skill of your Vault Hunter."
                 },
                 "xp": {
-                    "label": "XP",
-                    "hint": "The current experience points your Vault Hunter has."
+                    "current": {
+                        "label": "XP",
+                        "hint": "The current experience points your Vault Hunter has."
+                    },
+                    "segment": {
+                        "label": "XP Segment",
+                        "hint": "The amount of XP per segment for this level."
+                    }
                 },
                 "defenses": {
                     "label": "Defenses",
@@ -496,6 +524,17 @@
             "quest": "Quest Item",
             "relic": "Relic",
             "defense": "Defense"
+        },
+        "custom": {
+            "archetype": "Archetype",
+            "class": "Class",
+            "skill": "Skill",
+            "action": "Action",
+            "background": "Background",
+            "element": "Element",
+            "gunType": "Gun Type",
+            "manufacturer": "Manufacturer",
+            "level": "Level"
         }
     }
 }

@@ -128,4 +128,23 @@ export function registerSettings() {
         type: SettingsIO,
         restricted: true,
     });
+
+    // #region data
+
+    game.settings.register(BADASS.namespace, 'actions', {
+        scope: 'world',
+        config: false,
+        type: Array,
+    });
+    game.settings.register(BADASS.namespace, 'archetypes', {
+        scope: 'world',
+        config: false,
+        type: Array,
+    });
+    game.settings.register(BADASS.namespace, 'classes', {
+        scope: 'world',
+        config: false,
+        type: Array,
+    });
+    // #endregion
 }

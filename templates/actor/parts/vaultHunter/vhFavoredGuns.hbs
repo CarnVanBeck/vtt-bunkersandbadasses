@@ -1,5 +1,5 @@
-<section class="actor-section actor-favored-guns">
-    <div class="actor-row">
+<section class="badass-section badass-favored-guns">
+    <div class="badass-row">
         <h2 title="{{localize "SHEETS.actor.vaultHunter.favoredGun.hint"}}">
             {{localize
                 'SHEETS.actor.vaultHunter.favoredGun.label'
@@ -7,8 +7,8 @@
         </h2>
     </div>
     {{#each gunTypes}}
-    <div class="actor-row actor-favored-gun">
-        <div class="actor-col">
+    <div class="badass-row badass-favored-gun">
+        <div class="badass-col">
             <input
                 type="checkbox"
                 id="{{ this.key }}"
@@ -18,10 +18,10 @@
                 this.key}}
             />
         </div>
-        <div class="actor-col">
+        <div class="badass-col">
             <image src="{{ this.icon }}" title="{{localize this.name}}" />
         </div>
-        <div class="actor-col">
+        <div class="badass-col">
             <label for="{{ this.key }}" title="{{ this.description }}">{{localize this.name}}</label>
         </div>
     </div>

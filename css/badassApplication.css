@@ -12,71 +12,269 @@
         padding: 5px;
         margin-bottom: 5px;
     }
-    .settings {
+    .settings, .browser {
         display: flex;
     }
-    .settings {
-        .sidebar {
-            padding: 10px;
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            flex-flow: column wrap;
-            flex-basis: 25%;
-        }
-        .sidebar .sidebar-list {
-            flex-basis: 100%;
-        }
-        .sidebar .sidebar-list ul {
-            padding: 0;
-            margin: 0;
-        }
-        .sidebar .sidebar-list .sidebar-list-item {
-            text-decoration: none;
-            border-bottom: 1px solid var(--color-light-5);
-            cursor: pointer;
-            list-style-type: none;
-        }
-        .sidebar .sidebar-list .sidebar-list-item:hover {
-            text-shadow: var(--color-shadow-primary);
-            font-weight: bold;
-        }
-        .sidebar .sidebar-list .sidebar-list-item .icon {
-            border: 0;
-            height: 14px;
-            display: inline-block;
-            padding-right: 7px;
-            vertical-align: bottom;
-            margin-bottom: 2px;
-        }
-        .sidebar .sidebar-item {
-            flex-basis: 100%;
-        }
-        .content {
-            padding: 10px;
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            flex-basis: 75%;
-        }
 
-        .content-full {
-            flex-basis: 100%;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-        .content-grid .content-grid-item {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .settings-buttons {
-            display: flex;
-            flex-flow: row nowrap;
-        }
+    .sidebar {
+        padding: 10px;
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        flex-basis: 25%;
     }
+    .sidebar .sidebar-list {
+        flex-basis: 100%;
+    }
+    .sidebar .sidebar-list ul {
+        padding: 0;
+        margin: 0;
+    }
+    .sidebar .sidebar-list .sidebar-list-item {
+        text-decoration: none;
+        border-bottom: 1px solid var(--color-light-5);
+        cursor: pointer;
+        list-style-type: none;
+    }
+    .sidebar .sidebar-list .sidebar-list-item:hover {
+        text-shadow: var(--color-shadow-primary);
+        font-weight: bold;
+    }
+    .sidebar .sidebar-list .sidebar-list-item .icon {
+        border: 0;
+        height: 14px;
+        display: inline-block;
+        padding-right: 7px;
+        vertical-align: bottom;
+        margin-bottom: 2px;
+    }
+    .sidebar .sidebar-item {
+        flex-basis: 100%;
+    }
+    .content {
+        padding: 10px;
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-basis: 75%;
+    }
+
+    .content-full {
+        flex-basis: 100%;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .content-grid .content-grid-item {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .settings-buttons {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    
+    .badass-section {
+        display: flex;
+        flex-flow: column nowrap;
+        flex-basis: 100%;
+    }
+    .badass-row {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 100%;
+    }
+
+    .badass-col {
+        display: flex;
+        flex-flow: column nowrap;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    .col-1 { flex-basis: 8.33%; }
+    .col-2 { flex-basis: 16.66%; }
+    .col-3 { flex-basis: 25%; }
+    .col-4 { flex-basis: 33.33%; }
+    .col-5 { flex-basis: 41.66%; }
+    .col-6 { flex-basis: 50%; }
+    .col-7 { flex-basis: 58.33%; }
+    .col-8 { flex-basis: 66.66%; }
+    .col-9 { flex-basis: 75%; }
+    .col-10 { flex-basis: 83.33%; }
+    .col-11 { flex-basis: 91.66%; }
+    .col-12 { flex-basis: 100%; }
+
+    /* Favored Gun specials */
+    .badass-favored-guns {
+        display: flex;
+        flex-flow: column nowrap;
+        flex-basis: 100%;
+    }
+    .badass-favored-gun {
+        display: flex;
+        flex-flow: row nowrap;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    .badass-favored-gun img {
+        border: 0;
+        height: 22px;
+        color: #6e7075;
+    }
+
+    /* Defense specials */
+    .actorBlockHeader {
+        display: block;
+        text-align: center;
+        background-color: rgba(110, 112, 117, 0.5);
+    }
+
+    .actorSheetValue {
+        width: 35px;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .actorSheetPlus,
+    .actorSheetEquals
+    {
+        width: 5%;
+        font-size: 0.75em;
+        text-align: center;
+        margin: 10px 0 0 0;
+    }
+
+    .actorSheetSum
+    {
+        width: 40px;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .actorStatMod {
+        font-size: 1.8em;
+        width: 55%;
+        text-align: center;
+    }
+
+    /* Actor stats */
+
+    .singleStatBlock {
+        display: block;
+    }
+
+    .singleStatValue {
+        width: 55%;
+    }
+
+    .singleStatBlock {
+        min-width: 90px;
+    }
+
+    /* Actor initivative */
+    .initiativeBlock,
+    .movementBlock {
+        display: flex;
+        flex-flow: row;
+        margin: 0 0 0 -80px;
+    }
+
+    .initName,
+    .movementName {
+        width: 120px;
+        line-height: 2em;
+    }
+    
+    .initModValue,
+    .movementModValue {
+        width: 10%;
+    }
+
+    /* underline and Boxes */
+    .underlineBox {
+        border-bottom: grey 2px solid;
+    }
+
+    .tlbrBox {
+        border: grey 2px solid;
+    }
+
+    /* Actor checks */
+    .skillBlock {
+        display: flex;
+        margin: 0.5em 0 0 10%;
+    }
+    
+    .skillName {
+        width: 25%;
+        margin: 5px 0 0 0;
+    }
+    
+    .skillStatModName,
+    .skillMiscModName
+    {
+        width: 10%;
+        font-size: 0.75em;
+        text-align: center;
+        margin: 5px 0 0 0;
+    }
+
+    .meleeDieValue {
+        width: calc(100% - 40px);
+    }
+
+    .goldBlock {
+        height: 40px;
+    }
+
+    .goldName {
+        width: 60px;
+        height: 38px;
+        line-height: 40px;
+    }
+
+    .placeHolder {
+        height: 80px;
+        align-items: center;
+    }
+    .chamberPlaceholder .chamber {
+        stroke: rgb(110, 112, 117);
+        stroke-width: 40;
+        fill: none;
+    }
+
+    /* Footer */
+    .badass-section-footer {
+        height: 5px;
+        border: 1px dashed #6e7075;
+        background-color: white;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .badass-section-footer:hover {
+        height: 15px;
+    }
+    .badass-section-footer a {
+        display: none;
+        height: 0px;
+        font-size: 12px;
+        text-align: center;
+        display: block;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+    .badass-section-footer:hover a {
+        height: 15px;
+    }
+
 }

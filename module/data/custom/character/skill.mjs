@@ -1,17 +1,12 @@
-import BaseModel from '../baseModel.mjs';
+import CharacterModel from '../characterModel.mjs';
 
 /**
  * System definition for a skill
  */
-export default class Skill extends BaseModel {
+export default class Skill extends CharacterModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();
-        schema.icon = new fields.FilePathField({
-            initial: 'icons/svg/temple.svg',
-            categories: ['IMAGE'],
-            base64: false,
-        });
         schema.level = new fields.NumberField({
             required: true,
             nullable: false,

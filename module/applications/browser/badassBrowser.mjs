@@ -11,7 +11,7 @@ export default class BadassBrowser extends HandlebarsApplicationMixin(Applicatio
         },
         tag: 'form',
         window: {
-            contentClasses: ['badass', 'browser'],
+            contentClasses: ['badass'],
             controls: [
                 {
                     icon: 'fa-solid fa-file-import',
