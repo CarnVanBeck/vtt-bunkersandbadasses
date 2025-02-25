@@ -40,6 +40,7 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
         const context = await super._prepareContext(options);
         context.tabs = this._getTabs();
         context.gunTypes = getSystemGunTypes();
+        context.system.xp.levelUp = (context.system.xp.nextLevelPercentage > 1);
         return context;
     }
 

@@ -2,7 +2,10 @@
     {{#each system.stats as | singleStat | }}
     <div class="singleStatBlock tlbrBox">
         <div class="actorBlockHeader singleStatName">
-            {{localize (concat "badass.stats." @key ".label")}}({{localize (concat "badass.stats." @key ".short")}})
+            
+            {{localize (concat "badass.stats." @key ".label")}}
+            ({{localize (concat "badass.stats." @key ".short")}})
+        
         </div>
         <div class="singleStatValueMod badass-row">
             <div class="actorSheetValue singleStatValue">{{ singleStat.sum }}</div>

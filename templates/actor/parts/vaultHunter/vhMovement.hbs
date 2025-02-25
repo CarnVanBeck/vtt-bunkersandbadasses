@@ -1,7 +1,7 @@
 <section class="badass-section">
     {{#with system.movement as | movement | }}
     <div class="movementBlock">
-        <div class="actorBlockHeader movementName">{{!--localize--}} MOVEMENT</div>
+        <div class="actorBlockHeader movementName">{{ localize "SHEETS.actor.vaultHunter.movement.label" }}</div>
         <div class="actorSheetValue movementModValue underlineBox">{{ movement.base }}</div>
         <div class="actorSheetPlus">+</div>
         <div class="actorSheetValue movementModValue underlineBox">{{ ../system.stats.spd.mod }}</div>

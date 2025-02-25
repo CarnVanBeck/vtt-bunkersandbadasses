@@ -272,6 +272,7 @@ export default class VaultHunterData extends BaseActorData {
         }
         this.xp.segment = getXPSegmentByLevel(this.level);
         this.xp.nextLevelPercentage = this.xp.current / (this.xp.segment * 10);
+        this.xp.levelUp = (nextLevelPercentage >= 1);
     }
 
     /**

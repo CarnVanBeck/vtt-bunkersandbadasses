@@ -1,7 +1,7 @@
 <section class="badass-section">
     {{#with system.initiative as | initiative | }}
     <div class="initiativeBlock">
-        <div class="actorBlockHeader initName">{{!--localize--}} INITIATIVE</div>
+        <div class="actorBlockHeader initName">{{ localize "SHEETS.actor.vaultHunter.initative.label" }}</div>
         <div class="actorSheetValue initModValue underlineBox">{{../system.badassRank}}</div>
         <div class="actorSheetPlus">+</div>
         <div class="actorSheetValue initModValue underlineBox">{{ ../system.stats.spd.mod }}</div>

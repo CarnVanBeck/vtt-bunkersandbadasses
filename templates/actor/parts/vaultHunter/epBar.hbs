@@ -10,47 +10,6 @@
             #epBar{{actor.id}} {
             	--epPercent: {{system.xp.nextLevelPercentage}};
             }
-
-            .epBar {
-            	--darkBlue: #22A9AC;
-            	--lightBlue: #27D6DB;
-            	--darkGrey: #bbb;
-            	--lightGrey: #ddd;
-
-            }
-
-                     #bgPatternRect {
-                         fill: var(--darkGrey);
-                         stroke: black;
-                         stroke-width: 4px;
-                     }
-
-                     #genPatternRect {
-                         fill: var(--lightBlue);
-                         stroke: black;
-                         stroke-width: 3px;
-                     }
-
-            .bar {
-            	stroke-width: 3px;
-            	opacity: 0.8;
-            }
-
-            #backgroundBar {
-            	fill: url(#greyLine);
-                         stroke: black;
-            }
-
-            #foregroundBar {
-            	fill: url(#genericLine);
-                         stroke: none;
-            	clip-path: polygon(
-            		-2px 0px,
-            		calc(964px * var(--epPercent, 1)) 0px,
-            		calc(964px * var(--epPercent, 1)) 50px,
-            		-2px 50px
-            	);
-            }
         </style>
         <pattern id="greyLine" x="20" y="0" width="96" height="50" patternUnits="userSpaceOnUse">
             <desc>greyLine</desc>
@@ -58,7 +17,7 @@
         </pattern>
         <pattern id="genericLine" x="20" y="0" width="96" height="50" patternUnits="userSpaceOnUse">
             <desc>genericLine</desc>
-            <rect id="genPatternRect" x="0" y="0" width="96" height="50" />
+            <rect id="genPatternRect" {{#if system.xp.levelUp}}class="levelUp"{{/if}} x="0" y="0" width="96" height="50" />
         </pattern>
         <symbol id="genericBar">
             <path d="m20,35 l80,-28 h800 l80,28 v10 l-80,-18 h-800 l-80,18 z" />
