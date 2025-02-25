@@ -83,11 +83,13 @@
         display: flex;
         flex-flow: column nowrap;
         flex-basis: 100%;
+        margin: 0 0 8px 0;
     }
     .badass-row {
         display: flex;
         flex-direction: row;
         flex-basis: 100%;
+        margin: 0 4px;
     }
 
     .badass-col {
@@ -231,6 +233,11 @@
         width: calc(100% - 40px);
     }
 
+    .meleeDieValueMod,
+    .badassBlock {
+        margin: 0;
+    }
+
     .goldBlock {
         height: 40px;
     }
@@ -251,6 +258,70 @@
         fill: none;
     }
 
+    /* EXP Bar */
+    .epBar {
+        --darkBlue: #22A9AC;
+        --lightBlue: #2ff8ff;
+        --darkGrey: #bbb;
+        --lightGrey: #ddd;
+
+    }
+
+    #bgPatternRect {
+        fill: var(--darkGrey);
+        stroke: black;
+        stroke-width: 4px;
+    }
+
+    #genPatternRect {
+        fill: var(--darkBlue);
+        stroke: black;
+        stroke-width: 3px;
+    }
+
+    .levelUp {
+        animation-name:             levelUpPulse;
+        animation-duration:         2s;
+        animation-direction:        alternate;
+        animation-iteration-count:  infinite;
+    }
+    
+    @keyframes levelUpPulse {
+        0% {
+            fill: var(--darkBlue);
+        }
+        70% {
+            fill: var(--lightBlue);
+        }
+        80% {
+            fill: var(--lightBlue);
+        }
+        100% {
+            fill: var(--darkBlue);
+        }
+    }
+
+    .bar {
+        stroke-width: 3px;
+        opacity: 0.8;
+    }
+
+    #backgroundBar {
+        fill: url(#greyLine);
+                 stroke: black;
+    }
+
+    #foregroundBar {
+        fill: url(#genericLine);
+                 stroke: none;
+        clip-path: polygon(
+            -2px 0px,
+            calc(964px * var(--epPercent, 1)) 0px,
+            calc(964px * var(--epPercent, 1)) 50px,
+            -2px 50px
+        );
+    }
+    
     /* Footer */
     .badass-section-footer {
         height: 5px;
