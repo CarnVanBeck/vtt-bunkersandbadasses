@@ -54,9 +54,14 @@ export default class VaultHunterData extends BaseActorData {
             nextLevelPercentage: new fields.NumberField({
                 required: false,
                 nullable: true,
-                min: 0,
-                max: 100,
-                initial: 0,
+                min: 0.0,
+                max: 1.0,
+                initial: 0.0,
+            }),
+            levelUp: new fields.BooleanField({
+                required: true,
+                nullable: false,
+                initial: false,
             }),
         });
         schema.stats = new fields.SchemaField({
@@ -272,7 +277,7 @@ export default class VaultHunterData extends BaseActorData {
         }
         this.xp.segment = getXPSegmentByLevel(this.level);
         this.xp.nextLevelPercentage = this.xp.current / (this.xp.segment * 10);
-        this.xp.levelUp = (nextLevelPercentage >= 1);
+        this.xp.levelUp = this.xp.nextLevelPercentage >= 1;
     }
 
     /**
