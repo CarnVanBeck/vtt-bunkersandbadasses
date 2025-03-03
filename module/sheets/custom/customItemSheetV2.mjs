@@ -1,3 +1,4 @@
+import Action from '../../data/custom/character/action.mjs';
 import { BADASS } from '../../helper/config.mjs';
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -8,12 +9,14 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
  * @extends {ActorSheetV2}
  */
 export default class CustomItemSheetV2 extends HandlebarsApplicationMixin(ApplicationV2) {
-    constructor(key, ...args) {
+    constructor(source, ...args) {
         super(...args);
-        this.key = key;
+        this.source = source;
         this.type = null;
+        this.settingsName = null;
     }
     static DEFAULT_OPTIONS = {
+        tag: 'form',
         position: {
             width: 620,
             height: 620,
@@ -89,9 +92,31 @@ export default class CustomItemSheetV2 extends HandlebarsApplicationMixin(Applic
      * @private
      */
     static #onSubmitForm(e, formData, formDataExtended) {
-        console.debug('submit on change', e, formData, formDataExtended);
         e.preventDefault();
         e.stopPropagation();
+
+        let updateData = {};
+        if (e.target.dataset.hasOwnProperty('target')) {
+            updateData[e.target.dataset['target']] = e.target.value;
+            try {
+                this.item.validate({ changes: updateData });
+                this.item[e.target.dataset['target']] = e.target.value;
+
+                let settingsArray = game.settings.get(BADASS.namespace, this.settingsName);
+                let itemIndex = settingsArray.findIndex((item) => item.key === this.item.key);
+                if (itemIndex !== -1) {
+                    settingsArray[itemIndex] = this.item;
+                    game.settings.set(BADASS.namespace, this.settingsName, settingsArray);
+                    this.source.render(true);
+                }
+            } catch (validationError) {
+                if (validationError instanceof foundry.data.validation.DataModelValidationError) {
+                    ui.notifications.error(validationError.message);
+                } else {
+                    console.error('Generic Error during validation:', validationError);
+                }
+            }
+        }
     }
 
     // #region Abstracts
