@@ -11,7 +11,13 @@ export default class ActionItemSheetV2 extends CustomItemSheetV2 {
         this.type = 'action';
         this.settingsName = 'actions';
         if (key) {
-            this.item = new Action(game.settings.get(BADASS.namespace, 'actions').find((action) => action.key === key));
+            let settings = game.settings.get(BADASS.namespace, 'actions');
+            if (settings) {
+                this.item = new Action(settings.find((action) => action.key === key));
+            } else {
+                this.item = new Action();
+            }
+            this.window.title = this.item.name;
         }
     }
 
