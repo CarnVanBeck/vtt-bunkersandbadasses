@@ -167,6 +167,18 @@
         text-align: center;
     }
 
+    .blockInfo {
+        min-height: 28px;
+        text-align: center;
+    }
+
+    .blockHint,
+    .startHint {
+        font-size: 10px;
+    }
+
+    .block
+
     /* Actor stats */
 
     .singleStatBlock {
@@ -207,6 +219,11 @@
 
     .tlbrBox {
         border: grey 2px solid;
+    }
+
+    .grenadeTypeBlock,
+    .grenadeInfoBlock {
+        width: 60%;
     }
 
     /* Actor checks */
