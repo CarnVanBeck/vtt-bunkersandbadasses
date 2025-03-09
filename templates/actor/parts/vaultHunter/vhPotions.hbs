@@ -1,1 +1,10 @@
-<section class="badass-section">Placeholder Potions</section>
+<section class="badass-section tlbrBox">
+    <div class="actorBlockHeader skillHeader">{{ localize "SHEETS.actor.vaultHunter.potions.label" }}</div>
+    {{#each system.potions as | potion | }}
+    <div class="potionBlock {{ @key }}">
+        <div class="potionName">{{ @key }}</div>
+        <div class="potionUse"></div>
+        <div class="potionDelete"></div>
+    </div>
+    {{/each}}
+</section>
