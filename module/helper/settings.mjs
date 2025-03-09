@@ -135,16 +135,34 @@ export function registerSettings() {
         scope: 'world',
         config: false,
         type: Array,
+        default: [],
+        onChange: (value) => {
+            if (!game.settings.get(BADASS.namespace, 'actions')) {
+                game.settings.set(BADASS.namespace, 'actions', []);
+            }
+        },
     });
     game.settings.register(BADASS.namespace, 'archetypes', {
         scope: 'world',
         config: false,
         type: Array,
+        default: [],
+        onChange: (value) => {
+            if (!game.settings.get(BADASS.namespace, 'archetypes')) {
+                game.settings.set(BADASS.namespace, 'archetypes', []);
+            }
+        },
     });
     game.settings.register(BADASS.namespace, 'classes', {
         scope: 'world',
         config: false,
         type: Array,
+        default: [],
+        onChange: (value) => {
+            if (!game.settings.get(BADASS.namespace, 'classes')) {
+                game.settings.set(BADASS.namespace, 'classes', []);
+            }
+        },
     });
     // #endregion
 }
