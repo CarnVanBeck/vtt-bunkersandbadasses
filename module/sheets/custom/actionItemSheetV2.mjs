@@ -39,12 +39,6 @@ export default class ActionItemSheetV2 extends CustomItemSheetV2 {
      * @override
      */
     _setAdditionalContext(context) {
-        if (this.item) {
-            context.item = this.item;
-        } else {
-            context.item = new Action();
-        }
-
         return context;
     }
 }

@@ -27,7 +27,11 @@ export default class CharacterModel extends BaseModel {
             nullable: false,
             initial: '',
         });
-        schema.description = new fields.HTMLField();
+        schema.description = new fields.HTMLField({
+            required: false,
+            nullable: true,
+            initial: '<p>&nbsp;</p>',
+        });
         schema.icon = new fields.FilePathField({
             initial: 'icons/svg/temple.svg',
             categories: ['IMAGE'],

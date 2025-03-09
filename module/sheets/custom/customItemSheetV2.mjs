@@ -1,4 +1,3 @@
-import Action from '../../data/custom/character/action.mjs';
 import { BADASS } from '../../helper/config.mjs';
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -9,9 +8,9 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
  * @extends {ActorSheetV2}
  */
 export default class CustomItemSheetV2 extends HandlebarsApplicationMixin(ApplicationV2) {
-    constructor(source, ...args) {
+    constructor(callback, ...args) {
         super(...args);
-        this.source = source;
+        this.callback = callback;
         this.type = null;
         this.settingsName = null;
     }
@@ -29,6 +28,9 @@ export default class CustomItemSheetV2 extends HandlebarsApplicationMixin(Applic
         window: {
             contentClasses: ['badass'],
             resizable: true,
+        },
+        actions: {
+            save: CustomItemSheetV2.#saveDescription,
         },
     };
 
@@ -50,7 +52,7 @@ export default class CustomItemSheetV2 extends HandlebarsApplicationMixin(Applic
      * @readonly
      */
     get title() {
-        return this.item?.name;
+        return `Edit ${this.type}`;
     }
 
     /**
@@ -62,6 +64,7 @@ export default class CustomItemSheetV2 extends HandlebarsApplicationMixin(Applic
      */
     async _prepareContext(options) {
         const context = await super._prepareContext(options);
+        context.item = this.item;
         this.tabGroups.primary = this.tabGroups.primary ?? 'details';
         let tabs = {
             details: {
@@ -74,6 +77,7 @@ export default class CustomItemSheetV2 extends HandlebarsApplicationMixin(Applic
         };
         context.tabs = { ...tabs, ...this._getTabs() };
         this._getTabs();
+        context.descriptionHtml = await TextEditor.enrichHTML(context.item.description, { secrets: game.user.isGM });
         return this._setAdditionalContext(context);
     }
 
@@ -98,23 +102,46 @@ export default class CustomItemSheetV2 extends HandlebarsApplicationMixin(Applic
         let updateData = {};
         if (e.target.dataset.hasOwnProperty('target')) {
             updateData[e.target.dataset['target']] = e.target.value;
-            try {
-                this.item.validate({ changes: updateData });
-                this.item[e.target.dataset['target']] = e.target.value;
+            CustomItemSheetV2._saveItem(this.item, updateData, this.settingsName, this.callback);
+        }
+    }
 
-                let settingsArray = game.settings.get(BADASS.namespace, this.settingsName);
-                let itemIndex = settingsArray.findIndex((item) => item.key === this.item.key);
-                if (itemIndex !== -1) {
-                    settingsArray[itemIndex] = this.item;
-                    game.settings.set(BADASS.namespace, this.settingsName, settingsArray);
-                    this.source.render(true);
+    static #saveDescription(e, formData) {
+        if (e.target.dataset.action === 'save') {
+            const proseMirrorElement = document.querySelector(`prose-mirror[data-document-u-u-i-d="${this.item.key}"]`);
+            if (proseMirrorElement) {
+                const editorContentDiv = proseMirrorElement.querySelector('.editor-content');
+                if (editorContentDiv) {
+                    const descriptionHtml = editorContentDiv.innerHTML;
+                    let updateData = {};
+                    updateData.description = descriptionHtml;
+                    CustomItemSheetV2._saveItem(this.item, updateData, this.settingsName, this.callback);
                 }
-            } catch (validationError) {
-                if (validationError instanceof foundry.data.validation.DataModelValidationError) {
-                    ui.notifications.error(validationError.message);
-                } else {
-                    console.error('Generic Error during validation:', validationError);
+            }
+        }
+    }
+
+    static async _saveItem(item, updateData, settingsName, callback) {
+        try {
+            item.validate({ changes: updateData });
+            for (let key in updateData) {
+                item[key] = updateData[key];
+            }
+
+            let settingsArray = game.settings.get(BADASS.namespace, settingsName);
+            let itemIndex = settingsArray.findIndex((i) => i.key === item.key);
+            if (itemIndex !== -1) {
+                settingsArray[itemIndex] = item;
+                await game.settings.set(BADASS.namespace, settingsName, settingsArray);
+                if (callback && typeof callback === 'function') {
+                    callback();
                 }
+            }
+        } catch (validationError) {
+            if (validationError instanceof foundry.data.validation.DataModelValidationError) {
+                ui.notifications.error(validationError.message);
+            } else {
+                console.error('Generic Error during validation:', validationError);
             }
         }
     }

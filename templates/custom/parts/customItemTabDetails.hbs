@@ -1,3 +1,5 @@
 <section class="tab col-12 {{ tab.cssClass }}" data-group="primary" data-tab="details">
-    <h3>Placeholder for Details</h3>
+    <prose-mirror name="item.description" data-document-u-u-i-d="{{ item.key }}" value="{{ item.description }}" >
+        {{{ descriptionHtml }}}
+    </prose-mirror>
 </section>
