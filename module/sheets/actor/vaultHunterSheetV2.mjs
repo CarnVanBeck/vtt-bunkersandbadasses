@@ -9,6 +9,9 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
         actions: {
             addDefense: BadassActorSheetV2.addDefense,
         },
+        window: {
+            resizable: true,
+        },
     };
 
     static PARTS = {
@@ -51,6 +54,12 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
         return context;
     }
 
+    _ccsTabHelper(primary, current) {
+        let defaultClasses = 'scrollable';
+        let additionalClasses = 'scrollable';
+        return (primary === current ? 'active ' + additionalClasses : defaultClasses);
+    }
+
     _getTabs() {
         this.tabGroups.primary = this.tabGroups.primary ?? 'overview';
 
@@ -60,28 +69,28 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
                 icon: 'fas fa-home',
                 id: 'overview',
                 group: 'primary',
-                cssClass: this.tabGroups.primary === 'overview' ? 'active' : '',
+                cssClass: this._ccsTabHelper(this.tabGroups.primary, 'overview'),
             },
             inventory: {
                 label: game.i18n.localize('SHEETS.actor.vaultHunter.tabs.inventory'),
                 icon: 'fas fa-boxes',
                 id: 'inventory',
                 group: 'primary',
-                cssClass: this.tabGroups.primary === 'inventory' ? 'active' : '',
+                cssClass: this._ccsTabHelper(this.tabGroups.primary, 'inventory'),
             },
             details: {
                 label: game.i18n.localize('SHEETS.actor.vaultHunter.tabs.details'),
                 icon: 'fas fa-info',
                 id: 'details',
                 group: 'primary',
-                cssClass: this.tabGroups.primary === 'details' ? 'active' : '',
+                cssClass: this._ccsTabHelper(this.tabGroups.primary, 'details'),
             },
             activeEffects: {
                 label: game.i18n.localize('SHEETS.actor.generic.tabs.activeEffects'),
                 icon: 'fas fa-bolt',
                 id: 'activeEffects',
                 group: 'primary',
-                cssClass: this.tabGroups.primary === 'activeEffects' ? 'active' : '',
+                cssClass: this._ccsTabHelper(this.tabGroups.primary, 'activeEffects'),
             },
         };
     }
