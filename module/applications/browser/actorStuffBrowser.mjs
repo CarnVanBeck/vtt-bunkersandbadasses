@@ -84,22 +84,26 @@ export default class ActorStuffBrowser extends BadassBrowser {
         };
     }
 
-    static addAction(e, target) {
+    static async addAction(e, target) {
         let action = new Action();
         let actions = game.settings.get(BADASS.namespace, 'actions') ?? [];
         actions.push(action);
-        game.settings.set(BADASS.namespace, 'actions', actions);
+        await game.settings.set(BADASS.namespace, 'actions', actions);
         this.render();
-        new ActionItemSheetV2(action.key, this).render(true);
+        new ActionItemSheetV2(action.key, () => {
+            this.render();
+        }).render(true);
     }
 
     static editAction(e, target) {
-        new ActionItemSheetV2(target.dataset.key, this).render(true);
+        new ActionItemSheetV2(target.dataset.key, () => {
+            this.render();
+        }).render(true);
     }
 
-    static deleteAction(e, target) {
+    static async deleteAction(e, target) {
         let actions = game.settings.get(BADASS.namespace, 'actions').filter((a) => a.key !== target.dataset.key);
-        game.settings.set(BADASS.namespace, 'actions', actions);
+        await game.settings.set(BADASS.namespace, 'actions', actions);
         this.render();
     }
 }
