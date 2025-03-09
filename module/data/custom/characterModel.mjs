@@ -46,8 +46,10 @@ export default class CharacterModel extends BaseModel {
     _generateKey(settingsName) {
         let newKey = `${this.type}-${generateUUID()}`;
         let settings = game.settings.get(BADASS.namespace, settingsName);
-        while (settings.some((setting) => setting.key === newKey)) {
-            newKey = `${this.type}-${generateUUID()}`;
+        if (settings) {
+            while (settings.some((setting) => setting.key === newKey)) {
+                newKey = `${this.type}-${generateUUID()}`;
+            }
         }
         return newKey;
     }
