@@ -83,13 +83,16 @@
         display: flex;
         flex-flow: column nowrap;
         flex-basis: 100%;
-        margin: 0 0 8px 0;
+        margin-top: 4px;
+        margin-bottom: 4px;
     }
+    
     .badass-row {
         display: flex;
         flex-direction: row;
         flex-basis: 100%;
-        margin: 0 4px;
+        margin-right: 4px;
+        margin-left: 4px;
     }
 
     .badass-col {
@@ -177,20 +180,20 @@
         font-size: 10px;
     }
 
-    .block
-
     /* Actor stats */
 
     .singleStatBlock {
         display: block;
+        margin-right: 8px;
+        width: 100px;
+    }
+
+    .singleStatValueMod {
+        margin-top: calc(100% - 75px);
     }
 
     .singleStatValue {
         width: 55%;
-    }
-
-    .singleStatBlock {
-        min-width: 90px;
     }
 
     /* Actor initivative */
@@ -198,7 +201,7 @@
     .movementBlock {
         display: flex;
         flex-flow: row;
-        margin: 0 0 0 -80px;
+        margin: 0 0 0 -55px;
     }
 
     .initName,
@@ -224,6 +227,10 @@
     .grenadeTypeBlock,
     .grenadeInfoBlock {
         width: 60%;
+    }
+
+    .grenadeCurrentBlock {
+        width: 15%;
     }
 
     /* Actor checks */
@@ -257,6 +264,8 @@
 
     .goldBlock {
         height: 40px;
+        display: flex;
+        flex-flow: row;
     }
 
     .goldName {
@@ -297,10 +306,11 @@
     }
 
     .levelUp {
-        animation-name:             levelUpPulse;
-        animation-duration:         2s;
-        animation-direction:        alternate;
-        animation-iteration-count:  infinite;
+        animation-name: levelUpPulse;
+        animation-duration: 2s;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        -webkit-animation: levelUpPulse 2s linear 0s infinite alternate;
     }
     
     @keyframes levelUpPulse {
