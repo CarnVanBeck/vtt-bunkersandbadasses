@@ -1,5 +1,4 @@
 .badass {
-
     .badass-input {
         padding: 0px 5px;
     }
@@ -12,7 +11,8 @@
         padding: 5px;
         margin-bottom: 5px;
     }
-    .settings, .browser {
+    .settings,
+    .browser {
         display: flex;
     }
 
@@ -73,12 +73,12 @@
         display: flex;
         flex-wrap: wrap;
     }
-    
+
     .settings-buttons {
         display: flex;
         flex-flow: row nowrap;
     }
-    
+
     .badass-section {
         display: flex;
         flex-flow: column nowrap;
@@ -86,7 +86,7 @@
         margin-top: 4px;
         margin-bottom: 4px;
     }
-    
+
     .badass-row {
         display: flex;
         flex-direction: row;
@@ -149,16 +149,14 @@
     }
 
     .actorSheetPlus,
-    .actorSheetEquals
-    {
+    .actorSheetEquals {
         width: 5%;
         font-size: 0.75em;
         text-align: center;
         margin: 10px 0 0 0;
     }
 
-    .actorSheetSum
-    {
+    .actorSheetSum {
         width: 40px;
         font-size: 24px;
         text-align: center;
@@ -175,7 +173,11 @@
         text-align: center;
     }
 
-    .blockHint,
+    .centerBlockHint {
+        text-align: center;
+    }
+
+    .centerBlockHint,
     .startHint {
         font-size: 10px;
     }
@@ -209,7 +211,7 @@
         width: 120px;
         line-height: 2em;
     }
-    
+
     .initModValue,
     .movementModValue {
         width: 10%;
@@ -224,29 +226,44 @@
         border: grey 2px solid;
     }
 
+    /* grenades */
     .grenadeTypeBlock,
     .grenadeInfoBlock {
         width: 60%;
     }
 
+    .grenadeDamageBlock {
+        width: 40%;
+    }
+
     .grenadeCurrentBlock {
         width: 15%;
     }
+    .grenadeMaxBlock {
+        width: 25%;
+    }
+
+    .favGunCheckBlock {
+        width: 20px;
+    }
 
     /* Actor checks */
+    .skillSection {
+        padding-bottom: 8px;
+    }
+
     .skillBlock {
         display: flex;
         margin: 0.5em 0 0 10%;
     }
-    
+
     .skillName {
         width: 25%;
         margin: 5px 0 0 0;
     }
-    
+
     .skillStatModName,
-    .skillMiscModName
-    {
+    .skillMiscModName {
         width: 10%;
         font-size: 0.75em;
         text-align: center;
@@ -286,11 +303,10 @@
 
     /* EXP Bar */
     .epBar {
-        --darkBlue: #22A9AC;
+        --darkBlue: #22a9ac;
         --lightBlue: #2ff8ff;
         --darkGrey: #bbb;
         --lightGrey: #ddd;
-
     }
 
     #bgPatternRect {
@@ -310,9 +326,8 @@
         animation-duration: 2s;
         animation-direction: normal;
         animation-iteration-count: infinite;
-        -webkit-animation: levelUpPulse 2s linear 0s infinite alternate;
     }
-    
+
     @keyframes levelUpPulse {
         0% {
             fill: var(--darkBlue);
@@ -335,12 +350,12 @@
 
     #backgroundBar {
         fill: url(#greyLine);
-                 stroke: black;
+        stroke: black;
     }
 
     #foregroundBar {
         fill: url(#genericLine);
-                 stroke: none;
+        stroke: none;
         clip-path: polygon(
             -2px 0px,
             calc(964px * var(--epPercent, 1)) 0px,
@@ -348,7 +363,7 @@
             -2px 50px
         );
     }
-    
+
     /* Footer */
     .badass-section-footer {
         height: 5px;
@@ -374,5 +389,5 @@
     .badass-section-footer:hover a {
         height: 15px;
     }
-
 }
+
