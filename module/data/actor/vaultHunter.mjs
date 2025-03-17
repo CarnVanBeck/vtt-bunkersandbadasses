@@ -253,6 +253,11 @@ export default class VaultHunterData extends BaseActorData {
         });
     }
 
+    _updateCheck(check, mod, base) {
+        check.base = base;
+        check.mod = mod;
+    }
+
     prepareDerivedData() {
         this.archetypeNames = this.archetypes.map((archetype) => archetype.name).join('/');
 
@@ -261,15 +266,29 @@ export default class VaultHunterData extends BaseActorData {
             this.stats[stat].mod = Math.floor(this.stats[stat].sum / 2);
         }
 
-        for (let check in this.checks) {
-            let base = 0;
-            if (check === 'insight') base = this.stats.acc.mod;
-            if (check === 'interact') base = this.stats.acc.mod;
-            if (check === 'search') base = this.stats.mst.mod;
-            if (check === 'sneak') base = this.stats.mst.mod;
-            if (check === 'talk') base = this.stats.spd.mod;
-            if (check === 'traverse') base = this.stats.spd.mod;
-            this.checks[check].sum = this.checks[check].base + this.checks[check].bonus + this.checks[check].miscMod;
+        for (let checkName in this.checks) {
+            let check = this.checks[checkName];
+            switch (checkName) {
+                case 'insight':
+                    this._updateCheck(check, 'ACC', this.stats.acc.mod);
+                    break;
+                case 'interact':
+                    this._updateCheck(check, 'ACC', this.stats.acc.mod);
+                    break;
+                case 'search':
+                    this._updateCheck(check, 'MST', this.stats.mst.mod);
+                    break;
+                case 'sneak':
+                    this._updateCheck(check, 'MST', this.stats.mst.mod);
+                    break;
+                case 'talk':
+                    this._updateCheck(check, 'SPD', this.stats.spd.mod);
+                    break;
+                case 'traverse':
+                    this._updateCheck(check, 'SPD', this.stats.spd.mod);
+                    break;
+            }
+            check.sum = check.base + check.bonus + check.miscMod;
         }
 
         for (let at in this.archetypes) {
@@ -298,3 +317,4 @@ export default class VaultHunterData extends BaseActorData {
         this.parent.prototypeToken.disposition = 1; //1 = Friendly
     }
 }
+
