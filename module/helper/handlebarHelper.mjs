@@ -51,7 +51,7 @@ export function preloadHandlebarsTemplates() {
         vhMovement: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhMovement.hbs`,
         vhPlaceholder: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhPlaceholder.hbs`,
         vhPotions: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhPotions.hbs`,
-        vhSkills: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhSkills.hbs`,
+        vhStats: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhStats.hbs`,
         vhTraits: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/vhTraits.hbs`,
         epBar: `${CONFIG.BADASS.systemPath}/templates/actor/parts/vaultHunter/epBar.hbs`,
 

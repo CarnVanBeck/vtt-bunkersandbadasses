@@ -113,6 +113,15 @@ export default class VaultHunterData extends BaseActorData {
             label: 'badass.actor.vaultHunter.badassRank.label',
             hint: 'badass.actor.vaultHunter.badassRank.hint',
         });
+        schema.badassToken = new fields.NumberField({
+            required: true,
+            nullable: false,
+            integer: true,
+            min: 0,
+            initial: 0,
+            label: 'SHEETS.actor.vaultHunter.badassTokens.label',
+            hint: 'SHEETS.actor.vaultHunter.badassTokens.hint',
+        });
 
         schema.favoredGuns = new fields.ArrayField(
             new fields.StringField({
@@ -175,6 +184,16 @@ export default class VaultHunterData extends BaseActorData {
         schema.carriableItemConfig = new fields.ArrayField(new fields.ObjectField(), {
             required: true,
             nullable: false,
+        });
+
+        schema.gold = new fields.NumberField({
+            required: true,
+            nullable: false,
+            integer: true,
+            min: 0,
+            initial: 0,
+            label: 'SHEETS.actor.vaultHunter.gold.label',
+            hint: 'SHEETS.actor.vaultHunter.gold.hint',
         });
 
         return schema;
