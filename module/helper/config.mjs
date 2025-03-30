@@ -1,3 +1,10 @@
+/**
+ * Configuration module for the Bunkers and Badasses system.
+ * This file contains the default configurations for defenses, elements, rarities, and Vault Hunter levels.
+ *
+ * Tiny Tina says: "This is where the magic happens, sugar! Shields, elements, and all that juicy loot logic!"
+ */
+
 import Defense from '../data/custom/system/defense.mjs';
 import Element from '../data/custom/system/element.mjs';
 
@@ -5,6 +12,14 @@ export const BADASS = {};
 BADASS.namespace = 'vtt-bunkersandbadasses';
 BADASS.systemPath = 'systems/vtt-bunkersandbadasses';
 
+/**
+ * Get the default defenses used in the system.
+ * These defenses define how damage interacts with actors and items.
+ *
+ * @returns {Array<Defense>} An array of Defense objects.
+ *
+ * Mr. Torgue says: "DEFENSES! BECAUSE SOMETIMES YOU NEED TO NOT EXPLODE!"
+ */
 export function getDefaultDefenses() {
     let shield = new Defense();
     shield.key = 'sld';
@@ -12,51 +27,68 @@ export function getDefaultDefenses() {
     shield.description = 'Used by Shields and takes double damage from Shock damage.';
     shield.requiresItem = true;
     shield.order = 0;
+
     let armor = new Defense();
     armor.key = 'arm';
     armor.name = 'Armor';
     armor.description = 'Used for actors with the Armored trait and takes double damage from Corrosive damage.';
     armor.order = 10;
+
     let hp = new Defense();
     hp.key = 'hp';
     hp.name = 'Health';
     hp.description = 'Used for actors with the Flesh trait and takes double damage from Incendiary damage.';
     hp.isLife = true;
     hp.order = 20;
+
     let generic = new Defense();
     generic.key = 'gen';
     generic.name = 'Health';
     generic.description = "Used if the actor doesn't have any weaknesses against any element.";
     generic.isLife = true;
     generic.order = 30;
+
     return [shield, armor, hp, generic];
 }
 
+/**
+ * Get the default elements used in the system.
+ * Elements define the type of damage and their interactions with defenses.
+ *
+ * @returns {Array<Element>} An array of Element objects.
+ *
+ * Lilith says: "Elements are the spice of life... and death."
+ */
 export function getDefaultElements() {
     let incendiary = new Element();
     incendiary.key = 'inc';
     incendiary.name = 'Incendiary';
     incendiary.description = '';
     incendiary.strongAgainst = ['hp'];
+
     let corrosive = new Element();
     corrosive.key = 'cor';
     corrosive.name = 'Corrosive';
     corrosive.description = '';
     corrosive.strongAgainst = ['arm'];
+
     let shock = new Element();
     shock.key = 'shk';
     shock.name = 'Shock';
     shock.description = '';
     shock.strongAgainst = ['sld'];
+
     let explosive = new Element();
     explosive.key = 'xpl';
     explosive.name = 'Explosive';
     explosive.description = '';
+
     let radiation = new Element();
     radiation.key = 'rad';
     radiation.name = 'Radiation';
     radiation.description = '';
     radiation.ignores = ['sld', 'arm'];
+
     let cryo = new Element();
     cryo.key = 'cry';
     cryo.name = 'Cryo';
@@ -65,6 +97,14 @@ export function getDefaultElements() {
     return [incendiary, corrosive, shock, explosive, radiation, cryo];
 }
 
+/**
+ * Get the default rarities for items in the system.
+ * Rarities define the quality and uniqueness of items.
+ *
+ * @returns {Array<Object>} An array of rarity objects.
+ *
+ * Moxxi says: "Rarity is like a good drink—common ones are fine, but the legendary ones? Oh, sugar, they’re unforgettable."
+ */
 export function getDefaultRarities() {
     return [
         { name: 'common', key: 'common', icon: `${BADASS.systemPath}/assets/standalone/rarity/common.svg` },
@@ -75,6 +115,14 @@ export function getDefaultRarities() {
     ];
 }
 
+/**
+ * Get the default Vault Hunter levels and their XP requirements.
+ * Levels define the progression system for characters.
+ *
+ * @returns {Array<Object>} An array of level objects with XP segments.
+ *
+ * Claptrap says: "LEVEL UP! Because being a noob is soooo last season."
+ */
 export function getDefaultVaultHunterLevels() {
     return [
         { level: 1, xpSegment: 100 },

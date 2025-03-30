@@ -1,3 +1,12 @@
+/**
+ * Settings Module for Bunkers and Badasses
+ *
+ * This module handles the registration of system settings, menus, and default configurations.
+ * It ensures that the Game Master (GM) has full control over the system's customization options.
+ *
+ * Tiny Tina says: "Settings, sugar! Without 'em, your game is like a gun without bullets—pointless!"
+ */
+
 import { BADASS, getDefaultDefenses, getDefaultElements, getDefaultVaultHunterLevels } from './config.mjs';
 import DefenseConfig from '../applications/settings/defenseConfig.mjs';
 import ElementConfig from '../applications/settings/elementConfig.mjs';
@@ -6,7 +15,16 @@ import GunTypeConfig from '../applications/settings/gunTypeConfig.mjs';
 import SettingsIO from '../applications/settings/settingsIO.mjs';
 import VaultHunterLevelConfig from '../applications/settings/vhLevelConfig.mjs';
 
+/**
+ * Register System Settings
+ *
+ * This function registers all settings and menus for the Bunkers and Badasses system.
+ * It includes configurations for defenses, elements, manufacturers, gun types, and Vault Hunter levels.
+ *
+ * Moxxi says: "Customizing your game is like mixing a good drink—get the balance right, and it's unforgettable!"
+ */
 export function registerSettings() {
+    // Migration Version
     game.settings.register(BADASS.namespace, 'migrationVersion', {
         name: 'Migration Version',
         scope: 'world',
@@ -16,6 +34,11 @@ export function registerSettings() {
     });
 
     // #region Defenses
+    /**
+     * Defenses Settings
+     *
+     * Mr. Torgue says: "DEFENSES! BECAUSE SOMETIMES YOU NEED TO NOT EXPLODE!"
+     */
     game.settings.registerMenu(BADASS.namespace, 'defenses', {
         name: 'SETTINGS.defenses.label',
         label: 'SETTINGS.defenses.config.label',
@@ -37,6 +60,11 @@ export function registerSettings() {
     // #endregion
 
     // #region Elements
+    /**
+     * Elements Settings
+     *
+     * Lilith says: "Elements are the spice of life... and death."
+     */
     game.settings.registerMenu(BADASS.namespace, 'elements', {
         name: 'SETTINGS.elements.label',
         label: 'SETTINGS.elements.config.label',
@@ -58,6 +86,11 @@ export function registerSettings() {
     // #endregion
 
     // #region Gun Types
+    /**
+     * Gun Types Settings
+     *
+     * Tiny Tina says: "Guns, guns, guns! Customize 'em, sugar!"
+     */
     game.settings.registerMenu(BADASS.namespace, 'gunTypes', {
         name: 'SETTINGS.gunTypes.label',
         label: 'SETTINGS.gunTypes.config.label',
@@ -79,6 +112,11 @@ export function registerSettings() {
     // #endregion
 
     // #region Manufacturers
+    /**
+     * Manufacturers Settings
+     *
+     * Marcus says: "No refunds! But you can customize your manufacturers."
+     */
     game.settings.registerMenu(BADASS.namespace, 'manufacturers', {
         name: 'SETTINGS.manufacturers.label',
         label: 'SETTINGS.manufacturers.config.label',
@@ -99,7 +137,12 @@ export function registerSettings() {
     });
     // #endregion
 
-    // #region levels
+    // #region Vault Hunter Levels
+    /**
+     * Vault Hunter Levels Settings
+     *
+     * Claptrap says: "LEVEL UP! Because being a noob is soooo last season."
+     */
     game.settings.registerMenu(BADASS.namespace, 'levels', {
         name: 'SETTINGS.levels.label',
         label: 'SETTINGS.levels.config',
@@ -120,6 +163,12 @@ export function registerSettings() {
     });
     // #endregion
 
+    // #region Settings IO
+    /**
+     * Settings Import/Export
+     *
+     * Moxxi says: "Sharing is caring, sugar! Export your settings and spread the love."
+     */
     game.settings.registerMenu(BADASS.namespace, 'settingsIO', {
         name: 'SETTINGS.io.label',
         label: 'SETTINGS.io.label',
@@ -128,9 +177,14 @@ export function registerSettings() {
         type: SettingsIO,
         restricted: true,
     });
+    // #endregion
 
-    // #region data
-
+    // #region Data Settings
+    /**
+     * Data Settings
+     *
+     * Tiny Tina says: "Data, data, data! Keep it clean and organized, sugar!"
+     */
     game.settings.register(BADASS.namespace, 'actions', {
         scope: 'world',
         config: false,
