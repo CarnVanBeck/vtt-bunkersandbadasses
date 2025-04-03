@@ -8,7 +8,7 @@
     </div>
     {{#each gunTypes}}
     <div class="badass-row badass-favored-gun">
-        <div class="badass-col favGunCheckBlock">
+        <div class="badass-col favGunCheckBlock col-2">
             <input
                 type="checkbox"
                 id="{{ this.key }}"
@@ -18,10 +18,10 @@
                 this.key}}
             />
         </div>
-        <div class="badass-col favGunIconBlock">
+        <div class="badass-col favGunIconBlock col-4">
             <image src="{{ this.icon }}" title="{{localize this.name}}" />
         </div>
-        <div class="badass-col favGunNameBlock">
+        <div class="badass-col favGunNameBlock col-6">
             <label for="{{ this.key }}" title="{{ this.description }}">{{localize this.name}}</label>
         </div>
     </div>
