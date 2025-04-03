@@ -1,0 +1,32 @@
+.input-lookup {
+    align-items: center;
+    overflow: hidden;
+}
+
+.input-lookup-field {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+}
+
+.input-lookup-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-lookup-button:hover {
+    background-color: #0056b3;
+}
+
+.input-lookup-button i {
+    font-size: 16px;
+}

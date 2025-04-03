@@ -6,6 +6,8 @@
 
 @import './badassApplication.css';
 
+@import './inputs.css';
+
 /* Styles limited to badass sheets */
 .badass .item-form {
     font-family: 'Roboto', sans-serif;

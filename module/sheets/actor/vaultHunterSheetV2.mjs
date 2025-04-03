@@ -2,6 +2,7 @@ import BadassActorSheetV2 from './badassActorSheetV2.mjs';
 import { BADASS } from '../../helper/config.mjs';
 import DefenseConfig from '../../applications/settings/defenseConfig.mjs';
 import { getSystemGunTypes } from '../../helper/systemValues.mjs';
+import { setupInputLookup } from '../../helper/utils.mjs';
 
 export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
     static DEFAULT_OPTIONS = {
@@ -11,6 +12,9 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
         },
         window: {
             resizable: true,
+        },
+        position: {
+            width: 777,
         },
     };
 
@@ -46,6 +50,10 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
         return context;
     }
 
+    _onRender() {
+        setupInputLookup('archetype');
+    }
+
     /** @override */
     async _preparePartContext(partId, context) {
         if (context.tabs[partId]) {
@@ -57,7 +65,7 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
     _ccsTabHelper(primary, current) {
         let defaultClasses = 'scrollable';
         let additionalClasses = 'scrollable';
-        return (primary === current ? 'active ' + additionalClasses : defaultClasses);
+        return primary === current ? 'active ' + additionalClasses : defaultClasses;
     }
 
     _getTabs() {

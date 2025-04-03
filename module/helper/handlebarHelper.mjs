@@ -72,6 +72,9 @@ export function preloadHandlebarsTemplates() {
 
         // Browser Parts
         browserAvailableItems: `${CONFIG.BADASS.systemPath}/templates/browser/parts/browserAvailableItems.hbs`,
+
+        // Custom Inputs
+        lookup: `${CONFIG.BADASS.systemPath}/templates/generic/inputLookup.hbs`,
     };
 
     // Load the template parts

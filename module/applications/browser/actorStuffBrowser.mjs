@@ -4,8 +4,9 @@ import ActionItemSheetV2 from '../../sheets/custom/actionItemSheetV2.mjs';
 import BadassBrowser from './badassBrowser.mjs';
 
 export default class ActorStuffBrowser extends BadassBrowser {
-    constructor(...args) {
+    constructor(startTab, ...args) {
         super(...args);
+        this.startTab = startTab ?? 'actions';
     }
 
     static DEFAULT_OPTIONS = {
@@ -57,7 +58,7 @@ export default class ActorStuffBrowser extends BadassBrowser {
     }
 
     _getTabs() {
-        this.tabGroups.primary = this.tabGroups.primary ?? 'actions';
+        this.tabGroups.primary = this.tabGroups.primary ?? this.startTab;
 
         return {
             actions: {

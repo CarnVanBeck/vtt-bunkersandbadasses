@@ -1,3 +1,5 @@
+import ActorStuffBrowser from '../applications/browser/actorStuffBrowser.mjs';
+
 /**
  * Generates a UUID (Universally Unique Identifier).
  *
@@ -12,4 +14,16 @@ export function generateUUID() {
     return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
         (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16),
     );
+}
+
+export function setupInputLookup(id) {
+    document.querySelectorAll(`button.input-lookup-button#${id}`).forEach((button) => {
+        console.log('browser', button.dataset.browser);
+        button.addEventListener('click', () => {
+            // Open the browser logic here
+            console.log(`Browser opened for input lookup with ID: ${id}. Drag and drop your value here.`);
+
+            new ActorStuffBrowser(button.dataset.browser).render(true);
+        });
+    });
 }
