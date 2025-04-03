@@ -3,20 +3,7 @@
         <div class="badass-col col-1">placeholder for image</div>
         <div class="badass-col">
             <div class="badass-input">
-                <label
-                    for="system.archetype"
-                    class="badass-label"
-                    title="{{localize 'SHEETS.actor.vaultHunter.archetype.hint'}}"
-                >
-                    {{localize 'SHEETS.actor.vaultHunter.archetype.label'}}
-                </label>
-                <input
-                    name="system.archetype"
-                    disabled
-                    type="text"
-                    value="{{ system.archetype }}"
-                    placeholder="{{localize 'SHEETS.actor.vaultHunter.archetype.label'}}"
-                />
+                {{> lookup id='archetype' label='SHEETS.actor.vaultHunter.archetype.label' hint='SHEETS.actor.vaultHunter.archetype.hint' browser='archetypes' value=system.archetype }}
             </div>
         </div>
         <div class="badass-col col-2">
