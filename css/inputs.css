@@ -4,11 +4,11 @@
 }
 
 .input-lookup-field {
+    display: flex;
     flex: 1;
     padding: 8px;
     border: none;
     outline: none;
-    background-color: #f9f9f9;
     cursor: not-allowed;
 }
 
@@ -29,4 +29,8 @@
 
 .input-lookup-button i {
     font-size: 16px;
+    height: 34px;
+    width: 34px;
+    position: relative;
+    right: 0;
 }
