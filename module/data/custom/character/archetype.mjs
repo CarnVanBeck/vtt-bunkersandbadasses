@@ -1,3 +1,4 @@
+import { BADASS } from '../../../helper/config.mjs';
 import CharacterItemModel from '../characterItemModel.mjs';
 
 /**
@@ -49,7 +50,7 @@ export default class Archetype extends CharacterItemModel {
             required: true,
             nullable: false,
             integer: true,
-            initial: 0,
+            initial: 1,
         });
         schema.levels = new fields.ArrayField(
             new fields.SchemaField({
@@ -62,6 +63,12 @@ export default class Archetype extends CharacterItemModel {
             }),
         );
         return schema;
+    }
+
+    static getByKey(key) {
+        const archetypes = game.settings.get(BADASS.namespace, 'archetypes') ?? [];
+
+        return archetypes.find((a) => a.key === key);
     }
 
     /** @inheritDoc */

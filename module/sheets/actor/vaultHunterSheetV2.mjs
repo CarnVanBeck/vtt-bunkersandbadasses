@@ -4,8 +4,13 @@ import DefenseConfig from '../../applications/settings/defenseConfig.mjs';
 import { getSystemGunTypes } from '../../helper/systemValues.mjs';
 import { setupInputLookup } from '../../helper/utils.mjs';
 import ActorStuffBrowser from '../../applications/browser/actorStuffBrowser.mjs';
+import Archetype from '../../data/custom/character/archetype.mjs';
 
 export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
+    constructor(options = {}) {
+        super(options);
+        this.#dragDrop = this.#createDragDropHandlers();
+    }
     static DEFAULT_OPTIONS = {
         ...BadassActorSheetV2.DEFAULT_OPTIONS,
         actions: {
@@ -17,6 +22,11 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
         position: {
             width: 777,
         },
+        dragDrop: [
+            {
+                dropSelector: null,
+            },
+        ],
     };
 
     static PARTS = {
@@ -52,8 +62,9 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
     }
 
     _onRender() {
+        this.#dragDrop.forEach((d) => d.bind(this.element));
         setupInputLookup('archetype', () => {
-            new ActorStuffBrowser('archetypes').render(true)
+            new ActorStuffBrowser('archetypes').render(true);
         });
     }
 
@@ -145,4 +156,80 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
     static addDefense() {
         new DefenseConfig().render(true);
     }
+
+    async _onDrop(event) {
+        let data = TextEditor.getDragEventData(event);
+        console.debug('getDragEventData', TextEditor.getDragEventData(event));
+        if (data.type === 'archetype') {
+            //TODO: add validation like unique assignment etc.
+
+            let archetypes = this.document.system.archetypes ?? [];
+            archetypes.push(data);
+            await this.document.update({ 'system.archetypes': archetypes });
+        } else if (data.type === 'background') {
+            //TODO: add validation like overwrite protection etc.
+            await this.document.update({ background: data });
+        } else if (data.type === 'class') {
+            //TODO: add validation like overwrite protection etc.
+            await this.document.update({ class: data });
+        } else if (data.type === 'action') {
+            //TODO: add validation like unique assignment etc.
+
+            let actions = this.document.system.actions ?? [];
+            actions.push(data);
+            await this.document.update({ actions: actions });
+        }
+    }
+
+    //#region Drag and Drop Implementation
+    /**
+     * Create drag-and-drop workflow handlers for this Application
+     * @returns {DragDrop[]}     An array of DragDrop handlers
+     * @private
+     */
+    #createDragDropHandlers() {
+        return this.options.dragDrop.map((d) => {
+            console.log('dragDrop', d);
+            d.permissions = {
+                drop: this._canDragDrop.bind(this),
+            };
+            d.callbacks = {
+                drop: this._onDrop.bind(this),
+            };
+            return new DragDrop(d);
+        });
+    }
+
+    #dragDrop;
+
+    /**
+     * Returns an array of DragDrop instances
+     * @type {DragDrop[]}
+     */
+    get dragDrop() {
+        return this.#dragDrop;
+    }
+
+    /**
+     * Define whether a user is able to begin a dragstart workflow for a given drag selector
+     * @param {string} selector       The candidate HTML selector for dragging
+     * @returns {boolean}             Can the current user drag this selector?
+     * @protected
+     */
+    _canDragStart(selector) {
+        // game.user fetches the current user
+        return true;
+    }
+
+    /**
+     * Define whether a user is able to conclude a drag-and-drop workflow for a given drop selector
+     * @param {string} selector       The candidate HTML selector for the drop target
+     * @returns {boolean}             Can the current user drop on this selector?
+     * @protected
+     */
+    _canDragDrop(selector) {
+        // game.user fetches the current user
+        return true;
+    }
+    //#endregion Drag and Drop Handlers
 }

@@ -9,6 +9,7 @@ export default class ActorStuffBrowser extends BadassBrowser {
     constructor(startTab, ...args) {
         super(...args);
         this.startTab = startTab ?? 'actions';
+        this.#dragDrop = this.#createDragDropHandlers();
     }
 
     static DEFAULT_OPTIONS = {
@@ -27,6 +28,7 @@ export default class ActorStuffBrowser extends BadassBrowser {
             editarchetype: ActorStuffBrowser.editArchetype,
             deletearchetype: ActorStuffBrowser.deleteArchetype,
         },
+        dragDrop: [{ dragSelector: '[data-drag]' }],
     };
     static PARTS = {
         ...BadassBrowser.PARTS,
@@ -89,6 +91,11 @@ export default class ActorStuffBrowser extends BadassBrowser {
             },
         };
     }
+
+    _onRender(context, options) {
+        this.#dragDrop.forEach((d) => d.bind(this.element));
+    }
+
     //#region Action Methods
     static async addAction(e, target) {
         let action = new Action();
@@ -136,6 +143,47 @@ export default class ActorStuffBrowser extends BadassBrowser {
         let archetypes = game.settings.get(BADASS.namespace, 'archetypes').filter((a) => a.key !== target.dataset.key);
         await game.settings.set(BADASS.namespace, 'archetypes', archetypes);
         this.render();
+    }
+    //#endregion
+
+    //#region Drag and Drop Implementation
+    /**
+     * Create drag-and-drop workflow handlers for this Application
+     * @returns {DragDrop[]}     An array of DragDrop handlers
+     * @private
+     */
+    #createDragDropHandlers() {
+        return this.options.dragDrop.map((d) => {
+            d.callbacks = {
+                dragstart: this._onDragStart.bind(this),
+            };
+            return new DragDrop(d);
+        });
+    }
+
+    #dragDrop;
+
+    /**
+     * Returns an array of DragDrop instances
+     * @type {DragDrop[]}
+     */
+    get dragDrop() {
+        return this.#dragDrop;
+    }
+
+    _onDragStart(event) {
+        console.debug('dragstart', event);
+
+        const el = event.currentTarget;
+        if ('link' in event.target.dataset) return;
+
+        // Extract the data you need
+        let dragData = Archetype.getByKey(event.target.dataset.itemid);
+
+        if (!dragData) return;
+
+        // Set data transfer
+        event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
     }
     //#endregion
 }

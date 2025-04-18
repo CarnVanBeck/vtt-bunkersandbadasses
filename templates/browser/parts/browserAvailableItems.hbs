@@ -1,5 +1,5 @@
 {{#each items as |item id|}}
-<li class="item flexrow" data-item-id="{{ item._id }}">
+<li class="item flexrow" data-itemId="{{ item.key }}" data-drag="true">
     <div class="item-name">
         <div class="item-image">
             <a class="rollable" data-roll-type="item">
@@ -12,7 +12,7 @@
         <a
             class="item-control item-edit"
             title="{{localize 'DOCUMENT.Update' type=item.type}}"
-            data-action="edit{{item.type}}"
+            data-action="edit{{ item.type }}"
             data-key="{{ item.key }}"
         >
             <i class="fas fa-edit"></i>
@@ -20,7 +20,7 @@
         <a
             class="item-control item-delete"
             title="{{localize 'DOCUMENT.Delete' type=item.type}}"
-            data-action="delete{{item.type}}"
+            data-action="delete{{ item.type }}"
             data-key="{{ item.key }}"
         >
             <i class="fas fa-trash"></i>
