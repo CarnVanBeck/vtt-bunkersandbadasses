@@ -12,7 +12,7 @@
         <a
             class="item-control item-edit"
             title="{{localize 'DOCUMENT.Update' type=item.type}}"
-            data-action="editAction"
+            data-action="edit{{item.type}}"
             data-key="{{ item.key }}"
         >
             <i class="fas fa-edit"></i>
@@ -20,7 +20,7 @@
         <a
             class="item-control item-delete"
             title="{{localize 'DOCUMENT.Delete' type=item.type}}"
-            data-action="deleteAction"
+            data-action="delete{{item.type}}"
             data-key="{{ item.key }}"
         >
             <i class="fas fa-trash"></i>

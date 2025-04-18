@@ -1,7 +1,17 @@
 <section class="tab col-12 {{ tab.cssClass }}" data-group="primary" data-tab="archetypes">
     <h3>Archetypes</h3>
     <div class="browser">
-        <div class="sidebar">Sidebar</div>
-        <div class="content">available</div>
+        <div class="sidebar">
+            Sidebar
+
+            <button type="button" data-action="addArchetype">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="content">
+            <div class="browser-available-items">
+                {{> browserAvailableItems items=archetypes}}
+            </div>
+        </div>
     </div>
 </section>

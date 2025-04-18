@@ -3,6 +3,7 @@ import { BADASS } from '../../helper/config.mjs';
 import DefenseConfig from '../../applications/settings/defenseConfig.mjs';
 import { getSystemGunTypes } from '../../helper/systemValues.mjs';
 import { setupInputLookup } from '../../helper/utils.mjs';
+import ActorStuffBrowser from '../../applications/browser/actorStuffBrowser.mjs';
 
 export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
     static DEFAULT_OPTIONS = {
@@ -51,7 +52,9 @@ export default class VaultHunterSheetV2 extends BadassActorSheetV2 {
     }
 
     _onRender() {
-        setupInputLookup('archetype');
+        setupInputLookup('archetype', () => {
+            new ActorStuffBrowser('archetypes').render(true)
+        });
     }
 
     /** @override */

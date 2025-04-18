@@ -1,6 +1,8 @@
 import Action from '../../data/custom/character/action.mjs';
+import Archetype from '../../data/custom/character/archetype.mjs';
 import { BADASS } from '../../helper/config.mjs';
 import ActionItemSheetV2 from '../../sheets/custom/actionItemSheetV2.mjs';
+import ArchetypeItemSheetV2 from '../../sheets/custom/archetypeItemSheetV2.mjs';
 import BadassBrowser from './badassBrowser.mjs';
 
 export default class ActorStuffBrowser extends BadassBrowser {
@@ -18,9 +20,12 @@ export default class ActorStuffBrowser extends BadassBrowser {
         },
         actions: {
             ...BadassBrowser.DEFAULT_OPTIONS.actions,
-            addAction: ActorStuffBrowser.addAction,
-            editAction: ActorStuffBrowser.editAction,
-            deleteAction: ActorStuffBrowser.deleteAction,
+            addaction: ActorStuffBrowser.addAction,
+            editaction: ActorStuffBrowser.editAction,
+            deleteaction: ActorStuffBrowser.deleteAction,
+            addarchetype: ActorStuffBrowser.addArchetype,
+            editarchetype: ActorStuffBrowser.editArchetype,
+            deletearchetype: ActorStuffBrowser.deleteArchetype,
         },
     };
     static PARTS = {
@@ -84,7 +89,7 @@ export default class ActorStuffBrowser extends BadassBrowser {
             },
         };
     }
-
+    //#region Action Methods
     static async addAction(e, target) {
         let action = new Action();
         let actions = game.settings.get(BADASS.namespace, 'actions') ?? [];
@@ -107,4 +112,30 @@ export default class ActorStuffBrowser extends BadassBrowser {
         await game.settings.set(BADASS.namespace, 'actions', actions);
         this.render();
     }
+    //#endregion
+
+    //#region Archetype Methods
+    static async addArchetype(e, target) {
+        let archetype = new Archetype();
+        let archetypes = game.settings.get(BADASS.namespace, 'archetypes') ?? [];
+        archetypes.push(archetype);
+        await game.settings.set(BADASS.namespace, 'archetypes', archetypes);
+        this.render();
+        new ArchetypeItemSheetV2(archetype.key, () => {
+            this.render();
+        }).render(true);
+    }
+
+    static editArchetype(e, target) {
+        new ArchetypeItemSheetV2(target.dataset.key, () => {
+            this.render();
+        }).render(true);
+    }
+
+    static async deleteArchetype(e, target) {
+        let archetypes = game.settings.get(BADASS.namespace, 'archetypes').filter((a) => a.key !== target.dataset.key);
+        await game.settings.set(BADASS.namespace, 'archetypes', archetypes);
+        this.render();
+    }
+    //#endregion
 }
