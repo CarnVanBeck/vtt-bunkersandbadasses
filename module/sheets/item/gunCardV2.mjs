@@ -12,6 +12,7 @@ import { ManufacturedSheet } from './manufacteredV2.mjs';
 export class GunCardSheetV2 extends ManufacturedSheet {
     constructor(...args) {
         super(...args);
+        this.gunTypes = [];
     }
 
     static DEFAULT_OPTIONS = {
@@ -39,7 +40,8 @@ export class GunCardSheetV2 extends ManufacturedSheet {
         const context = await super._prepareContext(options);
 
         // Add system relevant data arrays
-        context.gunTypes = getSystemGunTypes();
+        this.gunTypes = getSystemGunTypes();
+        context.gunTypes = this.gunTypes; 
 
         //context.manufacturers = game.settings.settings.get("badass.manufacturers").default;
         context.manufacturers = getSystemGunManufacturers();
@@ -128,10 +130,10 @@ export class GunCardSheetV2 extends ManufacturedSheet {
 
     /** @override */
     updateLevel(newLevel) {
-        let gunType = this.getData().data.system.type;
+        let gunType = this.document.system.type;
         let gunLevelData = getGunAccuracyByLevel(newLevel, gunType);
         if (gunLevelData == undefined) {
-            let gunTypeName = this.getData().gunTypes.find((value, index, array) => {
+            let gunTypeName = this.gunTypes.find((value, index, array) => {
                 return gunType == value.key;
             }).name;
             this.showErrorWindow('It seems there exists no data for a ' + gunTypeName + ' of level: ' + newLevel);
