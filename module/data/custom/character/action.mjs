@@ -1,9 +1,9 @@
-import CharacterModel from '../characterModel.mjs';
+import CharacterItemModel from '../characterItemModel.mjs';
 
 /**
  * System definition for an action
  */
-export default class Action extends CharacterModel {
+export default class Action extends CharacterItemModel {
     constructor(data = {}) {
         super();
         this.type = 'action';

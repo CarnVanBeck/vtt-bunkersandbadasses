@@ -1,9 +1,21 @@
-import CharacterModel from '../characterModel.mjs';
+import CharacterItemModel from '../characterItemModel.mjs';
 
 /**
  * System definition for an archetype
  */
-export default class Archetype extends CharacterModel {
+export default class Archetype extends CharacterItemModel {
+    constructor(data = {}) {
+        super();
+        this.type = 'archetype';
+
+        const defaults = {
+            name: game.i18n.localize('TYPES.custom.archetype'),
+            key: this._generateKey('archetypes'),
+        };
+
+        Object.assign(this, defaults, data);
+        console.log(this);
+    }
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();

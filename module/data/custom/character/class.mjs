@@ -1,12 +1,12 @@
 import SkillTier from './skillTier.mjs';
 import Action from './action.mjs';
 import Background from './background.mjs';
-import CharacterModel from '../characterModel.mjs';
+import CharacterItemModel from '../characterItemModel.mjs';
 
 /**
  * System definition for a class
  */
-export default class Class extends CharacterModel {
+export default class Class extends CharacterItemModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();

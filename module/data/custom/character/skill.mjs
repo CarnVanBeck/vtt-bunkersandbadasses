@@ -1,9 +1,9 @@
-import CharacterModel from '../characterModel.mjs';
+import CharacterItemModel from '../characterItemModel.mjs';
 
 /**
  * System definition for a skill
  */
-export default class Skill extends CharacterModel {
+export default class Skill extends CharacterItemModel {
     static defineSchema() {
         const fields = foundry.data.fields;
         const schema = super.defineSchema();

@@ -5,7 +5,7 @@ import BaseModel from './baseModel.mjs';
 /**
  * System definition for an archetype
  */
-export default class CharacterModel extends BaseModel {
+export default class CharacterItemModel extends BaseModel {
     constructor() {
         super();
     }
