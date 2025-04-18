@@ -31,8 +31,8 @@ export default class VaultHunterData extends BaseActorData {
             required: true,
             nullable: false,
             integer: true,
-            min: 1,
-            initial: 1,
+            min: 0,
+            initial: 0,
             label: 'badass.actor.vaultHunter.level.label',
             hint: 'badass.actor.vaultHunter.level.hint',
         });
@@ -310,10 +310,12 @@ export default class VaultHunterData extends BaseActorData {
             check.sum = check.base + check.bonus + check.miscMod;
         }
 
-        for (let at in this.archetypes) {
+        for (let at of this.archetypes) {
             this.level += at.level;
         }
-        this.xp.segment = getXPSegmentByLevel(this.level);
+        if (this.level > 0) {
+            this.xp.segment = getXPSegmentByLevel(this.level);
+        }
         this.xp.nextLevelPercentage = this.xp.current / (this.xp.segment * 10);
         this.xp.levelUp = this.xp.nextLevelPercentage >= 1;
     }
@@ -336,4 +338,3 @@ export default class VaultHunterData extends BaseActorData {
         this.parent.prototypeToken.disposition = 1; //1 = Friendly
     }
 }
-
