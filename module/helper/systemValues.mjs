@@ -67,6 +67,18 @@ export function getSystemManufacturers() {
     return game.settings.get(CONFIG.BADASS.namespace, 'manufacturers');
 }
 
+export function getSystemActions() {
+    return game.settings.get(CONFIG.BADASS.namespace, 'actions');
+}
+
+export function getSystemArchetypes() {
+    return game.settings.get(CONFIG.BADASS.namespace, 'archetypes');
+}
+
+export function getSystemClasses() {
+    return game.settings.get(CONFIG.BADASS.namespace, 'classes');
+}
+
 /**
  * Get a predefined array of accuracy values with range, hits, and crits.
  *

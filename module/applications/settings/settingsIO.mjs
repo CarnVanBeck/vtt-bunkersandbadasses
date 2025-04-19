@@ -1,6 +1,6 @@
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 import { BADASS } from '../../helper/config.mjs';
-import { getSystemDefenses, getSystemElements, getSystemGunTypes, getSystemManufacturers } from '../../helper/systemValues.mjs';
+import { getSystemActions, getSystemArchetypes, getSystemClasses, getSystemDefenses, getSystemElements, getSystemGunTypes, getSystemManufacturers } from '../../helper/systemValues.mjs';
 
 /**
  * 
@@ -85,7 +85,10 @@ export default class SettingsIO extends HandlebarsApplicationMixin(ApplicationV2
             "gunTypes" : getSystemGunTypes(),
             "elements" : getSystemElements(),
             "defenses" : getSystemDefenses(),
-            "manufacturers" : getSystemManufacturers()
+            "manufacturers" : getSystemManufacturers(),
+            "actions": getSystemActions(),
+            "archetypes": getSystemArchetypes(),
+            "classes": getSystemClasses(),
         }
         let stringified = JSON.stringify(systemDataSets, undefined, 4); 
         return new File([stringified], "settings.json", {type: "application/json"});
