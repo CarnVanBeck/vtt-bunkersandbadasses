@@ -1,0 +1,35 @@
+<svg id="guardian" viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+	<defs>
+		<style>
+			#focusOcular {
+                fill: none;
+            }
+
+            .shieldBlock {
+                fill: rgba(60, 60, 160, 0.5);
+                stroke: #2020aa;
+                stroke-width: 2px;
+            }
+		</style>
+        <radialGradient id="eyeDotGrad" cx="50%" cy="50%" r="95%" fx="50%" fy="50%">
+            <stop offset="20%" stop-color="#990000" />
+            <stop offset="100%" stop-color="#00f" />
+        </radialGradient>
+        <symbol id="eyeIrisSingleFlavor">
+            <path d="m180,180 c-2,-3 -3,3 -10,-2 c-4,1 2,-2 -5,1"/>
+            <path d="m180,175 c-1,-4 -2,4 -10,-6 c-4,1 2,-2 -3,-1"/>
+        </symbol>
+	</defs>
+    <!-- guardian -->
+    <path 
+        d="m150,200 l-50,0 a10,10 0,0,1 0,-20 l70,0 h20 l50,-50 a10,10 0,0,1 10,10 l-50,50 v50
+        v80 a10,10 0,0,1 -20,0 h-" />
+	<!-- shield -->
+    <path class="shieldBlock" d="m150,180 l10,20 l20,0 l10,-20 l-10,-20 l-20,0 z" />
+    <path class="shieldBlock" d="m182,160 l10,20 l20,0 l10,-20 l-10,-20 l-20,0 z" />
+    <path class="shieldBlock" d="m184,200 l10,20 l20,0 l10,-20 l-10,-20 l-20,0 z" />
+    <path class="shieldBlock" d="m216,180 l10,20 l20,0 l10,-20 l-10,-20 l-20,0 z" />
+    <path class="shieldBlock" d="m216,220 l10,20 l20,0 l10,-20 l-10,-20 l-20,0 z" />
+    <path class="shieldBlock" d="m182,240 l10,20 l20,0 l10,-20 l-10,-20 l-20,0 z" />
+    <path class="shieldBlock" d="m150,220 l10,20 l20,0 l10,-20 l-10,-20 l-20,0 z" />
+</svg>
