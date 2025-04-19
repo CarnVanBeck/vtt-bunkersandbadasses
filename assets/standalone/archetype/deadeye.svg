@@ -1,0 +1,64 @@
+<svg id="deadeye" viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+	<defs>
+		<style>
+			#focusOcular {
+                fill: none;
+            }
+            .ocular {
+                stroke: dimgrey;
+                stroke-width: 10px;
+            }
+            #eyeWhite {
+                fill: blanchedalmond;
+            }
+            #eyeIris {
+                fill: url(#eyeDotGrad);
+            }
+            #bone {
+                fill: blanchedalmond;
+            }
+		</style>
+        <radialGradient id="eyeDotGrad" cx="50%" cy="50%" r="95%" fx="50%" fy="50%">
+            <stop offset="20%" stop-color="#990000" />
+            <stop offset="100%" stop-color="#00f" />
+        </radialGradient>
+        <symbol id="eyeIrisSingleFlavor">
+            <path d="m180,180 c-2,-3 -3,3 -10,-2 c-4,1 2,-2 -5,1"/>
+            <path d="m180,175 c-1,-4 -2,4 -10,-6 c-4,1 2,-2 -3,-1"/>
+        </symbol>
+        <symbol id="eyeIrisFlavor">
+            <g id="flavorBlock1">
+                <use href="#eyeIrisSingleFlavor"></use>
+                <use href="#eyeIrisSingleFlavor" transform="rotate(15,200,180)"></use>
+                <use href="#eyeIrisSingleFlavor" transform="rotate(25,200,180)"></use>
+                <use href="#eyeIrisSingleFlavor" transform="rotate(55,200,180)"></use>
+                <use href="#eyeIrisSingleFlavor" transform="rotate(95,200,180)"></use>
+                <use href="#eyeIrisSingleFlavor" transform="rotate(115,200,180)"></use>
+                <use href="#eyeIrisSingleFlavor" transform="rotate(135,200,180)"></use>
+            </g>
+            <use href="#flavorBlock1" transform="rotate(135,200,180)"></use>
+            <use href="#flavorBlock1" transform="rotate(185,200,180)"></use>
+            <use href="#flavorBlock1" transform="rotate(235,200,180)"></use>
+            <use href="#flavorBlock1" transform="rotate(300,200,180)"></use>
+        </symbol>
+	</defs>
+    <!-- ocular -->
+	<path id="focusOcular" class="ocular" d="m120,180 a50,50 0,0,0 160,0 a50,50 0,0,0 -160,0 z" />
+    <line class="ocular" x1="50" x2="120" y1="180" y2="180" />
+    <line class="ocular" x1="280" x2="350" y1="180" y2="180" />
+    <line class="ocular" x1="200" x2="200" y1="30" y2="100" />
+    <line class="ocular" x1="200" x2="200" y1="260" y2="330" />
+    <!-- eye -->
+    <path id="eyeWhite" d="m130,180 a50,30 0,0,0 140,0 a50,30 0,0,0 -140,0 z" />
+    <path id="eyeIris" d="m160,180 a40,40 0,0,0 80,0 a40,40 0,0,0 -80,0 z" />
+    <use href="#eyeIrisFlavor"></use>
+    <path id="eyeDot" d="m185,180 a15,15 0,0,0 30,0 a15,15 0,0,0 -30,0 z" />
+    <path id="upperEyeLid" class="eyelid" d="m130,180 a50,50 0,0,1 140,0 a50,25 0,0,0 -140,0 z" />
+    <path id="bottomEyeLid" class="eyelid" d="m130,180 a50,50 0,0,0 140,0 a50,25 0,0,1 -140,0 z" />
+    <!-- eye -->
+    <path id="bone"
+        d="m82,250 a10,15 30,0,1 20,6 l200,60 a10,15 30,0,1 20,10 l-3,10 
+        a10,15 30,0,1 -22,-5 l-200,-60 a10,15 30,0,1 -22,-5z"
+    />
+    <use href="#bone" transform="rotate(-35,200,300)"></use>
+</svg>
