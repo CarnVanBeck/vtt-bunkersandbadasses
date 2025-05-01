@@ -1,14 +1,18 @@
 <section class="badass-section">
     {{#with system.initiative as | initiative | }}
-    <div class="initiativeBlock">
-        <div class="actorBlockHeader initName">{{ localize "SHEETS.actor.vaultHunter.initative.label" }}</div>
-        <div class="actorSheetValue initModValue underlineBox">{{../system.badassRank}}</div>
-        <div class="actorSheetPlus">+</div>
-        <div class="actorSheetValue initModValue underlineBox">{{ ../system.stats.spd.mod }}</div>
-        <div class="actorSheetPlus">+</div>
-        <div class="actorSheetValue initModValue underlineBox">{{ initiative.bonus }}</div>
-        <div class="actorSheetEquals">=</div>
-        <div class="actorSheetSum initSumValue tlbrBox">{{ initiative.sum }}</div>
+    <div class="badass-row initiativeBlock">
+        <div class="badass-col col-5 actorBlockHeader initName">{{ localize "SHEETS.actor.vaultHunter.initative.label" }}</div>
+        <div class="badass-col col-5 calculatingBlock">
+            <div class="badass-row">
+                <div class="badass-col col-3 actorSheetValue initModValue underlineBox">{{../system.badassRank}}</div>
+                <div class="badass-col col-1 actorSheetPlus">+</div>
+                <div class="badass-col col-3 actorSheetValue initModValue underlineBox">{{ ../system.stats.spd.mod }}</div>
+                <div class="badass-col col-1 actorSheetPlus">+</div>
+                <div class="badass-col col-3 actorSheetValue initModValue underlineBox">{{ initiative.bonus }}</div>
+                <div class="badass-col col-1 actorSheetEquals">=</div>
+            </div>
+        </div>
+        <div class="badass-col col-2 actorSheetSum initSumValue tlbrBox">{{ initiative.sum }}</div>
     </div>
     {{/with}}
 </section>

@@ -1,14 +1,18 @@
 <section class="badass-section">
     {{#with system.movement as | movement | }}
-    <div class="movementBlock">
-        <div class="actorBlockHeader movementName">{{ localize "SHEETS.actor.vaultHunter.movement.label" }}</div>
-        <div class="actorSheetValue movementModValue underlineBox">{{ movement.base }}</div>
-        <div class="actorSheetPlus">+</div>
-        <div class="actorSheetValue movementModValue underlineBox">{{ ../system.stats.spd.mod }}</div>
-        <div class="actorSheetPlus">+</div>
-        <div class="actorSheetValue movementModValue underlineBox">{{ movement.bonus }}</div>
-        <div class="actorSheetEquals">=</div>
-        <div class="actorSheetSum skillSumValue tlbrBox">{{ movement.sum }}</div>
+    <div class="badass-row movementBlock">
+        <div class="badass-col col-5 actorBlockHeader movementName">{{ localize "SHEETS.actor.vaultHunter.movement.label" }}</div>
+        <div class="badass-col col-5 calculatingBlock">
+            <div class="badass-row">
+                <div class="badass-col col-3 actorSheetValue movementModValue underlineBox">{{ movement.base }}</div>
+                <div class="badass-col col-1 actorSheetPlus">+</div>
+                <div class="badass-col col-3 actorSheetValue movementModValue underlineBox">{{ ../system.stats.spd.mod }}</div>
+                <div class="badass-col col-1 actorSheetPlus">+</div>
+                <div class="badass-col col-3 actorSheetValue movementModValue underlineBox">{{ movement.bonus }}</div>
+                <div class="badass-col col-1 actorSheetEquals">=</div>
+                
+            </div>
+        </div>
+        <div class="badass-col col-2 actorSheetSum skillSumValue tlbrBox">{{ movement.sum }}</div>
     </div>
     {{/with}}
-</section>

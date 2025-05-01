@@ -1,15 +1,19 @@
 <section class="badass-section tlbrBox skillSection">
     <div class="actorBlockHeader skillHeader">{{ localize "SHEETS.actor.vaultHunter.checks.label" }}</div>
     {{#each system.checks as | skill | }}
-    <div class="skillBlock {{ @key }}">
-        <div class="skillName">{{ @key }}</div>
-        <div class="skillStatModName">{{ skill.mod }} MOD</div>
-        <div class="actorSheetValue skillStatModValue underlineBox">{{ skill.base }}</div>
-        <div class="actorSheetPlus">+</div>
-        <div class="skillMiscModName">MISC MOD</div>
-        <div class="actorSheetValue skillMiscModValue underlineBox">{{ skill.miscMod }}</div>
-        <div class="actorSheetEquals">=</div>
-        <div class="actorSheetSum skillSumValue tlbrBox">{{ skill.sum }}</div>
+    <div class="badass-row skillBlock {{ @key }}">
+        <div class="badass-col col-3 skillName">{{ @key }}</div>
+        <div class="badass-col col-7 calcBlock {{ @key }}">
+            <div class="badass-row {{ @key }}">
+                <div class="badass-col col-2 skillStatModName">{{ skill.mod }} MOD</div>
+                <div class="badass-col col-3 actorSheetValue skillStatModValue underlineBox">{{ skill.base }}</div>
+                <div class="badass-col col-1 actorSheetPlus">+</div>
+                <div class="badass-col col-2 skillMiscModName">MISC MOD</div>
+                <div class="badass-col col-3 actorSheetValue skillMiscModValue underlineBox">{{ skill.miscMod }}</div>
+                <div class="badass-col col-1 actorSheetEquals">=</div>
+            </div>
+        </div>
+        <div class="badass-col col-2 actorSheetSum skillSumValue tlbrBox">{{ skill.sum }}</div>
     </div>
     {{/each}}
 </section>

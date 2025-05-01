@@ -137,34 +137,31 @@
 
     /* Defense specials */
     .actorBlockHeader {
-        display: block;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: rgba(110, 112, 117, 0.5);
     }
 
     .actorSheetValue {
-        width: 35px;
         font-size: 2em;
         text-align: center;
     }
 
     .actorSheetPlus,
     .actorSheetEquals {
-        width: 5%;
         font-size: 0.75em;
         text-align: center;
         margin: 10px 0 0 0;
     }
 
     .actorSheetSum {
-        width: 40px;
         font-size: 24px;
         text-align: center;
     }
 
     .actorStatMod {
         font-size: 1.8em;
-        width: 55%;
         text-align: center;
     }
 
@@ -191,30 +188,11 @@
     }
 
     .singleStatValueMod {
-        margin-top: calc(100% - 75px);
+        margin-top: 20px;
     }
 
     .singleStatValue {
         width: 55%;
-    }
-
-    /* Actor initivative */
-    .initiativeBlock,
-    .movementBlock {
-        display: flex;
-        flex-flow: row;
-        margin: 0 0 0 -55px;
-    }
-
-    .initName,
-    .movementName {
-        width: 120px;
-        line-height: 2em;
-    }
-
-    .initModValue,
-    .movementModValue {
-        width: 10%;
     }
 
     /* underline and Boxes */
@@ -255,7 +233,7 @@
 
     .skillBlock {
         display: flex;
-        margin: 0.5em 0 0 10%;
+        margin: 0.5em 3% 0 3%;
     }
 
     .skillName {
@@ -282,10 +260,13 @@
     }
 
     /* gold */
-    .goldBlock input[type="number"],
+    .goldBlock > input[type="number"],
     .goldBlock .goldName {
         height: 100%;
-        line-height: 400%;
+    }
+
+    .goldBlock > input[type="number"] {
+        font-size: 2em;
     }
 
     .goldBlock {

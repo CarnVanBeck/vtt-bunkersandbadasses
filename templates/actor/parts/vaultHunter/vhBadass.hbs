@@ -1,11 +1,13 @@
-<section class="badass-section badass-row">
+<section class="badass-section">
+    <div class="badass-row">
     <div class="badass-col badassBlock tlbrBox">
-        <div class="actorBlockHeader badassRankName">{{ localize "SHEETS.actor.vaultHunter.badassRank.label" }}</div>
-        {{> stdInput inputClass="actorSheetValue goldValue" inputValue=system.badassRank inputName="system.badassRank"}}
-    </div>
-    <div class="badass-col badassBlock badassTokenBlock tlbrBox">
-        <div class="meleeDieName">{{ localize "SHEETS.actor.vaultHunter.badassTokens.label" }}</div>
-        <div class="actorSheetValue badassTokenValue">{{ system.badassToken }}</div>
+            <div class="actorBlockHeader badassRankName">{{ localize "SHEETS.actor.vaultHunter.badassRank.label" }}</div>
+            {{> stdInput inputClass="actorSheetValue goldValue" inputValue=system.badassRank inputName="system.badassRank"}}
+        </div>
+        <div class="badass-col badassBlock badassTokenBlock tlbrBox">
+            <div class="meleeDieName">{{ localize "SHEETS.actor.vaultHunter.badassTokens.label" }}</div>
+            <div class="actorSheetValue badassTokenValue">{{ system.badassToken }}</div>
+        </div>
     </div>
 </section>
 
